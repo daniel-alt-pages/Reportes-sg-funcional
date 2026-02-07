@@ -10,11 +10,11 @@ import sys
 import webbrowser
 app = Flask(__name__)
 
-# Rutas organizadas (Nueva estructura)
-app.config['DATOS_FOLDER'] = 'output/temp'
-app.config['RESULTADOS_FOLDER'] = 'output/temp'
-app.config['CARGAR_FOLDER'] = 'cache'
-app.config['SALIDA_FOLDER'] = 'output'
+# Rutas organizadas (Nueva estructura reorganizada)
+app.config['DATOS_FOLDER'] = '_procesamiento/temp'
+app.config['RESULTADOS_FOLDER'] = '_procesamiento/temp'
+app.config['CARGAR_FOLDER'] = '_procesamiento'
+app.config['SALIDA_FOLDER'] = '_salida'
 app.config['ASSETS_FOLDER'] = 'assets'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max-limit
 
