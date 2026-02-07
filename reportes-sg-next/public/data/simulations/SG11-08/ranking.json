@@ -1,0 +1,4760 @@
+{
+  "estudiantes": [
+    {
+      "informacion_personal": {
+        "nombres": "MARIA JOSE",
+        "apellidos": "GUTIERREZ OSORIO",
+        "numero_identificacion": "1114241878",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Valle del Cauca",
+        "correo_electronico": "gutierrezosiomj.sg.est@gmail.com"
+      },
+      "puntaje_global": 385,
+      "s1_aciertos": 113,
+      "s1_total": 119,
+      "s2_aciertos": 122,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 81
+        },
+        "lectura crítica": {
+          "puntaje": 79
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 67
+        },
+        "ciencias naturales": {
+          "puntaje": 78
+        },
+        "inglés": {
+          "puntaje": 87
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Nicol Tatiana",
+        "apellidos": "Cerpa Peinado",
+        "numero_identificacion": "1148438554",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "nicolcerpa04@gmail.com"
+      },
+      "puntaje_global": 150,
+      "s1_aciertos": 55,
+      "s1_total": 119,
+      "s2_aciertos": 27,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 25
+        },
+        "lectura crítica": {
+          "puntaje": 63
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 20
+        },
+        "ciencias naturales": {
+          "puntaje": 18
+        },
+        "inglés": {
+          "puntaje": 12
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "STEPHANY",
+        "apellidos": "VELAZCO RODRIGUEZ",
+        "numero_identificacion": "1142715366",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "velazcorodriguezs.sg.est@gmail.com"
+      },
+      "puntaje_global": 422,
+      "s1_aciertos": 113,
+      "s1_total": 119,
+      "s2_aciertos": 128,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 85
+        },
+        "lectura crítica": {
+          "puntaje": 72
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 100
+        },
+        "ciencias naturales": {
+          "puntaje": 82
+        },
+        "inglés": {
+          "puntaje": 80
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Luis Daniel",
+        "apellidos": "Uribe Mendoza",
+        "numero_identificacion": "1133790838",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "ietac.sg.luis.mendoza@gmail.com"
+      },
+      "puntaje_global": 252,
+      "s1_aciertos": 80,
+      "s1_total": 119,
+      "s2_aciertos": 85,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 56
+        },
+        "lectura crítica": {
+          "puntaje": 47
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 62
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Luisa Fernanda",
+        "apellidos": "Baron Lucas",
+        "numero_identificacion": "1148437900",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "baronlucaslf.sg.est@gmail.com"
+      },
+      "puntaje_global": 247,
+      "s1_aciertos": 78,
+      "s1_total": 119,
+      "s2_aciertos": 97,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 40
+        },
+        "lectura crítica": {
+          "puntaje": 61
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 44
+        },
+        "inglés": {
+          "puntaje": 87
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Janer",
+        "apellidos": "Castro Montalvo",
+        "numero_identificacion": "1148695511",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "janer2025c@gmail.com"
+      },
+      "puntaje_global": 277,
+      "s1_aciertos": 90,
+      "s1_total": 119,
+      "s2_aciertos": 97,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 58
+        },
+        "lectura crítica": {
+          "puntaje": 50
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 65
+        },
+        "ciencias naturales": {
+          "puntaje": 50
+        },
+        "inglés": {
+          "puntaje": 50
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Ana Belén",
+        "apellidos": "Baron Ceballos",
+        "numero_identificacion": "1033373778",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "anaceballos201018@gmail.com"
+      },
+      "puntaje_global": 255,
+      "s1_aciertos": 86,
+      "s1_total": 119,
+      "s2_aciertos": 88,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 61
+        },
+        "lectura crítica": {
+          "puntaje": 42
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 59
+        },
+        "ciencias naturales": {
+          "puntaje": 46
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Juan David",
+        "apellidos": "Correa Hernández",
+        "numero_identificacion": "1066572003",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "correahernandezjd.sg.est@gmail.com"
+      },
+      "puntaje_global": 280,
+      "s1_aciertos": 91,
+      "s1_total": 119,
+      "s2_aciertos": 101,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 66
+        },
+        "lectura crítica": {
+          "puntaje": 63
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 43
+        },
+        "ciencias naturales": {
+          "puntaje": 49
+        },
+        "inglés": {
+          "puntaje": 66
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Gabriel",
+        "apellidos": "Sutachan Mendez",
+        "numero_identificacion": "1025062800",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bogotá, D.C.",
+        "correo_electronico": "sutachanmendezg.sg.est@gmail.com"
+      },
+      "puntaje_global": 427,
+      "s1_aciertos": 117,
+      "s1_total": 119,
+      "s2_aciertos": 128,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 81
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 84
+        },
+        "ciencias naturales": {
+          "puntaje": 77
+        },
+        "inglés": {
+          "puntaje": 85
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Harold Ivan",
+        "apellidos": "Hoyos Vergara",
+        "numero_identificacion": "1148438187",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "hoyosvergarahi.sg.est@gmail.com"
+      },
+      "puntaje_global": 250,
+      "s1_aciertos": 87,
+      "s1_total": 119,
+      "s2_aciertos": 81,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 61
+        },
+        "lectura crítica": {
+          "puntaje": 47
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 51
+        },
+        "ciencias naturales": {
+          "puntaje": 44
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Mariana De Jesus",
+        "apellidos": "Cabadia Parra",
+        "numero_identificacion": "1148438017",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "cabadiaparramd.sg.est@gmail.com"
+      },
+      "puntaje_global": 322,
+      "s1_aciertos": 105,
+      "s1_total": 119,
+      "s2_aciertos": 101,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 71
+        },
+        "lectura crítica": {
+          "puntaje": 65
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 62
+        },
+        "ciencias naturales": {
+          "puntaje": 59
+        },
+        "inglés": {
+          "puntaje": 66
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Jorge andres",
+        "apellidos": "Perez Mestra",
+        "numero_identificacion": "1148695420",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "perezmestreja.sg.est@gmail.com"
+      },
+      "puntaje_global": 182,
+      "s1_aciertos": 39,
+      "s1_total": 119,
+      "s2_aciertos": 72,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 40
+        },
+        "lectura crítica": {
+          "puntaje": 36
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 34
+        },
+        "ciencias naturales": {
+          "puntaje": 36
+        },
+        "inglés": {
+          "puntaje": 34
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Jairo Manuel",
+        "apellidos": "Baltazar Villeros",
+        "numero_identificacion": "1063290755",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "jairobaltazar629@gmail.com"
+      },
+      "puntaje_global": 235,
+      "s1_aciertos": 87,
+      "s1_total": 119,
+      "s2_aciertos": 69,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 51
+        },
+        "lectura crítica": {
+          "puntaje": 49
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 50
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Ximena",
+        "apellidos": "Arias Manco",
+        "numero_identificacion": "1066605786",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "ximenaarias1311@gmail.com"
+      },
+      "puntaje_global": 263,
+      "s1_aciertos": 91,
+      "s1_total": 119,
+      "s2_aciertos": 86,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 61
+        },
+        "lectura crítica": {
+          "puntaje": 61
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 52
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 43
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Cristian David",
+        "apellidos": "Fajardo Perilla",
+        "numero_identificacion": "1050096058",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Boyacá",
+        "correo_electronico": "fajardoperillacd.sg.est@gmail.com"
+      },
+      "puntaje_global": 390,
+      "s1_aciertos": 112,
+      "s1_total": 119,
+      "s2_aciertos": 124,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 83
+        },
+        "lectura crítica": {
+          "puntaje": 78
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 76
+        },
+        "ciencias naturales": {
+          "puntaje": 74
+        },
+        "inglés": {
+          "puntaje": 82
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "María Esther",
+        "apellidos": "Acosta Feria",
+        "numero_identificacion": "1066605450",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "acostaferiame.sg.est@gmail.com"
+      },
+      "puntaje_global": 287,
+      "s1_aciertos": 88,
+      "s1_total": 119,
+      "s2_aciertos": 95,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 67
+        },
+        "lectura crítica": {
+          "puntaje": 52
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 62
+        },
+        "ciencias naturales": {
+          "puntaje": 54
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Luis Mario",
+        "apellidos": "Zabala Sanchez",
+        "numero_identificacion": "1066606169",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "zabalasanchezlm.sg.est@gmail.com"
+      },
+      "puntaje_global": 322,
+      "s1_aciertos": 110,
+      "s1_total": 119,
+      "s2_aciertos": 81,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 63
+        },
+        "lectura crítica": {
+          "puntaje": 81
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 79
+        },
+        "ciencias naturales": {
+          "puntaje": 44
+        },
+        "inglés": {
+          "puntaje": 36
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "CAMILO ANDRES",
+        "apellidos": "ARROYO CASTRO",
+        "numero_identificacion": "1066605793",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "arroyocastroca.sg.est@gmail.com"
+      },
+      "puntaje_global": 257,
+      "s1_aciertos": 88,
+      "s1_total": 119,
+      "s2_aciertos": 85,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 76
+        },
+        "lectura crítica": {
+          "puntaje": 46
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 46
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 45
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Jose Miguel",
+        "apellidos": "Urrea Gómez",
+        "numero_identificacion": "1114882979",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Quindío",
+        "correo_electronico": "urreagomezjm.sg.est@gmail.com"
+      },
+      "puntaje_global": 417,
+      "s1_aciertos": 115,
+      "s1_total": 119,
+      "s2_aciertos": 119,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 80
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 81
+        },
+        "ciencias naturales": {
+          "puntaje": 80
+        },
+        "inglés": {
+          "puntaje": 61
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Eliana Marcela",
+        "apellidos": "Vergara Gandia",
+        "numero_identificacion": "1063293969",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "ietacelianamarcelavergaragandi@gmail.com"
+      },
+      "puntaje_global": 242,
+      "s1_aciertos": 85,
+      "s1_total": 119,
+      "s2_aciertos": 79,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 50
+        },
+        "lectura crítica": {
+          "puntaje": 56
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 45
+        },
+        "ciencias naturales": {
+          "puntaje": 45
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "KAREN GABRIELA",
+        "apellidos": "LÓPEZ PEDROZO",
+        "numero_identificacion": "1093299319",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Norte de Santander",
+        "correo_electronico": "gabrielakplopez14@gmail.com"
+      },
+      "puntaje_global": 213,
+      "s1_aciertos": 72,
+      "s1_total": 119,
+      "s2_aciertos": 67,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 46
+        },
+        "lectura crítica": {
+          "puntaje": 50
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 35
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Alexandra",
+        "apellidos": "Julio Romero",
+        "numero_identificacion": "1148695425",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "alexandrajulioromero@gmail.com"
+      },
+      "puntaje_global": 236,
+      "s1_aciertos": 78,
+      "s1_total": 119,
+      "s2_aciertos": 79,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 61
+        },
+        "lectura crítica": {
+          "puntaje": 46
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 44
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Ronaldo Andrés",
+        "apellidos": "Zuleta Guerra",
+        "numero_identificacion": "1063363727",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "zuletaguerrara.sg.est@gmail.com"
+      },
+      "puntaje_global": 388,
+      "s1_aciertos": 112,
+      "s1_total": 119,
+      "s2_aciertos": 111,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 86
+        },
+        "lectura crítica": {
+          "puntaje": 80
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 75
+        },
+        "ciencias naturales": {
+          "puntaje": 80
+        },
+        "inglés": {
+          "puntaje": 45
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Valeria",
+        "apellidos": "Ausecha Campo",
+        "numero_identificacion": "1058933116",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Valle del Cauca",
+        "correo_electronico": "ausechacampov.sg.est@gmail.com"
+      },
+      "puntaje_global": 398,
+      "s1_aciertos": 115,
+      "s1_total": 119,
+      "s2_aciertos": 123,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 85
+        },
+        "lectura crítica": {
+          "puntaje": 82
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 74
+        },
+        "ciencias naturales": {
+          "puntaje": 77
+        },
+        "inglés": {
+          "puntaje": 80
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Davier Esteban",
+        "apellidos": "Otero Urango",
+        "numero_identificacion": "1067286561",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "oterorurangode.sg.est@gmail.com"
+      },
+      "puntaje_global": 232,
+      "s1_aciertos": 80,
+      "s1_total": 119,
+      "s2_aciertos": 70,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 54
+        },
+        "lectura crítica": {
+          "puntaje": 51
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 44
+        },
+        "inglés": {
+          "puntaje": 36
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Arnedis",
+        "apellidos": "Sibaja Begambre",
+        "numero_identificacion": "1063290456",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "sibajabegambrea.sg.est@gmail.com"
+      },
+      "puntaje_global": 216,
+      "s1_aciertos": 75,
+      "s1_total": 119,
+      "s2_aciertos": 67,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 43
+        },
+        "lectura crítica": {
+          "puntaje": 49
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 42
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "JHOANS SEBASTIAN",
+        "apellidos": "DURANGO ZABALA",
+        "numero_identificacion": "1063789927",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "durangozabalajs.sg.est@gmail.com"
+      },
+      "puntaje_global": 299,
+      "s1_aciertos": 93,
+      "s1_total": 119,
+      "s2_aciertos": 94,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 74
+        },
+        "lectura crítica": {
+          "puntaje": 53
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 63
+        },
+        "ciencias naturales": {
+          "puntaje": 56
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Juan Diego",
+        "apellidos": "Zambrano Ocampo",
+        "numero_identificacion": "1077726158",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Huila",
+        "correo_electronico": "zambranoocanpojd.sg.est@gmail.com"
+      },
+      "puntaje_global": 389,
+      "s1_aciertos": 107,
+      "s1_total": 119,
+      "s2_aciertos": 128,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 80
+        },
+        "lectura crítica": {
+          "puntaje": 71
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 79
+        },
+        "ciencias naturales": {
+          "puntaje": 80
+        },
+        "inglés": {
+          "puntaje": 82
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Dainer Andres",
+        "apellidos": "Sánchez Castro",
+        "numero_identificacion": "1063295162",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "sanchezcastrodainerandres@gmail.com"
+      },
+      "puntaje_global": 290,
+      "s1_aciertos": 90,
+      "s1_total": 119,
+      "s2_aciertos": 87,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 71
+        },
+        "lectura crítica": {
+          "puntaje": 57
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 64
+        },
+        "ciencias naturales": {
+          "puntaje": 49
+        },
+        "inglés": {
+          "puntaje": 32
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Viviana Marcela",
+        "apellidos": "Romero Zuñiga",
+        "numero_identificacion": "1066573694",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "romerozunigavm.sg.est@gmail.com"
+      },
+      "puntaje_global": 306,
+      "s1_aciertos": 102,
+      "s1_total": 119,
+      "s2_aciertos": 88,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 66
+        },
+        "lectura crítica": {
+          "puntaje": 71
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 53
+        },
+        "ciencias naturales": {
+          "puntaje": 62
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Salomé",
+        "apellidos": "Diaz Valencia",
+        "numero_identificacion": "1110296676",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Valle del Cauca",
+        "correo_electronico": "diazvalencias.sg.est@gmail.com"
+      },
+      "puntaje_global": 214,
+      "s1_aciertos": 64,
+      "s1_total": 119,
+      "s2_aciertos": 65,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 39
+        },
+        "lectura crítica": {
+          "puntaje": 56
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 31
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "YULISA",
+        "apellidos": "Rodríguez Rodríguez",
+        "numero_identificacion": "1133790727",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "merly4704@gmail.com"
+      },
+      "puntaje_global": 208,
+      "s1_aciertos": 63,
+      "s1_total": 119,
+      "s2_aciertos": 77,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 43
+        },
+        "lectura crítica": {
+          "puntaje": 45
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 36
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Daniel Andres",
+        "apellidos": "Zabala Montiel",
+        "numero_identificacion": "106660887",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "danielzabalamontiel04@gmail.com"
+      },
+      "puntaje_global": 203,
+      "s1_aciertos": 68,
+      "s1_total": 119,
+      "s2_aciertos": 83,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 56
+        },
+        "lectura crítica": {
+          "puntaje": 15
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 47
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 54
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Isabella",
+        "apellidos": "Manchego Lozano",
+        "numero_identificacion": "1063295017",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "manchegolozanoi.sg.est@gmail.com"
+      },
+      "puntaje_global": 240,
+      "s1_aciertos": 84,
+      "s1_total": 119,
+      "s2_aciertos": 69,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 64
+        },
+        "lectura crítica": {
+          "puntaje": 54
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 31
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Luis Antonio",
+        "apellidos": "Muñoz hincapie",
+        "numero_identificacion": "1104821599",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Valle del Cauca",
+        "correo_electronico": "munozhincapiela.sg.est@gmail.com"
+      },
+      "puntaje_global": 397,
+      "s1_aciertos": 116,
+      "s1_total": 119,
+      "s2_aciertos": 120,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 83
+        },
+        "lectura crítica": {
+          "puntaje": 82
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 79
+        },
+        "ciencias naturales": {
+          "puntaje": 75
+        },
+        "inglés": {
+          "puntaje": 75
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "yuleimis",
+        "apellidos": "murillo  gomez",
+        "numero_identificacion": "1133790340",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "murilloyuleimis@gmail.com"
+      },
+      "puntaje_global": 188,
+      "s1_aciertos": 59,
+      "s1_total": 119,
+      "s2_aciertos": 63,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 40
+        },
+        "lectura crítica": {
+          "puntaje": 43
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 27
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Isabela",
+        "apellidos": "Barreiro Cardenas",
+        "numero_identificacion": "1077230281",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Huila",
+        "correo_electronico": "barreirocardnasi.sg.est@gmail.com"
+      },
+      "puntaje_global": 389,
+      "s1_aciertos": 112,
+      "s1_total": 119,
+      "s2_aciertos": 109,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 73
+        },
+        "lectura crítica": {
+          "puntaje": 100
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 70
+        },
+        "ciencias naturales": {
+          "puntaje": 75
+        },
+        "inglés": {
+          "puntaje": 57
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Dayana Michel",
+        "apellidos": "Peña tordecilla",
+        "numero_identificacion": "1148695628",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "dayanamichelpenatordecilla@gmail.com"
+      },
+      "puntaje_global": 228,
+      "s1_aciertos": 79,
+      "s1_total": 119,
+      "s2_aciertos": 65,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 54
+        },
+        "lectura crítica": {
+          "puntaje": 46
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 49
+        },
+        "ciencias naturales": {
+          "puntaje": 39
+        },
+        "inglés": {
+          "puntaje": 30
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "KAREN SOFIA",
+        "apellidos": "ARRIETA VERGARA",
+        "numero_identificacion": "1148695567",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "k90825363@gmail.com"
+      },
+      "puntaje_global": 232,
+      "s1_aciertos": 79,
+      "s1_total": 119,
+      "s2_aciertos": 75,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 61
+        },
+        "lectura crítica": {
+          "puntaje": 36
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 52
+        },
+        "inglés": {
+          "puntaje": 35
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Dairon Steeven",
+        "apellidos": "Peña Cerquera",
+        "numero_identificacion": "1106635223",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Tolima",
+        "correo_electronico": "daironpenacerquera@gmail.com"
+      },
+      "puntaje_global": 326,
+      "s1_aciertos": 101,
+      "s1_total": 119,
+      "s2_aciertos": 90,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 76
+        },
+        "lectura crítica": {
+          "puntaje": 67
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 67
+        },
+        "ciencias naturales": {
+          "puntaje": 61
+        },
+        "inglés": {
+          "puntaje": 34
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Adriana Lucia",
+        "apellidos": "Rojas cordero",
+        "numero_identificacion": "1038117449",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "rojasadrianalucia03@gmail.com"
+      },
+      "puntaje_global": 213,
+      "s1_aciertos": 75,
+      "s1_total": 119,
+      "s2_aciertos": 74,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 48
+        },
+        "lectura crítica": {
+          "puntaje": 43
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 42
+        },
+        "inglés": {
+          "puntaje": 34
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Yeimi Paola",
+        "apellidos": "Barragan Babilonia",
+        "numero_identificacion": "1044918807",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "barraganbabiloniayp.sg.est@gmail.com"
+      },
+      "puntaje_global": 217,
+      "s1_aciertos": 65,
+      "s1_total": 119,
+      "s2_aciertos": 91,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 49
+        },
+        "lectura crítica": {
+          "puntaje": 44
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 37
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 55
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "JHOAN DAVID",
+        "apellidos": "LEÓN LAGOS",
+        "numero_identificacion": "1118366653",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Caquetá",
+        "correo_electronico": "leonlagosjd.sg.est@gmail.com"
+      },
+      "puntaje_global": 458,
+      "s1_aciertos": 117,
+      "s1_total": 119,
+      "s2_aciertos": 132,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 100
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 84
+        },
+        "ciencias naturales": {
+          "puntaje": 80
+        },
+        "inglés": {
+          "puntaje": 100
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Hernan andres",
+        "apellidos": "Palmera perez",
+        "numero_identificacion": "1101447212",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "palmerahernan77@gmail.com"
+      },
+      "puntaje_global": 346,
+      "s1_aciertos": 99,
+      "s1_total": 119,
+      "s2_aciertos": 116,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 76
+        },
+        "lectura crítica": {
+          "puntaje": 60
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 70
+        },
+        "ciencias naturales": {
+          "puntaje": 72
+        },
+        "inglés": {
+          "puntaje": 66
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Sheyla De Jesus",
+        "apellidos": "Avilez Vega",
+        "numero_identificacion": "1069485344",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Córdoba",
+        "correo_electronico": "avilezvegasd.sg.est@gmail.com"
+      },
+      "puntaje_global": 330,
+      "s1_aciertos": 99,
+      "s1_total": 119,
+      "s2_aciertos": 102,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 76
+        },
+        "lectura crítica": {
+          "puntaje": 72
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 70
+        },
+        "ciencias naturales": {
+          "puntaje": 54
+        },
+        "inglés": {
+          "puntaje": 42
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Samuel Felipe",
+        "apellidos": "Parra Pulido",
+        "numero_identificacion": "1057842601",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Boyacá",
+        "correo_electronico": "parrapulidosf.sg.est@gmail.com"
+      },
+      "puntaje_global": 332,
+      "s1_aciertos": 97,
+      "s1_total": 119,
+      "s2_aciertos": 112,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 74
+        },
+        "lectura crítica": {
+          "puntaje": 59
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 66
+        },
+        "ciencias naturales": {
+          "puntaje": 66
+        },
+        "inglés": {
+          "puntaje": 68
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Samuel",
+        "apellidos": "Diaz Hoyos",
+        "numero_identificacion": "1054870892",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Caldas",
+        "correo_electronico": "samueldiazhoyos123456789@gmail.com"
+      },
+      "puntaje_global": 393,
+      "s1_aciertos": 111,
+      "s1_total": 119,
+      "s2_aciertos": 123,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 78
+        },
+        "lectura crítica": {
+          "puntaje": 80
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 77
+        },
+        "ciencias naturales": {
+          "puntaje": 81
+        },
+        "inglés": {
+          "puntaje": 74
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Yunior Leonel",
+        "apellidos": "Mora Bustamante",
+        "numero_identificacion": "6734964",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Nariño",
+        "correo_electronico": "moralyuniorb@gmail.com"
+      },
+      "puntaje_global": 337,
+      "s1_aciertos": 99,
+      "s1_total": 119,
+      "s2_aciertos": 0,
+      "s2_total": 0,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 85
+        },
+        "lectura crítica": {
+          "puntaje": 61
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 72
+        },
+        "ciencias naturales": {
+          "puntaje": 74
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Karen Dayana",
+        "apellidos": "Castillo Perez",
+        "numero_identificacion": "1063292595",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "karendayana172010@gmail.com"
+      },
+      "puntaje_global": 200,
+      "s1_aciertos": 57,
+      "s1_total": 119,
+      "s2_aciertos": 0,
+      "s2_total": 0,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 59
+        },
+        "lectura crítica": {
+          "puntaje": 31
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 35
+        },
+        "ciencias naturales": {
+          "puntaje": 48
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Alex",
+        "apellidos": "Sierra Benítez",
+        "numero_identificacion": "1030241016",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Sucre",
+        "correo_electronico": "alexsierrabenitez41@gmail.com"
+      },
+      "puntaje_global": 267,
+      "s1_aciertos": 88,
+      "s1_total": 119,
+      "s2_aciertos": 76,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 73
+        },
+        "lectura crítica": {
+          "puntaje": 65
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 45
+        },
+        "inglés": {
+          "puntaje": 25
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "DIANA MARCELA",
+        "apellidos": "MANBUSCAY AGUDELO",
+        "numero_identificacion": "1028663171",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Valle del Cauca",
+        "correo_electronico": "manbuscayaguddm.sg.est@gmail.com"
+      },
+      "puntaje_global": 350,
+      "s1_aciertos": 102,
+      "s1_total": 119,
+      "s2_aciertos": 115,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 78
+        },
+        "lectura crítica": {
+          "puntaje": 68
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 59
+        },
+        "ciencias naturales": {
+          "puntaje": 76
+        },
+        "inglés": {
+          "puntaje": 68
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Johan Andres",
+        "apellidos": "Salcedo Bedoya",
+        "numero_identificacion": "1066606386",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "salcedobedoyaja.sg.est@gmail.com"
+      },
+      "puntaje_global": 282,
+      "s1_aciertos": 92,
+      "s1_total": 119,
+      "s2_aciertos": 84,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 71
+        },
+        "lectura crítica": {
+          "puntaje": 48
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 57
+        },
+        "ciencias naturales": {
+          "puntaje": 56
+        },
+        "inglés": {
+          "puntaje": 36
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "JESUS IVAN",
+        "apellidos": "MIRANDA VARELO",
+        "numero_identificacion": "1130272053",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Atlántico",
+        "correo_electronico": "jesusimv2020@gmail.com"
+      },
+      "puntaje_global": 367,
+      "s1_aciertos": 103,
+      "s1_total": 119,
+      "s2_aciertos": 102,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 65
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 65
+        },
+        "ciencias naturales": {
+          "puntaje": 75
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "LUIS FELIPE",
+        "apellidos": "ESCUDERO VILLEGAS",
+        "numero_identificacion": "1013126436",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bogotá, D.C.",
+        "correo_electronico": "escuderovllegalf.sg.est@gmail.com"
+      },
+      "puntaje_global": 334,
+      "s1_aciertos": 100,
+      "s1_total": 119,
+      "s2_aciertos": 115,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 74
+        },
+        "lectura crítica": {
+          "puntaje": 75
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 62
+        },
+        "ciencias naturales": {
+          "puntaje": 51
+        },
+        "inglés": {
+          "puntaje": 82
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "laura madeleine",
+        "apellidos": "Gomez Suarez",
+        "numero_identificacion": "1069128754",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cundinamarca",
+        "correo_electronico": "madeleinegomez2022@gmail.com"
+      },
+      "puntaje_global": 327,
+      "s1_aciertos": 99,
+      "s1_total": 119,
+      "s2_aciertos": 99,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 83
+        },
+        "lectura crítica": {
+          "puntaje": 70
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 65
+        },
+        "ciencias naturales": {
+          "puntaje": 52
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Eliseo Eli",
+        "apellidos": "Fuentes Diaz",
+        "numero_identificacion": "1133790795",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "fuentesdiazee.sg.est@gmail.com"
+      },
+      "puntaje_global": 272,
+      "s1_aciertos": 90,
+      "s1_total": 119,
+      "s2_aciertos": 93,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 64
+        },
+        "lectura crítica": {
+          "puntaje": 52
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 48
+        },
+        "ciencias naturales": {
+          "puntaje": 55
+        },
+        "inglés": {
+          "puntaje": 51
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Miguel Andres",
+        "apellidos": "Rhenals Argumedo",
+        "numero_identificacion": "1019903782",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Sucre",
+        "correo_electronico": "miguelrhenals98@gmail.com"
+      },
+      "puntaje_global": 365,
+      "s1_aciertos": 108,
+      "s1_total": 119,
+      "s2_aciertos": 117,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 73
+        },
+        "lectura crítica": {
+          "puntaje": 70
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 76
+        },
+        "ciencias naturales": {
+          "puntaje": 72
+        },
+        "inglés": {
+          "puntaje": 76
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "danna alejandra",
+        "apellidos": "recalde rodriguez",
+        "numero_identificacion": "1110046760",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Valle del Cauca",
+        "correo_electronico": "redannaalejandra@gmail.com"
+      },
+      "puntaje_global": 219,
+      "s1_aciertos": 75,
+      "s1_total": 119,
+      "s2_aciertos": 91,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 40
+        },
+        "lectura crítica": {
+          "puntaje": 48
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 66
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Andrés Felipe",
+        "apellidos": "Orozco Arriola",
+        "numero_identificacion": "1049828142",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "andresfelipeorozcoarriola16@gmail.com"
+      },
+      "puntaje_global": 245,
+      "s1_aciertos": 80,
+      "s1_total": 119,
+      "s2_aciertos": 90,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 64
+        },
+        "lectura crítica": {
+          "puntaje": 51
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 43
+        },
+        "inglés": {
+          "puntaje": 42
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "MARÍA FERNANDA",
+        "apellidos": "SANTANA RAMÍREZ",
+        "numero_identificacion": "1065893790",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cesar",
+        "correo_electronico": "santanaramirezmf.sg.est@gmail.com"
+      },
+      "puntaje_global": 290,
+      "s1_aciertos": 91,
+      "s1_total": 119,
+      "s2_aciertos": 89,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 58
+        },
+        "lectura crítica": {
+          "puntaje": 61
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 56
+        },
+        "ciencias naturales": {
+          "puntaje": 64
+        },
+        "inglés": {
+          "puntaje": 38
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "THOMAS",
+        "apellidos": "MUÑOZ FLOREZ",
+        "numero_identificacion": "1023383635",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "munozflorezthomas@gmail.com"
+      },
+      "puntaje_global": 407,
+      "s1_aciertos": 110,
+      "s1_total": 119,
+      "s2_aciertos": 125,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 79
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 70
+        },
+        "ciencias naturales": {
+          "puntaje": 78
+        },
+        "inglés": {
+          "puntaje": 78
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Sofia",
+        "apellidos": "Munera López",
+        "numero_identificacion": "1143340255",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Huila",
+        "correo_electronico": "muneralopezs.sg.est@gmail.com"
+      },
+      "puntaje_global": 217,
+      "s1_aciertos": 78,
+      "s1_total": 119,
+      "s2_aciertos": 77,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 41
+        },
+        "lectura crítica": {
+          "puntaje": 53
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 42
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Camilo Andres",
+        "apellidos": "Fuken Mendez",
+        "numero_identificacion": "1043981466",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "camiloandresfuken@gmail.com"
+      },
+      "puntaje_global": 295,
+      "s1_aciertos": 85,
+      "s1_total": 119,
+      "s2_aciertos": 113,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 73
+        },
+        "lectura crítica": {
+          "puntaje": 48
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 60
+        },
+        "ciencias naturales": {
+          "puntaje": 51
+        },
+        "inglés": {
+          "puntaje": 71
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Camila Alejandra",
+        "apellidos": "Ramírez Rueda",
+        "numero_identificacion": "1016036708",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Caldas",
+        "correo_electronico": "ramirezruedaca.sg.est@gmail.com"
+      },
+      "puntaje_global": 413,
+      "s1_aciertos": 112,
+      "s1_total": 119,
+      "s2_aciertos": 128,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 81
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 72
+        },
+        "ciencias naturales": {
+          "puntaje": 77
+        },
+        "inglés": {
+          "puntaje": 85
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Alexandra",
+        "apellidos": "Urzola Martínez",
+        "numero_identificacion": "1067898547",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "urzolamartineza.sg.est@gmail.com"
+      },
+      "puntaje_global": 272,
+      "s1_aciertos": 96,
+      "s1_total": 119,
+      "s2_aciertos": 92,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 58
+        },
+        "lectura crítica": {
+          "puntaje": 64
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 52
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 66
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "LAURA SOFIA",
+        "apellidos": "OVEJERO MALDONADO",
+        "numero_identificacion": "1115690260",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "overeromaldonadols.sg.est@gmail.com"
+      },
+      "puntaje_global": 302,
+      "s1_aciertos": 92,
+      "s1_total": 119,
+      "s2_aciertos": 96,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 59
+        },
+        "lectura crítica": {
+          "puntaje": 63
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 63
+        },
+        "ciencias naturales": {
+          "puntaje": 63
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Miguel Angel",
+        "apellidos": "Ayala Prieto",
+        "numero_identificacion": "1098678852",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "ayalaprietoma.sg.est@gmail.com"
+      },
+      "puntaje_global": 383,
+      "s1_aciertos": 114,
+      "s1_total": 119,
+      "s2_aciertos": 117,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 83
+        },
+        "lectura crítica": {
+          "puntaje": 81
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 74
+        },
+        "ciencias naturales": {
+          "puntaje": 70
+        },
+        "inglés": {
+          "puntaje": 73
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Samantha",
+        "apellidos": "Cala Martinez",
+        "numero_identificacion": "1126644594",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "samantha.cala.martinez@gmail.com"
+      },
+      "puntaje_global": 360,
+      "s1_aciertos": 104,
+      "s1_total": 119,
+      "s2_aciertos": 122,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 78
+        },
+        "lectura crítica": {
+          "puntaje": 72
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 64
+        },
+        "ciencias naturales": {
+          "puntaje": 70
+        },
+        "inglés": {
+          "puntaje": 85
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Maria Angélica",
+        "apellidos": "Morelo villeros",
+        "numero_identificacion": "1070815365",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "morelomariaangelica52@gmail.com"
+      },
+      "puntaje_global": 221,
+      "s1_aciertos": 78,
+      "s1_total": 119,
+      "s2_aciertos": 80,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 40
+        },
+        "lectura crítica": {
+          "puntaje": 49
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 48
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 44
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "JANNA YALID",
+        "apellidos": "NORE PÉREZ",
+        "numero_identificacion": "1029666834",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Casanare",
+        "correo_electronico": "jannanore2611@gmail.com"
+      },
+      "puntaje_global": 395,
+      "s1_aciertos": 110,
+      "s1_total": 119,
+      "s2_aciertos": 127,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 85
+        },
+        "lectura crítica": {
+          "puntaje": 82
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 72
+        },
+        "ciencias naturales": {
+          "puntaje": 76
+        },
+        "inglés": {
+          "puntaje": 82
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Valerie Salomé",
+        "apellidos": "Gamarra Fontalvo",
+        "numero_identificacion": "1041981827",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "valeriegamarr4@gmail.com"
+      },
+      "puntaje_global": 399,
+      "s1_aciertos": 112,
+      "s1_total": 119,
+      "s2_aciertos": 128,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 83
+        },
+        "lectura crítica": {
+          "puntaje": 80
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 72
+        },
+        "ciencias naturales": {
+          "puntaje": 82
+        },
+        "inglés": {
+          "puntaje": 87
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Nicolle",
+        "apellidos": "Marmolejo Luna",
+        "numero_identificacion": "1047430590",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "marmoleolunan.sg.est@gmail.com"
+      },
+      "puntaje_global": 305,
+      "s1_aciertos": 93,
+      "s1_total": 119,
+      "s2_aciertos": 108,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 61
+        },
+        "lectura crítica": {
+          "puntaje": 63
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 59
+        },
+        "ciencias naturales": {
+          "puntaje": 57
+        },
+        "inglés": {
+          "puntaje": 74
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "DANIELA SOFÍA",
+        "apellidos": "FLÓREZ VARGAS",
+        "numero_identificacion": "1023381412",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bogotá, D.C.",
+        "correo_electronico": "florezvargasds.sg.est@gmail.com"
+      },
+      "puntaje_global": 313,
+      "s1_aciertos": 93,
+      "s1_total": 119,
+      "s2_aciertos": 115,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 68
+        },
+        "lectura crítica": {
+          "puntaje": 58
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 56
+        },
+        "ciencias naturales": {
+          "puntaje": 63
+        },
+        "inglés": {
+          "puntaje": 80
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Daniela",
+        "apellidos": "Manchola Torres",
+        "numero_identificacion": "1105840578",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Tolima",
+        "correo_electronico": "mancholatorresd.sg.est@gmail.com"
+      },
+      "puntaje_global": 335,
+      "s1_aciertos": 101,
+      "s1_total": 119,
+      "s2_aciertos": 101,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 78
+        },
+        "lectura crítica": {
+          "puntaje": 71
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 57
+        },
+        "ciencias naturales": {
+          "puntaje": 71
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Rosa ines",
+        "apellidos": "reverol gonzalez",
+        "numero_identificacion": "5420076",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Risaralda",
+        "correo_electronico": "reverolonzalezri.sg.est@gmail.com"
+      },
+      "puntaje_global": 265,
+      "s1_aciertos": 81,
+      "s1_total": 119,
+      "s2_aciertos": 98,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 46
+        },
+        "lectura crítica": {
+          "puntaje": 51
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 61
+        },
+        "ciencias naturales": {
+          "puntaje": 56
+        },
+        "inglés": {
+          "puntaje": 46
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Liiz valeria",
+        "apellidos": "Gil hoyos",
+        "numero_identificacion": "163292674",
+        "institucion": "IETAC",
+        "municipio": "Córdoba",
+        "correo_electronico": "lizvaleriagilhoyos@gmail.com"
+      },
+      "puntaje_global": 130,
+      "s1_aciertos": 37,
+      "s1_total": 119,
+      "s2_aciertos": 46,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 22
+        },
+        "lectura crítica": {
+          "puntaje": 26
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 21
+        },
+        "ciencias naturales": {
+          "puntaje": 32
+        },
+        "inglés": {
+          "puntaje": 34
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Sara Sofia",
+        "apellidos": "Esquivel Vargas",
+        "numero_identificacion": "1077726354",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Huila",
+        "correo_electronico": "esquivelvargasss.sg.est@gmail.com"
+      },
+      "puntaje_global": 364,
+      "s1_aciertos": 105,
+      "s1_total": 119,
+      "s2_aciertos": 122,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 67
+        },
+        "lectura crítica": {
+          "puntaje": 75
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 68
+        },
+        "ciencias naturales": {
+          "puntaje": 78
+        },
+        "inglés": {
+          "puntaje": 82
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Hanna Nicolle",
+        "apellidos": "Trejos Apache",
+        "numero_identificacion": "1106228690",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Tolima",
+        "correo_electronico": "trejosapachehn.sg.est@gmail.com"
+      },
+      "puntaje_global": 255,
+      "s1_aciertos": 87,
+      "s1_total": 119,
+      "s2_aciertos": 90,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 54
+        },
+        "lectura crítica": {
+          "puntaje": 59
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 51
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 52
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Karen Yulied",
+        "apellidos": "Arenas Cometa",
+        "numero_identificacion": "1061717282",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cauca",
+        "correo_electronico": "arenascometaky.sg.est@gmail.com"
+      },
+      "puntaje_global": 399,
+      "s1_aciertos": 108,
+      "s1_total": 119,
+      "s2_aciertos": 124,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 75
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 71
+        },
+        "ciencias naturales": {
+          "puntaje": 73
+        },
+        "inglés": {
+          "puntaje": 81
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "miguel angel",
+        "apellidos": "chachinoy criollo",
+        "numero_identificacion": "1083173177",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Nariño",
+        "correo_electronico": "chachinoymiguelangel@gmail.com"
+      },
+      "puntaje_global": 363,
+      "s1_aciertos": 104,
+      "s1_total": 119,
+      "s2_aciertos": 120,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 81
+        },
+        "lectura crítica": {
+          "puntaje": 72
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 66
+        },
+        "ciencias naturales": {
+          "puntaje": 70
+        },
+        "inglés": {
+          "puntaje": 78
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Angie Carolina",
+        "apellidos": "Soto Giraldo",
+        "numero_identificacion": "1063158765",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Córdoba",
+        "correo_electronico": "sotogiraldoac.sg.est@gmail.com"
+      },
+      "puntaje_global": 370,
+      "s1_aciertos": 110,
+      "s1_total": 119,
+      "s2_aciertos": 117,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 84
+        },
+        "lectura crítica": {
+          "puntaje": 79
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 69
+        },
+        "ciencias naturales": {
+          "puntaje": 63
+        },
+        "inglés": {
+          "puntaje": 78
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Lorena Andrea",
+        "apellidos": "Rodríguez Martínez",
+        "numero_identificacion": "1064717055",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cesar",
+        "correo_electronico": "rodriguezmartinezla.sg.est@gmail.com"
+      },
+      "puntaje_global": 288,
+      "s1_aciertos": 89,
+      "s1_total": 119,
+      "s2_aciertos": 100,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 71
+        },
+        "lectura crítica": {
+          "puntaje": 61
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 58
+        },
+        "ciencias naturales": {
+          "puntaje": 42
+        },
+        "inglés": {
+          "puntaje": 52
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Juan Pablo",
+        "apellidos": "Montoya Zapata",
+        "numero_identificacion": "1155214375",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Antioquia",
+        "correo_electronico": "montoyazapatajp.sg.est@gmail.com"
+      },
+      "puntaje_global": 262,
+      "s1_aciertos": 87,
+      "s1_total": 119,
+      "s2_aciertos": 91,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 44
+        },
+        "lectura crítica": {
+          "puntaje": 63
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 56
+        },
+        "ciencias naturales": {
+          "puntaje": 48
+        },
+        "inglés": {
+          "puntaje": 48
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "ANDERSON AMILKAR",
+        "apellidos": "BECERRA IMBAJOA",
+        "numero_identificacion": "1089486569",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Nariño",
+        "correo_electronico": "amilkarbecerra05@gmail.com"
+      },
+      "puntaje_global": 238,
+      "s1_aciertos": 79,
+      "s1_total": 119,
+      "s2_aciertos": 81,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 61
+        },
+        "lectura crítica": {
+          "puntaje": 52
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Gisell Letizia",
+        "apellidos": "Duarte Calderón",
+        "numero_identificacion": "1097495125",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "duartecalderongl.sg.est@gmail.com"
+      },
+      "puntaje_global": 397,
+      "s1_aciertos": 110,
+      "s1_total": 119,
+      "s2_aciertos": 127,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 85
+        },
+        "lectura crítica": {
+          "puntaje": 75
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 80
+        },
+        "ciencias naturales": {
+          "puntaje": 76
+        },
+        "inglés": {
+          "puntaje": 83
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "JOSIAS",
+        "apellidos": "ACUÑA ARIAS",
+        "numero_identificacion": "1128327871",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Magdalena",
+        "correo_electronico": "acunaariasj.sg.est@gmail.com"
+      },
+      "puntaje_global": 378,
+      "s1_aciertos": 112,
+      "s1_total": 119,
+      "s2_aciertos": 120,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 83
+        },
+        "lectura crítica": {
+          "puntaje": 75
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 66
+        },
+        "ciencias naturales": {
+          "puntaje": 70
+        },
+        "inglés": {
+          "puntaje": 100
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Angie Sofia",
+        "apellidos": "Aldana Arias",
+        "numero_identificacion": "1014992221",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Tolima",
+        "correo_electronico": "angie.850gg@gmail.com"
+      },
+      "puntaje_global": 282,
+      "s1_aciertos": 87,
+      "s1_total": 119,
+      "s2_aciertos": 96,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 66
+        },
+        "lectura crítica": {
+          "puntaje": 58
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 60
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 61
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "JUAN SEBASTIAN",
+        "apellidos": "RIVERA AVENDAÑO",
+        "numero_identificacion": "1051066924",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Boyacá",
+        "correo_electronico": "riveraavendanojs.sg.est@gmail.com"
+      },
+      "puntaje_global": 434,
+      "s1_aciertos": 116,
+      "s1_total": 119,
+      "s2_aciertos": 129,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 85
+        },
+        "lectura crítica": {
+          "puntaje": 100
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 84
+        },
+        "ciencias naturales": {
+          "puntaje": 80
+        },
+        "inglés": {
+          "puntaje": 82
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Esteban",
+        "apellidos": "Puentes Sarmiento",
+        "numero_identificacion": "1109543289",
+        "institucion": "INDIVIDUAL (PROYECTO SECUNDARIO)",
+        "municipio": "Valle del Cauca",
+        "correo_electronico": "estebanpuentes5@gmail.com"
+      },
+      "puntaje_global": 286,
+      "s1_aciertos": 84,
+      "s1_total": 119,
+      "s2_aciertos": 0,
+      "s2_total": 0,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 72
+        },
+        "lectura crítica": {
+          "puntaje": 54
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 61
+        },
+        "ciencias naturales": {
+          "puntaje": 61
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Mariana",
+        "apellidos": "Díaz Zúñiga",
+        "numero_identificacion": "1110296142",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Valle del Cauca",
+        "correo_electronico": "diazzunigam.sg.est@gmail.com"
+      },
+      "puntaje_global": 405,
+      "s1_aciertos": 115,
+      "s1_total": 119,
+      "s2_aciertos": 126,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 86
+        },
+        "lectura crítica": {
+          "puntaje": 81
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 78
+        },
+        "ciencias naturales": {
+          "puntaje": 78
+        },
+        "inglés": {
+          "puntaje": 84
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Samuel",
+        "apellidos": "Loaiza Zambrano",
+        "numero_identificacion": "1065883810",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cesar",
+        "correo_electronico": "loaizazambranos.sg.est@gmail.com"
+      },
+      "puntaje_global": 336,
+      "s1_aciertos": 98,
+      "s1_total": 119,
+      "s2_aciertos": 113,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 85
+        },
+        "lectura crítica": {
+          "puntaje": 67
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 63
+        },
+        "ciencias naturales": {
+          "puntaje": 54
+        },
+        "inglés": {
+          "puntaje": 67
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Juan Andres",
+        "apellidos": "Echeverria Escobar",
+        "numero_identificacion": "1044637051",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "echeverriaescobja.sg.est@gmail.com"
+      },
+      "puntaje_global": 339,
+      "s1_aciertos": 100,
+      "s1_total": 119,
+      "s2_aciertos": 109,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 76
+        },
+        "lectura crítica": {
+          "puntaje": 73
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 67
+        },
+        "ciencias naturales": {
+          "puntaje": 59
+        },
+        "inglés": {
+          "puntaje": 57
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "maria paula",
+        "apellidos": "perez hormiga",
+        "numero_identificacion": "1058547636",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cauca",
+        "correo_electronico": "sg.estudiante.maria.paula3@gmail.com"
+      },
+      "puntaje_global": 219,
+      "s1_aciertos": 79,
+      "s1_total": 119,
+      "s2_aciertos": 81,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 41
+        },
+        "lectura crítica": {
+          "puntaje": 55
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 41
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Nubia Liseth",
+        "apellidos": "Mora hermozo",
+        "numero_identificacion": "1007602728",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bogotá, D.C.",
+        "correo_electronico": "morahermozonl.sg.est@gmail.com"
+      },
+      "puntaje_global": 373,
+      "s1_aciertos": 108,
+      "s1_total": 119,
+      "s2_aciertos": 117,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 76
+        },
+        "lectura crítica": {
+          "puntaje": 80
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 83
+        },
+        "ciencias naturales": {
+          "puntaje": 63
+        },
+        "inglés": {
+          "puntaje": 65
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Kamila Inés",
+        "apellidos": "Herrera Martínez",
+        "numero_identificacion": "1049935197",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "herreramartiniki.sg.est@gmail.com"
+      },
+      "puntaje_global": 354,
+      "s1_aciertos": 103,
+      "s1_total": 119,
+      "s2_aciertos": 121,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 78
+        },
+        "lectura crítica": {
+          "puntaje": 72
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 67
+        },
+        "ciencias naturales": {
+          "puntaje": 61
+        },
+        "inglés": {
+          "puntaje": 87
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Hilayda Rosa",
+        "apellidos": "Cantillo Ruz",
+        "numero_identificacion": "1143125505",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Atlántico",
+        "correo_electronico": "cantillohilayda1317@gmail.com"
+      },
+      "puntaje_global": 376,
+      "s1_aciertos": 107,
+      "s1_total": 119,
+      "s2_aciertos": 118,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 83
+        },
+        "lectura crítica": {
+          "puntaje": 65
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 77
+        },
+        "ciencias naturales": {
+          "puntaje": 79
+        },
+        "inglés": {
+          "puntaje": 65
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "María Julieth",
+        "apellidos": "Castillo Bautista",
+        "numero_identificacion": "1097102695",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "sg.estudiante.maria.julieth@gmail.com"
+      },
+      "puntaje_global": 382,
+      "s1_aciertos": 107,
+      "s1_total": 119,
+      "s2_aciertos": 116,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 73
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 58
+        },
+        "ciencias naturales": {
+          "puntaje": 77
+        },
+        "inglés": {
+          "puntaje": 69
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "MARGREYS",
+        "apellidos": "QUINTERO PALOMINO",
+        "numero_identificacion": "1043658548",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "quinteropalominom.sg.est@gmail.com"
+      },
+      "puntaje_global": 338,
+      "s1_aciertos": 103,
+      "s1_total": 119,
+      "s2_aciertos": 104,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 68
+        },
+        "lectura crítica": {
+          "puntaje": 75
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 68
+        },
+        "ciencias naturales": {
+          "puntaje": 64
+        },
+        "inglés": {
+          "puntaje": 53
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "ISABEL SOFIA",
+        "apellidos": "PEÑA GARCIA",
+        "numero_identificacion": "1075796399",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Huila",
+        "correo_electronico": "penagarciis.sg.est@gmail.com"
+      },
+      "puntaje_global": 344,
+      "s1_aciertos": 101,
+      "s1_total": 119,
+      "s2_aciertos": 117,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 70
+        },
+        "lectura crítica": {
+          "puntaje": 70
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 67
+        },
+        "ciencias naturales": {
+          "puntaje": 65
+        },
+        "inglés": {
+          "puntaje": 78
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Kiara",
+        "apellidos": "Caldera Coronado",
+        "numero_identificacion": "1169713061",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Córdoba",
+        "correo_electronico": "calderacoronadokiara@gmail.com"
+      },
+      "puntaje_global": 363,
+      "s1_aciertos": 103,
+      "s1_total": 119,
+      "s2_aciertos": 121,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 71
+        },
+        "lectura crítica": {
+          "puntaje": 75
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 75
+        },
+        "ciencias naturales": {
+          "puntaje": 68
+        },
+        "inglés": {
+          "puntaje": 78
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "María José",
+        "apellidos": "Cortes Chalitas",
+        "numero_identificacion": "1061741898",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Putumayo",
+        "correo_electronico": "corteschalitasmj.sg.est@gmail.com"
+      },
+      "puntaje_global": 257,
+      "s1_aciertos": 87,
+      "s1_total": 119,
+      "s2_aciertos": 99,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 56
+        },
+        "lectura crítica": {
+          "puntaje": 56
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 45
+        },
+        "inglés": {
+          "puntaje": 78
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Jhon Carlos",
+        "apellidos": "Rodriguez Mendoza",
+        "numero_identificacion": "1103743218",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Sucre",
+        "correo_electronico": "rodriguezmendozajhoncarlos@gmail.com"
+      },
+      "puntaje_global": 327,
+      "s1_aciertos": 103,
+      "s1_total": 119,
+      "s2_aciertos": 105,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 71
+        },
+        "lectura crítica": {
+          "puntaje": 70
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 62
+        },
+        "ciencias naturales": {
+          "puntaje": 57
+        },
+        "inglés": {
+          "puntaje": 69
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "ISABELLA",
+        "apellidos": "TAPIA ROMERO",
+        "numero_identificacion": "1042608024",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "isatapia1802@gmail.com"
+      },
+      "puntaje_global": 399,
+      "s1_aciertos": 109,
+      "s1_total": 119,
+      "s2_aciertos": 131,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 85
+        },
+        "lectura crítica": {
+          "puntaje": 74
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 80
+        },
+        "ciencias naturales": {
+          "puntaje": 78
+        },
+        "inglés": {
+          "puntaje": 87
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Cristian de Jesús",
+        "apellidos": "Cuesta Blanquicett",
+        "numero_identificacion": "1043975755",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "cuestablanquicd.sg.est@gmail.com"
+      },
+      "puntaje_global": 420,
+      "s1_aciertos": 112,
+      "s1_total": 119,
+      "s2_aciertos": 130,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 74
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 82
+        },
+        "ciencias naturales": {
+          "puntaje": 80
+        },
+        "inglés": {
+          "puntaje": 85
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Maria Jose",
+        "apellidos": "Ossa Cuervo",
+        "numero_identificacion": "1055359068",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Caldas",
+        "correo_electronico": "ossacuervomj.sg.est@gmail.com"
+      },
+      "puntaje_global": 285,
+      "s1_aciertos": 90,
+      "s1_total": 119,
+      "s2_aciertos": 107,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 63
+        },
+        "lectura crítica": {
+          "puntaje": 66
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 50
+        },
+        "inglés": {
+          "puntaje": 85
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Gabriela",
+        "apellidos": "Castiblanco Wilches",
+        "numero_identificacion": "1065892631",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cesar",
+        "correo_electronico": "castiblancowilcg.sg.est@gmail.com"
+      },
+      "puntaje_global": 295,
+      "s1_aciertos": 97,
+      "s1_total": 119,
+      "s2_aciertos": 99,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 55
+        },
+        "lectura crítica": {
+          "puntaje": 70
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 68
+        },
+        "ciencias naturales": {
+          "puntaje": 42
+        },
+        "inglés": {
+          "puntaje": 63
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Diana Carolina",
+        "apellidos": "Ruiz Guamanga",
+        "numero_identificacion": "1059235929",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cauca",
+        "correo_electronico": "dianaruizg098@gmail.com"
+      },
+      "puntaje_global": 344,
+      "s1_aciertos": 108,
+      "s1_total": 119,
+      "s2_aciertos": 109,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 70
+        },
+        "lectura crítica": {
+          "puntaje": 76
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 79
+        },
+        "ciencias naturales": {
+          "puntaje": 50
+        },
+        "inglés": {
+          "puntaje": 70
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Samara",
+        "apellidos": "Caro Ortega",
+        "numero_identificacion": "1042587442",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Córdoba",
+        "correo_electronico": "samaracaro0503@gmail.com"
+      },
+      "puntaje_global": 474,
+      "s1_aciertos": 119,
+      "s1_total": 119,
+      "s2_aciertos": 131,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 100
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 100
+        },
+        "ciencias naturales": {
+          "puntaje": 82
+        },
+        "inglés": {
+          "puntaje": 87
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "LUIS FERNANDO",
+        "apellidos": "LOPEZ LOPEZ",
+        "numero_identificacion": "1112465416",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Valle del Cauca",
+        "correo_electronico": "lopezlopezfercho739403@gmail.com"
+      },
+      "puntaje_global": 373,
+      "s1_aciertos": 107,
+      "s1_total": 119,
+      "s2_aciertos": 120,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 78
+        },
+        "lectura crítica": {
+          "puntaje": 74
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 82
+        },
+        "ciencias naturales": {
+          "puntaje": 65
+        },
+        "inglés": {
+          "puntaje": 73
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Danna Valentina",
+        "apellidos": "Salazar avirama",
+        "numero_identificacion": "1059602913",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Valle del Cauca",
+        "correo_electronico": "dannitaavirama02@gmail.com"
+      },
+      "puntaje_global": 218,
+      "s1_aciertos": 58,
+      "s1_total": 119,
+      "s2_aciertos": 79,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 40
+        },
+        "lectura crítica": {
+          "puntaje": 56
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 40
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "GERSON GIOVANI",
+        "apellidos": "ROJAS PISSO",
+        "numero_identificacion": "1082156310",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Huila",
+        "correo_electronico": "gersonrojas863@gmail.com"
+      },
+      "puntaje_global": 315,
+      "s1_aciertos": 97,
+      "s1_total": 119,
+      "s2_aciertos": 100,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 61
+        },
+        "lectura crítica": {
+          "puntaje": 66
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 71
+        },
+        "ciencias naturales": {
+          "puntaje": 59
+        },
+        "inglés": {
+          "puntaje": 47
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Brayan Javier",
+        "apellidos": "Chingal Inguilan",
+        "numero_identificacion": "1086103712",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Nariño",
+        "correo_electronico": "brayanchingal96@gmail.com"
+      },
+      "puntaje_global": 370,
+      "s1_aciertos": 110,
+      "s1_total": 119,
+      "s2_aciertos": 118,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 71
+        },
+        "lectura crítica": {
+          "puntaje": 75
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 74
+        },
+        "ciencias naturales": {
+          "puntaje": 73
+        },
+        "inglés": {
+          "puntaje": 82
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Samuel David",
+        "apellidos": "Jaramillo Loaiza",
+        "numero_identificacion": "1118370393",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Caquetá",
+        "correo_electronico": "jaramilloloaizasd.sg.est@gmail.com"
+      },
+      "puntaje_global": 359,
+      "s1_aciertos": 106,
+      "s1_total": 119,
+      "s2_aciertos": 109,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 78
+        },
+        "lectura crítica": {
+          "puntaje": 71
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 81
+        },
+        "ciencias naturales": {
+          "puntaje": 66
+        },
+        "inglés": {
+          "puntaje": 46
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Juliana",
+        "apellidos": "Borja Buelvas",
+        "numero_identificacion": "1062440492",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Córdoba",
+        "correo_electronico": "borjabuelvasj.sg.est@gmail.com"
+      },
+      "puntaje_global": 373,
+      "s1_aciertos": 111,
+      "s1_total": 119,
+      "s2_aciertos": 116,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 86
+        },
+        "lectura crítica": {
+          "puntaje": 81
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 74
+        },
+        "ciencias naturales": {
+          "puntaje": 58
+        },
+        "inglés": {
+          "puntaje": 73
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Valentina",
+        "apellidos": "Espinosa Arias",
+        "numero_identificacion": "1106633208",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Tolima",
+        "correo_electronico": "valeespinosa1010b@gmail.com"
+      },
+      "puntaje_global": 422,
+      "s1_aciertos": 112,
+      "s1_total": 119,
+      "s2_aciertos": 129,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 78
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 82
+        },
+        "ciencias naturales": {
+          "puntaje": 79
+        },
+        "inglés": {
+          "puntaje": 81
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "DARLY SARAY",
+        "apellidos": "PEREZ JAIMES",
+        "numero_identificacion": "1098073581",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "10sarayperez@gmail.com"
+      },
+      "puntaje_global": 317,
+      "s1_aciertos": 98,
+      "s1_total": 119,
+      "s2_aciertos": 107,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 66
+        },
+        "lectura crítica": {
+          "puntaje": 64
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 72
+        },
+        "ciencias naturales": {
+          "puntaje": 49
+        },
+        "inglés": {
+          "puntaje": 71
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Juan Francisco",
+        "apellidos": "Camacho Posso",
+        "numero_identificacion": "1023084237",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Atlántico",
+        "correo_electronico": "camachopossojf.sg.est@gmail.com"
+      },
+      "puntaje_global": 303,
+      "s1_aciertos": 86,
+      "s1_total": 119,
+      "s2_aciertos": 119,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 50
+        },
+        "lectura crítica": {
+          "puntaje": 65
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 67
+        },
+        "ciencias naturales": {
+          "puntaje": 47
+        },
+        "inglés": {
+          "puntaje": 100
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Dulce María",
+        "apellidos": "Rojas Tarazona",
+        "numero_identificacion": "1093434369",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Nariño",
+        "correo_electronico": "rojastarazonadm.sg.est@gmail.com"
+      },
+      "puntaje_global": 374,
+      "s1_aciertos": 102,
+      "s1_total": 119,
+      "s2_aciertos": 128,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 68
+        },
+        "lectura crítica": {
+          "puntaje": 73
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 70
+        },
+        "ciencias naturales": {
+          "puntaje": 80
+        },
+        "inglés": {
+          "puntaje": 100
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Mariana Gabriela",
+        "apellidos": "Mora Moreno",
+        "numero_identificacion": "1110491048",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Tolima",
+        "correo_electronico": "mariana.gabriela.mora@gmail.com"
+      },
+      "puntaje_global": 333,
+      "s1_aciertos": 95,
+      "s1_total": 119,
+      "s2_aciertos": 119,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 68
+        },
+        "lectura crítica": {
+          "puntaje": 62
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 62
+        },
+        "ciencias naturales": {
+          "puntaje": 68
+        },
+        "inglés": {
+          "puntaje": 85
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Paula Isabel",
+        "apellidos": "Jojoa Bucheli",
+        "numero_identificacion": "1081279021",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Risaralda",
+        "correo_electronico": "jojoabuchelipi.sg.est@gmail.com"
+      },
+      "puntaje_global": 340,
+      "s1_aciertos": 101,
+      "s1_total": 119,
+      "s2_aciertos": 98,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 78
+        },
+        "lectura crítica": {
+          "puntaje": 74
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 72
+        },
+        "ciencias naturales": {
+          "puntaje": 58
+        },
+        "inglés": {
+          "puntaje": 38
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "ANGELA VIVIANA",
+        "apellidos": "ACOSTA PERAFAN",
+        "numero_identificacion": "1058968986",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cauca",
+        "correo_electronico": "acostaperafanav.sg.est@gmail.com"
+      },
+      "puntaje_global": 269,
+      "s1_aciertos": 86,
+      "s1_total": 119,
+      "s2_aciertos": 89,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 59
+        },
+        "lectura crítica": {
+          "puntaje": 61
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 58
+        },
+        "ciencias naturales": {
+          "puntaje": 42
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Daniel Santiago Puchana De La Cruz",
+        "apellidos": "Puchana De La Cruz",
+        "numero_identificacion": "1080056247",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Nariño",
+        "correo_electronico": "delacruzds.sg.est@gmail.com"
+      },
+      "puntaje_global": 347,
+      "s1_aciertos": 103,
+      "s1_total": 119,
+      "s2_aciertos": 115,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 75
+        },
+        "lectura crítica": {
+          "puntaje": 70
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 70
+        },
+        "ciencias naturales": {
+          "puntaje": 60
+        },
+        "inglés": {
+          "puntaje": 76
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Marlong Ferney",
+        "apellidos": "Casas Rondon",
+        "numero_identificacion": "1030280214",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Tolima",
+        "correo_electronico": "marlongferneycasas@gmail.com"
+      },
+      "puntaje_global": 281,
+      "s1_aciertos": 82,
+      "s1_total": 119,
+      "s2_aciertos": 112,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 61
+        },
+        "lectura crítica": {
+          "puntaje": 63
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 44
+        },
+        "ciencias naturales": {
+          "puntaje": 51
+        },
+        "inglés": {
+          "puntaje": 73
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Gloria Carolina",
+        "apellidos": "Humanez Tobar",
+        "numero_identificacion": "1003004819",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Córdoba",
+        "correo_electronico": "humaneztobargc.sg.est@gmail.com"
+      },
+      "puntaje_global": 362,
+      "s1_aciertos": 106,
+      "s1_total": 119,
+      "s2_aciertos": 104,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 78
+        },
+        "lectura crítica": {
+          "puntaje": 70
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 83
+        },
+        "ciencias naturales": {
+          "puntaje": 69
+        },
+        "inglés": {
+          "puntaje": 40
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "María Paula",
+        "apellidos": "Tapia Yepes",
+        "numero_identificacion": "1062439947",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "tapiayepesmp.sg.est@gmail.com"
+      },
+      "puntaje_global": 446,
+      "s1_aciertos": 116,
+      "s1_total": 119,
+      "s2_aciertos": 131,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 76
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 100
+        },
+        "ciencias naturales": {
+          "puntaje": 82
+        },
+        "inglés": {
+          "puntaje": 86
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "María Daniela",
+        "apellidos": "Vera Villamizar",
+        "numero_identificacion": "1096069283",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "veravillamizarmd.sg.est@gmail.com"
+      },
+      "puntaje_global": 410,
+      "s1_aciertos": 116,
+      "s1_total": 119,
+      "s2_aciertos": 118,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 83
+        },
+        "lectura crítica": {
+          "puntaje": 100
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 75
+        },
+        "ciencias naturales": {
+          "puntaje": 71
+        },
+        "inglés": {
+          "puntaje": 78
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Julieth Vanessa",
+        "apellidos": "Becerra Mora",
+        "numero_identificacion": "1097496452",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "sg.estudiante.julieth.vanessa@gmail.com"
+      },
+      "puntaje_global": 309,
+      "s1_aciertos": 87,
+      "s1_total": 119,
+      "s2_aciertos": 116,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 74
+        },
+        "lectura crítica": {
+          "puntaje": 56
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 51
+        },
+        "ciencias naturales": {
+          "puntaje": 62
+        },
+        "inglés": {
+          "puntaje": 75
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Leysa Luz",
+        "apellidos": "Martinez Mendoza",
+        "numero_identificacion": "1104261261",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Sucre",
+        "correo_electronico": "martinezmendozall.sg.est@gmail.com"
+      },
+      "puntaje_global": 416,
+      "s1_aciertos": 113,
+      "s1_total": 119,
+      "s2_aciertos": 124,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 82
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 77
+        },
+        "ciencias naturales": {
+          "puntaje": 76
+        },
+        "inglés": {
+          "puntaje": 76
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Maria Paula",
+        "apellidos": "Carballo Quintero",
+        "numero_identificacion": "1095925977",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cesar",
+        "correo_electronico": "carballoquintmp.sg.est@gmail.com"
+      },
+      "puntaje_global": 315,
+      "s1_aciertos": 92,
+      "s1_total": 119,
+      "s2_aciertos": 111,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 78
+        },
+        "lectura crítica": {
+          "puntaje": 54
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 61
+        },
+        "ciencias naturales": {
+          "puntaje": 58
+        },
+        "inglés": {
+          "puntaje": 66
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Néstor Gabriel",
+        "apellidos": "Silva Bahamon",
+        "numero_identificacion": "1116496163",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Arauca",
+        "correo_electronico": "nsilvabahamon@gmail.com"
+      },
+      "puntaje_global": 363,
+      "s1_aciertos": 102,
+      "s1_total": 119,
+      "s2_aciertos": 122,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 79
+        },
+        "lectura crítica": {
+          "puntaje": 63
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 73
+        },
+        "ciencias naturales": {
+          "puntaje": 73
+        },
+        "inglés": {
+          "puntaje": 80
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Julio",
+        "apellidos": "Prado Barrios",
+        "numero_identificacion": "1068138658",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Córdoba",
+        "correo_electronico": "pradobarriosjulio823@gmail.com"
+      },
+      "puntaje_global": 358,
+      "s1_aciertos": 104,
+      "s1_total": 119,
+      "s2_aciertos": 111,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 83
+        },
+        "lectura crítica": {
+          "puntaje": 68
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 72
+        },
+        "ciencias naturales": {
+          "puntaje": 69
+        },
+        "inglés": {
+          "puntaje": 54
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "VALENTINA",
+        "apellidos": "PEÑA VERGARA",
+        "numero_identificacion": "1041088008",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Antioquia",
+        "correo_electronico": "penavergarav.sg.est@gmail.com"
+      },
+      "puntaje_global": 255,
+      "s1_aciertos": 93,
+      "s1_total": 119,
+      "s2_aciertos": 54,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 40
+        },
+        "lectura crítica": {
+          "puntaje": 69
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 63
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 28
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "ADRIANA ISABEL",
+        "apellidos": "HOYOS HOYOS",
+        "numero_identificacion": "1103950959",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "hoyoshoyosai.sg.est@gmail.com"
+      },
+      "puntaje_global": 245,
+      "s1_aciertos": 81,
+      "s1_total": 119,
+      "s2_aciertos": 76,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 56
+        },
+        "lectura crítica": {
+          "puntaje": 53
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 53
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 32
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Rosa",
+        "apellidos": "Mendieta Fonseca",
+        "numero_identificacion": "1097912847",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "mendietafonscar.sg.est@gmail.com"
+      },
+      "puntaje_global": 398,
+      "s1_aciertos": 110,
+      "s1_total": 119,
+      "s2_aciertos": 122,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 70
+        },
+        "lectura crítica": {
+          "puntaje": 100
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 76
+        },
+        "ciencias naturales": {
+          "puntaje": 71
+        },
+        "inglés": {
+          "puntaje": 83
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Andrea Valentina",
+        "apellidos": "Ramírez Ochoa",
+        "numero_identificacion": "1053787841",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Boyacá",
+        "correo_electronico": "ramirezochoaav.sg.est@gmail.com"
+      },
+      "puntaje_global": 465,
+      "s1_aciertos": 115,
+      "s1_total": 119,
+      "s2_aciertos": 131,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 100
+        },
+        "lectura crítica": {
+          "puntaje": 75
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 100
+        },
+        "ciencias naturales": {
+          "puntaje": 100
+        },
+        "inglés": {
+          "puntaje": 85
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Laura Camila",
+        "apellidos": "Guzmán López",
+        "numero_identificacion": "1059242362",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cauca",
+        "correo_electronico": "guzmanlopezlc.sg.est@gmail.com"
+      },
+      "puntaje_global": 308,
+      "s1_aciertos": 96,
+      "s1_total": 119,
+      "s2_aciertos": 101,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 81
+        },
+        "lectura crítica": {
+          "puntaje": 66
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 50
+        },
+        "ciencias naturales": {
+          "puntaje": 52
+        },
+        "inglés": {
+          "puntaje": 55
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "DAYANA MISHEL",
+        "apellidos": "TOVIA CHAVEZ",
+        "numero_identificacion": "1103743506",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Sucre",
+        "correo_electronico": "dayanatovia.edu.seamosgenios@gmail.com"
+      },
+      "puntaje_global": 392,
+      "s1_aciertos": 108,
+      "s1_total": 119,
+      "s2_aciertos": 127,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 80
+        },
+        "lectura crítica": {
+          "puntaje": 77
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 76
+        },
+        "ciencias naturales": {
+          "puntaje": 82
+        },
+        "inglés": {
+          "puntaje": 75
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Alejandro David",
+        "apellidos": "Lora Torres",
+        "numero_identificacion": "1028006716",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Antioquia",
+        "correo_electronico": "dlora5284@gmail.com"
+      },
+      "puntaje_global": 281,
+      "s1_aciertos": 86,
+      "s1_total": 119,
+      "s2_aciertos": 102,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 61
+        },
+        "lectura crítica": {
+          "puntaje": 45
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 74
+        },
+        "ciencias naturales": {
+          "puntaje": 46
+        },
+        "inglés": {
+          "puntaje": 52
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Natalie Isabel",
+        "apellidos": "Villegas Ortiz",
+        "numero_identificacion": "100662617",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Valle del Cauca",
+        "correo_electronico": "villegasortizni.sg.est@gmail.com"
+      },
+      "puntaje_global": 387,
+      "s1_aciertos": 110,
+      "s1_total": 119,
+      "s2_aciertos": 123,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 85
+        },
+        "lectura crítica": {
+          "puntaje": 75
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 67
+        },
+        "ciencias naturales": {
+          "puntaje": 82
+        },
+        "inglés": {
+          "puntaje": 78
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "José Ángel",
+        "apellidos": "Sora Merchan",
+        "numero_identificacion": "1050607301",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Boyacá",
+        "correo_electronico": "soramerchanja.sg.est@gmail.com"
+      },
+      "puntaje_global": 300,
+      "s1_aciertos": 85,
+      "s1_total": 119,
+      "s2_aciertos": 113,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 52
+        },
+        "lectura crítica": {
+          "puntaje": 55
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 67
+        },
+        "ciencias naturales": {
+          "puntaje": 65
+        },
+        "inglés": {
+          "puntaje": 62
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Maria Alejandra",
+        "apellidos": "Rodriguez Candury",
+        "numero_identificacion": "1044918208",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Bolívar",
+        "correo_electronico": "mcandury16@gmail.com"
+      },
+      "puntaje_global": 242,
+      "s1_aciertos": 79,
+      "s1_total": 119,
+      "s2_aciertos": 78,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 40
+        },
+        "lectura crítica": {
+          "puntaje": 66
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 67
+        },
+        "ciencias naturales": {
+          "puntaje": 15
+        },
+        "inglés": {
+          "puntaje": 65
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Kevin Santiago",
+        "apellidos": "Portillo Benavides",
+        "numero_identificacion": "1080052995",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Nariño",
+        "correo_electronico": "kevinsantiagoportillobenavides@iemciudaddepasto.edu.co"
+      },
+      "puntaje_global": 336,
+      "s1_aciertos": 98,
+      "s1_total": 119,
+      "s2_aciertos": 112,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 81
+        },
+        "lectura crítica": {
+          "puntaje": 58
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 58
+        },
+        "ciencias naturales": {
+          "puntaje": 74
+        },
+        "inglés": {
+          "puntaje": 61
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Caren Yileni",
+        "apellidos": "Echeverria Cardozo",
+        "numero_identificacion": "1099205249",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Boyacá",
+        "correo_electronico": "echeverriacaren998@gmail.com"
+      },
+      "puntaje_global": 325,
+      "s1_aciertos": 99,
+      "s1_total": 119,
+      "s2_aciertos": 106,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 63
+        },
+        "lectura crítica": {
+          "puntaje": 68
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 60
+        },
+        "ciencias naturales": {
+          "puntaje": 71
+        },
+        "inglés": {
+          "puntaje": 60
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Yessica Paola",
+        "apellidos": "Ruiz Ruiz",
+        "numero_identificacion": "1061794207",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cauca",
+        "correo_electronico": "yessica.ruiz.ruiz@gmail.com"
+      },
+      "puntaje_global": 256,
+      "s1_aciertos": 84,
+      "s1_total": 119,
+      "s2_aciertos": 88,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 66
+        },
+        "lectura crítica": {
+          "puntaje": 59
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 43
+        },
+        "ciencias naturales": {
+          "puntaje": 27
+        },
+        "inglés": {
+          "puntaje": 80
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Paula Andrea",
+        "apellidos": "Vergara Parra",
+        "numero_identificacion": "1014293473",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Huila",
+        "correo_electronico": "paulandreav8@gmail.com"
+      },
+      "puntaje_global": 381,
+      "s1_aciertos": 108,
+      "s1_total": 119,
+      "s2_aciertos": 123,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 79
+        },
+        "lectura crítica": {
+          "puntaje": 74
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 71
+        },
+        "ciencias naturales": {
+          "puntaje": 79
+        },
+        "inglés": {
+          "puntaje": 81
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "YURI NATALIA",
+        "apellidos": "SARMIENTO SILVA",
+        "numero_identificacion": "1095530126",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Santander",
+        "correo_electronico": "sarmientoyuri719@gmail.com"
+      },
+      "puntaje_global": 280,
+      "s1_aciertos": 80,
+      "s1_total": 119,
+      "s2_aciertos": 92,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 79
+        },
+        "lectura crítica": {
+          "puntaje": 71
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 27
+        },
+        "ciencias naturales": {
+          "puntaje": 40
+        },
+        "inglés": {
+          "puntaje": 76
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Emma Isabella",
+        "apellidos": "Lindado Algarin",
+        "numero_identificacion": "1043594698",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Atlántico",
+        "correo_electronico": "emmalindado@gmail.com"
+      },
+      "puntaje_global": 303,
+      "s1_aciertos": 95,
+      "s1_total": 119,
+      "s2_aciertos": 105,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 49
+        },
+        "lectura crítica": {
+          "puntaje": 65
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 70
+        },
+        "ciencias naturales": {
+          "puntaje": 55
+        },
+        "inglés": {
+          "puntaje": 71
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "valentina",
+        "apellidos": "sandoval diaz",
+        "numero_identificacion": "1107979320",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Tolima",
+        "correo_electronico": "sandovaldiazv.sg.est@gmail.com"
+      },
+      "puntaje_global": 282,
+      "s1_aciertos": 89,
+      "s1_total": 119,
+      "s2_aciertos": 100,
+      "s2_total": 133,
+      "puntajes": {
+        "matemáticas": {
+          "puntaje": 61
+        },
+        "lectura crítica": {
+          "puntaje": 56
+        },
+        "sociales y ciudadanas": {
+          "puntaje": 53
+        },
+        "ciencias naturales": {
+          "puntaje": 55
+        },
+        "inglés": {
+          "puntaje": 58
+        }
+      }
+    },
+    {
+      "informacion_personal": {
+        "nombres": "Nikol Vanessa",
+        "apellidos": "Mancilla Gonzalez",
+        "numero_identificacion": "1123438139",
+        "institucion": "PREICFES SEAMOSGENIOS",
+        "municipio": "Cauca",
+        "correo_electronico": "mancillagonzaleznikolvanessa@gmail.com"
+      },
+      "puntaje_global": 263,
+      "s1_aciertos": 0,
+      "s1_total": 0,
+      "s2_aciertos": 108,
+      "s2_total": 133,
+      "puntajes": {
+        "sociales y ciudadanas": {
+          "puntaje": 58
+        },
+        "matemáticas": {
+          "puntaje": 67
+        },
+        "ciencias naturales": {
+          "puntaje": 78
+        },
+        "inglés": {
+          "puntaje": 76
+        }
+      }
+    }
+  ]
+}
