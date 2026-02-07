@@ -1,0 +1,29 @@
+
+> reportes-sg-next@0.1.0 build
+> next build
+
+ÔÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\Daniel\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\Daniel\Downloads\reportes-sg-next\package-lock.json
+
+Ôû▓ Next.js 16.1.2 (Turbopack)
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 8.8s
+  Running TypeScript ...
+Failed to compile.
+
+./src/lib/reportGenerator.ts:1452:34
+Type error: Property 'nivel_desempeno' does not exist on type 'Estudiante'.
+
+  1450 |         const globalScore = Number(est.puntaje_global) || 0;
+  1451 |
+> 1452 |         let nivelCalculado = est.nivel_desempeno;
+       |                                  ^
+  1453 |         if (!nivelCalculado || nivelCalculado === 'Sin Nivel') {
+  1454 |             if (globalScore <= 200) nivelCalculado = 'Bajo';
+  1455 |             else if (globalScore <= 300) nivelCalculado = 'B├ísico';
+Next.js build worker exited with code: 1 and signal: null

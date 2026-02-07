@@ -1,0 +1,1240 @@
+xxx ANALYSIS OF boletin_ed_1.pdf xxx
+
+--- Keyword: Modelo (16 matches) ---
+Context:
+1. ¿Qué significa esto?
+La TRI es una teoría de los test para medir variables latentes, es
+Figura 1. Curva característica de un ítem en modelo 3PL
+decir que no se pueden medir directamente, a partir de una
+estimación paramétrica de las respuestas dadas por los
+
+Context:
+c=0.1 b=0.2
+0
+Actualmente, para las pruebas Saber se emplea un modelo
+-4 -0.2 4
+logístico con tres parámetros de los ítems, de allí que se θ
+
+Context:
+-4 -0.2 4
+logístico con tres parámetros de los ítems, de allí que se θ
+conozca como modelo logístico de tres parámetros (3PL por sus Fuente: ICFES, 2017
+siglas en inglés). Veamos cómo funciona esto en la figura 1.
+Nos referimos a curva característica de un ítem a la función que una probabilidad mayor a 99% se encuentra entre -4 a 4 y,
+
+Context:
+2
+2. ¿En qué consiste?
+Al analizar la relación entre la habilidad y la probabilidad de Así, la ecuación de un modelo 3PL es de la forma
+acierto, cabe señalar que estas no tienen un comportamiento
+lineal, lo que quiere decir que un aumento en una unidad en Ecuación 1.
+
+Context:
+estabilizar después de un punto crítico.
+3
+El modelo 3PL es una generalización de los modelos de TRI Una vez encontrados dichos parámetros, se calculan los nuevos
+para variables dicótomas. Cuando no se asume acierto casual valores de las habilidades y se repite este procedimiento de
+(c=0), se convierte en un modelo logístico de 2 parámetros maximización hasta que el valor de cada parámetro no cambie
+
+... and 11 more matches.
+
+--- Keyword: TRI (6 matches) ---
+Context:
+Para la calificación de las pruebas Saber 359, Saber 11, Un ejemplo para entender la habilidad o trazo latente sería
+Saber TyT y Saber PRO se emplea la Teoría de Respuesta al tratar de medir la estatura de una persona sin un metro.
+Ítem (TRI), que permite tomar en cuenta las características Supongamos que no se cuenta con un instrumento que permita
+psicométricas de las preguntas (también llamadas ítems) y obtener el número correspondiente a la altura, entonces se
+establecer una relación probabilística con la habilidad o trazo podría emplear un instrumento con ítems que de indicios de qué
+
+Context:
+definida. Así, se presentan a continuación los aspectos posible empezar a estimar la altura de las personas a las que se
+técnicos que permiten superar estos retos a la hora de generar encueste, con base en sus respuestas a los ítems, sin tener
+los puntajes en las pruebas Saber. medidas directamente. Esta es la lógica de la TRI.
+1. ¿Qué significa esto?
+La TRI es una teoría de los test para medir variables latentes, es
+
+Context:
+los puntajes en las pruebas Saber. medidas directamente. Esta es la lógica de la TRI.
+1. ¿Qué significa esto?
+La TRI es una teoría de los test para medir variables latentes, es
+Figura 1. Curva característica de un ítem en modelo 3PL
+decir que no se pueden medir directamente, a partir de una
+
+Context:
+los evaluados en algunas competencias como razonamiento
+cuantitativo o lectura crítica, a partir de un conjunto de ítems
+que miden distintos niveles de habilidad. La TRI permite estimar
+la habilidad de los individuos (θ) con base en las respuestas
+dadas a los ítems y las características de los ítems (a los cuales
+
+Context:
+estabilizar después de un punto crítico.
+3
+El modelo 3PL es una generalización de los modelos de TRI Una vez encontrados dichos parámetros, se calculan los nuevos
+para variables dicótomas. Cuando no se asume acierto casual valores de las habilidades y se repite este procedimiento de
+(c=0), se convierte en un modelo logístico de 2 parámetros maximización hasta que el valor de cada parámetro no cambie
+
+... and 1 more matches.
+
+--- Keyword: Calificación (2 matches) ---
+Context:
+¿Cómo se generan los puntajes
+en las pruebas saber del icfes?
+Para la calificación de las pruebas Saber 359, Saber 11, Un ejemplo para entender la habilidad o trazo latente sería
+Saber TyT y Saber PRO se emplea la Teoría de Respuesta al tratar de medir la estatura de una persona sin un metro.
+Ítem (TRI), que permite tomar en cuenta las características Supongamos que no se cuenta con un instrumento que permita
+
+Context:
+psicométricas de las preguntas (también llamadas ítems) y obtener el número correspondiente a la altura, entonces se
+establecer una relación probabilística con la habilidad o trazo podría emplear un instrumento con ítems que de indicios de qué
+latente que se desea medir. El objetivo de la calificación es tan alta es una persona. Por ejemplo, se podría preguntar:
+poder tener una escala definida para medir la habilidad de los ¿Alcanza a poner una maleta en el equipaje de un avión?
+evaluados, al ser esta una variable que no se puede medir ¿Logra sostenerse de los tubos horizontales en un bus? ¿Suele
+
+--- Keyword: Puntaje (2 matches) ---
+Context:
+habilidad. Dicho parámetro se conoce como asíntota inferior,
+pues es el valor asintótico que toma la probabilidad de acierto
+en el ítem en la medida en que el puntaje θ del ítem va siendo
+cada vez menor. En este caso, cuando el valor del parámetro c
+es pequeño, la probabilidad de acierto es muy reducida para
+
+Context:
+(2PL), y al asumir adicionalmente que la discriminación es sustancialmente. Si los parámetros de los ítems han sido
+constante entre ítems, se convierte en un modelo logístico de 1 estimados con otras pruebas, es decir los parámetros han sido
+parámetro (1PL). El modelo de Rasch puede ser visto como un calibrados previamente, la forma de calcular el puntaje de la
+caso particular del modelo 1PL, cuando se asume constante e prueba se realiza mediante la función de verosimilitud del
+igual a 1 el valor asociado a la discriminación de los ítems. modelo de 3PL (ecuación 1).
+
+--- Keyword: Dificultad (13 matches) ---
+Context:
+de los evaluados, es decir de θ, y en el eje y los valores de la ítem. Más adelante explicaremos a qué corresponden los
+probabilidad de acierto del ítem P(θ). La escala que se emplea parámetros ilustrados en la figura , los cuales corresponden a:
+para la habilidad (θ) está en el rango de -∞ a ∞, aunque con dificultad del ítem (b), discriminación (a) y acierto casual (c).
+2
+2. ¿En qué consiste?
+
+Context:
+respuesta del ítem. A esto se suman 3 parámetros de los ítems
+características de ítems. En este caso, el ítem 2 tiene mayor
+que son la dificultad del ítem (b), la discriminación (a) y la
+dificultad que el ítem 4 y que el ítem 1, ya que la primera curva
+probabilidad de acierto casual (c).
+
+Context:
+características de ítems. En este caso, el ítem 2 tiene mayor
+que son la dificultad del ítem (b), la discriminación (a) y la
+dificultad que el ítem 4 y que el ítem 1, ya que la primera curva
+probabilidad de acierto casual (c).
+presenta un mayor desplazamiento a la derecha del eje x que
+
+Context:
+presenta un mayor desplazamiento a la derecha del eje x que
+las últimas dos. En cuanto al parámetro del azar, el ítem 3 tiene
+El parámetro b hace referencia a la dificultad del ítem y una probabilidad de acierto casual mayor a los demás ítems
+para aquellos evaluados de baja habilidad, lo cual se evidencia
+representa la habilidad correspondiente a la probabilidad
+
+Context:
+acierto casual. La habilidad está en un rango entre -∞ a ∞ pero análoga, el ítem 2 tiene la probabilidad de acierto casual más
+se sitúa generalmente en un rango entre -4 y 4. Por definición, baja con respecto a los otros ítems: para niveles de habilidad
+el parámetro de dificultad está en la misma escala de la cercanos a -4 el ítem 2 tiene el nivel de probabilidad más
+habilidad, lo que garantiza una mayor interpretación de los cercano a cero. Alrededor de un θ=-2, se puede observar que
+resultados. Así, a medida que aumenta el valor del parámetro el ítem 4 es el que mayor discriminación tiene, al tener la
+
+... and 8 more matches.
+
+--- Keyword: Discriminación (11 matches) ---
+Context:
+de los evaluados, es decir de θ, y en el eje y los valores de la ítem. Más adelante explicaremos a qué corresponden los
+probabilidad de acierto del ítem P(θ). La escala que se emplea parámetros ilustrados en la figura , los cuales corresponden a:
+para la habilidad (θ) está en el rango de -∞ a ∞, aunque con dificultad del ítem (b), discriminación (a) y acierto casual (c).
+2
+2. ¿En qué consiste?
+
+Context:
+respuesta del ítem. A esto se suman 3 parámetros de los ítems
+características de ítems. En este caso, el ítem 2 tiene mayor
+que son la dificultad del ítem (b), la discriminación (a) y la
+dificultad que el ítem 4 y que el ítem 1, ya que la primera curva
+probabilidad de acierto casual (c).
+
+Context:
+el parámetro de dificultad está en la misma escala de la cercanos a -4 el ítem 2 tiene el nivel de probabilidad más
+habilidad, lo que garantiza una mayor interpretación de los cercano a cero. Alrededor de un θ=-2, se puede observar que
+resultados. Así, a medida que aumenta el valor del parámetro el ítem 4 es el que mayor discriminación tiene, al tener la
+b el ítem se hace más difícil y cuando se reduce el valor de pendiente más pronunciada de las curvas características. Lo
+dicho parámetro, la dificultad del ítem disminuye. cual implica que el ítem 4 logra diferenciar muy bien entre
+
+Context:
+dicho parámetro, la dificultad del ítem disminuye. cual implica que el ítem 4 logra diferenciar muy bien entre
+evaluados con alta y baja habilidad en ese punto. Cabe señalar
+que la interpretación del parámetro de discriminación se realiza
+El parámetro a corresponde a la discriminación y representa el
+alrededor de la habilidad correspondiente a la dificultad.
+
+Context:
+evaluados con alta y baja habilidad en ese punto. Cabe señalar
+que la interpretación del parámetro de discriminación se realiza
+El parámetro a corresponde a la discriminación y representa el
+alrededor de la habilidad correspondiente a la dificultad.
+cambio en la probabilidad de contestar correctamente el ítem
+
+... and 6 more matches.
+
+--- Keyword: Azar (5 matches) ---
+Context:
+probabilidad de acierto casual (c).
+presenta un mayor desplazamiento a la derecha del eje x que
+las últimas dos. En cuanto al parámetro del azar, el ítem 3 tiene
+El parámetro b hace referencia a la dificultad del ítem y una probabilidad de acierto casual mayor a los demás ítems
+para aquellos evaluados de baja habilidad, lo cual se evidencia
+
+Context:
+Ítem 3
+Por último, el parámetro de acierto casual c hace referencia a
+la probabilidad de acertar el ítem al azar teniendo una baja 0.5
+habilidad. Dicho parámetro se conoce como asíntota inferior,
+pues es el valor asintótico que toma la probabilidad de acierto
+
+Context:
+parámetro c es alto, aquellos evaluados con baja habilidad
+-4 -2 0 2 4
+tienen una probabilidad mayor de acertar el ítem al azar.
+θ
+1 Fuente: ICFES, 2017
+
+Context:
+La relevancia de usar un modelo de tres parámetros sobre de mantener los estándares de comparabilidad. Gracias al
+otras especificaciones tiene que ver con la violación de la armado actual de las pruebas Saber, estableciendo bloques
+condición exigida sobre probabilidad cero de acierto al azar con ciertas características (a los cuales llamamos bloques
+(c=0). Al emplear opciones de selección múltiple, resulta incompletos balanceados), es posible aumentar el número
+favorecedor emplear el modelo 3PL, generando mayor de ítems con diferentes grados de dificultad, discriminación
+
+Context:
+(c=0). Al emplear opciones de selección múltiple, resulta incompletos balanceados), es posible aumentar el número
+favorecedor emplear el modelo 3PL, generando mayor de ítems con diferentes grados de dificultad, discriminación
+ajuste al ser más probable que existan elementos de azar y acierto casual y mantener la precisión en las estimaciones.
+relacionados e ítems con diferentes grados de De esta manera, modelar las pruebas Saber aplicadas por el
+discriminación sin afectar la precisión de las estimaciones Icfes empleando un modelo 3PL permite una mejor
+
+--- Keyword: 3PL (10 matches) ---
+Context:
+1. ¿Qué significa esto?
+La TRI es una teoría de los test para medir variables latentes, es
+Figura 1. Curva característica de un ítem en modelo 3PL
+decir que no se pueden medir directamente, a partir de una
+estimación paramétrica de las respuestas dadas por los
+
+Context:
+-4 -0.2 4
+logístico con tres parámetros de los ítems, de allí que se θ
+conozca como modelo logístico de tres parámetros (3PL por sus Fuente: ICFES, 2017
+siglas en inglés). Veamos cómo funciona esto en la figura 1.
+Nos referimos a curva característica de un ítem a la función que una probabilidad mayor a 99% se encuentra entre -4 a 4 y,
+
+Context:
+2
+2. ¿En qué consiste?
+Al analizar la relación entre la habilidad y la probabilidad de Así, la ecuación de un modelo 3PL es de la forma
+acierto, cabe señalar que estas no tienen un comportamiento
+lineal, lo que quiere decir que un aumento en una unidad en Ecuación 1.
+
+Context:
+estabilizar después de un punto crítico.
+3
+El modelo 3PL es una generalización de los modelos de TRI Una vez encontrados dichos parámetros, se calculan los nuevos
+para variables dicótomas. Cuando no se asume acierto casual valores de las habilidades y se repite este procedimiento de
+(c=0), se convierte en un modelo logístico de 2 parámetros maximización hasta que el valor de cada parámetro no cambie
+
+Context:
+parámetro (1PL). El modelo de Rasch puede ser visto como un calibrados previamente, la forma de calcular el puntaje de la
+caso particular del modelo 1PL, cuando se asume constante e prueba se realiza mediante la función de verosimilitud del
+igual a 1 el valor asociado a la discriminación de los ítems. modelo de 3PL (ecuación 1).
+De manera ilustrativa, se presenta en la figura 3 un patrón de
+3. ¿Cómo se aplica? respuestas para 6 ítems que contiene 4 respuestas correctas y
+
+... and 5 more matches.
+
+--- Keyword: Logístico (4 matches) ---
+Context:
+Actualmente, para las pruebas Saber se emplea un modelo
+-4 -0.2 4
+logístico con tres parámetros de los ítems, de allí que se θ
+conozca como modelo logístico de tres parámetros (3PL por sus Fuente: ICFES, 2017
+siglas en inglés). Veamos cómo funciona esto en la figura 1.
+
+Context:
+-4 -0.2 4
+logístico con tres parámetros de los ítems, de allí que se θ
+conozca como modelo logístico de tres parámetros (3PL por sus Fuente: ICFES, 2017
+siglas en inglés). Veamos cómo funciona esto en la figura 1.
+Nos referimos a curva característica de un ítem a la función que una probabilidad mayor a 99% se encuentra entre -4 a 4 y,
+
+Context:
+El modelo 3PL es una generalización de los modelos de TRI Una vez encontrados dichos parámetros, se calculan los nuevos
+para variables dicótomas. Cuando no se asume acierto casual valores de las habilidades y se repite este procedimiento de
+(c=0), se convierte en un modelo logístico de 2 parámetros maximización hasta que el valor de cada parámetro no cambie
+(2PL), y al asumir adicionalmente que la discriminación es sustancialmente. Si los parámetros de los ítems han sido
+constante entre ítems, se convierte en un modelo logístico de 1 estimados con otras pruebas, es decir los parámetros han sido
+
+Context:
+(c=0), se convierte en un modelo logístico de 2 parámetros maximización hasta que el valor de cada parámetro no cambie
+(2PL), y al asumir adicionalmente que la discriminación es sustancialmente. Si los parámetros de los ítems han sido
+constante entre ítems, se convierte en un modelo logístico de 1 estimados con otras pruebas, es decir los parámetros han sido
+parámetro (1PL). El modelo de Rasch puede ser visto como un calibrados previamente, la forma de calcular el puntaje de la
+caso particular del modelo 1PL, cuando se asume constante e prueba se realiza mediante la función de verosimilitud del
+
+--- Keyword: Transformación (1 matches) ---
+Context:
+multiplicación de las probabilidades de respuesta a cada ítem justamente el patrón de respuestas que tuvo el evaluado.
+del test. Es decir, la función de verosimilitud es el producto del Estimada la habilidad θ, se calcula la puntuación
+patrón de respuestas, y por tanto incluye tanto respuestas correspondiente, haciendo una transformación de la habilidad
+correctas P(θ) como respuestas incorrectas 1-P(θ). del evaluado en una escala definida.
+2
+
+--- Keyword: Escala (6 matches) ---
+Context:
+establecer una relación probabilística con la habilidad o trazo podría emplear un instrumento con ítems que de indicios de qué
+latente que se desea medir. El objetivo de la calificación es tan alta es una persona. Por ejemplo, se podría preguntar:
+poder tener una escala definida para medir la habilidad de los ¿Alcanza a poner una maleta en el equipaje de un avión?
+evaluados, al ser esta una variable que no se puede medir ¿Logra sostenerse de los tubos horizontales en un bus? ¿Suele
+directamente y que además no tiene una escala únicamente tocar el marco de una pared al estirarse? De esta manera, es
+
+Context:
+poder tener una escala definida para medir la habilidad de los ¿Alcanza a poner una maleta en el equipaje de un avión?
+evaluados, al ser esta una variable que no se puede medir ¿Logra sostenerse de los tubos horizontales en un bus? ¿Suele
+directamente y que además no tiene una escala únicamente tocar el marco de una pared al estirarse? De esta manera, es
+definida. Así, se presentan a continuación los aspectos posible empezar a estimar la altura de las personas a las que se
+técnicos que permiten superar estos retos a la hora de generar encueste, con base en sus respuestas a los ítems, sin tener
+
+Context:
+ese ítem. En la medida en que la habilidad del evaluado disminuye, la
+probabilidad de acierto es menor y, de manera similar, cuando
+En el eje x se encuentran los valores de la escala de habilidad aumenta la habilidad, aumenta la probabilidad de acertar el
+de los evaluados, es decir de θ, y en el eje y los valores de la ítem. Más adelante explicaremos a qué corresponden los
+probabilidad de acierto del ítem P(θ). La escala que se emplea parámetros ilustrados en la figura , los cuales corresponden a:
+
+Context:
+En el eje x se encuentran los valores de la escala de habilidad aumenta la habilidad, aumenta la probabilidad de acertar el
+de los evaluados, es decir de θ, y en el eje y los valores de la ítem. Más adelante explicaremos a qué corresponden los
+probabilidad de acierto del ítem P(θ). La escala que se emplea parámetros ilustrados en la figura , los cuales corresponden a:
+para la habilidad (θ) está en el rango de -∞ a ∞, aunque con dificultad del ítem (b), discriminación (a) y acierto casual (c).
+2
+
+Context:
+acierto casual. La habilidad está en un rango entre -∞ a ∞ pero análoga, el ítem 2 tiene la probabilidad de acierto casual más
+se sitúa generalmente en un rango entre -4 y 4. Por definición, baja con respecto a los otros ítems: para niveles de habilidad
+el parámetro de dificultad está en la misma escala de la cercanos a -4 el ítem 2 tiene el nivel de probabilidad más
+habilidad, lo que garantiza una mayor interpretación de los cercano a cero. Alrededor de un θ=-2, se puede observar que
+resultados. Así, a medida que aumenta el valor del parámetro el ítem 4 es el que mayor discriminación tiene, al tener la
+
+... and 1 more matches.
+
+--- Keyword: A (56 matches) ---
+Context:
+Saber TyT y Saber PRO se emplea la Teoría de Respuesta al tratar de medir la estatura de una persona sin un metro.
+Ítem (TRI), que permite tomar en cuenta las características Supongamos que no se cuenta con un instrumento que permita
+psicométricas de las preguntas (también llamadas ítems) y obtener el número correspondiente a la altura, entonces se
+establecer una relación probabilística con la habilidad o trazo podría emplear un instrumento con ítems que de indicios de qué
+latente que se desea medir. El objetivo de la calificación es tan alta es una persona. Por ejemplo, se podría preguntar:
+
+Context:
+establecer una relación probabilística con la habilidad o trazo podría emplear un instrumento con ítems que de indicios de qué
+latente que se desea medir. El objetivo de la calificación es tan alta es una persona. Por ejemplo, se podría preguntar:
+poder tener una escala definida para medir la habilidad de los ¿Alcanza a poner una maleta en el equipaje de un avión?
+evaluados, al ser esta una variable que no se puede medir ¿Logra sostenerse de los tubos horizontales en un bus? ¿Suele
+directamente y que además no tiene una escala únicamente tocar el marco de una pared al estirarse? De esta manera, es
+
+Context:
+evaluados, al ser esta una variable que no se puede medir ¿Logra sostenerse de los tubos horizontales en un bus? ¿Suele
+directamente y que además no tiene una escala únicamente tocar el marco de una pared al estirarse? De esta manera, es
+definida. Así, se presentan a continuación los aspectos posible empezar a estimar la altura de las personas a las que se
+técnicos que permiten superar estos retos a la hora de generar encueste, con base en sus respuestas a los ítems, sin tener
+los puntajes en las pruebas Saber. medidas directamente. Esta es la lógica de la TRI.
+
+Context:
+directamente y que además no tiene una escala únicamente tocar el marco de una pared al estirarse? De esta manera, es
+definida. Así, se presentan a continuación los aspectos posible empezar a estimar la altura de las personas a las que se
+técnicos que permiten superar estos retos a la hora de generar encueste, con base en sus respuestas a los ítems, sin tener
+los puntajes en las pruebas Saber. medidas directamente. Esta es la lógica de la TRI.
+1. ¿Qué significa esto?
+
+Context:
+La TRI es una teoría de los test para medir variables latentes, es
+Figura 1. Curva característica de un ítem en modelo 3PL
+decir que no se pueden medir directamente, a partir de una
+estimación paramétrica de las respuestas dadas por los
+evaluados a un conjunto de preguntas o ítems. En el caso de Curva característica del Ítem
+
+... and 51 more matches.
+
+
+==================================================
+
+xxx ANALYSIS OF boletin_ed_12.pdf xxx
+
+--- Keyword: Calificación (11 matches) ---
+Context:
+¿Cuál es la primera condición que debe cumplir la
+sede o establecimiento para ingresar en el proceso de
+calificación?
+La primera condición que se verificará es que al menos un estudiante
+del establecimiento o sede haya presentado el examen Saber 11 en
+
+Context:
+el año para el cual se está generando la clasificación.
+¿Todos los estudiantes que inscribí entran al proceso
+para generar una calificación?
+No. Para este momento es importante que hagamos la distinción entre
+los estudiantes inscritos y los evaluados. Primero te explicaremos cuales
+
+Context:
+Ten presente que los INSCRITOS que cumplen las condiciones antes
+expuestas y por lo tanto son EVALUADOS, tendrán en sus mano
+un resultado que va a representar su calificación en el examen, en
+caso contrario, los INSCRITOS que no pertenecen a la categoría
+EVALUADOS se representan con una mano vacía.
+
+Context:
+EVALUADOS se representan con una mano vacía.
+Para la siguiente institución podrás encontrar que todos los estudiantes
+tienen calificación, lo que quiere decir que todos los estudiantes
+INSCRITOS son EVALUADOS. En este caso tenemos 10 inscritos que a
+su vez son evaluados. (Ver Figura 2).
+
+Context:
+su vez son evaluados. (Ver Figura 2).
+FIGURA 2. Ejemplo de estudiantes con su respectiva
+calificación.
+44
+43 45 48 49
+
+... and 6 more matches.
+
+--- Keyword: Puntaje (21 matches) ---
+Context:
+6
+EXAMEN SABER 11°
+Puntaje Global (PG)
+Es un indicador que permite obtener una medida global de los resultados
+de un examen.
+
+Context:
+un valor dado.
+Frecuencia relativa
+Proporción de estudiantes que han obtenido algún puntaje determinado.
+Frecuencia relativa acumulada
+Proporción de estudiantes que han obtenido puntajes iguales o menores
+
+Context:
+anulando la anterior que no incluía a dichos estudiantes.
+¿La clasificación que obtenga para la sede o
+establecimiento se calcula con el puntaje global
+del examen Saber 11 de mis evaluados?
+No. Vas a calcular un índice para cada una de las cinco pruebas que
+
+Context:
+total de estudiantes inscritos; es decir, se multiplica por 0,8 el número
+de INSCRITOS de la institución. El valor resultante de este producto
+será el número de puntajes que se utilizan del listado de puntaje
+asociado a los EVALUADOS antes mencionado, ordenado de mayor a
+menor, para continuar con el cálculo. En caso de que, el 80% de los
+
+Context:
+tomare(mos el 80% de los mejores) resultados qu(e, para este caso),
+será 9 evaluados, es decir se excluyen dos estudiantes del proceso, el
+estudiante que no presentó el examen y aquel que obtuvo el puntaje
+más bajo en la prueba, representadas con las manitos azules en la
+Figura 5
+
+... and 16 more matches.
+
+--- Keyword: Índice Global (7 matches) ---
+Context:
+del examen Saber 11 de mis evaluados?
+No. Vas a calcular un índice para cada una de las cinco pruebas que
+componen el examen y con estos índices calcularás un índice global
+que es el que le asigna una categoría de clasificación a la sede o al
+establecimiento.
+
+Context:
+Todo este proceso que te acabamos de enseñar deberás replicarlo para
+cada una de las pruebas, por lo tanto, obtendrás 5 índices en total con
+los cuales construirás un índice global que se calcula como sigue:
+(3 x MA) + (3 x LC) + (3 x CN) + (3 x SC) + IN
+Indice Global =
+
+Context:
+(MA) Crítica (LC) Naturales (CN) Ciudadanas (SC)
+Índice 0,6363 0,5344 0,6314 0,6398 0,562
+Por lo tanto, el Índice Global resultara del siguiente modo:
+(3 x MA) + (3 x LC) + (3 x CN) + (3 x SC) + IN
+Indice Global =
+
+Context:
+21
+Ok ¿Y qué calificación le asigno a un establecimiento
+o sede según el resultado del índice global?
+Después de realizar todo el proceso que te explicamos anteriormente y
+según el índice global que obtengas con tus cálculos, puedes ubicar a
+
+Context:
+o sede según el resultado del índice global?
+Después de realizar todo el proceso que te explicamos anteriormente y
+según el índice global que obtengas con tus cálculos, puedes ubicar a
+cada una de las sedes o establecimientos en algunas de las categorías
+presentadas en la Tabla 6, según corresponda.
+
+... and 2 more matches.
+
+--- Keyword: Transformación (2 matches) ---
+Context:
+El Icfes realizará cambios o revisiones periódicas a
+En todo caso cuando se haga uso parcial o total de los presentes términos de uso y los actualizará en
+1La transformación es la modificación de la obra a través de la creación esta publicación.
+de adaptaciones, traducciones, compilaciones, actualizaciones, revisiones
+y, en general cualquier modificación que se pueda realizar, haciendo que
+
+Context:
+originales, que aquellas requieren, para su realización, de la autorización
+expresa del autor o propietario, para adaptar, traducir, compilar, etc. En
+este caso, el Icfes prohíbe la transformación de esta publicación. Térmi-
+nos y condiciones de uso para las publicaciones y obras que son propie-
+dad del Icfes.
+
+--- Keyword: Categoría (8 matches) ---
+Context:
+4
+¿Qué es la clasificación de planteles?
+Es la asignación de una categoría a un establecimiento o sede
+educativa, teniendo en cuenta los resultados del Examen Saber 11°
+obtenidos por sus estudiantes.
+
+Context:
+¿Cuántas categorías existen dentro de la
+clasificación?
+Las categorías A+, A, B, C y D, siendo A+ la categoría asignada a los
+establecimientos educativos más destacados.
+¿Por qué es importante que mi colegio tenga la
+
+Context:
+de los últimos tres años.
+Se establecen los puntos de corte para cada
+categoría.
+2020 2021
+Resolución 268 de 2020 Resolución 677 de 2021
+
+Context:
+No. Vas a calcular un índice para cada una de las cinco pruebas que
+componen el examen y con estos índices calcularás un índice global
+que es el que le asigna una categoría de clasificación a la sede o al
+establecimiento.
+Vale, entendida la diferencia entre estudiantes
+
+Context:
+expuestas y por lo tanto son EVALUADOS, tendrán en sus mano
+un resultado que va a representar su calificación en el examen, en
+caso contrario, los INSCRITOS que no pertenecen a la categoría
+EVALUADOS se representan con una mano vacía.
+Para la siguiente institución podrás encontrar que todos los estudiantes
+
+... and 3 more matches.
+
+--- Keyword: Plantel (2 matches) ---
+Context:
+se obtenga ese número, no se continúa con el proceso de clasificación
+y, en consecuencia, no se le asignará categoría de clasificación al
+plantel educativo y se le reportará en la publicación.
+Para la siguiente institución, podrás encontrar en la Figura 6 que hay
+12 inscritos, pero solo hay 9 evaluados.
+
+Context:
+índice tomará un valor alto, por lo cual, la categoría asignada al
+establecimiento o sede será mejor. En consecuencia, el índice da
+cuenta del comportamiento esperado por el plantel educativo en los
+resultados del Examen Saber 11 de los últimos 3 años consecutivos, ya
+que se obtiene un valor representativo de los puntajes superiores y una
+
+--- Keyword: A (79 matches) ---
+Context:
+QUE SON PROPIEDAD DEL ICFES
+El Instituto Colombiano para la Evaluación de la los contenidos de esta publicación, el usuario deberá
+Educación (Icfes) pone a disposición de la comunidad consignar o hacer referencia a los créditos institucionales
+educativa, y del público en general, de forma gratuita y del Icfes, respetando los derechos de cita. En otras
+libre de cualquier cargo, un conjunto de publicaciones palabras se podrá hacer uso de esta publicación si dicho
+
+Context:
+materiales y documentos están normados por la presente entonces, transcribir pasajes del texto si se cita siempre
+política y se encuentran protegidos por derechos de la fuente de autor. Por supuesto, estas citas no deberían
+propiedad intelectual y derechos de autor a favor del ser excesivas ni frecuentes para que, así, no se considere
+Icfes. Si tiene conocimiento de alguna utilización contraria una reproducción simulada y sustancial que redunde en
+a lo establecido en estas condiciones de uso, por favor perjuicio del Icfes.
+
+Context:
+propiedad intelectual y derechos de autor a favor del ser excesivas ni frecuentes para que, así, no se considere
+Icfes. Si tiene conocimiento de alguna utilización contraria una reproducción simulada y sustancial que redunde en
+a lo establecido en estas condiciones de uso, por favor perjuicio del Icfes.
+infórmenos al correo prensaicfes@icfes.gov.co.
+Asimismo, los logotipos institucionales son marcas
+
+Context:
+autorizado su uso para fines académicos e investigativos. tanto, cuando su uso pueda causar confusión, los terceros
+Ninguna persona natural o jurídica, nacional o no podrán usar las marcas de propiedad del Icfes con
+internacional, podrá vender, distribuir, alquilar reproducir, signos idénticos o similares respecto a cualquier producto
+transformar1, promocionar o realizar acción alguna con la o servicio prestado por esta entidad. En todo caso queda
+cual se lucre directa o indirectamente con este material. prohibido su uso sin previa autorización expresa por parte
+
+Context:
+sólo de cada título, sino, también de la autoría, la edición, aplicables.
+el editor y el país dónde se edita.
+El Icfes realizará cambios o revisiones periódicas a
+En todo caso cuando se haga uso parcial o total de los presentes términos de uso y los actualizará en
+1La transformación es la modificación de la obra a través de la creación esta publicación.
+
+... and 74 more matches.
+
+
+==================================================
+
+xxx ANALYSIS OF boletin_ed_7.pdf xxx
+
+--- Keyword: Modelo (9 matches) ---
+Context:
+en 3, y los codificados en 3 menos que en los requisitos
+3
+¿Cuál es el modelo de calificación empleado?
+Donde,
+Como se ha abordado en publicaciones pasadas,
+
+Context:
+j
+clasificación del evaluado que resultan relevantes para el
+e :Es el error de medición del modelo
+proceso de calificación. Estos elementos, que se conocen nijk
+como facetas, son los factores del modelo de calificación
+
+Context:
+e :Es el error de medición del modelo
+proceso de calificación. Estos elementos, que se conocen nijk
+como facetas, son los factores del modelo de calificación
+de múltiples facetas de Rasch (MMFR), que se utilizan en Brevemente, la ecuación anterior expone que la
+el procesos de calificación de este tipo de preguntas y por calificación de un evaluado está relacionada con la
+
+Context:
+próximos, que depende de su habilidad, la dificultad
+La particularidad del MMFR consiste en estimar la habilidad del ítem y la severidad del evaluador. Teniendo en cuenta
+del evaluado, teniendo en cuenta las facetas anteriormente la naturaleza del modelo logístico, la escala de medición
+mencionadas. De tal manera que el resultado obtenido está en unidades de logits. Así, cada faceta se calibra2
+por los evaluados aísla el efecto de qué tan severo o laxo con las clasificaciones dadas por los evaluadores y
+
+Context:
+por los evaluados aísla el efecto de qué tan severo o laxo con las clasificaciones dadas por los evaluadores y
+es el evaluador y de la dificultad del ítem. Así, el MMFR es se llevan a la misma escala en un mapa de facetas,
+una generalización del modelo de Rasch1, pues considera como se presenta en la figura 2, de tal manera que es
+el efecto de diferentes facetas para estimar la habilidad de posible analizar todas las facetas en un solo esquema.
+los evaluados (Linacre, 1994). Vamos a entenderlo.
+
+... and 4 more matches.
+
+--- Keyword: TRI (2 matches) ---
+Context:
+probabilidad de acierto. En particular, en los modelos nij(k-1)
+clasificación k-1 en el ítem i por el evaluador j
+de 3 parámetros de Teoría Respuesta al Ítem (TRI) se
+contemplan la dificultad, la discriminación y el azar. Por B :Es la habilidad del evaluado n
+n
+
+Context:
+evaluados dadas por los evaluadores. Para todos
+1. El modelo de Rasch puede ser visto como un caso particular del 2. Para profundizar sobre los modelos de calibración y sus supuestos
+modelo 1PL de TRI. Para profundizar sobre los modelos de calificación refiérase a la Edición 1 del Boletín Saber al Detalle ¿Cómo se
+y sus supuestos refiérase a la Edición 1 del Boletín Saber al Detalle generan los puntajes en las pruebas Saber del Icfes? Ejemplo de
+¿Cómo se generan los puntajes en las pruebas Saber del Icfes? pregunta abierta.
+
+--- Keyword: Calificación (10 matches) ---
+Context:
+DE LAS PRUEBAS SABER?
+En las pruebas Saber Pro y Saber TyT se contempla una Icfes, los ítems de pregunta abierta cuentan con evaluadores
+metodología de calificación específica para los ítems que utilizan rúbricas de evaluación previamente definidas
+de respuesta abierta. Este tipo de ítems busca medir para ser empleadas como insumo en el proceso de
+habilidades relacionadas con el desarrollo de argumentos codificación. En esta edición, ahondaremos en la
+
+Context:
+de respuesta abierta. Este tipo de ítems busca medir para ser empleadas como insumo en el proceso de
+habilidades relacionadas con el desarrollo de argumentos codificación. En esta edición, ahondaremos en la
+y conceptos, como es el caso de la pregunta de habilidades calificación de pregunta abierta, exploraremos qué tipo de
+comunicativas o de la prueba específica de arquitectura. A ítems corresponden con esta modalidad y expondremos la
+diferencia de los ítems que habitualmente se aplican en el metodología de calificación que se emplea.
+
+Context:
+y conceptos, como es el caso de la pregunta de habilidades calificación de pregunta abierta, exploraremos qué tipo de
+comunicativas o de la prueba específica de arquitectura. A ítems corresponden con esta modalidad y expondremos la
+diferencia de los ítems que habitualmente se aplican en el metodología de calificación que se emplea.
+¿A qué nos referimos con preguntas abiertas?
+Las preguntas abiertas son aquellas en las que el evaluado para la medición de competencias comunicativas para
+
+Context:
+en 3, y los codificados en 3 menos que en los requisitos
+3
+¿Cuál es el modelo de calificación empleado?
+Donde,
+Como se ha abordado en publicaciones pasadas,
+
+Context:
+Donde,
+Como se ha abordado en publicaciones pasadas,
+los modelos de calificación empleados en el Icfes P : La probabilidad que el evaluado n obtenga una
+nijk
+buscan establecer una relación probabilística entre clasificación k en el ítem i por el evaluador j
+
+... and 5 more matches.
+
+--- Keyword: Dificultad (8 matches) ---
+Context:
+clasificación k-1 en el ítem i por el evaluador j
+de 3 parámetros de Teoría Respuesta al Ítem (TRI) se
+contemplan la dificultad, la discriminación y el azar. Por B :Es la habilidad del evaluado n
+n
+su parte, en la calificación de las preguntas abiertas
+
+Context:
+n
+su parte, en la calificación de las preguntas abiertas
+D:Es la dificultad del ítem i
+se consideran elementos tales como la severidad del i
+evaluador (codificador), la dificultad de la tarea y la C: Es la severidad del evaluador j
+
+Context:
+D:Es la dificultad del ítem i
+se consideran elementos tales como la severidad del i
+evaluador (codificador), la dificultad de la tarea y la C: Es la severidad del evaluador j
+j
+clasificación del evaluado que resultan relevantes para el
+
+Context:
+el procesos de calificación de este tipo de preguntas y por calificación de un evaluado está relacionada con la
+tanto se deben identificar y medir (Bond & Fox, 2007). probabilidad relativa de ser clasificado entre dos niveles
+próximos, que depende de su habilidad, la dificultad
+La particularidad del MMFR consiste en estimar la habilidad del ítem y la severidad del evaluador. Teniendo en cuenta
+del evaluado, teniendo en cuenta las facetas anteriormente la naturaleza del modelo logístico, la escala de medición
+
+Context:
+mencionadas. De tal manera que el resultado obtenido está en unidades de logits. Así, cada faceta se calibra2
+por los evaluados aísla el efecto de qué tan severo o laxo con las clasificaciones dadas por los evaluadores y
+es el evaluador y de la dificultad del ítem. Así, el MMFR es se llevan a la misma escala en un mapa de facetas,
+una generalización del modelo de Rasch1, pues considera como se presenta en la figura 2, de tal manera que es
+el efecto de diferentes facetas para estimar la habilidad de posible analizar todas las facetas en un solo esquema.
+
+... and 3 more matches.
+
+--- Keyword: Discriminación (1 matches) ---
+Context:
+clasificación k-1 en el ítem i por el evaluador j
+de 3 parámetros de Teoría Respuesta al Ítem (TRI) se
+contemplan la dificultad, la discriminación y el azar. Por B :Es la habilidad del evaluado n
+n
+su parte, en la calificación de las preguntas abiertas
+
+--- Keyword: Azar (1 matches) ---
+Context:
+clasificación k-1 en el ítem i por el evaluador j
+de 3 parámetros de Teoría Respuesta al Ítem (TRI) se
+contemplan la dificultad, la discriminación y el azar. Por B :Es la habilidad del evaluado n
+n
+su parte, en la calificación de las preguntas abiertas
+
+--- Keyword: Logístico (1 matches) ---
+Context:
+próximos, que depende de su habilidad, la dificultad
+La particularidad del MMFR consiste en estimar la habilidad del ítem y la severidad del evaluador. Teniendo en cuenta
+del evaluado, teniendo en cuenta las facetas anteriormente la naturaleza del modelo logístico, la escala de medición
+mencionadas. De tal manera que el resultado obtenido está en unidades de logits. Así, cada faceta se calibra2
+por los evaluados aísla el efecto de qué tan severo o laxo con las clasificaciones dadas por los evaluadores y
+
+--- Keyword: Escala (8 matches) ---
+Context:
+próximos, que depende de su habilidad, la dificultad
+La particularidad del MMFR consiste en estimar la habilidad del ítem y la severidad del evaluador. Teniendo en cuenta
+del evaluado, teniendo en cuenta las facetas anteriormente la naturaleza del modelo logístico, la escala de medición
+mencionadas. De tal manera que el resultado obtenido está en unidades de logits. Así, cada faceta se calibra2
+por los evaluados aísla el efecto de qué tan severo o laxo con las clasificaciones dadas por los evaluadores y
+
+Context:
+mencionadas. De tal manera que el resultado obtenido está en unidades de logits. Así, cada faceta se calibra2
+por los evaluados aísla el efecto de qué tan severo o laxo con las clasificaciones dadas por los evaluadores y
+es el evaluador y de la dificultad del ítem. Así, el MMFR es se llevan a la misma escala en un mapa de facetas,
+una generalización del modelo de Rasch1, pues considera como se presenta en la figura 2, de tal manera que es
+el efecto de diferentes facetas para estimar la habilidad de posible analizar todas las facetas en un solo esquema.
+
+Context:
+los evaluados (Linacre, 1994). Vamos a entenderlo.
+Los parámetros del modelo de múltiples facetas de Rasch De manera general se aprecian 5 columnas que, de
+se muestran en la siguiente ecuación: izquierda a derecha, dan información de 1) la escala
+de medición, 2) la severidad de los evaluadores
+P (codificadores), 3) la habilidad de los evaluados, 4)
+
+Context:
+4
+los casos, el asterisco corresponde a un conjunto de FIGURA 2. Mapa del modelo de múltiples facetas de Rasch
+evaluados. En la primera columna se aprecia la escala
+de medición en unidades logits que permite tener una
+Measr -Codificador +Evaluados -Tarea RS1
+
+Context:
+y conforme aumenta el valor de la última columna, los 11 . .
+10 . .
+valores de la escala de logits de la primera columna
+9 . .
+también se incrementan en magnitud.
+
+... and 3 more matches.
+
+--- Keyword: Categoría (4 matches) ---
+Context:
+la forma de expresión, el planteamiento expuesto a través natural de los textos argumentativos.
+¿Cómo se evalúa?
+El proceso de codificación de las preguntas de opción de la categoría 4. Para cada evaluado se cuenta con
+múltiple con única respuesta es de tipo binario, en el que al menos dos evaluadores, con el fin de garantizar
+la respuesta correcta se codifica con 1 y las respuestas confiabilidad y objetividad en el proceso, y se requiere
+
+Context:
+para realizar la codificación de pregunta abierta. Estos Por ejemplo, si los evaluados coinciden en que el texto
+evaluadores se denominan codificadores, pues codifican de un evaluado presenta una clasificación de 3, su
+la respuesta con una clasificación; por ejemplo, para la codificación corresponderá a esa categoría. Sin embargo,
+prueba de comunicación escrita cada codificador asigna si esto no sucede, se apela a un tercer evaluador,
+una clasificación de 1 a 4 de acuerdo al cumplimiento pues la codificación debe reflejar objetividad de las
+
+Context:
+de tareas específicas que se definen en la rúbrica. Se pautas de evaluación. De tal manera que se asigna
+codifica en cuatro categorías ordenadas, de tal manera la codificación más concordante con el tercer evaluador,
+que los textos evaluados en categoría 1 cumplen menos el cual es un miembro del equipo altamente calificado
+requisitos que en 2, aquellos clasificados en 2 menos que para realizar estos procesos de codificación.
+en 3, y los codificados en 3 menos que en los requisitos
+
+Context:
+regla de medición común de los parámetros de las
+16 . (4)
+facetas definidas. Así, por ejemplo, la categoría 1 de 15 .
+14 . .
+la última columna corresponde con los valores bajos
+
+--- Keyword: A (26 matches) ---
+Context:
+habilidades relacionadas con el desarrollo de argumentos codificación. En esta edición, ahondaremos en la
+y conceptos, como es el caso de la pregunta de habilidades calificación de pregunta abierta, exploraremos qué tipo de
+comunicativas o de la prueba específica de arquitectura. A ítems corresponden con esta modalidad y expondremos la
+diferencia de los ítems que habitualmente se aplican en el metodología de calificación que se emplea.
+¿A qué nos referimos con preguntas abiertas?
+
+Context:
+comunicativas o de la prueba específica de arquitectura. A ítems corresponden con esta modalidad y expondremos la
+diferencia de los ítems que habitualmente se aplican en el metodología de calificación que se emplea.
+¿A qué nos referimos con preguntas abiertas?
+Las preguntas abiertas son aquellas en las que el evaluado para la medición de competencias comunicativas para
+elabora una respuesta frente a un tema propuesto y en los exámenes Saber Pro y Saber TyT, y para el módulo
+
+Context:
+¿A qué nos referimos con preguntas abiertas?
+Las preguntas abiertas son aquellas en las que el evaluado para la medición de competencias comunicativas para
+elabora una respuesta frente a un tema propuesto y en los exámenes Saber Pro y Saber TyT, y para el módulo
+relación con la exposición de un enunciado, que se específico de proyecto de arquitectura del examen Saber
+conoce como estímulo. Por ejemplo: indicar, ¿cuál fue Pro. En esta edición ahondaremos sobre las preguntas
+
+Context:
+el procedimiento realizado para despejar una variable abiertas enfocadas en competencias comunicativas.
+de una ecuación?, o ¿considera que se deben imponer
+sanciones a las empresas que contaminen más allá de
+FIGURA 1. Ejemplo de pregunta abierta
+un límite? Como se observa, este tipo de preguntas son
+
+Context:
+FIGURA 1. Ejemplo de pregunta abierta
+un límite? Como se observa, este tipo de preguntas son
+diferentes a las preguntas de opción múltiple con única
+Desde el 1 de julio de 2017, los colombianos
+respuesta y pueden requerir de diversas competencias
+
+... and 21 more matches.
+
+
+==================================================
+
+xxx ANALYSIS OF boletin_ed_8.pdf xxx
+
+--- Keyword: Modelo (27 matches) ---
+Context:
+de los evaluados en distintos niveles educativos. Para consecutivas, para estos módulos se utilizan los modelos
+ello, usa diferentes modelos de calificación que surgen de Teoría de Respuesta al Ítem (TRI). En contraste, un
+del análisis psicométrico, la selección del modelo de módulo que no cumple con las anteriores características
+calificación depende de diferentes factores. En el caso es clasificado como “no adoptado”, para estos módulos
+particular de los exámenes de Estado Saber Pro y Saber se emplea la Teoría Clásica del Test (TCT). Ahondaremos
+
+Context:
+calificación depende de diferentes factores. En el caso es clasificado como “no adoptado”, para estos módulos
+particular de los exámenes de Estado Saber Pro y Saber se emplea la Teoría Clásica del Test (TCT). Ahondaremos
+TyT, la selección del modelo depende de la clasificación sobre amobos modelos más adelante. Además, dentro del
+del módulo. En el Icfes se tienen dos clasificaciones, análisis psicométrico de estos instrumentos de medición se
+módulos genéricos y módulos específicos1, estos últimos tienen en cuenta características tales como, la consistencia
+
+Context:
+cumple con ciertos criterios de calidad en cuanto a la de los ítems.
+1. Esto aplica para el caso de los módulos específicos, ya que los
+genéricos se califican con un modelo específico establecido en la
+Resolución 268 de 2020.
+2
+
+Context:
+La calificación aplicando procedimientos de TCT toma De la primera publicación de Saber al detalle, recordemos
+en consideración las respuestas correctas sobre el total que la TRI se utiliza para medir variables latentes, es
+de preguntas del examen, pues bajo este modelo la decir, variables que no se pueden medir directamente a
+puntuación X obtenida en una prueba se puede expresar en partir de una estimación de las respuestas dadas por los
+términos de un puntaje verdadero V y un error de medición evaluados a un conjunto de preguntas. La TRI permite
+
+Context:
+e que tiende a cero al evaluar una gran cantidad de veces estimar la habilidad de los individuos (conocida como
+el ítem (ver Tabla 1). El parámetro de dificultad, bajo este θ) con base en las respuestas dadas a los ítems y las
+modelo, corresponde a la proporción de evaluados que características de estos, los cuales son estimados durante
+responden correctamente un ítem. Una característica de el proceso de calibración o a través de un proceso de
+la TCT es que no permite realizar comparaciones de los anclaje2. De esta manera, es posible establecer una
+
+... and 22 more matches.
+
+--- Keyword: TRI (22 matches) ---
+Context:
+las diferentes habilidades, conocimientos y destrezas a la confiabilidad de la prueba durante tres aplicaciones
+de los evaluados en distintos niveles educativos. Para consecutivas, para estos módulos se utilizan los modelos
+ello, usa diferentes modelos de calificación que surgen de Teoría de Respuesta al Ítem (TRI). En contraste, un
+del análisis psicométrico, la selección del modelo de módulo que no cumple con las anteriores características
+calificación depende de diferentes factores. En el caso es clasificado como “no adoptado”, para estos módulos
+
+Context:
+Resolución 268 de 2020.
+2
+¿Qué diferencias hay entre TCT y TRI?
+La calificación aplicando procedimientos de TCT toma De la primera publicación de Saber al detalle, recordemos
+en consideración las respuestas correctas sobre el total que la TRI se utiliza para medir variables latentes, es
+
+Context:
+¿Qué diferencias hay entre TCT y TRI?
+La calificación aplicando procedimientos de TCT toma De la primera publicación de Saber al detalle, recordemos
+en consideración las respuestas correctas sobre el total que la TRI se utiliza para medir variables latentes, es
+de preguntas del examen, pues bajo este modelo la decir, variables que no se pueden medir directamente a
+puntuación X obtenida en una prueba se puede expresar en partir de una estimación de las respuestas dadas por los
+
+Context:
+de preguntas del examen, pues bajo este modelo la decir, variables que no se pueden medir directamente a
+puntuación X obtenida en una prueba se puede expresar en partir de una estimación de las respuestas dadas por los
+términos de un puntaje verdadero V y un error de medición evaluados a un conjunto de preguntas. La TRI permite
+e que tiende a cero al evaluar una gran cantidad de veces estimar la habilidad de los individuos (conocida como
+el ítem (ver Tabla 1). El parámetro de dificultad, bajo este θ) con base en las respuestas dadas a los ítems y las
+
+Context:
+evaluada. Teniendo en cuenta que el puntaje promedio de parámetros).
+un evaluado corresponde a la razón entre el número de
+ítems correctos sobre el número de ítems de un examen, Bajo la TRI, la medida de dificultad está en la misma
+si se toman dos aplicaciones con poblaciones diferentes, métrica que la habilidad y busca identificar la habilidad
+aumentos en el puntaje promedio no necesariamente bajo el cual se espera que el 50% de los evaluados
+
+... and 17 more matches.
+
+--- Keyword: Teoría de Respuesta al Ítem (1 matches) ---
+Context:
+las diferentes habilidades, conocimientos y destrezas a la confiabilidad de la prueba durante tres aplicaciones
+de los evaluados en distintos niveles educativos. Para consecutivas, para estos módulos se utilizan los modelos
+ello, usa diferentes modelos de calificación que surgen de Teoría de Respuesta al Ítem (TRI). En contraste, un
+del análisis psicométrico, la selección del modelo de módulo que no cumple con las anteriores características
+calificación depende de diferentes factores. En el caso es clasificado como “no adoptado”, para estos módulos
+
+--- Keyword: Calificación (18 matches) ---
+Context:
+¿CUÁLES SON
+LOS MODELOS DE
+CALIFICACIÓN DE LAS
+PRUEBAS SABER?
+¿CUÁLES SON LOS MODELOS DE
+
+Context:
+PRUEBAS SABER?
+¿CUÁLES SON LOS MODELOS DE
+CALIFICACIÓN DE LAS PRUEBAS SABER?
+El Instituto colombiano para la evaluación de la educación tiene 0, pregunta abierta o escala tipo Likert) o el tamaño
+(Icfes) emplea diferentes modelos psicométricos para poblacional de los evaluados. En cualquier caso, los
+
+Context:
+(Icfes) emplea diferentes modelos psicométricos para poblacional de los evaluados. En cualquier caso, los
+la medición de trazos latentes de los evaluados. En la insumos empleados para el uso de los diferentes modelos
+mayoría de las pruebas, los trazos latentes corresponden de calificación son las respuestas de los evaluados a
+a las habilidades y a los factores asociados al aprendizaje los ítems de la prueba de competencias que aplican los
+de los estudiantes. Cada uno de estos modelos tiene evaluados, de los cuestionarios auxiliares y la información
+
+Context:
+de los estudiantes. Cada uno de estos modelos tiene evaluados, de los cuestionarios auxiliares y la información
+características propias de la medición: el tipo de escala socioeconómica. En esta edición, ahondaremos sobre los
+de respuesta de los ítems (pregunta cerrada, es decir, modelos psicométricos empleados para la calificación
+de selección múltiple con única respuesta donde una de los exámenes del Icfes y profundizaremos sobre sus
+respuesta correcta tiene 1 y una respuesta incorrecta características y diferencias.
+
+Context:
+las diferentes habilidades, conocimientos y destrezas a la confiabilidad de la prueba durante tres aplicaciones
+de los evaluados en distintos niveles educativos. Para consecutivas, para estos módulos se utilizan los modelos
+ello, usa diferentes modelos de calificación que surgen de Teoría de Respuesta al Ítem (TRI). En contraste, un
+del análisis psicométrico, la selección del modelo de módulo que no cumple con las anteriores características
+calificación depende de diferentes factores. En el caso es clasificado como “no adoptado”, para estos módulos
+
+... and 13 more matches.
+
+--- Keyword: Puntaje (5 matches) ---
+Context:
+de preguntas del examen, pues bajo este modelo la decir, variables que no se pueden medir directamente a
+puntuación X obtenida en una prueba se puede expresar en partir de una estimación de las respuestas dadas por los
+términos de un puntaje verdadero V y un error de medición evaluados a un conjunto de preguntas. La TRI permite
+e que tiende a cero al evaluar una gran cantidad de veces estimar la habilidad de los individuos (conocida como
+el ítem (ver Tabla 1). El parámetro de dificultad, bajo este θ) con base en las respuestas dadas a los ítems y las
+
+Context:
+puntajes a través del tiempo, puesto que el parámetro relación entre habilidad estimada de los evaluados y la
+de dificultad es sensible a la habilidad de la población probabilidad de acertar el ítem (teniendo en cuenta sus
+evaluada. Teniendo en cuenta que el puntaje promedio de parámetros).
+un evaluado corresponde a la razón entre el número de
+ítems correctos sobre el número de ítems de un examen, Bajo la TRI, la medida de dificultad está en la misma
+
+Context:
+ítems correctos sobre el número de ítems de un examen, Bajo la TRI, la medida de dificultad está en la misma
+si se toman dos aplicaciones con poblaciones diferentes, métrica que la habilidad y busca identificar la habilidad
+aumentos en el puntaje promedio no necesariamente bajo el cual se espera que el 50% de los evaluados
+implican que los resultados estén mejorando a través contesten correctamente el ítem, y por tanto ítems más
+del tiempo, sino a índices de dificultades diferentes para fáciles reflejan índices de dificultad menores. A diferencia
+
+Context:
+resultado del examen y la habilidad que mide, mientras creciente de la función matemática implementada). Así
+que en TRI, la habilidad es un parámetro del modelo3. mismo, cada evaluado cuenta con un índice de precisión
+del puntaje del examen a través del error estándar de
+Cumpliendo los requerimientos de muestra mínima de medición.
+individuos evaluados para tener estimaciones precisas de
+
+Context:
+y pseudo-azar (c) de los ítems y de habilidad (θ) de por tipo de respuesta, de dificultad, de correlaciones
+i j
+las ecuaciones de la tabla 2 son desconocidos, pero entre las preguntas yel puntaje del examen. Además
+conocemos las respuestas de los evaluados a las la precisión del instrumento se mide a través de la
+preguntas de cada una de las pruebas. Con base en ese evaluación por consistencia interna de la prueba la cual
+
+--- Keyword: Dificultad (13 matches) ---
+Context:
+términos de un puntaje verdadero V y un error de medición evaluados a un conjunto de preguntas. La TRI permite
+e que tiende a cero al evaluar una gran cantidad de veces estimar la habilidad de los individuos (conocida como
+el ítem (ver Tabla 1). El parámetro de dificultad, bajo este θ) con base en las respuestas dadas a los ítems y las
+modelo, corresponde a la proporción de evaluados que características de estos, los cuales son estimados durante
+responden correctamente un ítem. Una característica de el proceso de calibración o a través de un proceso de
+
+Context:
+la TCT es que no permite realizar comparaciones de los anclaje2. De esta manera, es posible establecer una
+puntajes a través del tiempo, puesto que el parámetro relación entre habilidad estimada de los evaluados y la
+de dificultad es sensible a la habilidad de la población probabilidad de acertar el ítem (teniendo en cuenta sus
+evaluada. Teniendo en cuenta que el puntaje promedio de parámetros).
+un evaluado corresponde a la razón entre el número de
+
+Context:
+evaluada. Teniendo en cuenta que el puntaje promedio de parámetros).
+un evaluado corresponde a la razón entre el número de
+ítems correctos sobre el número de ítems de un examen, Bajo la TRI, la medida de dificultad está en la misma
+si se toman dos aplicaciones con poblaciones diferentes, métrica que la habilidad y busca identificar la habilidad
+aumentos en el puntaje promedio no necesariamente bajo el cual se espera que el 50% de los evaluados
+
+Context:
+aumentos en el puntaje promedio no necesariamente bajo el cual se espera que el 50% de los evaluados
+implican que los resultados estén mejorando a través contesten correctamente el ítem, y por tanto ítems más
+del tiempo, sino a índices de dificultades diferentes para fáciles reflejan índices de dificultad menores. A diferencia
+ambas poblaciones. de la TCT, en la TRI existe un supuesto de invarianza
+de los parámetros de los ítems, es decir, que los
+
+Context:
+TABLA 2. Modelos TRI
+Modelo Número de parámetros Función matemática
+Dos parámetros (dificultad
+1
+Modelo de dos b y discriminación a) P(X = 1| θ , a , b )=
+
+... and 8 more matches.
+
+--- Keyword: Discriminación (6 matches) ---
+Context:
+Dos parámetros (dificultad
+1
+Modelo de dos b y discriminación a) P(X = 1| θ , a , b )=
+parámetros i i ij j i i -a (θ - b )
+logístico (2PL) asociados con el ítem y 1 + e i j i
+
+Context:
+Tres parámetros (dificultad b,
+i 1 - c
+Modelo de tres discriminación a y pseudo- P(X = 1| θ , a , b , c )= c + i
+parámetros i
+logístico (3PL) azar c i ) asociados con el ítem ij j i i i i 1 + e -a i (θ j - b i )
+
+Context:
+4
+¿Por qué son complementarios los modelos TCT y TRI?
+Los parámetros de dificultad (b), discriminación (a) omisión de respuesta (no respuesta), de distribuciones
+i i
+y pseudo-azar (c) de los ítems y de habilidad (θ) de por tipo de respuesta, de dificultad, de correlaciones
+
+Context:
+competencias ciudadanas, comunicación escrita e compone del parámetro asociado con la habilidad de los
+inglés. Para algunos programas se ofertan módulos de evaluados y tres parámetros asociados a características
+competencias específicas que, según su Núcleo Básico de los ítems: dificultad (b), discriminación (a) y pseudo-
+i i
+de Conocimiento (NBC), indagan sobre competencias azar (c). Por su parte, un modelo 2PL se compone del
+
+Context:
+puntuales. parámetro asociado con la habilidad de los evaluados
+y dos parámetros asociados a características de los
+Un elemento particular tanto de la aplicación del examen ítems: dificultad (b), discriminación (a). Es decir, para un
+i i
+Saber 11° como de los módulos de competencias modelo 2PL no se analiza el parámetro de pseudo-azar
+
+... and 1 more matches.
+
+--- Keyword: Azar (5 matches) ---
+Context:
+Modelo de tres discriminación a y pseudo- P(X = 1| θ , a , b , c )= c + i
+parámetros i
+logístico (3PL) azar c i ) asociados con el ítem ij j i i i i 1 + e -a i (θ j - b i )
+y habilidad estimada θ
+j
+
+Context:
+Los parámetros de dificultad (b), discriminación (a) omisión de respuesta (no respuesta), de distribuciones
+i i
+y pseudo-azar (c) de los ítems y de habilidad (θ) de por tipo de respuesta, de dificultad, de correlaciones
+i j
+las ecuaciones de la tabla 2 son desconocidos, pero entre las preguntas yel puntaje del examen. Además
+
+Context:
+competencias específicas que, según su Núcleo Básico de los ítems: dificultad (b), discriminación (a) y pseudo-
+i i
+de Conocimiento (NBC), indagan sobre competencias azar (c). Por su parte, un modelo 2PL se compone del
+i
+puntuales. parámetro asociado con la habilidad de los evaluados
+
+Context:
+Un elemento particular tanto de la aplicación del examen ítems: dificultad (b), discriminación (a). Es decir, para un
+i i
+Saber 11° como de los módulos de competencias modelo 2PL no se analiza el parámetro de pseudo-azar
+genéricas de los exámenes Saber Pro y Saber TyT es que (c). Como se mencionó anteriormente la elección del
+i
+
+Context:
+θ
+que en un modelo 3PL se reporta adicionalmente el pseudo
+azar. En la figura 1 se observa la curva característica de un
+ítem de la prueba Saber TyT estimado bajo el modelo 2PL,
+y podemos observar que para una habilidad θ que para 1
+
+--- Keyword: 3PL (5 matches) ---
+Context:
+Modelo de tres discriminación a y pseudo- P(X = 1| θ , a , b , c )= c + i
+parámetros i
+logístico (3PL) azar c i ) asociados con el ítem ij j i i i i 1 + e -a i (θ j - b i )
+y habilidad estimada θ
+j
+
+Context:
+TyT, los evaluados presentan de manera obligatoria el al que pertenezca (en el caso de Saber Pro y TyT). Al
+componente de competencias genéricas compuesto por contar con el tamaño de muestra adecuado es posible
+los módulos delectura crítica, razonamiento cuantitativo, emplear modelos de TRI, que, para el caso de 3PL se
+competencias ciudadanas, comunicación escrita e compone del parámetro asociado con la habilidad de los
+inglés. Para algunos programas se ofertan módulos de evaluados y tres parámetros asociados a características
+
+Context:
+discriminación se observa para un modelo 2PL, mientras -4 -1.71 4
+θ
+que en un modelo 3PL se reporta adicionalmente el pseudo
+azar. En la figura 1 se observa la curva característica de un
+ítem de la prueba Saber TyT estimado bajo el modelo 2PL,
+
+Context:
+y 4 (mayor habilidad ) de -1.71 la probabilidad de acierto
+es del 50%, mientras que para un ítem diferente de Saber
+11° cuya habilidad ha sido estimada bajo el modelo 3PL .545
+podemos analizar que con una probabilidad del 9% un
+estudiante con muy baja habilidad (-4) lograría contestar
+
+Context:
+ed
+dadilibaborP
+Curva Característica del Ítem - 3PL
+Fuente: Icfes, 2020
+Bibliografía
+
+--- Keyword: Logístico (2 matches) ---
+Context:
+Modelo de dos b y discriminación a) P(X = 1| θ , a , b )=
+parámetros i i ij j i i -a (θ - b )
+logístico (2PL) asociados con el ítem y 1 + e i j i
+habilidad estimada θ
+j
+
+Context:
+Modelo de tres discriminación a y pseudo- P(X = 1| θ , a , b , c )= c + i
+parámetros i
+logístico (3PL) azar c i ) asociados con el ítem ij j i i i i 1 + e -a i (θ j - b i )
+y habilidad estimada θ
+j
+
+--- Keyword: Escala (2 matches) ---
+Context:
+¿CUÁLES SON LOS MODELOS DE
+CALIFICACIÓN DE LAS PRUEBAS SABER?
+El Instituto colombiano para la evaluación de la educación tiene 0, pregunta abierta o escala tipo Likert) o el tamaño
+(Icfes) emplea diferentes modelos psicométricos para poblacional de los evaluados. En cualquier caso, los
+la medición de trazos latentes de los evaluados. En la insumos empleados para el uso de los diferentes modelos
+
+Context:
+a las habilidades y a los factores asociados al aprendizaje los ítems de la prueba de competencias que aplican los
+de los estudiantes. Cada uno de estos modelos tiene evaluados, de los cuestionarios auxiliares y la información
+características propias de la medición: el tipo de escala socioeconómica. En esta edición, ahondaremos sobre los
+de respuesta de los ítems (pregunta cerrada, es decir, modelos psicométricos empleados para la calificación
+de selección múltiple con única respuesta donde una de los exámenes del Icfes y profundizaremos sobre sus
+
+--- Keyword: A (47 matches) ---
+Context:
+(Icfes) emplea diferentes modelos psicométricos para poblacional de los evaluados. En cualquier caso, los
+la medición de trazos latentes de los evaluados. En la insumos empleados para el uso de los diferentes modelos
+mayoría de las pruebas, los trazos latentes corresponden de calificación son las respuestas de los evaluados a
+a las habilidades y a los factores asociados al aprendizaje los ítems de la prueba de competencias que aplican los
+de los estudiantes. Cada uno de estos modelos tiene evaluados, de los cuestionarios auxiliares y la información
+
+Context:
+la medición de trazos latentes de los evaluados. En la insumos empleados para el uso de los diferentes modelos
+mayoría de las pruebas, los trazos latentes corresponden de calificación son las respuestas de los evaluados a
+a las habilidades y a los factores asociados al aprendizaje los ítems de la prueba de competencias que aplican los
+de los estudiantes. Cada uno de estos modelos tiene evaluados, de los cuestionarios auxiliares y la información
+características propias de la medición: el tipo de escala socioeconómica. En esta edición, ahondaremos sobre los
+
+Context:
+¿Por qué se contemplan diferentes modelos psicométricos?
+En Colombia, el Icfes aplica exámenes que buscan medir estructura interna y si estos se mantienen estables respecto
+las diferentes habilidades, conocimientos y destrezas a la confiabilidad de la prueba durante tres aplicaciones
+de los evaluados en distintos niveles educativos. Para consecutivas, para estos módulos se utilizan los modelos
+ello, usa diferentes modelos de calificación que surgen de Teoría de Respuesta al Ítem (TRI). En contraste, un
+
+Context:
+del módulo. En el Icfes se tienen dos clasificaciones, análisis psicométrico de estos instrumentos de medición se
+módulos genéricos y módulos específicos1, estos últimos tienen en cuenta características tales como, la consistencia
+a su vez se clasifican en dos, módulos adoptados y interna (la confiabilidad sobre lo que se pretende medir),
+módulos no adoptados. Un módulo es “adoptado”, si los tamaños poblacionales por aplicación y los parámetros
+cumple con ciertos criterios de calidad en cuanto a la de los ítems.
+
+Context:
+a su vez se clasifican en dos, módulos adoptados y interna (la confiabilidad sobre lo que se pretende medir),
+módulos no adoptados. Un módulo es “adoptado”, si los tamaños poblacionales por aplicación y los parámetros
+cumple con ciertos criterios de calidad en cuanto a la de los ítems.
+1. Esto aplica para el caso de los módulos específicos, ya que los
+genéricos se califican con un modelo específico establecido en la
+
+... and 42 more matches.
+
+
+==================================================

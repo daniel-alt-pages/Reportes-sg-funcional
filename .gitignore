@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# Next.js / Node
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# Firebase
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+pubsub-debug.log*
+ui-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.claude/
+.idea/
+
+# Project specific
+output/
+cache/
+*.mp4
+*.xlsx
+fondo_16_9.svg
+reporte_detalle.txt
+simulacion.txt

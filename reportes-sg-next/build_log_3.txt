@@ -1,0 +1,31 @@
+
+> reportes-sg-next@0.1.0 build
+> next build
+
+ÔÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\Daniel\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\Daniel\Downloads\reportes-sg-next\package-lock.json
+
+Ôû▓ Next.js 16.1.2 (Turbopack)
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 8.7s
+  Running TypeScript ...
+Failed to compile.
+
+./src/components/AnalisisArea.tsx:198:86
+Type error: No overload matches this call.
+  The last overload gave the following error.
+    Object literal may only specify known properties, and 'className' does not exist in type 'Partial<unknown> & Attributes'.
+
+  196 |                     <div className="flex items-center gap-4">
+  197 |                         <div className={`p-2 rounded-lg bg-gradient-to-br ${config.gradient} shadow-lg text-white`}>
+> 198 |                             {React.cloneElement(config.icon as React.ReactElement, { className: 'w-6 h-6' })}
+      |                                                                                      ^
+  199 |                         </div>
+  200 |                         <div>
+  201 |                             <h2 className="text-xl font-bold text-white tracking-tight leading-none">{config.label}</h2>
+Next.js build worker exited with code: 1 and signal: null

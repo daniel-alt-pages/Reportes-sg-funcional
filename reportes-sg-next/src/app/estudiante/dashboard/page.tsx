@@ -1,0 +1,600 @@
+'use client';
+import { useEffect, useState, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
+
+interface Puntaje {
+    puntaje: number;
+    correctas: number;
+    total_preguntas: number;
+}
+
+interface Estudiante {
+    informacion_personal: {
+        nombres: string;
+        apellidos: string;
+        numero_identificacion: string;
+        institucion: string;
+    };
+    puntaje_global: number;
+    puntajes: Record<string, Puntaje>;
+    sesiones?: string[];
+}
+
+const materias = [
+    { key: 'lectura crítica', label: 'Lectura Crítica', color: '#ec4899', bg: 'bg-pink-50', text: 'text-pink-600', border: 'border-pink-200' },
+    { key: 'matemáticas', label: 'Matemáticas', color: '#3b82f6', bg: 'bg-blue-50', text: 'text-blue-600', border: 'border-blue-200' },
+    { key: 'sociales y ciudadanas', label: 'Ciencias Sociales', color: '#f59e0b', bg: 'bg-amber-50', text: 'text-amber-600', border: 'border-amber-200' },
+    { key: 'ciencias naturales', label: 'Ciencias Naturales', color: '#10b981', bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-200' },
+    { key: 'inglés', label: 'Inglés', color: '#8b5cf6', bg: 'bg-purple-50', text: 'text-purple-600', border: 'border-purple-200' },
+];
+
+export default function StudentDashboard() {
+    const router = useRouter();
+    const [estudiante, setEstudiante] = useState<Estudiante | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [errorMsg, setErrorMsg] = useState('');
+
+    const [rankingInfo, setRankingInfo] = useState({ puesto: 0, total: 0, top5: [] as any[] });
+    const [allStudents, setAllStudents] = useState<any[]>([]);
+    const [rankingModal, setRankingModal] = useState<{ title: string, students: any[], color: string, subjectKey: string } | null>(null);
+    const [welcomeModal, setWelcomeModal] = useState(false);
+
+    const loadData = useCallback(async () => {
+        if (typeof window === 'undefined') return;
+
+        const id = localStorage.getItem('student_id');
+
+        if (!id) {
+            console.warn("No student_id");
+            setErrorMsg("Sesión expirada.");
+            setLoading(false);
+            return;
+        }
+
+        // 1. Cargar Ranking Ligero (Parallel Fetch)
+        const fetchRanking = async () => {
+            try {
+                const res = await fetch(`/data/ranking_index.json?v=${new Date().getTime()}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    const sorted = [...data.estudiantes].sort((a: any, b: any) =>
+                        (Number(b.puntaje_global) || 0) - (Number(a.puntaje_global) || 0)
+                    );
+
+                    setAllStudents(data.estudiantes);
+
+                    const myIndex = sorted.findIndex((e: any) => String(e.informacion_personal.numero_identificacion).trim() === String(id).trim());
+
+                    setRankingInfo({
+                        puesto: myIndex + 1,
+                        total: sorted.length,
+                        top5: sorted.slice(0, 5)
+                    });
+                }
+            } catch (e) {
+                console.error("Error loading ranking", e);
+            }
+        };
+
+        // 2. Cargar Datos Estudiante (Optimizado)
+        const fetchEstudiante = async () => {
+            // Try to load from cache first for instant display
+            const cachedData = localStorage.getItem('student_data');
+            if (cachedData) {
+                try {
+                    const parsed = JSON.parse(cachedData);
+                    if (String(parsed.informacion_personal.numero_identificacion).trim() === String(id).trim()) {
+                        setEstudiante(parsed);
+                    }
+                } catch (e) {
+                    console.error("Error parsing cached student data", e);
+                    localStorage.removeItem('student_data');
+                }
+            }
+
+            try {
+                const targetId = String(id).trim();
+                const res = await fetch(`/data/estudiantes/${targetId}.json?v=${new Date().getTime()}`);
+
+                if (res.ok) {
+                    const found = await res.json();
+                    setEstudiante(found);
+                    try { localStorage.setItem('student_data', JSON.stringify(found)); } catch (e) { }
+                } else {
+                    // If network fetch fails, and no valid cached data was set, then throw error
+                    if (!estudiante) { // Only throw if student data is not already set from cache
+                        throw new Error(`Tu identificación (${targetId}) no tiene resultados detallados generados aún.`);
+                    }
+                }
+            } catch (err: any) {
+                console.error(err);
+                setErrorMsg(err.message || "Error cargando información.");
+            }
+        };
+
+        await Promise.all([fetchEstudiante(), fetchRanking()]);
+        setLoading(false);
+
+        // Show welcome modal only once per session
+        if (!sessionStorage.getItem('welcome_shown')) {
+            setTimeout(() => setWelcomeModal(true), 1000);
+            sessionStorage.setItem('welcome_shown', 'true');
+        }
+
+    }, []); // Removed 'estudiante' dependency to fix infinite loop
+
+    useEffect(() => {
+        loadData();
+    }, [loadData]);
+
+    const handleLogout = () => {
+        localStorage.removeItem('student_id');
+        localStorage.removeItem('student_name');
+        router.replace('/estudiante');
+    };
+
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-slate-50 flex items-center justify-center flex-col gap-4">
+                <div className="w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+                <p className="text-slate-500 font-medium animate-pulse">Cargando resultados...</p>
+            </div>
+        );
+    }
+
+    if (errorMsg) {
+        return (
+            <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+                <div className="bg-white p-8 rounded-2xl shadow-xl max-w-md text-center border border-red-100">
+                    <div className="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">⚠️</div>
+                    <h2 className="text-xl font-bold text-slate-800 mb-2">Error de Acceso</h2>
+                    <p className="text-slate-500 mb-6">{errorMsg}</p>
+                    <button onClick={handleLogout} className="w-full py-3 bg-slate-800 text-white rounded-xl font-bold hover:bg-slate-900 transition-colors">
+                        Volver al Inicio
+                    </button>
+                </div>
+            </div>
+        );
+    }
+
+    if (!estudiante) return null;
+
+    const totalCorrectas = Object.values(estudiante.puntajes).reduce((acc, p) => acc + (p.correctas || 0), 0);
+    const totalPreguntas = Object.values(estudiante.puntajes).reduce((acc, p) => acc + (p.total_preguntas || 0), 0);
+    const porcentajeGlobal = totalPreguntas > 0 ? Math.round((totalCorrectas / totalPreguntas) * 100) : 0;
+
+    const getNivel = (puntaje: number) => {
+        if (puntaje >= 400) return {
+            text: 'SUPERIOR',
+            color: 'bg-emerald-500',
+            icon: <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" /></svg>,
+            bgSoft: 'bg-emerald-50',
+            textCol: 'text-emerald-700'
+        };
+        if (puntaje >= 325) return {
+            text: 'ALTO',
+            color: 'bg-blue-500',
+            icon: <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>,
+            bgSoft: 'bg-blue-50',
+            textCol: 'text-blue-700'
+        };
+        if (puntaje >= 250) return {
+            text: 'MEDIO',
+            color: 'bg-amber-500',
+            icon: <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" /></svg>,
+            bgSoft: 'bg-amber-50',
+            textCol: 'text-amber-700'
+        };
+        return {
+            text: 'EN DESARROLLO',
+            color: 'bg-red-500',
+            icon: <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" /></svg>,
+            bgSoft: 'bg-red-50',
+            textCol: 'text-red-700'
+        };
+    };
+    const nivel = getNivel(estudiante.puntaje_global);
+
+    return (
+        <div className="min-h-screen bg-slate-50 text-slate-900 font-sans relative">
+            {/* Watermark responsive and overlay */}
+            <img
+                src="/fondo_16_9.svg"
+                alt=""
+                className="fixed inset-0 z-[30] w-full h-full object-cover opacity-30 pointer-events-none select-none"
+                draggable="false"
+            />
+            {/* Header */}
+            <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/60">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:h-20 flex flex-col sm:flex-row justify-between items-center gap-4">
+
+                    {/* User Info & Logo */}
+                    <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-start">
+                        <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg shadow-indigo-500/30 shrink-0">
+                            SG
+                        </div>
+                        <div className="min-w-0">
+                            <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 tracking-tight truncate">
+                                {estudiante.informacion_personal.nombres.split(' ')[0]} {estudiante.informacion_personal.apellidos.split(' ')[0]}
+                            </h1>
+                            <p className="text-xs md:text-sm font-semibold text-slate-400 uppercase tracking-widest truncate">{estudiante.informacion_personal.numero_identificacion}</p>
+                        </div>
+                    </div>
+
+                    {/* Navigation Actions */}
+                    <div className="flex gap-3 items-center w-full sm:w-auto">
+                        <div className="flex bg-slate-100 p-1 rounded-2xl flex-1 sm:flex-none">
+                            <button
+                                onClick={() => router.push('/estudiante/estadisticas')}
+                                className="flex-1 sm:flex-none px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-600 hover:bg-white hover:shadow-sm hover:text-indigo-600"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                                <span>Métricas</span>
+                            </button>
+                            <button
+                                onClick={() => router.push('/estudiante/analisis')}
+                                className="flex-1 sm:flex-none px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-600 hover:bg-white hover:shadow-sm hover:text-indigo-600"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                                <span>Respuestas</span>
+                            </button>
+                        </div>
+                        <button
+                            onClick={handleLogout}
+                            className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center bg-red-50 hover:bg-red-100 text-red-600 rounded-2xl transition-colors hover:scale-105 active:scale-95 shrink-0"
+                            title="Cerrar Sesión"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main className="max-w-7xl mx-auto px-6 py-10 space-y-10">
+
+                {/* Dashboard Grid System v2 - More Robust */}
+                <div className="flex flex-col gap-6">
+
+                    {/* Top Row: Global Score (Big) + Key Stats (Right) */}
+                    <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                        {/* Tarjeta Principal Puntaje Global */}
+                        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white rounded-[2rem] p-6 sm:p-8 relative overflow-hidden group shadow-2xl flex flex-col justify-between min-h-[320px] transition-all hover:shadow-indigo-500/20">
+                            {/* Blob decorativo animado */}
+                            <div className="absolute -top-10 -right-10 w-64 h-64 bg-indigo-500/30 rounded-full blur-[80px] pointer-events-none group-hover:bg-indigo-400/40 transition-colors duration-500"></div>
+                            <div className="absolute bottom-0 left-0 w-40 h-40 bg-purple-500/10 rounded-full blur-[60px] pointer-events-none"></div>
+
+                            {/* Contenido Superior */}
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-2 mb-4 opacity-80">
+                                    <span className="w-1 h-4 bg-indigo-400 rounded-full"></span>
+                                    <p className="text-sm font-bold uppercase tracking-widest text-indigo-200">Puntaje Global</p>
+                                </div>
+                                <div className="flex items-baseline gap-2">
+                                    <h2 className="text-7xl sm:text-8xl md:text-9xl font-black text-white tracking-tighter leading-none score-number">
+                                        {estudiante.puntaje_global}
+                                    </h2>
+                                </div>
+                                <p className="text-indigo-300 font-medium mt-1 text-lg md:text-xl">de 500 posibles</p>
+                            </div>
+
+                            {/* Contenido Inferior (Nivel) - Separado visualmente */}
+                            <div className="relative z-10 mt-8">
+                                <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/10 hover:bg-white/15 transition-colors">
+                                    <span className="text-2xl shadow-sm filter drop-shadow-lg">{nivel.icon}</span>
+                                    <div className="flex flex-col">
+                                        <span className="text-[10px] uppercase tracking-wider text-indigo-200 font-bold leading-tight">Nivel de Desempeño</span>
+                                        <span className={`text-sm font-black tracking-wide ${nivel.color.replace('bg-', 'text-').replace('-500', '-300')}`}>
+                                            {nivel.text}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Key Stats Cards + Position Card */}
+                        <div className="lg:col-span-2 flex flex-col gap-6 h-full">
+
+                            {/* Grid de Stats (Aciertos + Efectividad) */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                {/* Stat Card 1: Aciertos */}
+                                <div className="bg-white rounded-[2rem] p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="p-3 bg-emerald-50 rounded-2xl text-emerald-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded-lg text-xs">+2.5% vs promedio</span>
+                                    </div>
+                                    <div>
+                                        <p className="text-slate-400 text-xs md:text-sm font-bold uppercase tracking-wider mb-1">Aciertos Totales</p>
+                                        <p className="text-4xl md:text-5xl font-black text-slate-800 tracking-tight">{totalCorrectas} <span className="text-lg md:text-xl text-slate-400 font-medium">/ {totalPreguntas}</span></p>
+                                    </div>
+                                </div>
+
+                                {/* Stat Card 2: Efectividad */}
+                                <div className="bg-white rounded-[2rem] p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group relative flex flex-col justify-between">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="p-3 bg-blue-50 rounded-2xl text-blue-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-blue-600 font-bold bg-blue-50 px-3 py-1 rounded-lg text-xs flex items-center gap-2 cursor-help" title="Porcentaje de respuestas correctas">
+                                            Efectividad <span className="opacity-50">?</span>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <p className="text-slate-400 text-xs md:text-sm font-bold uppercase tracking-wider mb-1">Porcentaje</p>
+                                        <p className="text-4xl md:text-5xl font-black text-slate-800 tracking-tight">{porcentajeGlobal}%</p>
+                                    </div>
+                                    {/* Mobile Tooltip Hint */}
+                                    <div className="absolute top-2 right-2 md:hidden opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 text-white text-[10px] p-2 rounded shadow-lg z-20 pointer-events-none">
+                                        % de respuestas correctas
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* My Position Card (Moved here) */}
+                            <div
+                                onClick={() => router.push('/estudiante/ranking')}
+                                className="bg-gradient-to-br from-purple-50 to-white rounded-[2rem] p-6 sm:px-8 border border-purple-100 shadow-sm hover:shadow-md transition-all cursor-pointer group hover:-translate-y-1 flex flex-row items-center justify-between min-h-[140px]"
+                            >
+                                <div>
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <div className="p-2 bg-white rounded-xl text-purple-600 shadow-sm border border-purple-50 group-hover:scale-110 transition-transform">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                                        </div>
+                                        <p className="text-purple-800/60 text-xs font-bold uppercase tracking-widest">Tu Posición Global</p>
+                                    </div>
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-5xl font-black text-purple-900 tracking-tighter">
+                                            #{rankingInfo.puesto}
+                                        </span>
+                                        <span className="text-sm font-bold text-purple-400">
+                                            / {rankingInfo.total} Geniesitos
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="hidden sm:flex items-center gap-2 text-purple-600 font-bold bg-white px-4 py-2 rounded-full text-xs shadow-sm border border-purple-50 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                    Ver Ranking <span className="text-lg leading-none">&rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </div>
+
+                {/* Materias Grid */}
+                <section>
+                    <div className="flex items-center justify-between mb-6">
+                        <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+                            <span className="w-2 h-6 bg-indigo-600 rounded-full"></span>
+                            Resultados por Área
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {materias.map((materia) => {
+                            const data = estudiante.puntajes[materia.key] || { puntaje: 0, correctas: 0, total_preguntas: 0 };
+                            const porc = data.total_preguntas > 0 ? Math.round((data.correctas / data.total_preguntas) * 100) : 0;
+
+                            return (
+                                <div
+                                    key={materia.key}
+                                    onClick={() => router.push(`/estudiante/analisis?materia=${encodeURIComponent(materia.key)}`)}
+                                    className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden cursor-pointer"
+                                >
+                                    <div className={`h-2 w-full ${materia.bg.replace('bg-', 'bg-gradient-to-r from-')}-400 to-${materia.bg.replace('bg-', '')}-600`}></div>
+                                    <div className="p-6">
+                                        <div className="flex justify-between items-start mb-4">
+                                            <div className="flex items-center gap-3">
+                                                <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl ${materia.bg} ${materia.text}`}>
+                                                    {materia.key === 'matemáticas' && <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>}
+                                                    {materia.key === 'lectura crítica' && <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>}
+                                                    {materia.key === 'sociales y ciudadanas' && <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
+                                                    {materia.key === 'ciencias naturales' && <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>}
+                                                    {materia.key === 'inglés' && <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>}
+                                                </div>
+                                                <div>
+                                                    <h3 className="font-bold text-slate-800 leading-tight group-hover:text-indigo-600 transition-colors md:text-lg">{materia.label}</h3>
+                                                    <p className="text-xs text-slate-400 font-medium">Clic para ver detalles &rarr;</p>
+                                                </div>
+                                            </div>
+                                            <div className="text-right">
+                                                <span className={`text-2xl md:text-3xl font-black ${materia.text}`}>
+                                                    {data.puntaje}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-3">
+                                            <div className="flex justify-between text-xs font-bold text-slate-500 uppercase tracking-wide">
+                                                <span>Progreso</span>
+                                                <span>{porc}%</span>
+                                            </div>
+                                            <div className="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
+                                                <div
+                                                    className={`h-full rounded-full transition-all duration-1000 ease-out group-hover:scale-105 origin-left`}
+                                                    style={{ width: `${porc}%`, backgroundColor: materia.color }}
+                                                ></div>
+                                            </div>
+                                            <div className="flex justify-between items-center text-xs pt-2">
+                                                <span className="px-2 py-1 rounded bg-slate-50 text-slate-600 font-medium border border-slate-100">
+                                                    {data.correctas} / {data.total_preguntas} Aciertos
+                                                </span>
+                                            </div>
+
+                                            {/* Sección de Superados */}
+                                            {allStudents.length > 0 && (
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        const currentScore = data.puntaje;
+                                                        const outperformed = allStudents.filter(s => {
+                                                            const sScore = s.puntajes?.[materia.key]?.puntaje || 0;
+                                                            return sScore < currentScore;
+                                                        }).sort((a, b) => (b.puntajes[materia.key]?.puntaje || 0) - (a.puntajes[materia.key]?.puntaje || 0));
+
+                                                        setRankingModal({
+                                                            title: materia.label,
+                                                            students: outperformed,
+                                                            color: materia.text,
+                                                            subjectKey: materia.key
+                                                        });
+                                                    }}
+                                                    className={`mt-4 w-full py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 group/btn hover:scale-[1.02] active:scale-[0.98] ${materia.bg} border ${materia.border}`}
+                                                >
+                                                    <span className={`text-[10px] font-bold uppercase tracking-wider ${materia.text} opacity-80`}>
+                                                        Superaste a
+                                                    </span>
+                                                    <div className={`flex items-center gap-1 bg-white px-2 py-0.5 rounded-md shadow-sm border ${materia.border}`}>
+                                                        <span className={`text-xs font-black ${materia.text}`}>
+                                                            {allStudents.filter(s => (s.puntajes?.[materia.key]?.puntaje || 0) < data.puntaje).length}
+                                                        </span>
+                                                    </div>
+                                                    <span className={`text-[10px] font-bold ${materia.text} opacity-80`}>
+                                                        Geniesitos
+                                                    </span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" className={`w-3 h-3 ${materia.text} opacity-60 group-hover/btn:translate-x-0.5 transition-transform`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                                                    </svg>
+                                                </button>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+
+                        {/* Tarjeta Logo Decorativa (Relleno del Grid) */}
+                        <div className="hidden lg:flex bg-white rounded-2xl border border-slate-100 shadow-sm items-center justify-center overflow-hidden">
+                            <img
+                                src="/seamsogenios_logo_hr.svg"
+                                alt="Seamos Genios"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Validation for Modal to avoid hydration issues */}
+                    {rankingModal && (
+                        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                            <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setRankingModal(null)}></div>
+                            <div className="bg-white rounded-3xl shadow-2xl w-full max-w-lg max-h-[80vh] flex flex-col relative z-10 overflow-hidden animate-in fade-in zoom-in duration-200">
+                                <div className={`p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50`}>
+                                    <div>
+                                        <h3 className={`text-xl font-bold ${rankingModal.color}`}>
+                                            {rankingModal.title}
+                                        </h3>
+                                        <p className="text-slate-500 text-sm font-medium">
+                                            Superaste a {rankingModal.students.length} Geniesitos
+                                        </p>
+                                    </div>
+                                    <button
+                                        onClick={() => setRankingModal(null)}
+                                        className="p-2 hover:bg-slate-100 rounded-full text-slate-400 hover:text-slate-600 transition-colors"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                                    </button>
+                                </div>
+                                <div className="overflow-y-auto p-4 space-y-2">
+                                    {rankingModal.students.length > 0 ? (
+                                        rankingModal.students.map((st, idx) => (
+                                            <div key={idx} className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-colors">
+                                                <div className="flex items-center gap-3">
+                                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white ${rankingModal.color.replace('text-', 'bg-').replace('600', '500')}`}>
+                                                        {idx + 1}
+                                                    </div>
+                                                    <div className="flex flex-col">
+                                                        <span className="text-slate-700 font-bold text-sm capitalize">
+                                                            {st.informacion_personal.nombres.toLowerCase()} {st.informacion_personal.apellidos.split(' ')[0].toLowerCase()}
+                                                        </span>
+                                                        <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
+                                                            {st.informacion_personal.institucion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <span className={`text-lg font-black ${rankingModal.color}`}>
+                                                    {st.puntajes[rankingModal.subjectKey]?.puntaje || 0}
+                                                </span>
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <div className="text-center py-10 text-slate-400">
+                                            <p>No hay datos disponibles.</p>
+                                        </div>
+                                    )}
+                                </div>
+                                <div className="p-4 border-t border-slate-100 bg-slate-50 text-center text-xs text-slate-400">
+                                    Seamos Genios Colombia
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Welcome / Performance Modal */}
+                    {welcomeModal && estudiante && (
+                        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-in fade-in duration-300">
+                            <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onClick={() => setWelcomeModal(false)}></div>
+                            <div className="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-md relative z-10 overflow-hidden text-center p-8 sm:p-10 transform transition-all scale-100">
+                                {estudiante.puntaje_global >= 320 ? (
+                                    <>
+                                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
+                                        <div className="w-24 h-24 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-emerald-500/20 text-5xl animate-bounce">
+                                            🏆
+                                        </div>
+                                        <h3 className="text-3xl font-black text-slate-800 mb-3 tracking-tight">
+                                            ¡Increíble, Geniesito!
+                                        </h3>
+                                        <p className="text-slate-500 font-medium mb-8 leading-relaxed">
+                                            Tu puntaje de <strong className="text-emerald-600 text-xl">{estudiante.puntaje_global}</strong> es sobresaliente. Estás demostrando que con esfuerzo todo es posible. ¡Sigue brillando!
+                                        </p>
+                                        <button
+                                            onClick={() => setWelcomeModal(false)}
+                                            className="w-full py-4 bg-emerald-600 text-white rounded-2xl font-bold text-lg shadow-xl shadow-emerald-600/30 hover:bg-emerald-700 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                                        >
+                                            ¡Gracias, vamos por más!
+                                        </button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600"></div>
+                                        <div className="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/20 text-5xl animate-pulse">
+                                            🚀
+                                        </div>
+                                        <h3 className="text-3xl font-black text-slate-800 mb-3 tracking-tight">
+                                            ¡Tú puedes, Geniesito!
+                                        </h3>
+                                        <p className="text-slate-500 font-medium mb-8 leading-relaxed">
+                                            Obtuviste <strong className="text-blue-600 text-xl">{estudiante.puntaje_global}</strong> puntos. Es un buen comienzo, pero sabemos que tu potencial es infinito. ¡Revisa tus fallos y vuelve más fuerte!
+                                        </p>
+                                        <button
+                                            onClick={() => setWelcomeModal(false)}
+                                            className="w-full py-4 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                                        >
+                                            ¡Voy a mejorar!
+                                        </button>
+                                    </>
+                                )}
+                            </div>
+                        </div>
+                    )}
+
+
+                </section >
+
+                {/* Footer */}
+                < footer className="text-center py-8 border-t border-slate-200" >
+                    <p className="text-slate-400 text-sm font-medium">
+                        © 2026 Seamos Genios Colombia &bull; Plataforma de Resultados Inteligentes
+                    </p>
+                </footer >
+            </main >
+        </div >
+    );
+}

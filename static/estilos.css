@@ -1,0 +1,2456 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+}
+
+.menu-superior {
+    width: 100%;
+    background: linear-gradient(145deg, #1a1a1a, #000000);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contenedor-menu {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    gap: 25px;
+}
+
+.seccion-carga {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contenedor-archivos-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.archivo-input-menu {
+    position: relative;
+}
+
+.archivo-input-menu input[type="file"] {
+    display: none;
+}
+
+.archivo-input-menu label.archivo-cargado {
+    background: rgba(76, 175, 80, 0.2);
+    border-color: #4CAF50;
+}
+
+.archivo-input-menu label.archivo-cargado i {
+    color: #4CAF50;
+    animation: checkmark 0.3s ease-in-out;
+}
+
+@keyframes checkmark {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.archivo-input-menu label.archivo-cargado .texto-estado {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.archivo-input-menu label {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: 100px;
+    justify-content: center;
+}
+
+.archivo-input-menu i {
+    color: #FF4D4D;
+    margin-right: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.archivo-input-menu .texto-estado {
+    margin-left: 8px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.boton-procesar {
+    background: linear-gradient(45deg, #FF4D4D, #FF0000);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.boton-procesar i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.boton-procesar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+
+.controles-derecha {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    transition: all 0.3s ease;
+}
+
+.selector-estudiante {
+    background: rgba(34, 34, 34, 0.95);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    flex-grow: 1;
+    max-width: 300px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1.2em;
+}
+
+.selector-estudiante:hover {
+    background-color: rgba(51, 51, 51, 0.95);
+    border-color: #FF4D4D;
+}
+
+.selector-estudiante option {
+    background-color: #222222;
+    color: white;
+    padding: 8px;
+}
+
+.selector-rango {
+    background: rgba(34, 34, 34, 0.95);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1.2em;
+}
+
+.selector-rango:hover {
+    background-color: rgba(51, 51, 51, 0.95);
+    border-color: #FF4D4D;
+}
+
+.selector-rango option {
+    background-color: #222222;
+    color: white;
+    padding: 8px;
+}
+
+.selector-modo .selector-rango {
+    background: linear-gradient(45deg, #FF4D4D, #FF0000);
+    border: none;
+    font-weight: bold;
+}
+
+.selector-modo .selector-rango:hover {
+    opacity: 0.9;
+}
+
+.rango-descarga {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background: rgba(34, 34, 34, 0.95);
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.rango-descarga.visible {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.rango-descarga .selectores-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    flex: 1;
+    min-width: 280px;
+}
+
+.rango-descarga select {
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
+    background-color: rgba(34, 34, 34, 0.95);
+    color: white;
+}
+
+.boton-descarga {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #FF4D4D, #FF0000);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.boton-descarga i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.boton-descarga:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+}
+
+.documento {
+    width: 216mm;
+    height: 355mm;
+    /* Reducido de 380mm para evitar salto de página */
+    padding: 15mm;
+    /* Padding lateral */
+    padding-top: 12mm;
+    /* Margen superior reducido */
+    padding-bottom: 18mm;
+    /* Margen inferior aumentado */
+    background-color: white;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 20px;
+    /* Margen superior adicional */
+    border-radius: 2px;
+    transform: rotateX(2deg);
+    overflow: hidden;
+    /* Asegura que la marca de agua no se salga */
+}
+
+/* Estilos para divs contenteditable */
+div[contenteditable="true"]:empty:before {
+    content: attr(data-placeholder);
+    color: #999;
+    font-style: italic;
+}
+
+div[contenteditable="true"]:focus:before {
+    content: "";
+}
+
+div[contenteditable="true"] {
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* Estilos para el contenedor de marca de agua */
+.marca-agua-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Estilos para la imagen de marca de agua */
+.marca-agua-imagen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@media print {
+    .marca-agua-container {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .marca-agua-imagen {
+        opacity: 0.5;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+.encabezado {
+    background: linear-gradient(135deg, #FF4D4D, #FF0000);
+    padding: 1rem;
+    /* Aumentado para más espaciado */
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 1.2rem;
+    /* Aumentado */
+    margin-top: -2mm;
+    /* Compensar el padding superior */
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    /* Reducido de 1.5rem */
+    align-items: flex-start;
+    max-height: 120px;
+    /* Reducido de 140px */
+    padding-top: 0;
+}
+
+.titulo-descripcion {
+    max-width: 600px;
+    padding-top: 0;
+    margin-top: -0.3rem;
+}
+
+.titulo-descripcion h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+.descripcion {
+    font-size: 0.8rem;
+    /* Reducido de 0.85rem */
+    line-height: 1.3;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0;
+    margin-top: 0.3rem;
+}
+
+.logo-container {
+    width: 90px;
+    /* Reducido de 110px */
+    height: 90px;
+    /* Reducido de 110px */
+    flex-shrink: 0;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    margin-top: 0.5rem;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.datos-estudiante {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.2rem;
+    /* Reducido de 1.5rem */
+    margin-bottom: 2rem;
+    /* Reducido de 2.5rem */
+}
+
+.info-container {
+    background: #222222;
+    padding: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.info-container h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.campos-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.campo {
+    margin-bottom: 0.8rem;
+}
+
+.campo:nth-child(1) {
+    /* NOMBRE */
+    grid-column: 1 / 2;
+    grid-row: 1;
+    max-width: 280px;
+}
+
+.campo:nth-child(2) {
+    /* TIPO */
+    grid-column: 2 / 3;
+    grid-row: 1;
+}
+
+.campo:nth-child(3) {
+    /* TELÉFONO */
+    grid-column: 1 / 2;
+    grid-row: 2;
+    max-width: 280px;
+}
+
+.campo:nth-child(4) {
+    /* MUNICIPIO */
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+.campo:nth-child(5) {
+    /* IDENTIFICACIÓN */
+    grid-column: 1 / 2;
+    grid-row: 3;
+    max-width: 280px;
+}
+
+.campo:nth-child(6) {
+    /* FECHA */
+    grid-column: 2 / 3;
+    grid-row: 3;
+}
+
+.campo .documento-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.campo .tipo-documento {
+    width: 70px;
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 0.9rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.2em;
+    cursor: pointer;
+}
+
+.campo .numero-documento {
+    flex: 1;
+    min-width: 0;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 0.9rem;
+}
+
+.campo input[type="tel"] {
+    -moz-appearance: textfield;
+}
+
+.campo input[type="tel"]::-webkit-outer-spin-button,
+.campo input[type="tel"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.campo label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.3rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Ajuste específico para el campo TIPO */
+.campo:nth-child(2) input {
+    text-align: center;
+    font-weight: bold;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.campo input:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.municipio-select {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1.2em;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.municipio-select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.municipio-select:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.municipio-select option {
+    background-color: #222222;
+    color: white;
+    padding: 0.5rem;
+}
+
+/* Eliminar las reglas que forzaban la dirección hacia arriba */
+.municipio-select {
+    direction: ltr;
+}
+
+select.municipio-select:not([multiple]) {
+    transform-origin: top;
+}
+
+@supports (-webkit-appearance: none) {
+    .municipio-select {
+        transform: none;
+    }
+}
+
+.puntaje-global {
+    background: linear-gradient(135deg, #FF4D4D, #FF0000);
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.puntaje-global h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.puntaje {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.sg11-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.sg11-prefix {
+    font-weight: bold;
+    color: white;
+}
+
+.sg11-input {
+    width: 40px;
+    padding: 0.1rem 0.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.sg11-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.qr-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    background-color: white;
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.qr-code {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.asignaturas {
+    margin-top: 0.8rem;
+    /* Ajustado de 1rem */
+}
+
+.asignaturas h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.grafico {
+    height: 280px;
+    /* Reducido de 300px */
+    margin-bottom: 1.8rem;
+    /* Reducido de 2rem */
+}
+
+.tabla-resultados {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabla-resultados th,
+.tabla-resultados td {
+    padding: 0.6rem;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.header-materia {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Colores para los encabezados de materias */
+.header-materia:nth-child(2) {
+    /* Lectura Crítica */
+    border-top: 3px solid #FF4D4D;
+}
+
+.header-materia:nth-child(3) {
+    /* Matemáticas */
+    border-top: 3px solid #33CCFF;
+}
+
+.header-materia:nth-child(4) {
+    /* Ciencias Sociales */
+    border-top: 3px solid #FF8C00;
+}
+
+.header-materia:nth-child(5) {
+    /* Ciencias Naturales */
+    border-top: 3px solid #33FF77;
+}
+
+.header-materia:nth-child(6) {
+    /* Inglés */
+    border-top: 3px solid #B366FF;
+}
+
+.celda-nivel {
+    background: linear-gradient(135deg, #FF4D4D, #FF0000);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+.rango {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+    padding: 0.4rem;
+}
+
+/* Estilos para los rangos activos */
+.rango.activo {
+    position: relative;
+}
+
+/* Colores específicos para cada columna cuando está activa */
+td:nth-child(2) .rango.activo {
+    /* Lectura Crítica */
+    background-color: rgba(255, 77, 77, 0.1);
+    border-left: 3px solid #FF4D4D;
+}
+
+td:nth-child(3) .rango.activo {
+    /* Matemáticas */
+    background-color: rgba(51, 204, 255, 0.1);
+    border-left: 3px solid #33CCFF;
+}
+
+td:nth-child(4) .rango.activo {
+    /* Ciencias Sociales */
+    background-color: rgba(255, 140, 0, 0.1);
+    border-left: 3px solid #FF8C00;
+}
+
+td:nth-child(5) .rango.activo {
+    /* Ciencias Naturales */
+    background-color: rgba(51, 255, 119, 0.1);
+    border-left: 3px solid #33FF77;
+}
+
+td:nth-child(6) .rango.activo {
+    /* Inglés */
+    background-color: rgba(179, 102, 255, 0.1);
+    border-left: 3px solid #B366FF;
+}
+
+.puntaje-input {
+    width: 80%;
+    padding: 0.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.puntaje-input:focus {
+    outline: none;
+    border-color: #FF4D4D;
+    box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.2);
+}
+
+.puntaje-input:hover {
+    background-color: #fff;
+}
+
+.percentil {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.nivel {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.fila-puntaje td {
+    background-color: #fff;
+    padding: 0.8rem;
+}
+
+.fila-percentil td,
+.fila-desempeno td {
+    background-color: #fff;
+}
+
+.fila-nivel:hover td:not(.celda-nivel) {
+    background-color: #f0f0f0;
+}
+
+.tabla-resultados tr:last-child td {
+    border-bottom: none;
+}
+
+.redes-container {
+    background: #222222;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 0.8rem;
+}
+
+.redes-container h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin: 0 0 0.6rem 0;
+    text-align: center;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.qr-codes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.3rem;
+}
+
+.qr-code-item {
+    text-align: center;
+    background: white;
+    padding: 0.4rem;
+    border-radius: 6px;
+    width: 70px;
+    /* Reducido de 80px */
+    height: 70px;
+    /* Reducido de 80px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-code-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media print {
+    .boton-descarga {
+        display: none;
+    }
+
+    body {
+        padding: 0 !important;
+        margin: 0 !important;
+        background-color: white;
+    }
+
+    .documento {
+        box-shadow: none;
+        transform: none;
+        margin: 0 !important;
+        padding: 10mm 15mm 20mm 15mm !important;
+        /* Aumentado padding inferior a 20mm, superior 10mm */
+        width: 100% !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        position: relative !important;
+        top: 0 !important;
+        /* Eliminado desplazamiento negativo */
+    }
+
+    .contenedor-principal {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        transform: none !important;
+        /* Eliminado desplazamiento negativo */
+    }
+
+    .encabezado {
+        margin-top: 0 !important;
+        /* Restaurado margen normal */
+    }
+
+    /* Estilos para gráficas y canvas en PDF */
+    .grafico {
+        opacity: 1 !important;
+        visibility: visible !important;
+        background-color: white !important;
+    }
+
+    .grafico canvas,
+    canvas {
+        opacity: 1 !important;
+        visibility: visible !important;
+        background-color: white !important;
+        display: block !important;
+    }
+
+    /* Estilos específicos para tablas de análisis en PDF */
+    .hoja-adicional table {
+        width: 100% !important;
+        table-layout: fixed !important;
+        border-collapse: collapse !important;
+        font-size: 9px !important;
+        margin: 0 !important;
+        page-break-inside: avoid !important;
+    }
+
+    .hoja-adicional table th,
+    .hoja-adicional table td {
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        overflow: hidden !important;
+        padding: 2px !important;
+        font-size: 8px !important;
+        line-height: 1.1 !important;
+        border: 0.5px solid #999 !important;
+        vertical-align: top !important;
+        max-width: none !important;
+    }
+
+    .hoja-adicional table tr {
+        page-break-inside: avoid !important;
+        page-break-after: auto !important;
+    }
+
+    .hoja-adicional table tbody tr:nth-child(20) {
+        page-break-after: always !important;
+    }
+
+    /* Ancho específico para columnas de tablas de análisis */
+    .hoja-adicional table th:nth-child(1),
+    .hoja-adicional table td:nth-child(1) {
+        width: 6% !important;
+    }
+
+    .hoja-adicional table th:nth-child(2),
+    .hoja-adicional table td:nth-child(2) {
+        width: 18% !important;
+    }
+
+    .hoja-adicional table th:nth-child(3),
+    .hoja-adicional table td:nth-child(3) {
+        width: 32% !important;
+    }
+
+    .hoja-adicional table th:nth-child(4),
+    .hoja-adicional table td:nth-child(4) {
+        width: 20% !important;
+    }
+
+    .hoja-adicional table th:nth-child(5),
+    .hoja-adicional table td:nth-child(5) {
+        width: 6% !important;
+    }
+
+    .hoja-adicional table th:nth-child(6),
+    .hoja-adicional table td:nth-child(6) {
+        width: 6% !important;
+    }
+
+    .hoja-adicional table th:nth-child(7),
+    .hoja-adicional table td:nth-child(7) {
+        width: 6% !important;
+    }
+
+    .hoja-adicional table th:nth-child(8),
+    .hoja-adicional table td:nth-child(8) {
+        width: 6% !important;
+    }
+
+    /* Para inglés con columnas adicionales */
+    .hoja-adicional table th:nth-child(9),
+    .hoja-adicional table td:nth-child(9) {
+        width: 4% !important;
+    }
+
+    .hoja-adicional table th:nth-child(10),
+    .hoja-adicional table td:nth-child(10) {
+        width: 4% !important;
+    }
+
+    .hoja-adicional table th:nth-child(11),
+    .hoja-adicional table td:nth-child(11) {
+        width: 4% !important;
+    }
+
+    .hoja-adicional table th:nth-child(12),
+    .hoja-adicional table td:nth-child(12) {
+        width: 4% !important;
+    }
+
+    /* Evitar que los divs contenteditable se desborden */
+    .hoja-adicional div[contenteditable="true"] {
+        overflow: hidden !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+        text-overflow: ellipsis !important;
+        max-height: 40px !important;
+        line-height: 1.1 !important;
+        font-size: 8px !important;
+        padding: 1px !important;
+    }
+
+    /* Estilos para inputs dentro de las tablas */
+    .hoja-adicional input[type="text"] {
+        font-size: 7px !important;
+        padding: 1px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+
+    /* Forzar tamaño de fuente pequeño para porcentajes */
+    .hoja-adicional table td strong,
+    .hoja-adicional table td span {
+        font-size: 7px !important;
+        line-height: 1 !important;
+    }
+}
+
+.campo .cal-select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 0.9rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.2em;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+.campo .cal-select option {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+}
+
+.campo input[type="date"] {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Cambiar el color del icono del calendario */
+.campo input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.campo input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+.selector-modo {
+    margin-right: 0;
+    position: relative;
+    min-width: 150px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1200px) {
+    .contenedor-menu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .controles-derecha {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .selector-estudiante,
+    .selector-modo,
+    .rango-descarga {
+        width: 100%;
+        max-width: none;
+    }
+
+    .rango-descarga .selectores-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.rango-descarga .separador {
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0 10px;
+    white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Estilos para SweetAlert2 */
+.swal2-popup-custom {
+    background: #1a1a1a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+    border-radius: 8px !important;
+}
+
+.swal2-title-custom {
+    color: #ffffff !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+}
+
+.swal2-content-custom {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 1rem !important;
+}
+
+.swal2-confirm-custom {
+    background: linear-gradient(45deg, #FF4D4D, #FF0000) !important;
+    border: none !important;
+    padding: 0.8rem 2rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+}
+
+.swal2-confirm-custom:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3) !important;
+}
+
+.swal2-icon {
+    border-color: #FF4D4D !important;
+    color: #FF4D4D !important;
+}
+
+.swal2-success-ring {
+    border-color: #4CAF50 !important;
+}
+
+.swal2-success-line-tip,
+.swal2-success-line-long {
+    background-color: #4CAF50 !important;
+}
+
+.swal2-error {
+    border-color: #FF4D4D !important;
+}
+
+.swal2-x-mark-line-left,
+.swal2-x-mark-line-right {
+    background-color: #FF4D4D !important;
+}
+
+.swal2-warning {
+    border-color: #FF8C00 !important;
+    color: #FF8C00 !important;
+}
+
+/* Estilos para el botón de apagado */
+.boton-apagar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #FF4D4D, #FF0000);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.boton-apagar i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.boton-apagar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos para las hojas adicionales */
+.hoja-adicional {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    /* Cambiado de 0 a 1 para evitar problemas en PDF */
+    position: relative;
+    margin-bottom: 10px;
+    transform: none;
+    width: 216mm;
+    height: 355mm;
+    padding: 15mm;
+    padding-top: 18mm;
+    /* Margen superior ajustado */
+    background-color: white;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+    margin-top: 20px;
+    /* Margen superior adicional */
+}
+
+.contenido-adicional {
+    font-family: Arial, sans-serif;
+    color: #333;
+    height: 100%;
+}
+
+.contenido-adicional:focus {
+    outline: none;
+}
+
+.boton-eliminar-hoja {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #FF4D4D;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.boton-eliminar-hoja:hover {
+    background: #FF0000;
+    transform: scale(1.1);
+}
+
+/* Estilos generales para tablas de análisis */
+.hoja-adicional table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    margin: 0;
+}
+
+.hoja-adicional table th,
+.hoja-adicional table td {
+    border: 0.5px solid #999;
+    padding: 3px;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
+    vertical-align: top;
+    line-height: 1.2;
+}
+
+.hoja-adicional table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    font-size: 9px;
+}
+
+/* Anchos específicos para columnas de análisis */
+.hoja-adicional table th:nth-child(1),
+.hoja-adicional table td:nth-child(1) {
+    width: 6%;
+}
+
+.hoja-adicional table th:nth-child(2),
+.hoja-adicional table td:nth-child(2) {
+    width: 18%;
+}
+
+.hoja-adicional table th:nth-child(3),
+.hoja-adicional table td:nth-child(3) {
+    width: 32%;
+}
+
+.hoja-adicional table th:nth-child(4),
+.hoja-adicional table td:nth-child(4) {
+    width: 20%;
+}
+
+.hoja-adicional table th:nth-child(5),
+.hoja-adicional table td:nth-child(5) {
+    width: 6%;
+}
+
+.hoja-adicional table th:nth-child(6),
+.hoja-adicional table td:nth-child(6) {
+    width: 6%;
+}
+
+.hoja-adicional table th:nth-child(7),
+.hoja-adicional table td:nth-child(7) {
+    width: 6%;
+}
+
+.hoja-adicional table th:nth-child(8),
+.hoja-adicional table td:nth-child(8) {
+    width: 6%;
+}
+
+/* Columnas adicionales para inglés */
+.hoja-adicional table th:nth-child(9),
+.hoja-adicional table td:nth-child(9) {
+    width: 4%;
+}
+
+.hoja-adicional table th:nth-child(10),
+.hoja-adicional table td:nth-child(10) {
+    width: 4%;
+}
+
+.hoja-adicional table th:nth-child(11),
+.hoja-adicional table td:nth-child(11) {
+    width: 4%;
+}
+
+.hoja-adicional table th:nth-child(12),
+.hoja-adicional table td:nth-child(12) {
+    width: 4%;
+}
+
+/* Estilos para contenido editable en tablas */
+.hoja-adicional div[contenteditable="true"] {
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    text-overflow: ellipsis;
+    max-height: 45px;
+    line-height: 1.2;
+}
+
+/* Estilos para inputs en tablas */
+.hoja-adicional input[type="text"] {
+    width: 100%;
+    border: none;
+    font-size: 8px;
+    padding: 1px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: transparent;
+}
+
+/* Estilos para porcentajes en celdas */
+.hoja-adicional table td strong,
+.hoja-adicional table td span {
+    font-size: 8px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* Asegurar que las celdas de porcentajes estén centradas */
+.hoja-adicional table td {
+    vertical-align: middle !important;
+}
+
+/* Estilos específicos para celdas con porcentajes (columnas A, B, C, D) */
+.hoja-adicional table td:nth-child(5),
+.hoja-adicional table td:nth-child(6),
+.hoja-adicional table td:nth-child(7),
+.hoja-adicional table td:nth-child(8) {
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 3px !important;
+}
+
+@media print {
+    /* ============================================
+       REGLAS DE PAGINACIÓN Y SANGRÍAS DE SEGURIDAD
+       ============================================ */
+
+    /* Ocultar elementos de UI */
+    .boton-apagar,
+    .boton-agregar,
+    .boton-eliminar-hoja,
+    .menu-superior,
+    .buscador-container {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    /* Configuración base de página */
+    @page {
+        size: letter;
+        margin: 5mm 10mm 15mm 10mm;
+        /* Menos arriba, más abajo */
+    }
+
+    /* Hojas adicionales (estadísticas, análisis, etc.) */
+    .hoja-adicional {
+        break-before: page;
+        page-break-before: always;
+        margin: 0 !important;
+        padding: 10mm 15mm 20mm 15mm !important;
+        /* Menos arriba, más abajo */
+        opacity: 1;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        overflow: visible !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    .contenido-adicional {
+        height: auto !important;
+        overflow: visible !important;
+        padding-bottom: 15mm;
+        /* Sangría inferior para evitar cortes */
+    }
+
+    .contenedor-principal {
+        gap: 0 !important;
+        transform: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .documento {
+        margin: 0 !important;
+        padding: 10mm 15mm 20mm 15mm !important;
+        /* Menos arriba, más abajo */
+        transform: none;
+        box-shadow: none;
+        border: none;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .modo-impresion .documento,
+    .modo-impresion .hoja-adicional {
+        margin: 0 !important;
+        padding: 10mm 15mm 20mm 15mm !important;
+    }
+
+    /* ============================================
+       CONTROL DE CORTE DE TABLAS
+       ============================================ */
+
+    /* Las tablas pueden dividirse entre páginas */
+    table {
+        page-break-inside: auto !important;
+        border-collapse: collapse !important;
+    }
+
+    /* El encabezado de tabla se repite en cada página */
+    thead {
+        display: table-header-group !important;
+    }
+
+    /* El pie de tabla aparece al final */
+    tfoot {
+        display: table-footer-group !important;
+    }
+
+    /* Las filas NO se cortan - pasan completas a la siguiente página */
+    tr {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    /* Celdas no se cortan */
+    td,
+    th {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    /* ============================================
+       CONTROL DE CORTE DE SECCIONES
+       ============================================ */
+
+    /* Headers de sección no se separan de su contenido */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    /* Secciones de resumen y recomendaciones no se cortan */
+    .seccion-recomendaciones,
+    .resumen-estadistico,
+    .panel-explicacion,
+    .interpretacion-resultado,
+    .recomendaciones-personalizadas,
+    .estadisticas-detalladas,
+    .nota-explicativa {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        margin-top: 5mm;
+    }
+
+    /* Elementos que deben mantenerse unidos */
+    .stat-card,
+    .indice-item,
+    .encabezado-materia {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    /* ============================================
+       ESTILOS ESPECÍFICOS PARA TABLAS ESTADÍSTICAS
+       ============================================ */
+
+    /* Contenedor de tabla estadística */
+    .tabla-estadistica-container {
+        page-break-inside: auto !important;
+        margin-bottom: 10mm;
+    }
+
+    /* Header de la tabla estadística - no separar del contenido */
+    .estadistica-header {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        margin-bottom: 3mm;
+    }
+
+    /* Metadata bar */
+    .estadistica-metadata {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        margin-bottom: 3mm;
+    }
+
+    /* Grupo de filas que deben mantenerse juntas (cada 5-10 filas) */
+    .fila-grupo {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    /* Resumen al final de tabla - no cortar */
+    .resumen-tabla {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        page-break-before: avoid !important;
+        break-before: avoid !important;
+        margin-top: 5mm;
+        padding: 3mm;
+    }
+
+    /* ============================================
+       ORPHANS Y WIDOWS - Control de líneas sueltas
+       ============================================ */
+
+    p,
+    li,
+    div {
+        orphans: 3;
+        /* Mínimo 3 líneas al final de página */
+        widows: 3;
+        /* Mínimo 3 líneas al inicio de página */
+    }
+
+    /* ============================================
+       AJUSTES DE VISUALIZACIÓN PARA IMPRESIÓN
+       ============================================ */
+
+    /* Asegurar colores en impresión */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    /* Forzar fondos de colores */
+    .celda-correcta,
+    .celda-distractor,
+    [style*="background-color"] {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+/* Estilos para el buscador */
+.buscador-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.buscador-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.boton-buscar {
+    background: linear-gradient(45deg, #FF4D4D, #FF0000);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.boton-buscar i {
+    font-size: 1.2rem;
+}
+
+.boton-buscar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.buscador-input-container {
+    position: absolute;
+    left: 60px;
+    display: none;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+}
+
+.buscador-input-container.visible {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.buscador-input {
+    width: 300px;
+    padding: 12px 20px;
+    padding-left: 45px;
+    border: none;
+    border-radius: 25px;
+    background: #222222;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.buscador-input:focus {
+    outline: none;
+    background: #333333;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    width: 350px;
+}
+
+.buscador-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.buscador-icono {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FF4D4D;
+    font-size: 1.1rem;
+}
+
+.resultados-busqueda {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    margin-bottom: 10px;
+    background: #222222;
+    border-radius: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.resultados-busqueda.visible {
+    display: block;
+    animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.resultado-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+    color: white;
+}
+
+.resultado-item:last-child {
+    border-bottom: none;
+}
+
+.resultado-item:hover {
+    background: rgba(255, 77, 77, 0.2);
+}
+
+.resultado-item .nombre {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.resultado-item .identificacion {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Estilo para la barra de desplazamiento en los resultados */
+.resultados-busqueda::-webkit-scrollbar {
+    width: 8px;
+}
+
+.resultados-busqueda::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.resultados-busqueda::-webkit-scrollbar-thumb {
+    background: #FF4D4D;
+    border-radius: 4px;
+}
+
+.resultados-busqueda::-webkit-scrollbar-thumb:hover {
+    background: #ff3333;
+}
+
+@media print {
+    .buscador-container {
+        display: none;
+    }
+}
+
+/* Estilos para el botón de editar */
+.boton-editar {
+    background: linear-gradient(45deg, #FF4D4D, #FF0000);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    margin-left: 20px;
+    /* Aumentado de 10px a 20px */
+    margin-right: 20px;
+    /* Añadido margen derecho */
+}
+
+.boton-editar i {
+    font-size: 1.2rem;
+}
+
+.boton-editar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.boton-editar.activo {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+}
+
+/* Estilos mejorados para el modal de edición */
+.modal-edicion {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, #1a1a1a, #222222);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-edicion h2 {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.campo-edicion {
+    margin-bottom: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.campo-edicion:hover {
+    transform: translateX(5px);
+}
+
+.campo-edicion label {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    min-width: 180px;
+}
+
+.campo-edicion label::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 24px;
+    margin-right: 10px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Colores específicos para cada materia */
+.campo-edicion.lc label::before {
+    background: linear-gradient(45deg, #FF4D4D, #FF0000);
+}
+
+.campo-edicion.mt label::before {
+    background: linear-gradient(45deg, #33CCFF, #2196F3);
+}
+
+.campo-edicion.sc label::before {
+    background: linear-gradient(45deg, #FF8C00, #FF6B00);
+}
+
+.campo-edicion.cn label::before {
+    background: linear-gradient(45deg, #33FF77, #00E676);
+}
+
+.campo-edicion.in label::before {
+    background: linear-gradient(45deg, #B366FF, #9C27B0);
+}
+
+.campo-edicion input {
+    width: 100px;
+    padding: 12px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Estilos de hover para los inputs según la materia */
+.campo-edicion.lc input:focus {
+    border-color: #FF4D4D;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.2);
+}
+
+.campo-edicion.mt input:focus {
+    border-color: #33CCFF;
+    box-shadow: 0 0 10px rgba(51, 204, 255, 0.2);
+}
+
+.campo-edicion.sc input:focus {
+    border-color: #FF8C00;
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.2);
+}
+
+.campo-edicion.cn input:focus {
+    border-color: #33FF77;
+    box-shadow: 0 0 10px rgba(51, 255, 119, 0.2);
+}
+
+.campo-edicion.in input:focus {
+    border-color: #B366FF;
+    box-shadow: 0 0 10px rgba(179, 102, 255, 0.2);
+}
+
+.campo-edicion .rango-actual {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    min-width: 100px;
+    text-align: right;
+}
+
+.botones-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.boton-modal {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.boton-guardar {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.boton-guardar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.boton-cancelar {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.boton-cancelar:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.overlay.visible {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animación para el modal */
+.modal-edicion.visible {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Estilo para el valor inválido */
+.campo-edicion input:invalid {
+    border-color: #FF4D4D;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.2);
+}
+
+/* Tooltip para mostrar el rango válido */
+.campo-edicion .tooltip {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.campo-edicion input:focus+.tooltip {
+    opacity: 1;
+    bottom: -25px;
+}
+
+.boton-agregar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #FF4D4D, #FF0000);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    font-size: 1.5rem;
+}
+
+.boton-agregar:hover {
+    transform: translateX(-50%) translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo para modo impresión sin espacios */
+.modo-impresion .contenedor-principal {
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.modo-impresion .documento,
+.modo-impresion .hoja-adicional {
+    margin: 0 !important;
+    padding-top: 18mm !important;
+    /* Mantener el margen superior */
+}
+
+@media print {
+    .modo-impresion .contenedor-principal {
+        gap: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .modo-impresion .documento,
+    .modo-impresion .hoja-adicional {
+        margin: 0 !important;
+        padding-top: 18mm !important;
+        /* Mantener el margen superior */
+    }
+}
+
+/* Estilo específico para ocultar el botón eliminar en PDF */
+.modo-impresion .boton-eliminar-hoja {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    z-index: -1 !important;
+}
+
+@media print {
+    .boton-eliminar-hoja {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        position: absolute !important;
+        z-index: -1 !important;
+    }
+}
+
+/* Estilos para el botón de magia y su menú desplegable */
+.boton-magia {
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-magia:hover {
+    background-color: #8e44ad;
+    transform: scale(1.1);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 8px 0;
+    z-index: 1000;
+    margin-bottom: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Flecha del menú desplegable */
+.dropdown-content::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: #fff transparent transparent;
+}
+
+/* Estilos específicos para el modo impresión */
+.modo-impresion .contenedor-principal {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.modo-impresion .documento,
+.modo-impresion .hoja-adicional {
+    box-shadow: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: white !important;
+}
+
+/* Asegurar que las gráficas sean visibles en modo impresión */
+.modo-impresion .grafico,
+.modo-impresion .grafica-item,
+.modo-impresion .grafica-canvas-container {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: white !important;
+    display: block !important;
+}
+
+.modo-impresion canvas {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: white !important;
+    display: block !important;
+}
+
+.modo-impresion .hoja-adicional {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: white !important;
+}
+
+/* Asegurar visibilidad completa de hojas de gráficas individuales */
+.modo-impresion .hoja-grafica-individual {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: white !important;
+    display: flex !important;
+}
+
+.modo-impresion .encabezado-materia {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.modo-impresion .contenido-grafica-individual {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+}
+
+.modo-impresion .grafica-principal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: white !important;
+    display: flex !important;
+}
+
+.modo-impresion .grafica-canvas-container-individual {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: white !important;
+    display: flex !important;
+}
+
+.modo-impresion .grafica-canvas-container-individual canvas {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: white !important;
+    display: block !important;
+}
+
+.modo-impresion .panel-explicacion,
+.modo-impresion .estadisticas-detalladas,
+.modo-impresion .interpretacion-resultado,
+.modo-impresion .recomendaciones-personalizadas {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: white !important;
+    display: block !important;
+}
+
+.modo-impresion .stat-card,
+.modo-impresion .stat-value,
+.modo-impresion .stat-label {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+}
+
+/* Regla global para modo impresión */
+.modo-impresion * {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.modo-impresion .boton-eliminar-hoja {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}

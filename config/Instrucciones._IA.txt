@@ -1,0 +1,35 @@
+
+
+
+
+Componentes por materia :
+
+Matemáticas:
+- Álgebra y Cálculo
+- Estadística
+- Geometría
+
+Lectura Crítica:
+- Comprensión y análisis textual
+- Reflexión sobre el contenido del texto
+- Comprensión e interpretación textual
+
+Inglés:
+- Lexical
+- Conversación
+- Gramatical
+- Lectura
+
+Ciencias Sociales:
+- Análisis de procesos históricos
+- Interpretación de fuentes históricas
+- Comprensión de dinámicas sociales y económicas
+- Análisis de conflictos y relaciones de poder
+- Evaluación de impactos culturales
+
+Ciencias Naturales:
+- Comprensión de procesos biológicos
+- Análisis de propiedades físicas y químicas
+- Evaluación de interacciones ambientales
+- Aplicación de principios científicos
+- Interpretación de datos experimentales

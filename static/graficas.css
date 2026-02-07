@@ -1,0 +1,458 @@
+/* Contenedor principal para todas las gráficas de Chart.js */
+.chart-graficas-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Contenedor individual para cada gráfica de Chart.js */
+.chart-grafica-item {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-grafica-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Título de la gráfica de Chart.js */
+.chart-grafica-titulo {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Contenedor del canvas de Chart.js */
+.chart-canvas-container {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    animation: chartGrow 0.5s ease-out forwards;
+    transition: transform 0.3s ease;
+}
+
+.chart-canvas-container:hover {
+    transform: scale(1.02);
+}
+
+/* Estilos específicos para cada tipo de gráfica de Chart.js */
+.chart-grafica-barras canvas,
+.chart-grafica-lineas canvas,
+.chart-grafica-radar canvas,
+.chart-grafica-dona canvas,
+.chart-grafica-area canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Leyenda de la gráfica de Chart.js */
+.chart-grafica-leyenda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.chart-leyenda-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+    padding: 4px 8px;
+}
+
+.chart-leyenda-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    margin-right: 6px;
+}
+
+/* Colores para las materias en Chart.js */
+.chart-color-lectura-critica { background-color: #FF4D4D; }
+.chart-color-matematicas { background-color: #33CCFF; }
+.chart-color-sociales { background-color: #FF8C00; }
+.chart-color-naturales { background-color: #33FF77; }
+.chart-color-ingles { background-color: #B366FF; }
+
+/* Tooltip personalizado para Chart.js */
+.chart-tooltip {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Estilos responsivos para las gráficas de Chart.js */
+@media (max-width: 768px) {
+    .chart-graficas-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-grafica-item {
+        height: 250px;
+    }
+}
+
+/* Estilos para impresión de gráficas Chart.js */
+@media print {
+    .chart-graficas-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+        page-break-inside: avoid;
+    }
+
+    .chart-grafica-item {
+        height: 250px;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .chart-canvas-container {
+        height: 250px;
+    }
+
+    .chart-grafica-leyenda {
+        border: 1px solid #eee;
+    }
+}
+
+/* Enhanced animations for graphs */
+@keyframes chartFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes chartGrow {
+    from {
+        transform: scale(0.95);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes chartRotate {
+    from {
+        transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.chart-grafica-item {
+    animation: chartFadeIn 0.6s ease-out forwards;
+    transition: all 0.3s ease;
+}
+
+.chart-grafica-item[data-subject="ingles"] {
+    border: 2px solid #B366FF;
+    box-shadow: 0 4px 12px rgba(179, 102, 255, 0.2);
+}
+
+.chart-grafica-item[data-subject="ingles"]:hover {
+    box-shadow: 0 8px 20px rgba(179, 102, 255, 0.3);
+}
+
+.chart-grafica-item[data-subject="ingles"] .chart-grafica-titulo {
+    color: #B366FF;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(179, 102, 255, 0.2);
+}
+
+/* Estilos para los ejes de Chart.js */
+.chart-ejes {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.chart-ejes-titulo {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Estilos para la cuadrícula de Chart.js */
+.chart-grid {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de información adicional para Chart.js */
+.chart-info {
+    margin-top: 10px;
+    padding: 5px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.chart-info-titulo {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 3px;
+}
+
+.chart-info-dato {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    margin: 2px 0;
+}
+
+/* Special styles for English graph */
+.chart-color-ingles { 
+    background-color: #B366FF;
+    animation: chartRotate 0.8s ease-out forwards;
+}
+
+.chart-grafica-item[data-subject="ingles"] .chart-grafica-titulo {
+    color: #B366FF;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(179, 102, 255, 0.2);
+}
+
+/* Special styles for Social Sciences graph */
+.chart-grafica-item[data-subject="sociales"] {
+    border: 2px solid #FF8C00;
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2);
+}
+
+.chart-grafica-item[data-subject="sociales"]:hover {
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.chart-grafica-item[data-subject="sociales"] .chart-grafica-titulo {
+    color: #FF8C00;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 140, 0, 0.2);
+}
+
+/* Special styles for Natural Sciences graph */
+.chart-grafica-item[data-subject="naturales"] {
+    border: 2px solid #33FF77;
+    box-shadow: 0 4px 12px rgba(51, 255, 119, 0.2);
+}
+
+.chart-grafica-item[data-subject="naturales"]:hover {
+    box-shadow: 0 8px 20px rgba(51, 255, 119, 0.3);
+    transform: translateY(-5px);
+}
+
+.chart-grafica-item[data-subject="naturales"] .chart-grafica-titulo {
+    color: #33FF77;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(51, 255, 119, 0.2);
+}
+
+/* Enhanced animations for science graphs */
+.chart-grafica-item[data-subject="sociales"] .chart-canvas-container,
+.chart-grafica-item[data-subject="naturales"] .chart-canvas-container {
+    animation: chartGrow 0.7s ease-out forwards;
+}
+
+.chart-grafica-item[data-subject="sociales"] .chart-canvas-container:hover,
+.chart-grafica-item[data-subject="naturales"] .chart-canvas-container:hover {
+    transform: scale(1.03);
+}
+
+/* Special hover effects for data points */
+.chart-grafica-item[data-subject="sociales"] .chart-point:hover,
+.chart-grafica-item[data-subject="naturales"] .chart-point:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
+/* Enhanced styles for percentages and scores */
+.grafica-info-dato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.grafica-info-dato:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grafica-info-dato span:first-child {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+.grafica-info-dato span:last-child {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #2196F3, #00BCD4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Subject-specific score styling */
+.grafica-item[data-subject="ingles"] .grafica-info-dato span:last-child {
+    background: linear-gradient(45deg, #9C27B0, #B366FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.grafica-item[data-subject="sociales"] .grafica-info-dato span:last-child {
+    background: linear-gradient(45deg, #FF8C00, #FFA726);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.grafica-item[data-subject="naturales"] .grafica-info-dato span:last-child {
+    background: linear-gradient(45deg, #33FF77, #69F0AE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Enhanced info section */
+.grafica-info {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.grafica-info-titulo {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Percentage badges */
+.porcentaje-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #2196F3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.porcentaje-badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation for score updates */
+@keyframes scoreUpdate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.score-update {
+    animation: scoreUpdate 0.5s ease;
+}
+
+/* Ensure proper text display for English graph */
+.grafica-item[data-subject="ingles"] .grafica-canvas-container {
+    min-height: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.grafica-item[data-subject="ingles"] {
+    min-width: 400px;
+    padding: 20px;
+}
+
+/* Adjust legend container for English graph */
+.grafica-item[data-subject="ingles"] .chart-js-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.grafica-item[data-subject="ingles"] .chart-js-legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.grafica-item[data-subject="ingles"] .chart-js-legend-item:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure tooltips don't get cut off */
+.chartjs-tooltip {
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8) !important;
+    border-radius: 4px;
+    padding: 8px 12px !important;
+    white-space: nowrap;
+    max-width: none !important;
+} 

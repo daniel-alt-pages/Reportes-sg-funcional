@@ -1,0 +1,29 @@
+
+> reportes-sg-next@0.1.0 build
+> next build
+
+ÔÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\Daniel\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\Daniel\Downloads\reportes-sg-next\package-lock.json
+
+Ôû▓ Next.js 16.1.2 (Turbopack)
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 15.1s
+  Running TypeScript ...
+Failed to compile.
+
+./src/app/admin/page.tsx:127:51
+Type error: Cannot find name 'busqueda'.
+
+  125 |             const nombre = `${e.informacion_personal.nombres} ${e.informacion_personal.apellidos}`.toLowerCase();
+  126 |             const doc = e.informacion_personal.numero_identificacion || '';
+> 127 |             const matchBusqueda = nombre.includes(busqueda.toLowerCase()) || doc.includes(busqueda);
+      |                                                   ^
+  128 |
+  129 |             const p = typeof e.puntaje_global === 'number' ? e.puntaje_global : 0;
+  130 |             const nivel = clasificarNivel(p).nivel.toLowerCase();
+Next.js build worker exited with code: 1 and signal: null

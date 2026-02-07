@@ -1,0 +1,29 @@
+
+> reportes-sg-next@0.1.0 build
+> next build
+
+ÔÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\Daniel\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\Daniel\Downloads\reportes-sg-next\package-lock.json
+
+Ôû▓ Next.js 16.1.2 (Turbopack)
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 13.9s
+  Running TypeScript ...
+Failed to compile.
+
+./src/app/admin/page.tsx:1095:34
+Type error: Cannot find name 'reprocessStatus'.
+
+  1093 |                                 </p>
+  1094 |
+> 1095 |                                 {reprocessStatus === 'processing' ? (
+       |                                  ^
+  1096 |                                     <div className="text-center py-6 bg-white/5 rounded-xl border border-white/5">
+  1097 |                                         <div className="animate-spin text-4xl mb-3">ÔÅ│</div>
+  1098 |                                         <p className="text-purple-400 font-bold">Procesando datos...</p>
+Next.js build worker exited with code: 1 and signal: null

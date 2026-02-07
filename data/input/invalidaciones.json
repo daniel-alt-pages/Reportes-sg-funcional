@@ -1,0 +1,20 @@
+{
+    "_comentario": "Lista de preguntas invalidadas por simulacro. Todas las respuestas a estas preguntas se consideran correctas.",
+    "_formato": "Cada entrada debe tener: simulacro, sesion (S1 o S2), numero_pregunta, y opcionalmente motivo.",
+    "invalidaciones": [
+        {
+            "simulacro": "S11 S-08",
+            "sesion": "S2",
+            "numero_pregunta": 94,
+            "materia": "inglés",
+            "motivo": "Error de transcripción en documento general"
+        },
+        {
+            "simulacro": "S11 S-08",
+            "sesion": "S1",
+            "numero_pregunta": 31,
+            "materia": "lectura crítica",
+            "motivo": "Pregunta invalidada por administrador"
+        }
+    ]
+}
