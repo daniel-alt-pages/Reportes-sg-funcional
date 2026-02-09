@@ -43,22 +43,6 @@ export default function AdminPage() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Load statistics on mount
-    useEffect(() => {
-        const cargarEstadisticas = async () => {
-            try {
-                const response = await fetch('/data/estadisticas_grupo.json');
-                if (response.ok) {
-                    const data = await response.json();
-                    setEstadisticas(data);
-                }
-            } catch (error) {
-                console.error('Error cargando estadísticas:', error);
-            }
-        };
-        cargarEstadisticas();
-    }, []);
-
     // Estados
     const [busqueda, setBusqueda] = useState('');
     const [filtroNivel, setFiltroNivel] = useState('todos');
@@ -67,7 +51,8 @@ export default function AdminPage() {
     const [ordenAsc, setOrdenAsc] = useState(false);
     const [vistaActual, setVistaActual] = useState<'tabla' | 'instituciones' | 'departamentos' | 'alertas' | 'estadisticas' | 'analisis' | 'correlacion' | 'perfiles'>('estadisticas');
     const [estudianteSeleccionado, setEstudianteSeleccionado] = useState<Estudiante | null>(null);
-    const [simulacroActual, setSimulacroActual] = useState('S11 S-08');
+    const [simulacroActual, setSimulacroActual] = useState('SG11-08');
+    const [simulacrosDisponibles, setSimulacrosDisponibles] = useState<string[]>(['SG11-08', 'SG11-09']);
 
     // Estado para Previsualización de Exportación
     const [previewData, setPreviewData] = useState<Estudiante[]>([]);
@@ -97,24 +82,142 @@ export default function AdminPage() {
     const [uploadStatus, setUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
     const [reprocessStatus, setReprocessStatus] = useState<'idle' | 'processing' | 'success' | 'error'>('idle');
 
+    // Cargar simulacros disponibles al iniciar
+    useEffect(() => {
+        const cargarSimulacros = async () => {
+            try {
+                const response = await fetch('/data/current_simulation.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    setSimulacrosDisponibles(data.available || ['SG11-08', 'SG11-09']);
+                    if (data.active) {
+                        setSimulacroActual(data.active);
+                    }
+                }
+            } catch (error) {
+                console.error('Error cargando simulacros:', error);
+            }
+        };
+        cargarSimulacros();
+    }, []);
+
+    // Cargar datos cuando cambia el simulacro
     useEffect(() => {
         const cargarDatos = async () => {
             setLoading(true);
+            setError(null);
             try {
-                // Fetch static file directly
-                const response = await fetch('/data/resultados_finales.json');
-                if (!response.ok) throw new Error('Error al cargar datos');
-                const data: ResultadosFinales = await response.json();
+                // Intentar cargar desde la carpeta del simulacro
+                const simPath = `/data/simulations/${simulacroActual}`;
 
-                // Aplicar Regla de Negocio: Penalización por Inasistencia
-                // Si no tiene ambas sesiones (S1 y S2), el puntaje global ES 0 y TODAS las materias son 0.
-                const estudiantesProcesados = (data.estudiantes || []).map(est => {
-                    const sesiones = est.sesiones || [];
+                // Cargar estudiantes
+                let estudiantesData: Estudiante[] = [];
+                const studentsRes = await fetch(`${simPath}/students.json`);
+                if (studentsRes.ok) {
+                    const data = await studentsRes.json();
+                    // Soportar ambos formatos:
+                    // 1. { estudiantes: [...] } - formato array directo
+                    // 2. { students: {...}, index: [...] } - formato objeto con índice
+                    if (data.estudiantes && Array.isArray(data.estudiantes)) {
+                        estudiantesData = data.estudiantes;
+                    } else if (data.index && data.students) {
+                        estudiantesData = data.index.map((id: string) => data.students[id]);
+                    } else if (data.students && typeof data.students === 'object') {
+                        estudiantesData = Object.values(data.students);
+                    }
+                }
+
+                // Fallback si students.json no devolvió datos
+                if (estudiantesData.length === 0) {
+                    // Fallback a resultados_finales.json
+                    const resultsRes = await fetch(`${simPath}/resultados_finales.json`);
+                    if (resultsRes.ok) {
+                        const data = await resultsRes.json();
+                        estudiantesData = data.estudiantes || [];
+                    } else {
+                        // Último fallback: archivo global
+                        const globalRes = await fetch('/data/resultados_finales.json');
+                        if (globalRes.ok) {
+                            const data = await globalRes.json();
+                            estudiantesData = data.estudiantes || [];
+                        }
+                    }
+                }
+
+                // Función auxiliar para calcular aciertos por sesión
+                const calcularAciertosSesion = (puntajes: Estudiante['puntajes']) => {
+                    if (!puntajes) return { s1_aciertos: 0, s1_total: 0, s2_aciertos: 0, s2_total: 0 };
+
+                    // ICFES divide materias en sesiones:
+                    // S1: Matemáticas (50 preguntas en cuadernillo estándar)
+                    //     + Sociales parte 1 (preguntas S1 de sociales, típicamente 25)
+                    //     + Ciencias Naturales parte 1 (típicamente primeras ~29 preguntas)
+                    // S2: Lectura Crítica (41 preguntas)
+                    //     + Sociales parte 2 (resto, típicamente 25)
+                    //     + Ciencias Naturales parte 2 (resto)
+                    //     + Inglés (55 preguntas)
+
+                    // Materias S1: Matemáticas completas
+                    const matemáticas = puntajes['matemáticas'] || { correctas: 0, total_preguntas: 0 };
+
+                    // Materias S2: Lectura crítica + Inglés completos
+                    const lectura = puntajes['lectura crítica'] || { correctas: 0, total_preguntas: 0 };
+                    const inglés = puntajes['inglés'] || { correctas: 0, total_preguntas: 0 };
+
+                    // Materias compartidas: Sociales y Ciencias (mitad en S1, mitad en S2)
+                    const sociales = puntajes['sociales y ciudadanas'] || { correctas: 0, total_preguntas: 0 };
+                    const ciencias = puntajes['ciencias naturales'] || { correctas: 0, total_preguntas: 0 };
+
+                    // Calculamos porcentaje de aciertos para repartir proporcionalmente
+                    const socialesRatio = sociales.total_preguntas > 0 ? sociales.correctas / sociales.total_preguntas : 0;
+                    const cienciasRatio = ciencias.total_preguntas > 0 ? ciencias.correctas / ciencias.total_preguntas : 0;
+
+                    // S1 típicamente tiene ~120 preguntas: Matemáticas (50) + Sociales parte 1 (~25) + Ciencias parte 1 (~45)
+                    // S2 típicamente tiene ~134 preguntas: LC (41) + Inglés (55) + Sociales parte 2 (~25) + Ciencias parte 2 (~13)
+                    // Pero en SG11-09 el formulario puede tener distribución diferente
+
+                    const s1_total = (matemáticas.total_preguntas || 0) +
+                        Math.floor((sociales.total_preguntas || 0) / 2) +
+                        Math.floor((ciencias.total_preguntas || 0) * 0.78); // ~78% en S1
+
+                    const s2_total = (lectura.total_preguntas || 0) +
+                        (inglés.total_preguntas || 0) +
+                        Math.ceil((sociales.total_preguntas || 0) / 2) +
+                        Math.ceil((ciencias.total_preguntas || 0) * 0.22); // ~22% en S2
+
+                    const s1_aciertos = (matemáticas.correctas || 0) +
+                        Math.floor((sociales.correctas || 0) / 2) +
+                        Math.floor((ciencias.correctas || 0) * 0.78);
+
+                    const s2_aciertos = (lectura.correctas || 0) +
+                        (inglés.correctas || 0) +
+                        Math.ceil((sociales.correctas || 0) / 2) +
+                        Math.ceil((ciencias.correctas || 0) * 0.22);
+
+                    return { s1_aciertos, s1_total, s2_aciertos, s2_total };
+                };
+
+                // Aplicar penalización por inasistencia y calcular aciertos por sesión
+                const estudiantesProcesados = estudiantesData.map(est => {
+                    const sesiones = est.secciones_completadas || est.sesiones || [];
                     const tieneS1 = sesiones.includes('S1');
                     const tieneS2 = sesiones.includes('S2');
 
+                    // Calcular aciertos por sesión si no existen
+                    let s1_aciertos = est.s1_aciertos;
+                    let s1_total = est.s1_total;
+                    let s2_aciertos = est.s2_aciertos;
+                    let s2_total = est.s2_total;
+
+                    if (s1_aciertos === undefined || s2_aciertos === undefined) {
+                        const calculados = calcularAciertosSesion(est.puntajes);
+                        s1_aciertos = calculados.s1_aciertos;
+                        s1_total = calculados.s1_total;
+                        s2_aciertos = calculados.s2_aciertos;
+                        s2_total = calculados.s2_total;
+                    }
+
                     if (!tieneS1 || !tieneS2) {
-                        // Clonar y penalizar puntajes individuales
                         const puntajesPenalizados = { ...est.puntajes };
                         if (puntajesPenalizados) {
                             Object.keys(puntajesPenalizados).forEach(materia => {
@@ -133,22 +236,46 @@ export default function AdminPage() {
                             puntaje_global: 0,
                             nivel_desempeno: 'Bajo',
                             puntajes: puntajesPenalizados,
-                            s1_aciertos: tieneS1 ? est.s1_aciertos : 0,
-                            s2_aciertos: tieneS2 ? est.s2_aciertos : 0
+                            s1_aciertos: 0,
+                            s1_total,
+                            s2_aciertos: 0,
+                            s2_total,
                         };
                     }
-                    return est;
+
+                    return {
+                        ...est,
+                        s1_aciertos,
+                        s1_total,
+                        s2_aciertos,
+                        s2_total,
+                    };
                 });
 
                 setEstudiantes(estudiantesProcesados);
+
+                // Cargar estadísticas del simulacro (estadisticas_grupo.json tiene las claves correctas)
+                let statsRes = await fetch(`${simPath}/estadisticas_grupo.json`);
+                if (!statsRes.ok) {
+                    statsRes = await fetch(`${simPath}/statistics.json`);
+                }
+                if (statsRes.ok) {
+                    const statsData = await statsRes.json();
+                    setEstadisticas(statsData);
+                }
+
             } catch (err) {
                 setError(err instanceof Error ? err.message : 'Error desconocido');
+                console.error('Error cargando datos:', err);
             } finally {
                 setLoading(false);
             }
         };
-        cargarDatos();
-    }, []);
+
+        if (simulacroActual) {
+            cargarDatos();
+        }
+    }, [simulacroActual]);
 
     // Obtener instituciones únicas
     const instituciones = useMemo(() => {
@@ -193,9 +320,42 @@ export default function AdminPage() {
         if (estudiantes.length === 0) return null;
 
         const puntajes = estudiantes.map(e => e.puntaje_global || 0).filter(p => p > 0);
-        const promedio = puntajes.length > 0 ? puntajes.reduce((a, b) => a + b, 0) / puntajes.length : 0;
-        const maximo = Math.max(...puntajes, 0);
-        const minimo = Math.min(...puntajes.filter(p => p > 0), 0);
+        const n = puntajes.length;
+        if (n === 0) return null;
+
+        const promedio = puntajes.reduce((a, b) => a + b, 0) / n;
+        const maximo = Math.max(...puntajes);
+        const minimo = Math.min(...puntajes);
+
+        // Estadísticas avanzadas
+        const puntajesOrdenados = [...puntajes].sort((a, b) => a - b);
+
+        // Mediana
+        const mediana = n % 2 === 0
+            ? (puntajesOrdenados[n / 2 - 1] + puntajesOrdenados[n / 2]) / 2
+            : puntajesOrdenados[Math.floor(n / 2)];
+
+        // Función para calcular percentiles
+        const calcPercentil = (p: number) => {
+            const idx = Math.floor((p / 100) * n);
+            return puntajesOrdenados[Math.min(idx, n - 1)];
+        };
+        const percentil25 = calcPercentil(25);
+        const percentil75 = calcPercentil(75);
+        const percentil90 = calcPercentil(90);
+        const rangoIntercuartilico = percentil75 - percentil25;
+
+        // Desviación estándar
+        const desviacionEstandar = Math.sqrt(
+            puntajes.reduce((sum, p) => sum + Math.pow(p - promedio, 2), 0) / n
+        );
+        const coeficienteVariacion = promedio > 0 ? (desviacionEstandar / promedio) * 100 : 0;
+
+        // Tasa de aprobación (>= 300 puntos)
+        const tasaAprobacion = (puntajes.filter(p => p >= 300).length / n) * 100;
+
+        // Brecha
+        const brechaMaxMin = maximo - minimo;
 
         const niveles = { superior: 0, alto: 0, medio: 0, bajo: 0 };
         estudiantes.forEach(e => {
@@ -245,6 +405,14 @@ export default function AdminPage() {
             estudiantes: data.estudiantes
         })).sort((a, b) => b.promedio - a.promedio);
 
+        // Materia más fuerte y más débil
+        const materiaMasFuerte = promediosPorMateria.length > 0
+            ? { nombre: promediosPorMateria[0].nombre, promedio: promediosPorMateria[0].promedio }
+            : null;
+        const materiaMasDebil = promediosPorMateria.length > 0
+            ? { nombre: promediosPorMateria[promediosPorMateria.length - 1].nombre, promedio: promediosPorMateria[promediosPorMateria.length - 1].promedio }
+            : null;
+
         // Top 5 estudiantes
         const top5 = [...estudiantes]
             .filter(e => (e.puntaje_global || 0) > 0)
@@ -259,11 +427,12 @@ export default function AdminPage() {
 
         // Sesiones completadas
         const conAmbas = estudiantes.filter(e => {
-            const sesiones = e.sesiones || [];
+            const sesiones = e.sesiones || e.secciones_completadas || [];
             return sesiones.includes('S1') && sesiones.includes('S2');
         }).length;
 
         return {
+            // Métricas básicas
             promedio: Math.round(promedio),
             maximo,
             minimo,
@@ -273,7 +442,19 @@ export default function AdminPage() {
             top5,
             enRiesgo,
             conAmbas,
-            total: estudiantes.length
+            total: estudiantes.length,
+            // Estadísticas avanzadas
+            mediana: Math.round(mediana),
+            desviacionEstandar: Math.round(desviacionEstandar * 10) / 10,
+            coeficienteVariacion: Math.round(coeficienteVariacion * 10) / 10,
+            percentil90,
+            percentil25,
+            percentil75,
+            rangoIntercuartilico,
+            tasaAprobacion: Math.round(tasaAprobacion * 10) / 10,
+            brechaMaxMin,
+            materiaMasFuerte,
+            materiaMasDebil
         };
     }, [estudiantes]);
 
@@ -562,17 +743,20 @@ export default function AdminPage() {
                                 <span className="text-white/50">📅 Última actualización:</span>
                                 <span className="text-white font-medium">{new Date().toLocaleDateString('es-CO')}</span>
                             </div>
-                            <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
-                                <span className="text-white/50">📝 Simulacro:</span>
+                            <div className="flex items-center gap-3 bg-gradient-to-r from-purple-600/20 to-pink-600/20 px-4 py-2 rounded-xl border-2 border-purple-500/40 shadow-lg shadow-purple-500/10">
+                                <span className="text-purple-300 font-medium">📝 Simulacro:</span>
                                 <select
                                     value={simulacroActual}
                                     onChange={(e) => setSimulacroActual(e.target.value)}
-                                    className="bg-transparent text-purple-400 font-bold focus:outline-none cursor-pointer"
+                                    className="bg-purple-900/50 text-white font-bold px-3 py-1 rounded-lg border border-purple-400/50 focus:outline-none focus:ring-2 focus:ring-purple-400 cursor-pointer text-base min-w-[120px]"
                                 >
-                                    <option value="S11 S-08" className="bg-slate-800 text-white">S11 S-08</option>
-                                    <option value="S11 S-07" className="bg-slate-800 text-white">S11 S-07</option>
-                                    <option value="S11 S-06" className="bg-slate-800 text-white">S11 S-06</option>
+                                    {simulacrosDisponibles.map(sim => (
+                                        <option key={sim} value={sim} className="bg-slate-800 text-white py-2">
+                                            {sim}
+                                        </option>
+                                    ))}
                                 </select>
+                                <span className="text-xs text-purple-400/70 hidden sm:inline">↕️ Cambiar</span>
                             </div>
                         </div>
                     </div>
@@ -717,7 +901,7 @@ export default function AdminPage() {
                                                             {iniciales}
                                                         </div>
                                                         <div className="min-w-0 flex flex-col">
-                                                            <span className="text-white font-bold text-sm leading-none group-hover:text-purple-300 transition-colors truncate max-w-[200px]">
+                                                            <span className="text-white font-bold text-sm leading-none group-hover:text-purple-300 transition-colors truncate max-w-[200px] student-name">
                                                                 {est.informacion_personal.nombres} {est.informacion_personal.apellidos}
                                                             </span>
                                                             <div className="flex items-center gap-2 mt-1">
@@ -877,38 +1061,136 @@ export default function AdminPage() {
                 {/* Vista: Alertas */}
                 {vistaActual === 'alertas' && (
                     <div className="space-y-6">
-                        {/* Sesión 1 faltante */}
-                        <div className="bg-orange-500/20 backdrop-blur-lg rounded-2xl border border-orange-500/30 p-6">
-                            <h3 className="text-orange-400 font-bold text-lg flex items-center gap-2 mb-4">
-                                <span>⚠️</span> Sin Sesión 1 ({alertas.sinSesion1.length})
-                            </h3>
-                            {alertas.sinSesion1.length === 0 ? (
-                                <p className="text-white/60">Todos los estudiantes tienen la sesión 1 ✓</p>
+                        {/* Resumen de Alertas */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div className="bg-gradient-to-br from-red-500/20 to-red-600/10 backdrop-blur-lg rounded-2xl border border-red-500/30 p-6 text-center">
+                                <div className="text-5xl font-black text-red-400 mb-2">
+                                    {alertas.sinSesion1.filter(e => !tieneSesion(e, 's2') && !tieneSesion(e, 'seccion2')).length}
+                                </div>
+                                <p className="text-red-300 font-bold">Sin ninguna sesión</p>
+                                <p className="text-red-200/60 text-sm mt-1">No presentaron S1 ni S2</p>
+                            </div>
+                            <div className="bg-gradient-to-br from-orange-500/20 to-orange-600/10 backdrop-blur-lg rounded-2xl border border-orange-500/30 p-6 text-center">
+                                <div className="text-5xl font-black text-orange-400 mb-2">
+                                    {alertas.sinSesion1.length + alertas.sinSesion2.length - alertas.sinSesion1.filter(e => !tieneSesion(e, 's2') && !tieneSesion(e, 'seccion2')).length}
+                                </div>
+                                <p className="text-orange-300 font-bold">Sesión incompleta</p>
+                                <p className="text-orange-200/60 text-sm mt-1">Falta S1 o S2</p>
+                            </div>
+                            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 backdrop-blur-lg rounded-2xl border border-emerald-500/30 p-6 text-center">
+                                <div className="text-5xl font-black text-emerald-400 mb-2">
+                                    {estudiantes.filter(e => tieneSesion(e, 's1') && tieneSesion(e, 's2')).length}
+                                </div>
+                                <p className="text-emerald-300 font-bold">Completos ✓</p>
+                                <p className="text-emerald-200/60 text-sm mt-1">Ambas sesiones</p>
+                            </div>
+                        </div>
+
+                        {/* Sin ninguna sesión - CRÍTICO */}
+                        {alertas.sinSesion1.filter(e => !tieneSesion(e, 's2') && !tieneSesion(e, 'seccion2')).length > 0 && (
+                            <div className="bg-gradient-to-r from-red-500/20 via-red-600/10 to-red-500/20 backdrop-blur-lg rounded-2xl border-2 border-red-500/50 p-6">
+                                <div className="flex items-center justify-between mb-4">
+                                    <h3 className="text-red-400 font-bold text-xl flex items-center gap-3">
+                                        <span className="text-3xl">🚨</span>
+                                        Sin Ninguna Sesión
+                                        <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-full ml-2">
+                                            {alertas.sinSesion1.filter(e => !tieneSesion(e, 's2') && !tieneSesion(e, 'seccion2')).length}
+                                        </span>
+                                    </h3>
+                                    <span className="text-red-300 text-sm bg-red-500/20 px-3 py-1 rounded-lg">CRÍTICO</span>
+                                </div>
+                                <p className="text-red-200/80 mb-4 text-sm">
+                                    Estos estudiantes <strong>no presentaron ninguna sesión</strong>. Deben completar ambas sesiones obligatorias.
+                                </p>
+                                <div className="grid gap-2 max-h-80 overflow-y-auto">
+                                    {alertas.sinSesion1.filter(e => !tieneSesion(e, 's2') && !tieneSesion(e, 'seccion2')).map((est, idx) => (
+                                        <div key={idx} className="bg-red-500/10 hover:bg-red-500/20 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors cursor-pointer border border-red-500/20"
+                                            onClick={() => setEstudianteSeleccionado(est)}
+                                        >
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-10 h-10 bg-red-500/30 rounded-xl flex items-center justify-center text-red-300 font-bold">
+                                                    {idx + 1}
+                                                </div>
+                                                <div>
+                                                    <span className="text-white font-semibold block">{est.informacion_personal.nombres} {est.informacion_personal.apellidos}</span>
+                                                    <span className="text-white/50 text-sm">{est.informacion_personal.institucion}</span>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-white/40 text-sm font-mono">{est.informacion_personal.numero_identificacion}</span>
+                                                <div className="flex gap-1">
+                                                    <span className="bg-red-500/50 text-red-200 text-xs px-2 py-1 rounded">❌ S1</span>
+                                                    <span className="bg-red-500/50 text-red-200 text-xs px-2 py-1 rounded">❌ S2</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Sesión 1 faltante (pero tienen S2) */}
+                        <div className="bg-orange-500/10 backdrop-blur-lg rounded-2xl border border-orange-500/30 p-6">
+                            <div className="flex items-center justify-between mb-4">
+                                <h3 className="text-orange-400 font-bold text-lg flex items-center gap-3">
+                                    <span className="text-2xl">⚠️</span>
+                                    Solo Falta Sesión 1
+                                    <span className="bg-orange-500/50 text-orange-100 text-sm px-3 py-1 rounded-full">
+                                        {alertas.sinSesion1.filter(e => tieneSesion(e, 's2') || tieneSesion(e, 'seccion2')).length}
+                                    </span>
+                                </h3>
+                            </div>
+                            {alertas.sinSesion1.filter(e => tieneSesion(e, 's2') || tieneSesion(e, 'seccion2')).length === 0 ? (
+                                <p className="text-white/60">✓ Todos los que tienen S2 también tienen S1</p>
                             ) : (
                                 <div className="grid gap-2 max-h-60 overflow-y-auto">
-                                    {alertas.sinSesion1.map((est, idx) => (
-                                        <div key={idx} className="bg-white/5 rounded-lg p-3 flex justify-between">
-                                            <span className="text-white">{est.informacion_personal.nombres} {est.informacion_personal.apellidos}</span>
-                                            <span className="text-white/50">{est.informacion_personal.numero_identificacion}</span>
+                                    {alertas.sinSesion1.filter(e => tieneSesion(e, 's2') || tieneSesion(e, 'seccion2')).map((est, idx) => (
+                                        <div key={idx} className="bg-white/5 hover:bg-orange-500/10 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors cursor-pointer"
+                                            onClick={() => setEstudianteSeleccionado(est)}
+                                        >
+                                            <div>
+                                                <span className="text-white font-medium">{est.informacion_personal.nombres} {est.informacion_personal.apellidos}</span>
+                                                <span className="text-white/40 text-xs ml-2">({est.informacion_personal.institucion})</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-white/50 text-sm font-mono">{est.informacion_personal.numero_identificacion}</span>
+                                                <span className="bg-red-500/30 text-red-300 text-xs px-2 py-1 rounded">❌ S1</span>
+                                                <span className="bg-green-500/30 text-green-300 text-xs px-2 py-1 rounded">✓ S2</span>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
                             )}
                         </div>
 
-                        {/* Sesión 2 faltante */}
-                        <div className="bg-orange-500/20 backdrop-blur-lg rounded-2xl border border-orange-500/30 p-6">
-                            <h3 className="text-orange-400 font-bold text-lg flex items-center gap-2 mb-4">
-                                <span>⚠️</span> Sin Sesión 2 ({alertas.sinSesion2.length})
-                            </h3>
-                            {alertas.sinSesion2.length === 0 ? (
-                                <p className="text-white/60">Todos los estudiantes tienen la sesión 2 ✓</p>
+                        {/* Sesión 2 faltante (pero tienen S1) */}
+                        <div className="bg-orange-500/10 backdrop-blur-lg rounded-2xl border border-orange-500/30 p-6">
+                            <div className="flex items-center justify-between mb-4">
+                                <h3 className="text-orange-400 font-bold text-lg flex items-center gap-3">
+                                    <span className="text-2xl">⚠️</span>
+                                    Solo Falta Sesión 2
+                                    <span className="bg-orange-500/50 text-orange-100 text-sm px-3 py-1 rounded-full">
+                                        {alertas.sinSesion2.filter(e => tieneSesion(e, 's1') || tieneSesion(e, 'seccion1')).length}
+                                    </span>
+                                </h3>
+                            </div>
+                            {alertas.sinSesion2.filter(e => tieneSesion(e, 's1') || tieneSesion(e, 'seccion1')).length === 0 ? (
+                                <p className="text-white/60">✓ Todos los que tienen S1 también tienen S2</p>
                             ) : (
                                 <div className="grid gap-2 max-h-60 overflow-y-auto">
-                                    {alertas.sinSesion2.map((est, idx) => (
-                                        <div key={idx} className="bg-white/5 rounded-lg p-3 flex justify-between">
-                                            <span className="text-white">{est.informacion_personal.nombres} {est.informacion_personal.apellidos}</span>
-                                            <span className="text-white/50">{est.informacion_personal.numero_identificacion}</span>
+                                    {alertas.sinSesion2.filter(e => tieneSesion(e, 's1') || tieneSesion(e, 'seccion1')).map((est, idx) => (
+                                        <div key={idx} className="bg-white/5 hover:bg-orange-500/10 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors cursor-pointer"
+                                            onClick={() => setEstudianteSeleccionado(est)}
+                                        >
+                                            <div>
+                                                <span className="text-white font-medium">{est.informacion_personal.nombres} {est.informacion_personal.apellidos}</span>
+                                                <span className="text-white/40 text-xs ml-2">({est.informacion_personal.institucion})</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-white/50 text-sm font-mono">{est.informacion_personal.numero_identificacion}</span>
+                                                <span className="bg-green-500/30 text-green-300 text-xs px-2 py-1 rounded">✓ S1</span>
+                                                <span className="bg-red-500/30 text-red-300 text-xs px-2 py-1 rounded">❌ S2</span>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
@@ -916,18 +1198,30 @@ export default function AdminPage() {
                         </div>
 
                         {/* Puntaje bajo */}
-                        <div className="bg-red-500/20 backdrop-blur-lg rounded-2xl border border-red-500/30 p-6">
-                            <h3 className="text-red-400 font-bold text-lg flex items-center gap-2 mb-4">
-                                <span>🔻</span> Puntaje Bajo ({alertas.puntajeBajo.length})
+                        <div className="bg-purple-500/10 backdrop-blur-lg rounded-2xl border border-purple-500/30 p-6">
+                            <h3 className="text-purple-400 font-bold text-lg flex items-center gap-3 mb-4">
+                                <span className="text-2xl">📉</span>
+                                Puntaje Bajo (menos de 250)
+                                <span className="bg-purple-500/50 text-purple-100 text-sm px-3 py-1 rounded-full">
+                                    {alertas.puntajeBajo.length}
+                                </span>
                             </h3>
                             {alertas.puntajeBajo.length === 0 ? (
-                                <p className="text-white/60">No hay estudiantes con puntaje bajo ✓</p>
+                                <p className="text-white/60">✓ No hay estudiantes con puntaje bajo</p>
                             ) : (
                                 <div className="grid gap-2 max-h-60 overflow-y-auto">
-                                    {alertas.puntajeBajo.map((est, idx) => (
-                                        <div key={idx} className="bg-white/5 rounded-lg p-3 flex justify-between items-center">
-                                            <span className="text-white">{est.informacion_personal.nombres} {est.informacion_personal.apellidos}</span>
-                                            <span className="bg-red-500 text-white text-sm px-2 py-1 rounded">{est.puntaje_global}/500</span>
+                                    {alertas.puntajeBajo.sort((a, b) => (a.puntaje_global || 0) - (b.puntaje_global || 0)).map((est, idx) => (
+                                        <div key={idx} className="bg-white/5 hover:bg-purple-500/10 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors cursor-pointer"
+                                            onClick={() => setEstudianteSeleccionado(est)}
+                                        >
+                                            <div>
+                                                <span className="text-white font-medium">{est.informacion_personal.nombres} {est.informacion_personal.apellidos}</span>
+                                                <span className="text-white/40 text-xs ml-2">({est.informacion_personal.institucion})</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-white/50 text-sm">{est.informacion_personal.numero_identificacion}</span>
+                                                <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-lg font-bold">{est.puntaje_global}/500</span>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>

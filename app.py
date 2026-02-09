@@ -11,12 +11,16 @@ import webbrowser
 app = Flask(__name__)
 
 # Rutas organizadas (Nueva estructura reorganizada)
+app.config['INPUT_FOLDER'] = 'data/input'  # Carpeta con los simulacros
 app.config['DATOS_FOLDER'] = '_procesamiento/temp'
 app.config['RESULTADOS_FOLDER'] = '_procesamiento/temp'
 app.config['CARGAR_FOLDER'] = '_procesamiento'
 app.config['SALIDA_FOLDER'] = '_salida'
 app.config['ASSETS_FOLDER'] = 'assets'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max-limit
+
+# Variable global para rastrear el simulacro activo
+simulacro_actual = None
 
 # Asegurarse de que los directorios existen
 os.makedirs(app.config['DATOS_FOLDER'], exist_ok=True)
@@ -645,10 +649,355 @@ def index():
 def informe():
     return render_template('Informe.html')
 
+@app.route('/api/simulacros')
+def listar_simulacros():
+    """Lista todos los simulacros disponibles en data/input/"""
+    try:
+        input_folder = app.config['INPUT_FOLDER']
+        simulacros = []
+        
+        if os.path.exists(input_folder):
+            for nombre in os.listdir(input_folder):
+                ruta = os.path.join(input_folder, nombre)
+                if os.path.isdir(ruta) and nombre.startswith('SG'):
+                    # Verificar si tiene las subcarpetas necesarias
+                    tiene_respuestas = os.path.exists(os.path.join(ruta, 'respuestas'))
+                    tiene_claves = os.path.exists(os.path.join(ruta, 'claves'))
+                    
+                    # Contar archivos
+                    num_respuestas = len([f for f in os.listdir(os.path.join(ruta, 'respuestas')) if f.endswith('.csv')]) if tiene_respuestas else 0
+                    num_claves = len([f for f in os.listdir(os.path.join(ruta, 'claves')) if f.endswith('.csv')]) if tiene_claves else 0
+                    
+                    # Verificar si ya fue procesado
+                    id_normalizado = nombre.replace(' ', '').replace('-', '-')
+                    ruta_procesado = os.path.join(app.config['CARGAR_FOLDER'], id_normalizado, 'resultados_finales.json')
+                    procesado = os.path.exists(ruta_procesado)
+                    
+                    simulacros.append({
+                        'id': nombre,
+                        'id_normalizado': id_normalizado,
+                        'tiene_respuestas': tiene_respuestas,
+                        'tiene_claves': tiene_claves,
+                        'num_respuestas': num_respuestas,
+                        'num_claves': num_claves,
+                        'procesado': procesado,
+                        'listo': tiene_respuestas and tiene_claves and num_respuestas >= 2 and num_claves >= 2
+                    })
+        
+        # Ordenar por nombre
+        simulacros.sort(key=lambda x: x['id'])
+        
+        return jsonify({
+            'simulacros': simulacros,
+            'simulacro_actual': simulacro_actual
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/simulacros/seleccionar', methods=['POST'])
+def seleccionar_simulacro():
+    """Selecciona el simulacro activo para procesar"""
+    global simulacro_actual
+    try:
+        datos = request.get_json()
+        simulacro_id = datos.get('simulacro_id')
+        
+        if not simulacro_id:
+            return jsonify({'error': 'No se especificó el simulacro'}), 400
+        
+        # Verificar que existe
+        ruta = os.path.join(app.config['INPUT_FOLDER'], simulacro_id)
+        if not os.path.exists(ruta):
+            return jsonify({'error': f'No se encontró el simulacro: {simulacro_id}'}), 404
+        
+        simulacro_actual = simulacro_id
+        
+        # Crear carpeta de procesamiento para este simulacro
+        id_normalizado = simulacro_id.replace(' ', '').replace('-', '-')
+        carpeta_procesamiento = os.path.join(app.config['CARGAR_FOLDER'], id_normalizado)
+        os.makedirs(carpeta_procesamiento, exist_ok=True)
+        os.makedirs(os.path.join(carpeta_procesamiento, 'temp'), exist_ok=True)
+        
+        return jsonify({
+            'success': True,
+            'simulacro_actual': simulacro_actual,
+            'mensaje': f'Simulacro {simulacro_id} seleccionado'
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/simulacros/procesar', methods=['POST'])
+def procesar_simulacro():
+    """Procesa un simulacro leyendo claves y respuestas desde la carpeta"""
+    global simulacro_actual
+    try:
+        datos = request.get_json()
+        simulacro_id = datos.get('simulacro_id') or simulacro_actual
+        
+        if not simulacro_id:
+            return jsonify({'error': 'No se ha seleccionado ningún simulacro'}), 400
+        
+        simulacro_actual = simulacro_id
+        ruta_simulacro = os.path.join(app.config['INPUT_FOLDER'], simulacro_id)
+        
+        if not os.path.exists(ruta_simulacro):
+            return jsonify({'error': f'No se encontró la carpeta del simulacro: {simulacro_id}'}), 404
+        
+        ruta_claves = os.path.join(ruta_simulacro, 'claves')
+        ruta_respuestas = os.path.join(ruta_simulacro, 'respuestas')
+        
+        # Verificar que existan las carpetas
+        if not os.path.exists(ruta_claves):
+            return jsonify({'error': 'No se encontró la carpeta de claves'}), 404
+        if not os.path.exists(ruta_respuestas):
+            return jsonify({'error': 'No se encontró la carpeta de respuestas'}), 404
+        
+        # Cargar claves de ambas sesiones
+        claves = {}
+        archivos_claves = [f for f in os.listdir(ruta_claves) if f.endswith('.csv')]
+        
+        for archivo in archivos_claves:
+            df_claves = pd.read_csv(os.path.join(ruta_claves, archivo))
+            columnas = df_claves.columns.tolist()
+            respuestas = df_claves.iloc[0].tolist()
+            
+            for col, resp in zip(columnas, respuestas):
+                # Extraer materia y número de pregunta del nombre de columna
+                # Formato: "Matemáticas S1 [1.]" o "Ingles Parte 1 [80.]"
+                import re
+                match = re.search(r'\[(\d+)\.\]', col)
+                if match:
+                    num_pregunta = match.group(1)
+                    claves[col] = str(resp).strip().upper()
+        
+        print(f"Claves cargadas: {len(claves)} preguntas")
+        
+        # Cargar respuestas de estudiantes
+        archivos_respuestas = [f for f in os.listdir(ruta_respuestas) if f.endswith('.csv')]
+        
+        estudiantes_combinados = {}
+        
+        for archivo in archivos_respuestas:
+            sesion = 'S1' if 'SESION 1' in archivo.upper() or 'S1' in archivo.upper() else 'S2'
+            df_resp = pd.read_csv(os.path.join(ruta_respuestas, archivo))
+            
+            print(f"Procesando {archivo}: {len(df_resp)} registros")
+            
+            # Encontrar columnas de identificación (buscar más patrones)
+            cols_id = [c for c in df_resp.columns if 
+                       ('número' in c.lower() and 'identificación' in c.lower()) or
+                       ('numero' in c.lower() and 'identificacion' in c.lower()) or
+                       ('identificación' in c.lower() and 'no te equivoques' in c.lower()) or
+                       ('identificacion' in c.lower() and 'no te equivoques' in c.lower()) or
+                       c.lower().strip() == 'documento']
+            cols_nombre = [c for c in df_resp.columns if 'nombre' in c.lower() and 'completo' in c.lower()]
+            cols_apellido = [c for c in df_resp.columns if 'apellido' in c.lower()]
+            cols_telefono = [c for c in df_resp.columns if 'telefono' in c.lower() or 'whatsapp' in c.lower() or 'celular' in c.lower()]
+            cols_depto = [c for c in df_resp.columns if 'departamento' in c.lower()]
+            cols_institucion = [c for c in df_resp.columns if 'instituci' in c.lower() or 'colegio' in c.lower()]
+            cols_fecha = [c for c in df_resp.columns if 'temporal' in c.lower() or 'timestamp' in c.lower()]
+            
+            print(f"Columnas ID encontradas: {cols_id}")
+            print(f"Columnas nombre encontradas: {cols_nombre}")
+            
+            for idx, fila in df_resp.iterrows():
+                # Obtener identificación
+                id_estudiante = None
+                for col in cols_id:
+                    val = fila.get(col)
+                    if pd.notna(val):
+                        id_estudiante = str(val).replace('.', '').replace(',', '').strip()
+                        break
+                
+                if not id_estudiante:
+                    continue
+                
+                # Obtener información personal
+                nombres = ''
+                for col in cols_nombre:
+                    val = fila.get(col)
+                    if pd.notna(val):
+                        nombres = str(val).strip()
+                        break
+                
+                apellidos = ''
+                for col in cols_apellido:
+                    val = fila.get(col)
+                    if pd.notna(val):
+                        apellidos = str(val).strip()
+                        break
+                
+                telefono = ''
+                for col in cols_telefono:
+                    val = fila.get(col)
+                    if pd.notna(val):
+                        telefono = str(val).strip()
+                        break
+                
+                departamento = ''
+                for col in cols_depto:
+                    val = fila.get(col)
+                    if pd.notna(val):
+                        departamento = str(val).strip()
+                        break
+                
+                institucion = ''
+                for col in cols_institucion:
+                    val = fila.get(col)
+                    if pd.notna(val):
+                        institucion = str(val).strip()
+                        break
+                
+                fecha = ''
+                for col in cols_fecha:
+                    val = fila.get(col)
+                    if pd.notna(val):
+                        fecha = str(val).strip()
+                        break
+                
+                # Inicializar estudiante si no existe
+                if id_estudiante not in estudiantes_combinados:
+                    estudiantes_combinados[id_estudiante] = {
+                        'informacion_personal': {
+                            'numero_identificacion': id_estudiante,
+                            'nombres': nombres,
+                            'apellidos': apellidos,
+                            'telefono': telefono,
+                            'departamento': departamento,
+                            'institucion': institucion
+                        },
+                        'fecha': fecha,
+                        'puntajes': {},
+                        'respuestas_detalladas': {},
+                        'secciones_completadas': []
+                    }
+                
+                est = estudiantes_combinados[id_estudiante]
+                est['secciones_completadas'].append(sesion)
+                
+                # Procesar respuestas de este estudiante
+                for columna in df_resp.columns:
+                    if '[' in columna and ']' in columna:
+                        respuesta_estudiante = str(fila.get(columna, '')).strip().upper()
+                        clave_correcta = claves.get(columna, '')
+                        
+                        # Determinar materia
+                        col_lower = columna.lower()
+                        if 'matem' in col_lower:
+                            materia = 'matemáticas'
+                        elif 'lectura' in col_lower:
+                            materia = 'lectura crítica'
+                        elif 'social' in col_lower or 'ciudadan' in col_lower:
+                            materia = 'sociales y ciudadanas'
+                        elif 'natural' in col_lower or 'ciencias n' in col_lower:
+                            materia = 'ciencias naturales'
+                        elif 'ingl' in col_lower:
+                            materia = 'inglés'
+                        else:
+                            continue
+                        
+                        # Inicializar materia si no existe
+                        if materia not in est['puntajes']:
+                            est['puntajes'][materia] = {
+                                'correctas': 0,
+                                'total_preguntas': 0,
+                                'porcentaje_real': 0,
+                                'puntaje': 0
+                            }
+                        
+                        if materia not in est['respuestas_detalladas']:
+                            est['respuestas_detalladas'][materia] = {}
+                        
+                        # Extraer número de pregunta
+                        import re
+                        match = re.search(r'\[(\d+)\.\]', columna)
+                        if match:
+                            num_pregunta = match.group(1)
+                            
+                            # Verificar si es correcta (soportar múltiples respuestas correctas con -)
+                            es_correcta = False
+                            if clave_correcta:
+                                if '-' in clave_correcta:
+                                    # Múltiples respuestas válidas
+                                    respuestas_validas = [r.strip() for r in clave_correcta.split('-')]
+                                    es_correcta = respuesta_estudiante in respuestas_validas
+                                else:
+                                    es_correcta = respuesta_estudiante == clave_correcta
+                            
+                            est['puntajes'][materia]['total_preguntas'] += 1
+                            if es_correcta:
+                                est['puntajes'][materia]['correctas'] += 1
+                            
+                            est['respuestas_detalladas'][materia][num_pregunta] = {
+                                'respuesta': respuesta_estudiante,
+                                'correcta': clave_correcta,
+                                'es_correcta': es_correcta
+                            }
+        
+        # Calcular puntajes finales
+        for id_est, est in estudiantes_combinados.items():
+            total_puntaje = 0
+            total_peso = 0
+            
+            for materia, datos in est['puntajes'].items():
+                if datos['total_preguntas'] > 0:
+                    porcentaje = (datos['correctas'] / datos['total_preguntas']) * 100
+                    datos['porcentaje_real'] = round(porcentaje, 2)
+                    datos['puntaje'] = int(round(calcular_puntaje_materia_icfes(porcentaje)))
+                    
+                    # Peso para puntaje global
+                    peso = 1 if materia == 'inglés' else 3
+                    total_puntaje += datos['puntaje'] * peso
+                    total_peso += peso
+            
+            est['puntaje_global'] = int(round((total_puntaje / total_peso) * 5)) if total_peso > 0 else 0
+            est['score_real'] = sum(d['correctas'] for d in est['puntajes'].values())
+            est['score_reportado'] = est['score_real']
+        
+        # Guardar resultados
+        id_normalizado = simulacro_id.replace(' ', '').replace('-', '-')
+        carpeta_salida = os.path.join(app.config['CARGAR_FOLDER'], id_normalizado)
+        os.makedirs(carpeta_salida, exist_ok=True)
+        
+        resultado_final = {
+            'simulacro': simulacro_id,
+            'fecha_procesamiento': datetime.now().isoformat(),
+            'total_estudiantes': len(estudiantes_combinados),
+            'estudiantes': list(estudiantes_combinados.values())
+        }
+        
+        with open(os.path.join(carpeta_salida, 'resultados_finales.json'), 'w', encoding='utf-8') as f:
+            json.dump(resultado_final, f, ensure_ascii=False, indent=2)
+        
+        # Ya no sobrescribimos el archivo compartido - cada simulacro tiene sus propios resultados
+        print(f"Resultados guardados en: {carpeta_salida}/resultados_finales.json")
+        
+        return jsonify({
+            'success': True,
+            'mensaje': f'Simulacro {simulacro_id} procesado exitosamente',
+            'total_estudiantes': len(estudiantes_combinados),
+            'claves_cargadas': len(claves)
+        })
+        
+    except Exception as e:
+        import traceback
+        print(f"Error procesando simulacro: {traceback.format_exc()}")
+        return jsonify({'error': str(e)}), 500
+
+
 @app.route('/cargar/resultados_finales.json')
 def get_resultados():
+    global simulacro_actual
     try:
-        # Primero intentar desde output (generado por procesar.py)
+        # Si hay un simulacro seleccionado, cargar sus resultados específicos
+        if simulacro_actual:
+            id_normalizado = simulacro_actual.replace(' ', '').replace('-', '-')
+            ruta_simulacro = os.path.join(app.config['CARGAR_FOLDER'], id_normalizado, 'resultados_finales.json')
+            if os.path.exists(ruta_simulacro):
+                with open(ruta_simulacro, 'r', encoding='utf-8') as f:
+                    return jsonify(json.load(f))
+        
+        # Fallback a rutas originales
         ruta_output = os.path.join(app.config['SALIDA_FOLDER'], 'resultados_finales.json')
         ruta_cache = os.path.join(app.config['CARGAR_FOLDER'], 'resultados_finales.json')
         

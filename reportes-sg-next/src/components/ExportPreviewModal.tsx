@@ -65,7 +65,11 @@ export default function ExportPreviewModal({ isOpen, onClose, estudiantesOrigina
             if (est.respuestas_detalladas) {
                 Object.entries(est.respuestas_detalladas).forEach(([materia, resps]) => {
                     if (!qAnalysis[materia]) qAnalysis[materia] = {};
-                    resps.forEach(r => {
+
+                    // Verificar que resps sea un array antes de iterar
+                    const respArray = Array.isArray(resps) ? resps : [];
+
+                    respArray.forEach(r => {
                         // 🚫 Ignorar preguntas anuladas - no son relevantes para diagnóstico
                         const respCorrectaStr = String(r.respuesta_correcta || '').toUpperCase();
                         if (respCorrectaStr.includes('ANULADA') || respCorrectaStr === '*ANULADA*') {

@@ -20,6 +20,18 @@ export default function StudentDetailModal({ estudiante, estadisticas, isOpen, o
 
     const materiasDisponibles = Object.keys(estudiante.respuestas_detalladas || {});
 
+    // Helper function to convert object format to array format
+    const toArrayFormat = (respuestasObj: any) => {
+        if (!respuestasObj) return [];
+        if (Array.isArray(respuestasObj)) return respuestasObj;
+        return Object.entries(respuestasObj).map(([num, data]: [string, any]) => ({
+            numero: parseInt(num),
+            respuesta_estudiante: data.respuesta || '',
+            respuesta_correcta: data.correcta || '',
+            es_correcta: data.es_correcta || false
+        })).sort((a, b) => a.numero - b.numero);
+    };
+
     const detectarPatron = (respuestas: any[], index: number) => {
         if (index < 3) return false;
         const current = respuestas[index].respuesta_estudiante;
@@ -30,9 +42,9 @@ export default function StudentDetailModal({ estudiante, estadisticas, isOpen, o
         );
     };
 
-    const respuestasActuales = estudiante.respuestas_detalladas?.[auditMateria] || [];
+    const respuestasActuales = toArrayFormat(estudiante.respuestas_detalladas?.[auditMateria]);
     const tasaAciertoMateria = respuestasActuales.length > 0
-        ? (respuestasActuales.filter(r => r.es_correcta).length / respuestasActuales.length) * 100
+        ? (respuestasActuales.filter((r: any) => r.es_correcta).length / respuestasActuales.length) * 100
         : 0;
 
     return (
@@ -185,7 +197,7 @@ export default function StudentDetailModal({ estudiante, estadisticas, isOpen, o
                             </div>
 
                             {(() => {
-                                const respuestas = estudiante.respuestas_detalladas?.[auditMateria] || [];
+                                const respuestas = toArrayFormat(estudiante.respuestas_detalladas?.[auditMateria]);
 
                                 const getSesion = (mat: string, num: number) => {
                                     const m = mat.toLowerCase();
@@ -259,7 +271,8 @@ export default function StudentDetailModal({ estudiante, estadisticas, isOpen, o
                                             <div className="sticky top-0 h-[80vh]">
                                                 {selectedPregunta ? (
                                                     (() => {
-                                                        const resp = estudiante.respuestas_detalladas?.[auditMateria]?.find(r => r.numero === selectedPregunta);
+                                                        const respuestasArr = toArrayFormat(estudiante.respuestas_detalladas?.[auditMateria]);
+                                                        const resp = respuestasArr.find((r: any) => r.numero === selectedPregunta);
                                                         const statsPregunta = estadisticas?.materias[auditMateria]?.[`pregunta_${selectedPregunta}`];
                                                         const numSesion = getSesion(auditMateria, selectedPregunta);
 

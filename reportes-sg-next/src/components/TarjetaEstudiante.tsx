@@ -16,9 +16,7 @@ export default function TarjetaEstudiante({
     const nombreCompleto = `${estudiante.informacion_personal.nombres} ${estudiante.informacion_personal.apellidos}`;
 
     const formatNombre = (nombre: string) => {
-        return nombre.split(' ')
-            .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase())
-            .join(' ');
+        return nombre.toUpperCase();
     };
 
     // Calcular promedio general

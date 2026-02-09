@@ -62,6 +62,13 @@ export const generateExcelReport = async (estudiantes: Estudiante[], filename: s
         if (est.respuestas_detalladas) {
             Object.entries(est.respuestas_detalladas).forEach(([materia, resps]) => {
                 if (!questionAnalysis[materia]) questionAnalysis[materia] = {};
+
+                // Defensive check: ensure resps is an array before iterating
+                if (!Array.isArray(resps)) {
+                    console.warn(`respuestas_detalladas[${materia}] is not an array for student ${est.informacion_personal?.numero_identificacion || 'unknown'}`);
+                    return;
+                }
+
                 resps.forEach(r => {
                     if (!questionAnalysis[materia][r.numero]) {
                         questionAnalysis[materia][r.numero] = {

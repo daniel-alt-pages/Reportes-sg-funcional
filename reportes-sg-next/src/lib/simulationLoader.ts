@@ -99,7 +99,13 @@ export async function loadStatistics(simId?: string): Promise<EstadisticasGrupo>
         return cache.statistics[currentSim];
     }
 
-    const res = await fetch(`/data/simulations/${currentSim}/statistics.json`);
+    // Primero intentar estadisticas_grupo.json (con claves detalladas)
+    let res = await fetch(`/data/simulations/${currentSim}/estadisticas_grupo.json`);
+
+    // Fallback a statistics.json si no existe
+    if (!res.ok) {
+        res = await fetch(`/data/simulations/${currentSim}/statistics.json`);
+    }
     if (!res.ok) {
         throw new Error(`Failed to load statistics for simulation: ${currentSim}`);
     }

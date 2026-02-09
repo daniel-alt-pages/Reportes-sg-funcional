@@ -104,32 +104,52 @@ export const COLORES_MATERIAS: { [key: string]: string } = {
 };
 
 export interface DashboardStats {
+  // Métricas básicas
+  promedio: number;
+  maximo: number;
+  minimo: number;
+  niveles: { superior: number; alto: number; medio: number; bajo: number };
+  distribucion: Record<string, number>;
+  promediosPorMateria: Array<{
+    nombre: string;
     promedio: number;
-    maximo: number;
-    minimo: number;
-    niveles: { superior: number; alto: number; medio: number; bajo: number };
-    distribucion: Record<string, number>;
-    promediosPorMateria: Array<{
-        nombre: string;
-        promedio: number;
-        correctas: number;
-        estudiantes: number;
-    }>;
-    top5: Estudiante[];
-    enRiesgo: Estudiante[];
-    conAmbas: number;
-    total: number;
+    correctas: number;
+    estudiantes: number;
+  }>;
+  top5: Estudiante[];
+  enRiesgo: Estudiante[];
+  conAmbas: number;
+  total: number;
+
+  // Estadísticas Avanzadas
+  mediana: number;
+  desviacionEstandar: number;
+  coeficienteVariacion: number;  // Porcentaje
+  percentil90: number;
+  percentil25: number;
+  percentil75: number;
+  rangoIntercuartilico: number;  // IQR = P75 - P25
+  tasaAprobacion: number;        // % >= 300
+  brechaMaxMin: number;          // maximo - minimo
+
+  // Análisis por materia
+  materiaMasDebil: { nombre: string; promedio: number } | null;
+  materiaMasFuerte: { nombre: string; promedio: number } | null;
+
+  // Tendencias (opcional, para comparar con simulacro anterior)
+  cambioPromedio?: number;
+  cambioTasaAprobacion?: number;
 }
 
 
 export interface InstitucionData {
-    estudiantes: Estudiante[];
-    promedio: number;
-    niveles: {
-        superior: number;
-        alto: number;
-        medio: number;
-        bajo: number;
-    };
+  estudiantes: Estudiante[];
+  promedio: number;
+  niveles: {
+    superior: number;
+    alto: number;
+    medio: number;
+    bajo: number;
+  };
 }
 

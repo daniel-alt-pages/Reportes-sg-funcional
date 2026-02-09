@@ -1,9 +1,9 @@
 
 // Lista de correos administradores
 export const ADMIN_EMAILS = [
-    "seamosgenios.calidad@gmail.com",
-    "seamosgenios.direccion@gmail.com",
-    "daniel.developer@example.com" // Placeholder, replace with actual
+    "danielff999gf@gmail.com",
+    "seamosgenios@adpmh.com",
+    "adm.seamosgenios@gmail.com"
 ];
 
 export const isAdmin = (email: string | null | undefined): boolean => {

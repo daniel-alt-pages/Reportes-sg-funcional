@@ -23,25 +23,16 @@
         <div class="contenedor-menu">
             <div class="seccion-carga">
                 <form id="formulario-archivos" class="contenedor-archivos-menu">
-                    <div class="archivo-input-menu">
-                        <input type="file" id="archivo1" name="file1" accept=".xlsx,.xls">
-                        <label for="archivo1">
-                            <i class="fas fa-file-excel"></i>
-                            SecciÃ³n 1
-                            <span class="texto-estado"></span>
-                        </label>
+                    <div class="selector-simulacro-container" style="margin-right: 15px;">
+                        <select id="selectorSimulacro" class="selector-simulacro"
+                            style="padding: 8px 12px; border-radius: 8px; border: 2px solid #6366f1; background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: #fff; font-weight: bold; cursor: pointer; min-width: 180px;">
+                            <option value="">Seleccionar Simulacro</option>
+                        </select>
+                        <span id="estadoSimulacro" style="margin-left: 8px; font-size: 12px; color: #94a3b8;"></span>
                     </div>
-                    <div class="archivo-input-menu">
-                        <input type="file" id="archivo2" name="file2" accept=".xlsx,.xls">
-                        <label for="archivo2">
-                            <i class="fas fa-file-excel"></i>
-                            SecciÃ³n 2
-                            <span class="texto-estado"></span>
-                        </label>
-                    </div>
-                    <button type="submit" class="boton-procesar">
-                        <i class="fas fa-sync-alt"></i>
-                        Procesar
+                    <button type="submit" class="boton-procesar" id="botonProcesar" disabled style="opacity: 0.5;">
+                        <i class="fas fa-cogs"></i>
+                        Procesar Simulacro
                     </button>
                 </form>
             </div>
@@ -1070,6 +1061,7 @@
             cargarDatosEstudiantes();
             inicializarGrafico();
             inicializarBuscador();
+            cargarSimulacros(); // Cargar lista de simulacros
 
             // Configurar el campo SG11
             const sg11Input = document.getElementById('sg11Numero');
@@ -1084,23 +1076,116 @@
             });
         });
 
-        // Modificar el manejo del formulario de archivos para usar alertas personalizadas
+        // Función para cargar la lista de simulacros
+        function cargarSimulacros() {
+            fetch('/api/simulacros')
+                .then(response => response.json())
+                .then(data => {
+                    const selector = document.getElementById('selectorSimulacro');
+                    const estadoSpan = document.getElementById('estadoSimulacro');
+
+                    selector.innerHTML = '<option value="">Seleccionar Simulacro</option>';
+
+                    if (data.simulacros && data.simulacros.length > 0) {
+                        data.simulacros.forEach(sim => {
+                            const option = document.createElement('option');
+                            option.value = sim.id;
+                            const estado = sim.procesado ? '✓' : (sim.listo ? '⏳' : '❌');
+                            option.textContent = `${sim.id} ${estado}`;
+                            option.dataset.listo = sim.listo;
+                            option.dataset.procesado = sim.procesado;
+                            selector.appendChild(option);
+                        });
+
+                        if (data.simulacro_actual) {
+                            selector.value = data.simulacro_actual;
+                            actualizarEstadoSimulacro(data.simulacros.find(s => s.id === data.simulacro_actual));
+                        }
+                    }
+                })
+                .catch(error => console.error('Error cargando simulacros:', error));
+        }
+
+        function actualizarEstadoSimulacro(sim) {
+            const estadoSpan = document.getElementById('estadoSimulacro');
+            const boton = document.getElementById('botonProcesar');
+
+            if (!sim) {
+                estadoSpan.textContent = '';
+                boton.disabled = true;
+                boton.style.opacity = '0.5';
+                return;
+            }
+
+            if (sim.procesado) {
+                estadoSpan.textContent = '✓ Procesado';
+                estadoSpan.style.color = '#22c55e';
+            } else if (sim.listo) {
+                estadoSpan.textContent = '⏳ Listo';
+                estadoSpan.style.color = '#f59e0b';
+            } else {
+                estadoSpan.textContent = '❌ Incompleto';
+                estadoSpan.style.color = '#ef4444';
+            }
+
+            boton.disabled = false;
+            boton.style.opacity = '1';
+        }
+
+        document.getElementById('selectorSimulacro').addEventListener('change', function (e) {
+            const simulacroId = e.target.value;
+            const boton = document.getElementById('botonProcesar');
+
+            if (!simulacroId) {
+                document.getElementById('estadoSimulacro').textContent = '';
+                boton.disabled = true;
+                boton.style.opacity = '0.5';
+                return;
+            }
+
+            fetch('/api/simulacros/seleccionar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ simulacro_id: simulacroId })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        fetch('/api/simulacros')
+                            .then(r => r.json())
+                            .then(simData => {
+                                const sim = simData.simulacros.find(s => s.id === simulacroId);
+                                actualizarEstadoSimulacro(sim);
+                            });
+                    }
+                });
+        });
+
+        // Manejo del formulario de archivos
         document.getElementById('formulario-archivos').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const formData = new FormData(this);
+            const simulacroId = document.getElementById('selectorSimulacro').value;
+            if (!simulacroId) {
+                mostrarAlerta('Error', 'Debe seleccionar un simulacro antes de procesar', 'warning');
+                return;
+            }
 
-            fetch('/upload', {
+            mostrarAlerta('Procesando', 'Procesando ' + simulacroId + '...', 'info');
+
+            fetch('/api/simulacros/procesar', {
                 method: 'POST',
-                body: formData
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ simulacro_id: simulacroId })
             })
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {
                         mostrarAlerta('Error', data.error, 'error');
                     } else {
-                        mostrarAlerta('Ã‰xito', 'Archivos procesados con Ã©xito', 'success');
+                        mostrarAlerta('Éxito', data.mensaje + ' (' + data.total_estudiantes + ' estudiantes)', 'success');
                         cargarDatosEstudiantes();
+                        cargarSimulacros();
                     }
                 })
                 .catch(error => {

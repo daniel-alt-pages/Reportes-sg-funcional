@@ -1,17 +1,39 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { auth, googleProvider } from '@/lib/firebase';
-import { signInWithPopup } from 'firebase/auth';
+import { signInWithPopup, browserLocalPersistence, setPersistence } from 'firebase/auth';
+import BrowserHelpModal from '@/components/BrowserHelpModal';
 
 export default function EstudianteLogin() {
     const router = useRouter();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const [isInitialized, setIsInitialized] = useState(false);
+    const [showBrowserHelp, setShowBrowserHelp] = useState(false);
+    const [isBrowserError, setIsBrowserError] = useState(false);
+
+    // Inicializar Firebase Auth con persistencia local para evitar problemas de sessionStorage
+    useEffect(() => {
+        const initAuth = async () => {
+            try {
+                // Usar persistencia LOCAL en lugar de SESSION para mejor compatibilidad
+                // Esto ayuda con navegadores que particionan sessionStorage
+                await setPersistence(auth, browserLocalPersistence);
+            } catch (e) {
+                console.warn('Could not set persistence:', e);
+            }
+            setIsInitialized(true);
+        };
+        initAuth();
+    }, []);
 
     const handleGoogleLogin = async () => {
+        if (!isInitialized) return;
+
         setLoading(true);
         setError('');
+        setIsBrowserError(false);
 
         try {
             // 1. Login con Google
@@ -55,6 +77,8 @@ export default function EstudianteLogin() {
 
         } catch (err: any) {
             console.error("Login error:", err);
+            const errorMessage = err.message || '';
+
             // Manejo de errores específicos de Firebase
             if (err.code === 'auth/popup-closed-by-user') {
                 setError('Inicio de sesión cancelado.');
@@ -62,6 +86,17 @@ export default function EstudianteLogin() {
                 setError('Error de configuración. Contacta al administrador.');
             } else if (err.code === 'auth/popup-blocked') {
                 setError('El navegador bloqueó la ventana emergente. Por favor permítela.');
+            } else if (
+                errorMessage.includes('missing initial state') ||
+                errorMessage.includes('sessionStorage is inaccessible') ||
+                errorMessage.includes('storage-partitioned')
+            ) {
+                // Error específico de navegadores con almacenamiento particionado
+                setIsBrowserError(true);
+                setShowBrowserHelp(true); // Abrir modal automáticamente
+                setError('Tu navegador está bloqueando el inicio de sesión.');
+            } else if (err.code === 'auth/network-request-failed') {
+                setError('Error de conexión. Verifica tu internet e inténtalo de nuevo.');
             } else {
                 setError(err.message || 'Ocurrió un error al iniciar sesión.');
             }
@@ -70,56 +105,84 @@ export default function EstudianteLogin() {
         }
     };
 
+    const handleRetryFromModal = () => {
+        setShowBrowserHelp(false);
+        handleGoogleLogin();
+    };
+
     return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-            <div className="w-full max-w-md">
-                <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 relative overflow-hidden">
+        <>
+            <BrowserHelpModal
+                isOpen={showBrowserHelp}
+                onClose={() => setShowBrowserHelp(false)}
+                onRetry={handleRetryFromModal}
+            />
 
-                    <div className="text-center mb-10">
-                        <img
-                            src="/logo_sg.svg"
-                            alt="Logo Seamos Genios"
-                            className="w-32 mx-auto mb-8"
-                        />
-                        <h1 className="text-2xl font-bold text-gray-900 mb-2">Consulta de Resultados</h1>
-                        <p className="text-gray-500">Seamos Genios 2026</p>
-                    </div>
+            <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+                <div className="w-full max-w-md">
+                    <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 relative overflow-hidden">
 
-                    <div className="space-y-6">
-                        {error && (
-                            <div className="bg-red-50 border border-red-200 rounded-lg px-4 py-3 text-red-700 text-sm flex items-start gap-2">
-                                <span className="text-lg mt-0.5">⚠️</span>
-                                <p>{error}</p>
-                            </div>
-                        )}
+                        <div className="text-center mb-10">
+                            <img
+                                src="/logo_sg.svg"
+                                alt="Logo Seamos Genios"
+                                className="w-32 mx-auto mb-8"
+                            />
+                            <h1 className="text-2xl font-bold text-gray-900 mb-2">Consulta de Resultados</h1>
+                            <p className="text-gray-500">Seamos Genios 2026</p>
+                        </div>
 
-                        <button
-                            onClick={handleGoogleLogin}
-                            disabled={loading}
-                            className="w-full py-3 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium rounded-lg transition-all shadow-sm flex items-center justify-center gap-3 group"
-                        >
-                            {loading ? (
-                                <div className="w-5 h-5 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
-                            ) : (
-                                <>
-                                    <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5" />
-                                    <span>Ingresar con Google</span>
-                                </>
+                        <div className="space-y-6">
+                            {error && (
+                                <div className={`rounded-lg px-4 py-3 text-sm ${isBrowserError ? 'bg-amber-50 border border-amber-200 text-amber-800' : 'bg-red-50 border border-red-200 text-red-700'}`}>
+                                    <div className="flex items-start gap-2">
+                                        <span className="text-lg mt-0.5">{isBrowserError ? '🔒' : '⚠️'}</span>
+                                        <div className="flex-1">
+                                            <p className="whitespace-pre-line">{error}</p>
+                                            {isBrowserError && (
+                                                <button
+                                                    onClick={() => setShowBrowserHelp(true)}
+                                                    className="mt-3 w-full py-2 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-lg transition-colors text-sm flex items-center justify-center gap-2"
+                                                >
+                                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    Ver cómo solucionarlo
+                                                </button>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
                             )}
-                        </button>
 
-                        <div className="text-center space-y-2">
-                            <p className="text-gray-400 text-xs px-4">
-                                Usa el correo institucional asignado para acceder a tus reportes.
-                            </p>
+                            <button
+                                onClick={handleGoogleLogin}
+                                disabled={loading}
+                                className="w-full py-3 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium rounded-lg transition-all shadow-sm flex items-center justify-center gap-3 group"
+                            >
+                                {loading ? (
+                                    <div className="w-5 h-5 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
+                                ) : (
+                                    <>
+                                        <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5" />
+                                        <span>Ingresar con Google</span>
+                                    </>
+                                )}
+                            </button>
+
+                            <div className="text-center space-y-2">
+                                <p className="text-gray-400 text-xs px-4">
+                                    Usa el correo institucional asignado para acceder a tus reportes.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <p className="text-center text-gray-400 text-xs mt-8">
-                    © 2026 Seamos Genios Colombia
-                </p>
+                    <p className="text-center text-gray-400 text-xs mt-8">
+                        © 2026 Seamos Genios Colombia
+                    </p>
+                </div>
             </div>
-        </div>
+        </>
     );
 }

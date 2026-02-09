@@ -1,0 +1,895 @@
+{
+  "version": "2025",
+  "fuente": "ICFES Rankings 2025",
+  "estadisticas_nacionales": {
+    "total_colegios": 9880,
+    "departamentos": 33,
+    "promedio_nacional": 50.68,
+    "promedio_global": 253.51,
+    "max_global": 388,
+    "min_global": 154,
+    "por_materia": {
+      "lectura": 53.37,
+      "matematicas": 51.71,
+      "sociales": 47.18,
+      "ciencias": 50.17,
+      "ingles": 51.52
+    },
+    "distribucion_global": {
+      "0-199": 534,
+      "200-249": 4204,
+      "250-299": 4021,
+      "300-349": 1030,
+      "350-399": 91,
+      "400+": 0
+    }
+  },
+  "top_50_nacional": [
+    {
+      "Puesto": 1,
+      "Colegio": "INSTITUCION EDUCATIVA CAMBRIDGE SCHOOL NO OFICIAL PAMPLONA NORTE DE SANTANDER",
+      "Departamento": "Norte_de_Santander",
+      "Lectura": 76.0,
+      "Matematicas": 80.0,
+      "Sociales": 75.0,
+      "Ciencias": 77.0,
+      "Ingles": 84.0,
+      "Promedio": 77.538,
+      "Global": 388.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "COLEGIO CRISTIANO MONTE HEBRON NO OFICIAL BOGOTÁ D.C. BOGOTÁ",
+      "Departamento": "Bogota",
+      "Lectura": 75.0,
+      "Matematicas": 84.0,
+      "Sociales": 73.0,
+      "Ciencias": 75.0,
+      "Ingles": 86.0,
+      "Promedio": 77.462,
+      "Global": 387.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "COL BILINGUE DIVINO NIÑO NO OFICIAL BUCARAMANGA SANTANDER",
+      "Departamento": "Santander",
+      "Lectura": 77.0,
+      "Matematicas": 79.0,
+      "Sociales": 74.0,
+      "Ciencias": 77.0,
+      "Ingles": 85.0,
+      "Promedio": 77.385,
+      "Global": 387.0
+    },
+    {
+      "Puesto": 2,
+      "Colegio": "LICEO CAMPO DAVID NO OFICIAL BOGOTÁ D.C. BOGOTÁ",
+      "Departamento": "Bogota",
+      "Lectura": 75.0,
+      "Matematicas": 81.0,
+      "Sociales": 74.0,
+      "Ciencias": 76.0,
+      "Ingles": 80.0,
+      "Promedio": 76.769,
+      "Global": 386.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "INSTITUCION EDUCATIVA LUIS MARIA JIMENEZ OFICIAL AGUAZUL CASANARE",
+      "Departamento": "Casanare",
+      "Lectura": 72.0,
+      "Matematicas": 83.0,
+      "Sociales": 72.0,
+      "Ciencias": 78.0,
+      "Ingles": 79.0,
+      "Promedio": 76.462,
+      "Global": 383.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "CORPORACION EDUCATIVA LA CONCEPCION NO OFICIAL TURBACO BOLÍVAR",
+      "Departamento": "Bolivar",
+      "Lectura": 73.0,
+      "Matematicas": 80.0,
+      "Sociales": 73.0,
+      "Ciencias": 75.0,
+      "Ingles": 82.0,
+      "Promedio": 75.769,
+      "Global": 380.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "FRANCISCANO SAN LUIS REY NO OFICIAL ARMENIA QUINDÍO",
+      "Departamento": "Quindio",
+      "Lectura": 73.0,
+      "Matematicas": 80.0,
+      "Sociales": 75.0,
+      "Ciencias": 74.0,
+      "Ingles": 78.0,
+      "Promedio": 75.692,
+      "Global": 379.0
+    },
+    {
+      "Puesto": 3,
+      "Colegio": "COLEGIO ANGLO AMERICANO NO OFICIAL BOGOTÁ D.C. BOGOTÁ",
+      "Departamento": "Bogota",
+      "Lectura": 73.0,
+      "Matematicas": 80.0,
+      "Sociales": 72.0,
+      "Ciencias": 73.0,
+      "Ingles": 83.0,
+      "Promedio": 75.154,
+      "Global": 378.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "COLEGIO LOS ÁNGELES NO OFICIAL TUNJA BOYACÁ",
+      "Departamento": "Boyaca",
+      "Lectura": 75.0,
+      "Matematicas": 81.0,
+      "Sociales": 72.0,
+      "Ciencias": 72.0,
+      "Ingles": 82.0,
+      "Promedio": 75.538,
+      "Global": 377.0
+    },
+    {
+      "Puesto": 2,
+      "Colegio": "GIMN SAN DIEGO NO OFICIAL FLORIDABLANCA SANTANDER",
+      "Departamento": "Santander",
+      "Lectura": 74.0,
+      "Matematicas": 78.0,
+      "Sociales": 72.0,
+      "Ciencias": 73.0,
+      "Ingles": 86.0,
+      "Promedio": 75.154,
+      "Global": 375.0
+    },
+    {
+      "Puesto": 2,
+      "Colegio": "COLEGIO SAN MATEO APOSTOL NO OFICIAL YOPAL CASANARE",
+      "Departamento": "Casanare",
+      "Lectura": 76.0,
+      "Matematicas": 81.0,
+      "Sociales": 70.0,
+      "Ciencias": 71.0,
+      "Ingles": 79.0,
+      "Promedio": 74.846,
+      "Global": 374.0
+    },
+    {
+      "Puesto": 4,
+      "Colegio": "LICEO NAVARRA NO OFICIAL BOGOTÁ D.C. BOGOTÁ",
+      "Departamento": "Bogota",
+      "Lectura": 73.0,
+      "Matematicas": 78.0,
+      "Sociales": 73.0,
+      "Ciencias": 72.0,
+      "Ingles": 83.0,
+      "Promedio": 74.692,
+      "Global": 373.0
+    },
+    {
+      "Puesto": 2,
+      "Colegio": "IE JUAN BAUTISTA MARIA VIANNEY NO OFICIAL PAIPA BOYACÁ",
+      "Departamento": "Boyaca",
+      "Lectura": 71.0,
+      "Matematicas": 81.0,
+      "Sociales": 75.0,
+      "Ciencias": 72.0,
+      "Ingles": 73.0,
+      "Promedio": 74.615,
+      "Global": 373.0
+    },
+    {
+      "Puesto": 2,
+      "Colegio": "CORPORACION EDUCATIVA LA SAGRADA FAMILIA NO OFICIAL CARTAGENA DE INDIAS BOLÍVAR",
+      "Departamento": "Bolivar",
+      "Lectura": 72.0,
+      "Matematicas": 81.0,
+      "Sociales": 72.0,
+      "Ciencias": 72.0,
+      "Ingles": 79.0,
+      "Promedio": 74.615,
+      "Global": 372.0
+    },
+    {
+      "Puesto": 3,
+      "Colegio": "COLEGIO INTEGRAL DEL NORTE NO OFICIAL CARTAGENA DE INDIAS BOLÍVAR",
+      "Departamento": "Bolivar",
+      "Lectura": 73.0,
+      "Matematicas": 78.0,
+      "Sociales": 72.0,
+      "Ciencias": 74.0,
+      "Ingles": 79.0,
+      "Promedio": 74.615,
+      "Global": 372.0
+    },
+    {
+      "Puesto": 4,
+      "Colegio": "CORPORACION EDUCATIVA COLEGIO ALTER ALTERIS NO OFICIAL CARTAGENA DE INDIAS BOLÍVAR",
+      "Departamento": "Bolivar",
+      "Lectura": 74.0,
+      "Matematicas": 77.0,
+      "Sociales": 72.0,
+      "Ciencias": 72.0,
+      "Ingles": 83.0,
+      "Promedio": 74.462,
+      "Global": 372.0
+    },
+    {
+      "Puesto": 3,
+      "Colegio": "LICEO MODERNO CELESTIN FREINET YOPAL LTDA NO OFICIAL YOPAL CASANARE",
+      "Departamento": "Casanare",
+      "Lectura": 73.0,
+      "Matematicas": 78.0,
+      "Sociales": 71.0,
+      "Ciencias": 73.0,
+      "Ingles": 82.0,
+      "Promedio": 74.385,
+      "Global": 372.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "COL SAN BONIFACIO DE LAS LANZAS NO OFICIAL IBAGUÉ TOLIMA",
+      "Departamento": "Tolima",
+      "Lectura": 74.0,
+      "Matematicas": 75.0,
+      "Sociales": 71.0,
+      "Ciencias": 72.0,
+      "Ingles": 86.0,
+      "Promedio": 74.0,
+      "Global": 370.0
+    },
+    {
+      "Puesto": 3,
+      "Colegio": "GIMNASIO VILLA FONTANA NO OFICIAL TUNJA BOYACÁ",
+      "Departamento": "Boyaca",
+      "Lectura": 75.0,
+      "Matematicas": 77.0,
+      "Sociales": 72.0,
+      "Ciencias": 68.0,
+      "Ingles": 83.0,
+      "Promedio": 73.769,
+      "Global": 369.0
+    },
+    {
+      "Puesto": 5,
+      "Colegio": "COL NUEVO COLOMBO AMERICANO NO OFICIAL BOGOTÁ D.C. BOGOTÁ",
+      "Departamento": "Bogota",
+      "Lectura": 72.0,
+      "Matematicas": 78.0,
+      "Sociales": 70.0,
+      "Ciencias": 70.0,
+      "Ingles": 85.0,
+      "Promedio": 73.462,
+      "Global": 368.0
+    },
+    {
+      "Puesto": 4,
+      "Colegio": "I.E. ACADEMICO DE PAIPA NO OFICIAL PAIPA BOYACÁ",
+      "Departamento": "Boyaca",
+      "Lectura": 72.0,
+      "Matematicas": 77.0,
+      "Sociales": 72.0,
+      "Ciencias": 73.0,
+      "Ingles": 75.0,
+      "Promedio": 73.615,
+      "Global": 368.0
+    },
+    {
+      "Puesto": 3,
+      "Colegio": "COL LUIS LOPEZ DE MESA NO OFICIAL BARRANCABERMEJA SANTANDER",
+      "Departamento": "Santander",
+      "Lectura": 72.0,
+      "Matematicas": 78.0,
+      "Sociales": 68.0,
+      "Ciencias": 73.0,
+      "Ingles": 82.0,
+      "Promedio": 73.462,
+      "Global": 368.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "LIC INTEGD DE BTO UNIVERSIDAD DE NARIÑO OFICIAL PASTO NARIÑO",
+      "Departamento": "Narino",
+      "Lectura": 72.0,
+      "Matematicas": 79.0,
+      "Sociales": 70.0,
+      "Ciencias": 72.0,
+      "Ingles": 74.0,
+      "Promedio": 73.308,
+      "Global": 367.0
+    },
+    {
+      "Puesto": 6,
+      "Colegio": "COLEGIO REUVEN FEUERSTEIN NO OFICIAL BOGOTÁ D.C. BOGOTÁ",
+      "Departamento": "Bogota",
+      "Lectura": 73.0,
+      "Matematicas": 76.0,
+      "Sociales": 69.0,
+      "Ciencias": 71.0,
+      "Ingles": 83.0,
+      "Promedio": 73.077,
+      "Global": 366.0
+    },
+    {
+      "Puesto": 5,
+      "Colegio": "COLEGIO LA NUEVA ESPERANZA NO OFICIAL TURBACO BOLÍVAR",
+      "Departamento": "Bolivar",
+      "Lectura": 71.0,
+      "Matematicas": 78.0,
+      "Sociales": 70.0,
+      "Ciencias": 71.0,
+      "Ingles": 79.0,
+      "Promedio": 73.0,
+      "Global": 366.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "COL. SAGRADA FAMILIA NO OFICIAL VALLEDUPAR CESAR",
+      "Departamento": "Cesar",
+      "Lectura": 71.0,
+      "Matematicas": 78.0,
+      "Sociales": 70.0,
+      "Ciencias": 71.0,
+      "Ingles": 78.0,
+      "Promedio": 72.923,
+      "Global": 366.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "COL ANGLOCANADIENSE DE NEIVA NO OFICIAL NEIVA HUILA",
+      "Departamento": "Huila",
+      "Lectura": 72.0,
+      "Matematicas": 77.0,
+      "Sociales": 69.0,
+      "Ciencias": 73.0,
+      "Ingles": 78.0,
+      "Promedio": 73.154,
+      "Global": 366.0
+    },
+    {
+      "Puesto": 7,
+      "Colegio": "LIC DE CERVANTES PADRES AGUSTINOS NO OFICIAL BOGOTÁ D.C. BOGOTÁ",
+      "Departamento": "Bogota",
+      "Lectura": 73.0,
+      "Matematicas": 76.0,
+      "Sociales": 69.0,
+      "Ciencias": 72.0,
+      "Ingles": 80.0,
+      "Promedio": 73.077,
+      "Global": 365.0
+    },
+    {
+      "Puesto": 8,
+      "Colegio": "INSTITUTO ALBERTO MERANI NO OFICIAL BOGOTÁ D.C. BOGOTÁ",
+      "Departamento": "Bogota",
+      "Lectura": 72.0,
+      "Matematicas": 73.0,
+      "Sociales": 74.0,
+      "Ciencias": 71.0,
+      "Ingles": 79.0,
+      "Promedio": 73.0,
+      "Global": 365.0
+    },
+    {
+      "Puesto": 5,
+      "Colegio": "COLEGIO CAMPESTRE SAN DIEGO NO OFICIAL DUITAMA BOYACÁ",
+      "Departamento": "Boyaca",
+      "Lectura": 69.0,
+      "Matematicas": 79.0,
+      "Sociales": 68.0,
+      "Ciencias": 73.0,
+      "Ingles": 79.0,
+      "Promedio": 72.769,
+      "Global": 364.0
+    },
+    {
+      "Puesto": 4,
+      "Colegio": "COLEGIO ALIANZA PEDAGOGICA NO OFICIAL YOPAL CASANARE",
+      "Departamento": "Casanare",
+      "Lectura": 71.0,
+      "Matematicas": 78.0,
+      "Sociales": 69.0,
+      "Ciencias": 72.0,
+      "Ingles": 73.0,
+      "Promedio": 72.538,
+      "Global": 364.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "COL ABRAHAM MASLOW NO OFICIAL CHÍA CUNDINAMARCA",
+      "Departamento": "Cundinamarca",
+      "Lectura": 74.0,
+      "Matematicas": 73.0,
+      "Sociales": 70.0,
+      "Ciencias": 70.0,
+      "Ingles": 85.0,
+      "Promedio": 72.769,
+      "Global": 364.0
+    },
+    {
+      "Puesto": 9,
+      "Colegio": "COLEGIO BILINGUE SAN GABRIEL ARCANGEL NO OFICIAL BOGOTÁ D.C. BOGOTÁ",
+      "Departamento": "Bogota",
+      "Lectura": 72.0,
+      "Matematicas": 74.0,
+      "Sociales": 72.0,
+      "Ciencias": 71.0,
+      "Ingles": 78.0,
+      "Promedio": 72.692,
+      "Global": 363.0
+    },
+    {
+      "Puesto": 2,
+      "Colegio": "INSTITUCIÓN EDUCATIVA SAN ALBERTO MAGNO NO OFICIAL ZIPAQUIRÁ CUNDINAMARCA",
+      "Departamento": "Cundinamarca",
+      "Lectura": 72.0,
+      "Matematicas": 76.0,
+      "Sociales": 70.0,
+      "Ciencias": 70.0,
+      "Ingles": 80.0,
+      "Promedio": 72.615,
+      "Global": 363.0
+    },
+    {
+      "Puesto": 3,
+      "Colegio": "GIMNASIO EL HONTANAR NO OFICIAL CHÍA CUNDINAMARCA",
+      "Departamento": "Cundinamarca",
+      "Lectura": 72.0,
+      "Matematicas": 76.0,
+      "Sociales": 68.0,
+      "Ciencias": 70.0,
+      "Ingles": 85.0,
+      "Promedio": 72.538,
+      "Global": 363.0
+    },
+    {
+      "Puesto": 2,
+      "Colegio": "INSTITUCION EDUCATIVA LOPERENA MAÑANA OFICIAL VALLEDUPAR CESAR",
+      "Departamento": "Cesar",
+      "Lectura": 70.0,
+      "Matematicas": 76.0,
+      "Sociales": 72.0,
+      "Ciencias": 71.0,
+      "Ingles": 75.0,
+      "Promedio": 72.462,
+      "Global": 362.0
+    },
+    {
+      "Puesto": 2,
+      "Colegio": "COL EMPRESARIAL DE LOS ANDES NO OFICIAL NEIVA HUILA",
+      "Departamento": "Huila",
+      "Lectura": 73.0,
+      "Matematicas": 74.0,
+      "Sociales": 70.0,
+      "Ciencias": 72.0,
+      "Ingles": 76.0,
+      "Promedio": 72.538,
+      "Global": 362.0
+    },
+    {
+      "Puesto": 10,
+      "Colegio": "COLEGIO CORAZONISTA NO OFICIAL BOGOTÁ D.C. BOGOTÁ",
+      "Departamento": "Bogota",
+      "Lectura": 70.0,
+      "Matematicas": 78.0,
+      "Sociales": 68.0,
+      "Ciencias": 71.0,
+      "Ingles": 78.0,
+      "Promedio": 72.231,
+      "Global": 361.0
+    },
+    {
+      "Puesto": 3,
+      "Colegio": "COLOMBUS AMERICAN SCHOOL NO OFICIAL RIVERA HUILA",
+      "Departamento": "Huila",
+      "Lectura": 72.0,
+      "Matematicas": 76.0,
+      "Sociales": 70.0,
+      "Ciencias": 69.0,
+      "Ingles": 79.0,
+      "Promedio": 72.308,
+      "Global": 361.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "COLEGIO SAN JOSE DE LAS VEGAS NO OFICIAL RETIRO ANTIOQUIA",
+      "Departamento": "Antioquia",
+      "Lectura": 71.0,
+      "Matematicas": 74.0,
+      "Sociales": 70.0,
+      "Ciencias": 70.0,
+      "Ingles": 81.0,
+      "Promedio": 72.0,
+      "Global": 360.0
+    },
+    {
+      "Puesto": 2,
+      "Colegio": "COL CORAZONISTA NO OFICIAL MEDELLÍN ANTIOQUIA",
+      "Departamento": "Antioquia",
+      "Lectura": 70.0,
+      "Matematicas": 77.0,
+      "Sociales": 68.0,
+      "Ciencias": 71.0,
+      "Ingles": 77.0,
+      "Promedio": 71.923,
+      "Global": 360.0
+    },
+    {
+      "Puesto": 4,
+      "Colegio": "INST CALDAS NO OFICIAL BUCARAMANGA SANTANDER",
+      "Departamento": "Santander",
+      "Lectura": 73.0,
+      "Matematicas": 75.0,
+      "Sociales": 67.0,
+      "Ciencias": 71.0,
+      "Ingles": 79.0,
+      "Promedio": 72.077,
+      "Global": 360.0
+    },
+    {
+      "Puesto": 5,
+      "Colegio": "COL SAN PEDRO CLAVER NO OFICIAL BUCARAMANGA SANTANDER",
+      "Departamento": "Santander",
+      "Lectura": 71.0,
+      "Matematicas": 75.0,
+      "Sociales": 69.0,
+      "Ciencias": 70.0,
+      "Ingles": 81.0,
+      "Promedio": 72.0,
+      "Global": 360.0
+    },
+    {
+      "Puesto": 11,
+      "Colegio": "LICEO DE COLOMBIA BILINGÜE NO OFICIAL BOGOTÁ D.C. BOGOTÁ",
+      "Departamento": "Bogota",
+      "Lectura": 71.0,
+      "Matematicas": 73.0,
+      "Sociales": 69.0,
+      "Ciencias": 69.0,
+      "Ingles": 86.0,
+      "Promedio": 71.692,
+      "Global": 359.0
+    },
+    {
+      "Puesto": 2,
+      "Colegio": "COL SANTO ANGEL DE LA GUARDA NO OFICIAL CÚCUTA NORTE DE SANTANDER",
+      "Departamento": "Norte_de_Santander",
+      "Lectura": 70.0,
+      "Matematicas": 77.0,
+      "Sociales": 68.0,
+      "Ciencias": 71.0,
+      "Ingles": 75.0,
+      "Promedio": 71.769,
+      "Global": 359.0
+    },
+    {
+      "Puesto": 6,
+      "Colegio": "COL DEL SAGRADO CORAZON DE JESUS NO OFICIAL BUCARAMANGA SANTANDER",
+      "Departamento": "Santander",
+      "Lectura": 71.0,
+      "Matematicas": 73.0,
+      "Sociales": 70.0,
+      "Ciencias": 72.0,
+      "Ingles": 78.0,
+      "Promedio": 72.0,
+      "Global": 359.0
+    },
+    {
+      "Puesto": 3,
+      "Colegio": "COLEGIO MONSEÑOR ALFONSO URIBE JARAMILLO NO OFICIAL RIONEGRO ANTIOQUIA",
+      "Departamento": "Antioquia",
+      "Lectura": 71.0,
+      "Matematicas": 76.0,
+      "Sociales": 68.0,
+      "Ciencias": 69.0,
+      "Ingles": 78.0,
+      "Promedio": 71.538,
+      "Global": 357.0
+    },
+    {
+      "Puesto": 4,
+      "Colegio": "COL DE LA COMPANIA DE MARIA NO OFICIAL MEDELLÍN ANTIOQUIA",
+      "Departamento": "Antioquia",
+      "Lectura": 70.0,
+      "Matematicas": 76.0,
+      "Sociales": 67.0,
+      "Ciencias": 69.0,
+      "Ingles": 82.0,
+      "Promedio": 71.385,
+      "Global": 357.0
+    },
+    {
+      "Puesto": 5,
+      "Colegio": "COLEGIO CAMPESTRE HORIZONTES NO OFICIAL RIONEGRO ANTIOQUIA",
+      "Departamento": "Antioquia",
+      "Lectura": 71.0,
+      "Matematicas": 74.0,
+      "Sociales": 68.0,
+      "Ciencias": 69.0,
+      "Ingles": 80.0,
+      "Promedio": 71.231,
+      "Global": 357.0
+    },
+    {
+      "Puesto": 1,
+      "Colegio": "COLEGIO SARA DE LUQUE PANAFLET NO OFICIAL RIOHACHA LA GUAJIRA",
+      "Departamento": "La_Guajira",
+      "Lectura": 72.0,
+      "Matematicas": 74.0,
+      "Sociales": 70.0,
+      "Ciencias": 69.0,
+      "Ingles": 74.0,
+      "Promedio": 71.462,
+      "Global": 357.0
+    }
+  ],
+  "departamentos": [
+    {
+      "nombre": "Bogota",
+      "promedio_global": 278.31,
+      "max_global": 387,
+      "total_colegios": 1090,
+      "promedio_materias": 55.66,
+      "top_colegio": "COLEGIO CRISTIANO MONTE HEBRON NO OFICIAL BOGOTÁ D.C. BOGOTÁ"
+    },
+    {
+      "nombre": "Quindio",
+      "promedio_global": 273.15,
+      "max_global": 379,
+      "total_colegios": 104,
+      "promedio_materias": 54.62,
+      "top_colegio": "FRANCISCANO SAN LUIS REY NO OFICIAL ARMENIA QUINDÍO"
+    },
+    {
+      "nombre": "Santander",
+      "promedio_global": 270.56,
+      "max_global": 387,
+      "total_colegios": 516,
+      "promedio_materias": 54.13,
+      "top_colegio": "COL BILINGUE DIVINO NIÑO NO OFICIAL BUCARAMANGA SANTANDER"
+    },
+    {
+      "nombre": "Cundinamarca",
+      "promedio_global": 269.75,
+      "max_global": 364,
+      "total_colegios": 763,
+      "promedio_materias": 53.96,
+      "top_colegio": "COL ABRAHAM MASLOW NO OFICIAL CHÍA CUNDINAMARCA"
+    },
+    {
+      "nombre": "Boyaca",
+      "promedio_global": 268.55,
+      "max_global": 377,
+      "total_colegios": 386,
+      "promedio_materias": 53.66,
+      "top_colegio": "COLEGIO LOS ÁNGELES NO OFICIAL TUNJA BOYACÁ"
+    },
+    {
+      "nombre": "Casanare",
+      "promedio_global": 265.09,
+      "max_global": 383,
+      "total_colegios": 108,
+      "promedio_materias": 53.02,
+      "top_colegio": "INSTITUCION EDUCATIVA LUIS MARIA JIMENEZ OFICIAL AGUAZUL CASANARE"
+    },
+    {
+      "nombre": "Norte_de_Santander",
+      "promedio_global": 262.95,
+      "max_global": 388,
+      "total_colegios": 313,
+      "promedio_materias": 52.51,
+      "top_colegio": "INSTITUCION EDUCATIVA CAMBRIDGE SCHOOL NO OFICIAL PAMPLONA NORTE DE SANTANDER"
+    },
+    {
+      "nombre": "Huila",
+      "promedio_global": 260.69,
+      "max_global": 366,
+      "total_colegios": 281,
+      "promedio_materias": 52.14,
+      "top_colegio": "COL ANGLOCANADIENSE DE NEIVA NO OFICIAL NEIVA HUILA"
+    },
+    {
+      "nombre": "Meta",
+      "promedio_global": 257.97,
+      "max_global": 349,
+      "total_colegios": 237,
+      "promedio_materias": 51.29,
+      "top_colegio": "COL NUEVO GIMNASIO NO OFICIAL VILLAVICENCIO META"
+    },
+    {
+      "nombre": "Valle_del_Cauca",
+      "promedio_global": 254.26,
+      "max_global": 351,
+      "total_colegios": 614,
+      "promedio_materias": 50.88,
+      "top_colegio": "INST NUESTRA SEÑORA DE LA ASUNCION NO OFICIAL CALI VALLE DEL CAUCA"
+    },
+    {
+      "nombre": "Risaralda",
+      "promedio_global": 253.98,
+      "max_global": 344,
+      "total_colegios": 190,
+      "promedio_materias": 50.81,
+      "top_colegio": "LICEO PINO VERDE NO OFICIAL PEREIRA RISARALDA"
+    },
+    {
+      "nombre": "Caldas",
+      "promedio_global": 253.23,
+      "max_global": 341,
+      "total_colegios": 240,
+      "promedio_materias": 50.32,
+      "top_colegio": "COL. SANTA INÉS NO OFICIAL MANIZALES CALDAS"
+    },
+    {
+      "nombre": "San_Andres",
+      "promedio_global": 253.07,
+      "max_global": 336,
+      "total_colegios": 14,
+      "promedio_materias": 50.6,
+      "top_colegio": "INSTITUCION EDUCATIVA LICEO DEL CARIBE NO OFICIAL SAN ANDRÉS SAN ANDRES"
+    },
+    {
+      "nombre": "Antioquia",
+      "promedio_global": 252.49,
+      "max_global": 360,
+      "total_colegios": 1092,
+      "promedio_materias": 50.5,
+      "top_colegio": "COLEGIO SAN JOSE DE LAS VEGAS NO OFICIAL RETIRO ANTIOQUIA"
+    },
+    {
+      "nombre": "Arauca",
+      "promedio_global": 248.77,
+      "max_global": 333,
+      "total_colegios": 69,
+      "promedio_materias": 49.72,
+      "top_colegio": "COLEGIO LA ENSEÑANZA NO OFICIAL ARAUCA ARAUCA"
+    },
+    {
+      "nombre": "Narino",
+      "promedio_global": 246.85,
+      "max_global": 367,
+      "total_colegios": 392,
+      "promedio_materias": 49.38,
+      "top_colegio": "LIC INTEGD DE BTO UNIVERSIDAD DE NARIÑO OFICIAL PASTO NARIÑO"
+    },
+    {
+      "nombre": "Tolima",
+      "promedio_global": 245.69,
+      "max_global": 370,
+      "total_colegios": 370,
+      "promedio_materias": 49.15,
+      "top_colegio": "COL SAN BONIFACIO DE LAS LANZAS NO OFICIAL IBAGUÉ TOLIMA"
+    },
+    {
+      "nombre": "Cordoba",
+      "promedio_global": 245.31,
+      "max_global": 356,
+      "total_colegios": 456,
+      "promedio_materias": 49.08,
+      "top_colegio": "IE MERCEDES ABREGO OFICIAL MONTERÍA CÓRDOBA"
+    },
+    {
+      "nombre": "Cesar",
+      "promedio_global": 244.28,
+      "max_global": 366,
+      "total_colegios": 264,
+      "promedio_materias": 48.87,
+      "top_colegio": "COL. SAGRADA FAMILIA NO OFICIAL VALLEDUPAR CESAR"
+    },
+    {
+      "nombre": "Atlantico",
+      "promedio_global": 241.64,
+      "max_global": 351,
+      "total_colegios": 290,
+      "promedio_materias": 48.27,
+      "top_colegio": "COLEGIO DEL SAGRADO CORAZON NO OFICIAL PUERTO COLOMBIA ATLÁNTICO"
+    },
+    {
+      "nombre": "Caqueta",
+      "promedio_global": 241.49,
+      "max_global": 356,
+      "total_colegios": 112,
+      "promedio_materias": 48.32,
+      "top_colegio": "IMPERIAL EAGLES BILINGUAL SCHOOL NO OFICIAL FLORENCIA CAQUETÁ"
+    },
+    {
+      "nombre": "Putumayo",
+      "promedio_global": 239.41,
+      "max_global": 338,
+      "total_colegios": 100,
+      "promedio_materias": 47.9,
+      "top_colegio": "IE FIDEL DE MONTCLAR OFICIAL MOCOA PUTUMAYO"
+    },
+    {
+      "nombre": "Sucre",
+      "promedio_global": 238.03,
+      "max_global": 345,
+      "total_colegios": 215,
+      "promedio_materias": 47.62,
+      "top_colegio": "INSTITUCIÓN EDUCATIVA LICEO PANAMERICANO NO OFICIAL SINCELEJO SUCRE"
+    },
+    {
+      "nombre": "Bolivar",
+      "promedio_global": 237.16,
+      "max_global": 380,
+      "total_colegios": 475,
+      "promedio_materias": 47.43,
+      "top_colegio": "CORPORACION EDUCATIVA LA CONCEPCION NO OFICIAL TURBACO BOLÍVAR"
+    },
+    {
+      "nombre": "Guaviare",
+      "promedio_global": 236.65,
+      "max_global": 306,
+      "total_colegios": 26,
+      "promedio_materias": 46.99,
+      "top_colegio": "INSTITUCION EDUCATIVA ALFONSO LOPEZ PUMAREJO OFICIAL SAN JOSÉ DEL GUAVIARE GUAVIARE"
+    },
+    {
+      "nombre": "Magdalena",
+      "promedio_global": 232.54,
+      "max_global": 339,
+      "total_colegios": 316,
+      "promedio_materias": 46.28,
+      "top_colegio": "COLEGIO IDPHU BILINGUE DE SANTA MARTA NO OFICIAL SANTA MARTA MAGDALENA"
+    },
+    {
+      "nombre": "Cauca",
+      "promedio_global": 229.5,
+      "max_global": 351,
+      "total_colegios": 445,
+      "promedio_materias": 45.92,
+      "top_colegio": "ACADEMIA MILITAR GRAL TOMAS CIPRIANO DE MOSQUERA NO OFICIAL POPAYÁN CAUCA"
+    },
+    {
+      "nombre": "La_Guajira",
+      "promedio_global": 227.18,
+      "max_global": 357,
+      "total_colegios": 181,
+      "promedio_materias": 45.46,
+      "top_colegio": "COLEGIO SARA DE LUQUE PANAFLET NO OFICIAL RIOHACHA LA GUAJIRA"
+    },
+    {
+      "nombre": "Amazonas",
+      "promedio_global": 225.75,
+      "max_global": 319,
+      "total_colegios": 20,
+      "promedio_materias": 44.76,
+      "top_colegio": "COL. SELVALEGRE NO OFICIAL LETICIA AMAZONAS"
+    },
+    {
+      "nombre": "Guainia",
+      "promedio_global": 217.36,
+      "max_global": 259,
+      "total_colegios": 11,
+      "promedio_materias": 43.56,
+      "top_colegio": "I.E. LUIS CARLOS GALAN SARMIENTO OFICIAL INÍRIDA GUAINÍA"
+    },
+    {
+      "nombre": "Vichada",
+      "promedio_global": 212.96,
+      "max_global": 268,
+      "total_colegios": 23,
+      "promedio_materias": 42.61,
+      "top_colegio": "INSTITUCIÓN EDUCATIVA JOSE EUSTASIO RIVERA OFICIAL PUERTO CARREÑO VICHADA"
+    },
+    {
+      "nombre": "Vaupes",
+      "promedio_global": 204.8,
+      "max_global": 261,
+      "total_colegios": 15,
+      "promedio_materias": 40.98,
+      "top_colegio": "I.E.D. INAYÁ OFICIAL MITÚ VAUPÉS"
+    },
+    {
+      "nombre": "Choco",
+      "promedio_global": 198.7,
+      "max_global": 289,
+      "total_colegios": 152,
+      "promedio_materias": 39.74,
+      "top_colegio": "COMFACHICO NO OFICIAL QUIBDÓ CHOCÓ"
+    }
+  ]
+}

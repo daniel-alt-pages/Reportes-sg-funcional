@@ -1,0 +1,1344 @@
+{
+  "informacion_personal": {
+    "numero_identificacion": "1142716693",
+    "nombres": "ISABELLA",
+    "apellidos": "VIVIESCAS ROMERO",
+    "telefono": "3224592469",
+    "departamento": "Santander",
+    "institucion": "INDIVIDUAL (PAGO UNICO)"
+  },
+  "fecha": "3/2/2026 16:59:22",
+  "puntajes": {
+    "matemáticas": {
+      "correctas": 34,
+      "total_preguntas": 50,
+      "porcentaje_real": 69.72,
+      "puntaje": 47,
+      "score_ponderado": 38.0,
+      "peso_total": 54.5
+    },
+    "lectura crítica": {
+      "correctas": 35,
+      "total_preguntas": 41,
+      "porcentaje_real": 85.0,
+      "puntaje": 69,
+      "score_ponderado": 42.5,
+      "peso_total": 50.0
+    },
+    "sociales y ciudadanas": {
+      "correctas": 46,
+      "total_preguntas": 50,
+      "porcentaje_real": 93.22,
+      "puntaje": 76,
+      "score_ponderado": 55.0,
+      "peso_total": 59.0
+    },
+    "ciencias naturales": {
+      "correctas": 48,
+      "total_preguntas": 58,
+      "porcentaje_real": 84.56,
+      "puntaje": 58,
+      "score_ponderado": 57.5,
+      "peso_total": 68.0
+    },
+    "inglés": {
+      "correctas": 42,
+      "total_preguntas": 55,
+      "porcentaje_real": 73.72,
+      "puntaje": 59,
+      "score_ponderado": 50.5,
+      "peso_total": 68.5
+    }
+  },
+  "respuestas_detalladas": {
+    "matemáticas": {
+      "1": {
+        "respuesta": "C",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "2": {
+        "respuesta": "C",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "3": {
+        "respuesta": "C",
+        "correcta": "D",
+        "es_correcta": false
+      },
+      "4": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "5": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "6": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "7": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "8": {
+        "respuesta": "A",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "9": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "10": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "11": {
+        "respuesta": "A",
+        "correcta": "D",
+        "es_correcta": false
+      },
+      "12": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "13": {
+        "respuesta": "A",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "14": {
+        "respuesta": "A",
+        "correcta": "D",
+        "es_correcta": false
+      },
+      "15": {
+        "respuesta": "D",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "16": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "17": {
+        "respuesta": "C",
+        "correcta": "D",
+        "es_correcta": false
+      },
+      "18": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "19": {
+        "respuesta": "B",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "20": {
+        "respuesta": "A",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "21": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "22": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "23": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "24": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "25": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "26": {
+        "respuesta": "C",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "27": {
+        "respuesta": "D",
+        "correcta": "A",
+        "es_correcta": false
+      },
+      "28": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "29": {
+        "respuesta": "D",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "30": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "31": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "32": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "33": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "34": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "35": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "36": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "37": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "38": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "39": {
+        "respuesta": "A",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "40": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "41": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "42": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "43": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "44": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "45": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "46": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "47": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "48": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "49": {
+        "respuesta": "C",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "50": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      }
+    },
+    "lectura crítica": {
+      "26": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "27": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "28": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "29": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "30": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "31": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "32": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "33": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "34": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "35": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "36": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "37": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "38": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "39": {
+        "respuesta": "D",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "40": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "41": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "42": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "43": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "44": {
+        "respuesta": "C",
+        "correcta": "D",
+        "es_correcta": false
+      },
+      "45": {
+        "respuesta": "D",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "46": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "47": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "48": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "49": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "50": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "51": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "52": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "53": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "54": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "55": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "56": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "57": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "58": {
+        "respuesta": "A",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "59": {
+        "respuesta": "B",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "60": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "61": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "62": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "63": {
+        "respuesta": "C",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "64": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "65": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "66": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      }
+    },
+    "sociales y ciudadanas": {
+      "67": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "68": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "69": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "70": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "71": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "72": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "73": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "74": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "75": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "76": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "77": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "78": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "79": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "80": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "81": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "82": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "83": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "84": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "85": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "86": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "87": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "88": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "89": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "90": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "91": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "1": {
+        "respuesta": "C",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "2": {
+        "respuesta": "D",
+        "correcta": "A",
+        "es_correcta": false
+      },
+      "3": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "4": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "5": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "6": {
+        "respuesta": "D",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "7": {
+        "respuesta": "A",
+        "correcta": "D",
+        "es_correcta": false
+      },
+      "8": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "9": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "10": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "11": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "12": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "13": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "14": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "15": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "16": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "17": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "18": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "19": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "20": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "21": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "22": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "23": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "24": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "25": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      }
+    },
+    "ciencias naturales": {
+      "92": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "93": {
+        "respuesta": "B",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "94": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "95": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "96": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "97": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "98": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "99": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "100": {
+        "respuesta": "A",
+        "correcta": "D",
+        "es_correcta": false
+      },
+      "101": {
+        "respuesta": "D",
+        "correcta": "A",
+        "es_correcta": false
+      },
+      "102": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "103": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "104": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "105": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "106": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "107": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "108": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "109": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "110": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "111": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "112": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "113": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "114": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "115": {
+        "respuesta": "D",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "116": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "117": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "118": {
+        "respuesta": "C",
+        "correcta": "D",
+        "es_correcta": false
+      },
+      "119": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "120": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "51": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "52": {
+        "respuesta": "A",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "53": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "54": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "55": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "56": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "57": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "58": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "59": {
+        "respuesta": "D",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "60": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "61": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "62": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "63": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "64": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "65": {
+        "respuesta": "B",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "66": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "67": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "68": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "69": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "70": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "71": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "72": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "73": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "74": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "75": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "76": {
+        "respuesta": "A",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "77": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "78": {
+        "respuesta": "D",
+        "correcta": "A",
+        "es_correcta": false
+      },
+      "79": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      }
+    },
+    "inglés": {
+      "80": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "81": {
+        "respuesta": "F",
+        "correcta": "F",
+        "es_correcta": true
+      },
+      "82": {
+        "respuesta": "E",
+        "correcta": "E",
+        "es_correcta": true
+      },
+      "83": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "84": {
+        "respuesta": "G",
+        "correcta": "G",
+        "es_correcta": true
+      },
+      "85": {
+        "respuesta": "F",
+        "correcta": "F",
+        "es_correcta": true
+      },
+      "86": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "87": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "88": {
+        "respuesta": "G",
+        "correcta": "G",
+        "es_correcta": true
+      },
+      "89": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "90": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "91": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "92": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "93": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "94": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "95": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "96": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "97": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "98": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "99": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "100": {
+        "respuesta": "C",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "101": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "102": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "103": {
+        "respuesta": "B",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "104": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "105": {
+        "respuesta": "B",
+        "correcta": "A",
+        "es_correcta": false
+      },
+      "106": {
+        "respuesta": "C",
+        "correcta": "A",
+        "es_correcta": false
+      },
+      "107": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "108": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "109": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "110": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "111": {
+        "respuesta": "A",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "112": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "113": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "114": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "115": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "116": {
+        "respuesta": "D",
+        "correcta": "A",
+        "es_correcta": false
+      },
+      "117": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "118": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "119": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "120": {
+        "respuesta": "B",
+        "correcta": "D",
+        "es_correcta": false
+      },
+      "121": {
+        "respuesta": "A",
+        "correcta": "D",
+        "es_correcta": false
+      },
+      "122": {
+        "respuesta": "C",
+        "correcta": "C",
+        "es_correcta": true
+      },
+      "123": {
+        "respuesta": "C",
+        "correcta": "A",
+        "es_correcta": false
+      },
+      "124": {
+        "respuesta": "A",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "125": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "126": {
+        "respuesta": "A",
+        "correcta": "B",
+        "es_correcta": false
+      },
+      "127": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "128": {
+        "respuesta": "B",
+        "correcta": "D",
+        "es_correcta": false
+      },
+      "129": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "130": {
+        "respuesta": "B",
+        "correcta": "C",
+        "es_correcta": false
+      },
+      "131": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      },
+      "132": {
+        "respuesta": "A",
+        "correcta": "A",
+        "es_correcta": true
+      },
+      "133": {
+        "respuesta": "B",
+        "correcta": "B",
+        "es_correcta": true
+      },
+      "134": {
+        "respuesta": "D",
+        "correcta": "D",
+        "es_correcta": true
+      }
+    }
+  },
+  "secciones_completadas": [
+    "S1",
+    "S2"
+  ],
+  "puntaje_global": 311,
+  "nivel_desempeno": "Medio",
+  "score_real": 205,
+  "score_reportado": 205,
+  "usa_calibracion": true
+}

@@ -1,12 +1,6 @@
 {
-    "id": "SG11-08",
-    "name": "Simulacro SG11 - 08",
-    "date": "2026-01-15",
-    "version": "1.0.0",
-    "totalStudents": 151,
-    "sessions": [
-        "S1",
-        "S2"
-    ],
-    "generatedAt": "2026-01-15T23:01:14"
+  "id": "SG11-08",
+  "name": "SG11 - 08",
+  "date": "2026-02-07",
+  "totalStudents": 152
 }

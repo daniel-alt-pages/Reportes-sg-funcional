@@ -11,6 +11,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     const [authorized, setAuthorized] = useState(false);
 
     useEffect(() => {
+        // BYPASS: Desarrollo local - desactivar autenticación temporalmente
+        const isDev = process.env.NODE_ENV === 'development' || window.location.hostname === 'localhost';
+        if (isDev) {
+            setAuthorized(true);
+            setLoading(false);
+            return;
+        }
+
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user && user.email && isAdmin(user.email)) {
                 setAuthorized(true);

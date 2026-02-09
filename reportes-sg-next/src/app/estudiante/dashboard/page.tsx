@@ -18,6 +18,7 @@ interface Estudiante {
     puntaje_global: number;
     puntajes: Record<string, Puntaje>;
     sesiones?: string[];
+    secciones_completadas?: string[];
 }
 
 const materias = [
@@ -38,11 +39,18 @@ export default function StudentDashboard() {
     const [allStudents, setAllStudents] = useState<any[]>([]);
     const [rankingModal, setRankingModal] = useState<{ title: string, students: any[], color: string, subjectKey: string } | null>(null);
     const [welcomeModal, setWelcomeModal] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    const loadData = useCallback(async () => {
+    // Selector de simulacro
+    const [simulacroActual, setSimulacroActual] = useState<string | null>(null);
+    const [simulacrosDelEstudiante, setSimulacrosDelEstudiante] = useState<string[]>([]);
+    const [showSimulacroModal, setShowSimulacroModal] = useState(false);
+
+    const loadData = useCallback(async (simId?: string) => {
         if (typeof window === 'undefined') return;
 
         const id = localStorage.getItem('student_id');
+        const currentSim = simId || simulacroActual;
 
         if (!id) {
             console.warn("No student_id");
@@ -51,22 +59,44 @@ export default function StudentDashboard() {
             return;
         }
 
-        // 1. Cargar Ranking Ligero (Parallel Fetch)
+        setLoading(true);
+        setErrorMsg('');
+
+        // 1. Cargar Ranking del Simulacro Actual
         const fetchRanking = async () => {
             try {
-                const res = await fetch(`/data/ranking_index.json?v=${new Date().getTime()}`);
+                // Cargar students.json del simulacro actual
+                const res = await fetch(`/data/simulations/${currentSim}/students.json?v=${new Date().getTime()}`);
                 if (res.ok) {
                     const data = await res.json();
-                    const sorted = [...data.estudiantes].sort((a: any, b: any) =>
+
+                    // Handle both data structures:
+                    // SG11-09 uses: { estudiantes: [...] }
+                    // SG11-08 uses: { students: { id: {...}, ... } }
+                    let studentsArray: any[] = [];
+
+                    if (data.estudiantes && Array.isArray(data.estudiantes)) {
+                        studentsArray = data.estudiantes;
+                    } else if (data.students && typeof data.students === 'object') {
+                        // Convert object to array
+                        studentsArray = Object.values(data.students);
+                    }
+
+                    if (studentsArray.length === 0) {
+                        console.warn("No students found in data");
+                        return;
+                    }
+
+                    const sorted = [...studentsArray].sort((a: any, b: any) =>
                         (Number(b.puntaje_global) || 0) - (Number(a.puntaje_global) || 0)
                     );
 
-                    setAllStudents(data.estudiantes);
+                    setAllStudents(studentsArray);
 
                     const myIndex = sorted.findIndex((e: any) => String(e.informacion_personal.numero_identificacion).trim() === String(id).trim());
 
                     setRankingInfo({
-                        puesto: myIndex + 1,
+                        puesto: myIndex >= 0 ? myIndex + 1 : 0,
                         total: sorted.length,
                         top5: sorted.slice(0, 5)
                     });
@@ -94,7 +124,14 @@ export default function StudentDashboard() {
 
             try {
                 const targetId = String(id).trim();
-                const res = await fetch(`/data/estudiantes/${targetId}.json?v=${new Date().getTime()}`);
+
+                // Intentar cargar desde la carpeta del simulacro específico
+                let res = await fetch(`/data/simulations/${currentSim}/estudiantes/${targetId}.json?v=${new Date().getTime()}`);
+
+                // Fallback a la ruta general
+                if (!res.ok) {
+                    res = await fetch(`/data/estudiantes/${targetId}.json?v=${new Date().getTime()}`);
+                }
 
                 if (res.ok) {
                     const found = await res.json();
@@ -103,7 +140,7 @@ export default function StudentDashboard() {
                 } else {
                     // If network fetch fails, and no valid cached data was set, then throw error
                     if (!estudiante) { // Only throw if student data is not already set from cache
-                        throw new Error(`Tu identificación (${targetId}) no tiene resultados detallados generados aún.`);
+                        throw new Error(`No tienes resultados para el simulacro ${currentSim}. Prueba cambiando de simulacro.`);
                     }
                 }
             } catch (err: any) {
@@ -115,21 +152,89 @@ export default function StudentDashboard() {
         await Promise.all([fetchEstudiante(), fetchRanking()]);
         setLoading(false);
 
-        // Show welcome modal only once per session
+    }, [simulacroActual]); // Reload when simulation changes
+
+    // Detectar simulacros disponibles para el estudiante al cargar
+    useEffect(() => {
+        const detectarSimulacros = async () => {
+            const id = localStorage.getItem('student_id');
+            if (!id) return;
+
+            const simulacrosConDatos: string[] = [];
+            const simulacrosPosibles = ['SG11-08', 'SG11-09'];
+
+            // Verificar en qué simulacros tiene datos el estudiante
+            for (const sim of simulacrosPosibles) {
+                try {
+                    // Primero intentar en carpeta del simulacro
+                    let res = await fetch(`/data/simulations/${sim}/estudiantes/${id}.json`, { method: 'HEAD' });
+                    if (res.ok) {
+                        simulacrosConDatos.push(sim);
+                    } else {
+                        // Intentar en ruta general (solo para el simulacro más reciente)
+                        res = await fetch(`/data/estudiantes/${id}.json`, { method: 'HEAD' });
+                        if (res.ok && sim === 'SG11-09') {
+                            simulacrosConDatos.push(sim);
+                        }
+                    }
+                } catch (e) {
+                    // Ignorar errores de fetch
+                }
+            }
+
+            setSimulacrosDelEstudiante(simulacrosConDatos);
+
+            // Si tiene múltiples simulacros y no ha seleccionado uno, mostrar el selector
+            if (simulacrosConDatos.length > 1 && !sessionStorage.getItem('simulacro_selected')) {
+                setShowSimulacroModal(true);
+                setSimulacroActual(simulacrosConDatos[simulacrosConDatos.length - 1]);
+            } else {
+                // Caso: Solo tiene uno, o ya seleccionó en esta sesión
+                const saved = sessionStorage.getItem('simulacro_selected');
+                const finalSim = saved || (simulacrosConDatos.length > 0 ? simulacrosConDatos[simulacrosConDatos.length - 1] : 'SG11-09');
+
+                setSimulacroActual(finalSim);
+
+                // Mostrar bienvenida si no se ha mostrado aún
+                if (!sessionStorage.getItem('welcome_shown')) {
+                    setTimeout(() => setWelcomeModal(true), 1500);
+                    sessionStorage.setItem('welcome_shown', 'true');
+                }
+            }
+        };
+
+        detectarSimulacros();
+    }, []);
+
+    useEffect(() => {
+        if (simulacroActual) {
+            loadData();
+        }
+    }, [loadData, simulacroActual]);
+
+    // Handler para seleccionar simulacro desde el modal
+    const handleSelectSimulacro = (sim: string) => {
+        sessionStorage.setItem('simulacro_selected', sim);
+        setSimulacroActual(sim);
+        setShowSimulacroModal(false);
+
+        // Mostrar bienvenida tras seleccionar el simulacro
         if (!sessionStorage.getItem('welcome_shown')) {
             setTimeout(() => setWelcomeModal(true), 1000);
             sessionStorage.setItem('welcome_shown', 'true');
         }
+    };
 
-    }, []); // Removed 'estudiante' dependency to fix infinite loop
-
-    useEffect(() => {
-        loadData();
-    }, [loadData]);
+    // Handler para cambiar de simulacro
+    const handleSimulacroChange = (newSim: string) => {
+        sessionStorage.setItem('simulacro_selected', newSim);
+        setSimulacroActual(newSim);
+    };
 
     const handleLogout = () => {
         localStorage.removeItem('student_id');
         localStorage.removeItem('student_name');
+        sessionStorage.removeItem('simulacro_selected');
         router.replace('/estudiante');
     };
 
@@ -197,6 +302,77 @@ export default function StudentDashboard() {
 
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans relative">
+
+            {/* 🎯 MODAL: Selector de Simulacro (Pantalla Completa) */}
+            {showSimulacroModal && simulacrosDelEstudiante.length > 1 && (
+                <div className="fixed inset-0 z-[100] bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
+                    {/* Decorative elements */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <div className="absolute top-20 left-20 w-72 h-72 bg-indigo-500/20 rounded-full blur-3xl animate-pulse"></div>
+                        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-500/10 rounded-full blur-3xl"></div>
+                    </div>
+
+                    <div className="relative z-10 max-w-2xl w-full text-center space-y-8">
+                        {/* Logo */}
+                        <div className="flex justify-center">
+                            <div className="w-24 h-24 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl flex items-center justify-center text-4xl font-black text-white shadow-2xl shadow-purple-500/30 animate-bounce">
+                                SG
+                            </div>
+                        </div>
+
+                        {/* Title */}
+                        <div>
+                            <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-3">
+                                ¡Hola de nuevo! 👋
+                            </h1>
+                            <p className="text-xl text-purple-200/80">
+                                Has participado en <span className="font-bold text-white">{simulacrosDelEstudiante.length} simulacros</span>
+                            </p>
+                        </div>
+
+                        {/* Question */}
+                        <p className="text-2xl text-white/90 font-medium">
+                            ¿Cuál deseas consultar?
+                        </p>
+
+                        {/* Simulation Options */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto">
+                            {simulacrosDelEstudiante.map((sim, index) => (
+                                <button
+                                    key={sim}
+                                    onClick={() => handleSelectSimulacro(sim)}
+                                    className={`group relative p-8 rounded-3xl border-2 transition-all duration-300 transform hover:scale-105 active:scale-95 
+                                        ${index === simulacrosDelEstudiante.length - 1
+                                            ? 'bg-gradient-to-br from-indigo-500 to-purple-600 border-indigo-400 shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/40'
+                                            : 'bg-white/10 border-white/20 hover:bg-white/20 hover:border-white/40'
+                                        }`}
+                                >
+                                    {/* Badge for latest */}
+                                    {index === simulacrosDelEstudiante.length - 1 && (
+                                        <span className="absolute -top-3 -right-3 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                            ⭐ Más reciente
+                                        </span>
+                                    )}
+
+                                    <div className="text-3xl font-black text-white mb-2">
+                                        {sim}
+                                    </div>
+                                    <div className="text-sm text-white/70">
+                                        {sim === 'SG11-08' ? 'Enero 2026' : 'Febrero 2026'}
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Note */}
+                        <p className="text-sm text-purple-300/60">
+                            Podrás cambiar de simulacro en cualquier momento desde el menú superior
+                        </p>
+                    </div>
+                </div>
+            )}
+
             {/* Watermark responsive and overlay */}
             <img
                 src="/fondo_16_9.svg"
@@ -206,34 +382,67 @@ export default function StudentDashboard() {
             />
             {/* Header */}
             <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/60">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:h-20 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:h-20 flex flex-row justify-between items-center gap-4">
 
                     {/* User Info & Logo */}
-                    <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-start">
+                    <div className="flex items-center gap-4">
                         <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg shadow-indigo-500/30 shrink-0">
                             SG
                         </div>
                         <div className="min-w-0">
-                            <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 tracking-tight truncate">
-                                {estudiante.informacion_personal.nombres.split(' ')[0]} {estudiante.informacion_personal.apellidos.split(' ')[0]}
+                            <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 tracking-tight truncate student-name">
+                                {estudiante.informacion_personal.nombres.split(' ')[0].toUpperCase()} {estudiante.informacion_personal.apellidos.split(' ')[0].toUpperCase()}
                             </h1>
                             <p className="text-xs md:text-sm font-semibold text-slate-400 uppercase tracking-widest truncate">{estudiante.informacion_personal.numero_identificacion}</p>
                         </div>
                     </div>
 
-                    {/* Navigation Actions */}
-                    <div className="flex gap-3 items-center w-full sm:w-auto">
-                        <div className="flex bg-slate-100 p-1 rounded-2xl flex-1 sm:flex-none">
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex gap-3 items-center">
+                        {/* Selector de Simulacro - Solo si tiene múltiples */}
+                        {simulacrosDelEstudiante.length > 1 && simulacroActual && (
+                            <div className="relative group">
+                                <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+                                <div className="relative flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-indigo-200/50 rounded-xl px-4 py-2.5 shadow-lg shadow-indigo-500/10">
+                                    <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg shadow-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                        </svg>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Simulacro</span>
+                                        <div className="relative">
+                                            <select
+                                                value={simulacroActual}
+                                                onChange={(e) => handleSimulacroChange(e.target.value)}
+                                                className="appearance-none bg-transparent text-slate-800 font-bold text-sm pr-6 cursor-pointer focus:outline-none hover:text-indigo-600 transition-colors"
+                                            >
+                                                {simulacrosDelEstudiante.map(sim => (
+                                                    <option key={sim} value={sim} className="bg-white text-slate-800 font-medium">
+                                                        {sim}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <svg className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-indigo-500 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        <div className="flex bg-slate-100 p-1 rounded-2xl">
                             <button
                                 onClick={() => router.push('/estudiante/estadisticas')}
-                                className="flex-1 sm:flex-none px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-600 hover:bg-white hover:shadow-sm hover:text-indigo-600"
+                                className="px-6 py-3 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-600 hover:bg-white hover:shadow-sm hover:text-indigo-600"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
                                 <span>Métricas</span>
                             </button>
                             <button
                                 onClick={() => router.push('/estudiante/analisis')}
-                                className="flex-1 sm:flex-none px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-600 hover:bg-white hover:shadow-sm hover:text-indigo-600"
+                                className="px-6 py-3 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-600 hover:bg-white hover:shadow-sm hover:text-indigo-600"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
                                 <span>Respuestas</span>
@@ -241,18 +450,224 @@ export default function StudentDashboard() {
                         </div>
                         <button
                             onClick={handleLogout}
-                            className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center bg-red-50 hover:bg-red-100 text-red-600 rounded-2xl transition-colors hover:scale-105 active:scale-95 shrink-0"
+                            className="w-12 h-12 flex items-center justify-center bg-red-50 hover:bg-red-100 text-red-600 rounded-2xl transition-colors hover:scale-105 active:scale-95 shrink-0"
                             title="Cerrar Sesión"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                             </svg>
                         </button>
                     </div>
+
+                    {/* Mobile Hamburger Button */}
+                    <button
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="md:hidden w-11 h-11 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition-colors"
+                        aria-label="Menú"
+                    >
+                        {mobileMenuOpen ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        )}
+                    </button>
                 </div>
+
+                {/* Mobile Menu Dropdown */}
+                {mobileMenuOpen && (
+                    <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-slate-200/60 animate-in slide-in-from-top duration-200">
+                        <div className="max-w-7xl mx-auto px-4 py-4 space-y-3">
+
+                            {/* Selector de Simulacro - Móvil */}
+                            {simulacrosDelEstudiante.length > 1 && simulacroActual && (
+                                <div className="p-3 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl border border-indigo-100">
+                                    <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-2">Simulacro</p>
+                                    <div className="flex gap-2">
+                                        {simulacrosDelEstudiante.map(sim => (
+                                            <button
+                                                key={sim}
+                                                onClick={() => {
+                                                    handleSimulacroChange(sim);
+                                                    setMobileMenuOpen(false);
+                                                }}
+                                                className={`flex-1 py-2.5 px-4 rounded-xl text-sm font-bold transition-all ${simulacroActual === sim
+                                                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/30'
+                                                    : 'bg-white text-slate-600 border border-slate-200 hover:border-indigo-300'
+                                                    }`}
+                                            >
+                                                {sim}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Navigation Links */}
+                            <button
+                                onClick={() => {
+                                    router.push('/estudiante/estadisticas');
+                                    setMobileMenuOpen(false);
+                                }}
+                                className="w-full flex items-center gap-4 p-4 bg-slate-50 hover:bg-slate-100 rounded-2xl transition-colors group"
+                            >
+                                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                </div>
+                                <div className="flex-1 text-left">
+                                    <p className="font-bold text-slate-800 text-base">Métricas</p>
+                                    <p className="text-xs text-slate-500">Estadísticas detalladas</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+
+                            <button
+                                onClick={() => {
+                                    router.push('/estudiante/analisis');
+                                    setMobileMenuOpen(false);
+                                }}
+                                className="w-full flex items-center gap-4 p-4 bg-slate-50 hover:bg-slate-100 rounded-2xl transition-colors group"
+                            >
+                                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                    </svg>
+                                </div>
+                                <div className="flex-1 text-left">
+                                    <p className="font-bold text-slate-800 text-base">Respuestas</p>
+                                    <p className="text-xs text-slate-500">Análisis pregunta a pregunta</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+
+                            <button
+                                onClick={() => {
+                                    router.push('/estudiante/ranking');
+                                    setMobileMenuOpen(false);
+                                }}
+                                className="w-full flex items-center gap-4 p-4 bg-slate-50 hover:bg-slate-100 rounded-2xl transition-colors group"
+                            >
+                                <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                    </svg>
+                                </div>
+                                <div className="flex-1 text-left">
+                                    <p className="font-bold text-slate-800 text-base">Ranking</p>
+                                    <p className="text-xs text-slate-500">Tu posición vs otros</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+
+                            {/* Logout Button - Móvil */}
+                            <button
+                                onClick={() => {
+                                    handleLogout();
+                                    setMobileMenuOpen(false);
+                                }}
+                                className="w-full flex items-center gap-4 p-4 bg-red-50 hover:bg-red-100 rounded-2xl transition-colors group border border-red-100"
+                            >
+                                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
+                                </div>
+                                <div className="flex-1 text-left">
+                                    <p className="font-bold text-red-700 text-base">Cerrar Sesión</p>
+                                    <p className="text-xs text-red-500">Salir de tu cuenta</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                )}
             </header>
 
             <main className="max-w-7xl mx-auto px-6 py-10 space-y-10">
+
+                {/* ⚠️ ALERTA: Sesiones Incompletas */}
+                {(() => {
+                    const sesiones = estudiante.secciones_completadas || estudiante.sesiones || [];
+                    const tieneS1 = sesiones.includes('S1');
+                    const tieneS2 = sesiones.includes('S2');
+                    const sesionesIncompletas = !tieneS1 || !tieneS2;
+
+                    if (sesionesIncompletas) {
+                        return (
+                            <div className="bg-gradient-to-r from-red-500/10 via-orange-500/10 to-red-500/10 border-2 border-red-500/30 rounded-3xl p-6 md:p-8 relative overflow-hidden animate-pulse-slow">
+                                {/* Decorative elements */}
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl"></div>
+                                <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-500/10 rounded-full blur-2xl"></div>
+
+                                <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-6">
+                                    {/* Icon */}
+                                    <div className="w-16 h-16 md:w-20 md:h-20 bg-red-500/20 rounded-2xl flex items-center justify-center text-4xl md:text-5xl flex-shrink-0 border border-red-500/30">
+                                        ⚠️
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="flex-1 space-y-3">
+                                        <h3 className="text-xl md:text-2xl font-black text-red-600 tracking-tight">
+                                            ¡Atención! Sesiones Incompletas
+                                        </h3>
+                                        <p className="text-slate-600 font-medium leading-relaxed">
+                                            <strong className="text-red-600">Es tu responsabilidad</strong> completar las <strong>dos sesiones obligatorias</strong> del simulacro.
+                                            {!tieneS1 && !tieneS2 && (
+                                                <span className="block mt-2 text-red-500 font-bold">
+                                                    ❌ No completaste ninguna sesión (S1 ni S2)
+                                                </span>
+                                            )}
+                                            {!tieneS1 && tieneS2 && (
+                                                <span className="block mt-2 text-orange-500 font-bold">
+                                                    ❌ Falta la Sesión 1 (S1) - Matemáticas, Sociales y Ciencias
+                                                </span>
+                                            )}
+                                            {tieneS1 && !tieneS2 && (
+                                                <span className="block mt-2 text-orange-500 font-bold">
+                                                    ❌ Falta la Sesión 2 (S2) - Lectura Crítica, Inglés y más
+                                                </span>
+                                            )}
+                                        </p>
+                                        <div className="flex flex-wrap gap-3 pt-2">
+                                            <div className={`px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 ${tieneS1 ? 'bg-green-100 text-green-700 border border-green-200' : 'bg-red-100 text-red-700 border border-red-300'}`}>
+                                                {tieneS1 ? '✓' : '✗'} Sesión 1
+                                            </div>
+                                            <div className={`px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 ${tieneS2 ? 'bg-green-100 text-green-700 border border-green-200' : 'bg-red-100 text-red-700 border border-red-300'}`}>
+                                                {tieneS2 ? '✓' : '✗'} Sesión 2
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Impact indicator */}
+                                    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 text-center min-w-[140px]">
+                                        <p className="text-[10px] uppercase tracking-widest text-red-500 font-bold mb-1">Puntaje Actual</p>
+                                        <p className="text-3xl font-black text-red-600">0</p>
+                                        <p className="text-[10px] text-slate-500 font-medium mt-1">Penalización aplicada</p>
+                                    </div>
+                                </div>
+
+                                {/* Footer message */}
+                                <div className="mt-6 pt-4 border-t border-red-200/50 text-center">
+                                    <p className="text-sm text-slate-500 font-medium">
+                                        📢 Comunícate con tu institución si crees que esto es un error.
+                                        <span className="block text-xs mt-1 text-slate-400">Los resultados mostrados NO son válidos hasta completar ambas sesiones.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        );
+                    }
+                    return null;
+                })()}
 
                 {/* Dashboard Grid System v2 - More Robust */}
                 <div className="flex flex-col gap-6">
@@ -511,8 +926,8 @@ export default function StudentDashboard() {
                                                         {idx + 1}
                                                     </div>
                                                     <div className="flex flex-col">
-                                                        <span className="text-slate-700 font-bold text-sm capitalize">
-                                                            {st.informacion_personal.nombres.toLowerCase()} {st.informacion_personal.apellidos.split(' ')[0].toLowerCase()}
+                                                        <span className="text-slate-700 font-bold text-sm uppercase">
+                                                            {st.informacion_personal.nombres.split(' ')[0]} {st.informacion_personal.apellidos.split(' ')[0]}
                                                         </span>
                                                         <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
                                                             {st.informacion_personal.institucion}
@@ -549,7 +964,7 @@ export default function StudentDashboard() {
                                             🏆
                                         </div>
                                         <h3 className="text-3xl font-black text-slate-800 mb-3 tracking-tight">
-                                            ¡Increíble, Geniesito!
+                                            ¡Increíble, {estudiante.informacion_personal.nombres.split(' ')[0].toUpperCase()}!
                                         </h3>
                                         <p className="text-slate-500 font-medium mb-8 leading-relaxed">
                                             Tu puntaje de <strong className="text-emerald-600 text-xl">{estudiante.puntaje_global}</strong> es sobresaliente. Estás demostrando que con esfuerzo todo es posible. ¡Sigue brillando!
@@ -568,7 +983,7 @@ export default function StudentDashboard() {
                                             🚀
                                         </div>
                                         <h3 className="text-3xl font-black text-slate-800 mb-3 tracking-tight">
-                                            ¡Tú puedes, Geniesito!
+                                            ¡Tú puedes, {estudiante.informacion_personal.nombres.split(' ')[0].toUpperCase()}!
                                         </h3>
                                         <p className="text-slate-500 font-medium mb-8 leading-relaxed">
                                             Obtuviste <strong className="text-blue-600 text-xl">{estudiante.puntaje_global}</strong> puntos. Es un buen comienzo, pero sabemos que tu potencial es infinito. ¡Revisa tus fallos y vuelve más fuerte!
