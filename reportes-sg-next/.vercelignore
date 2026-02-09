@@ -1,0 +1,2 @@
+# No subir JSON estáticos a Vercel — datos están en Firestore
+public/data/

@@ -1,0 +1,42 @@
+C:\Users\Daniel\AppData\Roaming\Python\Python311\site-packages\pandas\core\arrays\masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.5' currently installed).
+  from pandas.core import (
+============================================================
+­ƒÄô PROCESADOR DE SIMULACROS
+============================================================
+
+­ƒöä Procesando: SG11 - 09
+--------------------------------------------------
+­ƒôï Cargando claves de 2 archivos...
+   Ô£ô 507 claves cargadas
+   Ô£ô Calibraci├│n cargada: 254 preguntas configuradas
+­ƒôè Procesando respuestas de 2 archivos...
+   Archivo: SESION 1 - S11 S-09 (Respuestas) - Respuestas de formulario 1 copy.csv
+   Registros: 319
+   Columna ID: N├║mero de identificaci├│n (NO te equivoques)
+   Columna Nombres: Nombre(es) completo(os)
+   Ô£ô 319 estudiantes procesados
+   Archivo: SESION 2 - S11 S-09 (Respuestas) - Respuestas de formulario 1.csv
+   Registros: 314
+   Columna ID: N├║mero de identificaci├│n (NO te equivoques)
+   Columna Nombres: Nombre(es) completo(os)
+   Ô£ô 314 estudiantes procesados
+
+­ƒôê Calculando puntajes para 326 estudiantes...
+   ÔÜû´©Å Aplicando pesos por dificultad de pregunta
+
+­ƒÆ¥ Guardando resultados...
+­ƒÆ¥ Resultados guardados en: C:\Users\Daniel\Downloads\ReportesSG-main\ReportesSG-main\reportes-sg-next\public\data\simulations\SG11-09\resultados_finales.json
+   Ô£ô students.json generado (unificado con resultados_finales)
+   Ô£ô 326 archivos de estudiantes creados
+­ƒôè Generando estad├¡sticas de grupo...
+   Ô£ô estadisticas_grupo.json generado
+   Ô£ô Estudiantes copiados a public/data/estudiantes/
+   Ô£ô resultados_finales.json copiado a public/data/
+
+============================================================
+Ô£à PROCESAMIENTO COMPLETADO
+   Simulacro: SG11 - 09
+   Estudiantes: 326
+   Calibraci├│n: Ô£ô Aplicada
+   Salida: C:\Users\Daniel\Downloads\ReportesSG-main\ReportesSG-main\reportes-sg-next\public\data\simulations\SG11-09
+============================================================

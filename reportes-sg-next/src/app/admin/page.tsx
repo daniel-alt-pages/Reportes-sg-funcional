@@ -4,7 +4,7 @@ import { EstadisticasGrupo } from '@/types';
 import { useState, useEffect, useMemo } from 'react';
 import * as XLSX from 'xlsx';
 import { Estudiante, ResultadosFinales, InstitucionData } from '@/types';
-import { getAppConfig, getAllStudents, getStatistics } from '@/lib/firestoreService';
+// Admin lee de JSON estáticos locales (NO Firestore) para no generar reads en la nube
 import LiquidEther from '@/components/LiquidEther';
 import SlidingPillNav from '@/components/SlidingPillNav';
 import AnalisisArea from '@/components/AnalisisArea';
@@ -15,7 +15,7 @@ import ExportPreviewModal from '@/components/ExportPreviewModal';
 import InvalidacionesManager from '@/components/InvalidacionesManager';
 import FloatingActionBar from '@/components/FloatingActionBar';
 import StudentComparisonView from '@/components/StudentComparisonView';
-import FirestoreMigration from '@/components/FirestoreMigration';
+
 import DashboardOverview from '@/components/DashboardOverview';
 
 // Función para clasificar nivel
@@ -43,6 +43,15 @@ export default function AdminPage() {
     const [estadisticas, setEstadisticas] = useState<EstadisticasGrupo | null>(null); // State for statistics
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
+    // === LOCALHOST GUARD ===
+    // Admin solo funciona en localhost para no saturar Firestore
+    const [isLocal, setIsLocal] = useState(true);
+    useEffect(() => {
+        const host = window.location.hostname;
+        const local = host === 'localhost' || host === '127.0.0.1' || host.startsWith('192.168.');
+        setIsLocal(local);
+    }, []);
 
     // Estados
     const [busqueda, setBusqueda] = useState('');
@@ -83,30 +92,35 @@ export default function AdminPage() {
     const [uploadStatus, setUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
     const [reprocessStatus, setReprocessStatus] = useState<'idle' | 'processing' | 'success' | 'error'>('idle');
 
-    // Cargar simulacros disponibles al iniciar
+    // Cargar simulacros disponibles al iniciar (desde JSON local)
     useEffect(() => {
         const cargarSimulacros = async () => {
             try {
-                const config = await getAppConfig();
-                setSimulacrosDisponibles(config.availableSimulations || ['SG11-08', 'SG11-09']);
-                if (config.activeSimulation) {
-                    setSimulacroActual(config.activeSimulation);
+                const res = await fetch('/data/current_simulation.json');
+                const data = await res.json();
+                setSimulacrosDisponibles(data.available || ['SG11-08', 'SG11-09']);
+                if (data.active) {
+                    setSimulacroActual(data.active);
                 }
             } catch (error) {
                 console.error('Error cargando simulacros:', error);
             }
         };
-        cargarSimulacros();
-    }, []);
+        if (isLocal) cargarSimulacros();
+    }, [isLocal]);
 
-    // Cargar datos cuando cambia el simulacro
+    // Cargar datos cuando cambia el simulacro (desde JSON locales, NO Firestore)
     useEffect(() => {
+        if (!isLocal) return;
         const cargarDatos = async () => {
             setLoading(true);
             setError(null);
             try {
-                // Cargar estudiantes desde Firestore
-                const estudiantesData = await getAllStudents(simulacroActual);
+                // Cargar estudiantes desde JSON local
+                const res = await fetch(`/data/simulations/${simulacroActual}/students.json`);
+                if (!res.ok) throw new Error(`No se encontró students.json para ${simulacroActual}`);
+                const rawData = await res.json();
+                const estudiantesData: Estudiante[] = rawData.estudiantes || Object.values(rawData.students || {});
 
                 // Función auxiliar para calcular aciertos por sesión
                 const calcularAciertosSesion = (puntajes: Estudiante['puntajes']) => {
@@ -218,10 +232,11 @@ export default function AdminPage() {
 
                 setEstudiantes(estudiantesProcesados);
 
-                // Cargar estadísticas desde Firestore
+                // Cargar estadísticas desde JSON local
                 try {
-                    const statsData = await getStatistics(simulacroActual);
-                    if (statsData) {
+                    const statsRes = await fetch(`/data/simulations/${simulacroActual}/estadisticas_grupo.json`);
+                    if (statsRes.ok) {
+                        const statsData = await statsRes.json();
                         setEstadisticas(statsData);
                     }
                 } catch (statsErr) {
@@ -236,10 +251,10 @@ export default function AdminPage() {
             }
         };
 
-        if (simulacroActual) {
+        if (simulacroActual && isLocal) {
             cargarDatos();
         }
-    }, [simulacroActual]);
+    }, [simulacroActual, isLocal]);
 
     // Obtener instituciones únicas
     const instituciones = useMemo(() => {
@@ -583,6 +598,19 @@ export default function AdminPage() {
 
         setShowExportModal(false);
     };
+
+    // Bloquear en producción
+    if (!isLocal) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 text-center max-w-md">
+                    <div className="text-6xl mb-4">🔒</div>
+                    <h2 className="text-2xl font-bold text-white mb-2">Panel Solo Local</h2>
+                    <p className="text-white/60">Este panel solo está disponible en <code className="bg-white/10 px-2 py-1 rounded text-purple-300">localhost</code> para no consumir recursos de la nube.</p>
+                </div>
+            </div>
+        );
+    }
 
     if (loading) {
         return (
@@ -1412,9 +1440,6 @@ export default function AdminPage() {
             }
 
             {/* Modal: Cargar Archivos */}
-            <div className="max-w-7xl mx-auto px-6 mb-8">
-                <FirestoreMigration />
-            </div>
             {
                 showUploadModal && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 transition-all animate-in fade-in zoom-in-95 duration-200">

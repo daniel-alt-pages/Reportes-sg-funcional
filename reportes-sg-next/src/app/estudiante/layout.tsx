@@ -1,5 +1,5 @@
-import SecureSession from "@/components/SecureSession";
-import SecurityProvider from "@/components/SecurityProvider";
+// import SecureSession from "@/components/SecureSession";
+// import SecurityProvider from "@/components/SecurityProvider";
 
 export default function EstudianteLayout({
     children,
@@ -7,9 +7,9 @@ export default function EstudianteLayout({
     children: React.ReactNode;
 }) {
     return (
-        <SecurityProvider>
-            <SecureSession />
+        <>
+            {/* <SecureSession /> */}
             {children}
-        </SecurityProvider>
+        </>
     );
 }

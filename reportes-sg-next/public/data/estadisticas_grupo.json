@@ -1,17 +1,17 @@
 {
   "metadata": {
     "simulacro": "SG11 - 09",
-    "total_evaluados": 308,
-    "fecha_generacion": "2026-02-08T22:15:03.969168"
+    "total_evaluados": 326,
+    "fecha_generacion": "2026-02-09T02:01:51.696835"
   },
   "materias": {
     "matemáticas": {
       "pregunta_1": {
         "numero": 1,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 220,
-        "porcentaje_acierto": 72.8,
+        "total_respuestas": 319,
+        "aciertos": 233,
+        "porcentaje_acierto": 73.0,
         "distribucion": {
           "B": 73.0,
           "C": 9.0,
@@ -22,35 +22,35 @@
       "pregunta_2": {
         "numero": 2,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 91,
-        "porcentaje_acierto": 30.1,
+        "total_respuestas": 319,
+        "aciertos": 97,
+        "porcentaje_acierto": 30.4,
         "distribucion": {
           "B": 30.0,
-          "C": 33.0,
-          "A": 30.0,
-          "D": 7.0
+          "C": 34.0,
+          "A": 29.0,
+          "D": 6.0
         }
       },
       "pregunta_3": {
         "numero": 3,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 171,
-        "porcentaje_acierto": 56.6,
+        "total_respuestas": 319,
+        "aciertos": 178,
+        "porcentaje_acierto": 55.8,
         "distribucion": {
-          "D": 57.0,
+          "D": 56.0,
           "C": 35.0,
-          "A": 7.0,
+          "A": 8.0,
           "B": 1.0
         }
       },
       "pregunta_4": {
         "numero": 4,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 249,
-        "porcentaje_acierto": 82.5,
+        "total_respuestas": 319,
+        "aciertos": 263,
+        "porcentaje_acierto": 82.4,
         "distribucion": {
           "B": 82.0,
           "D": 3.0,
@@ -61,9 +61,9 @@
       "pregunta_5": {
         "numero": 5,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 294,
-        "porcentaje_acierto": 97.4,
+        "total_respuestas": 319,
+        "aciertos": 309,
+        "porcentaje_acierto": 96.9,
         "distribucion": {
           "A": 97.0,
           "D": 1.0,
@@ -74,12 +74,12 @@
       "pregunta_6": {
         "numero": 6,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 220,
-        "porcentaje_acierto": 72.8,
+        "total_respuestas": 319,
+        "aciertos": 232,
+        "porcentaje_acierto": 72.7,
         "distribucion": {
           "A": 73.0,
-          "C": 4.0,
+          "C": 3.0,
           "D": 14.0,
           "B": 10.0
         }
@@ -87,35 +87,35 @@
       "pregunta_7": {
         "numero": 7,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 257,
-        "porcentaje_acierto": 85.1,
+        "total_respuestas": 319,
+        "aciertos": 270,
+        "porcentaje_acierto": 84.6,
         "distribucion": {
           "B": 85.0,
           "A": 2.0,
-          "C": 5.0,
-          "D": 8.0
+          "C": 6.0,
+          "D": 7.0
         }
       },
       "pregunta_8": {
         "numero": 8,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 246,
-        "porcentaje_acierto": 81.5,
+        "total_respuestas": 319,
+        "aciertos": 256,
+        "porcentaje_acierto": 80.3,
         "distribucion": {
-          "B": 81.0,
+          "B": 80.0,
           "D": 2.0,
-          "A": 13.0,
+          "A": 14.0,
           "C": 4.0
         }
       },
       "pregunta_9": {
         "numero": 9,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 270,
-        "porcentaje_acierto": 89.4,
+        "total_respuestas": 319,
+        "aciertos": 283,
+        "porcentaje_acierto": 88.7,
         "distribucion": {
           "A": 89.0,
           "C": 5.0,
@@ -126,35 +126,35 @@
       "pregunta_10": {
         "numero": 10,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 280,
-        "porcentaje_acierto": 92.7,
+        "total_respuestas": 319,
+        "aciertos": 296,
+        "porcentaje_acierto": 92.8,
         "distribucion": {
           "C": 93.0,
           "B": 3.0,
-          "A": 4.0,
+          "A": 3.0,
           "D": 1.0
         }
       },
       "pregunta_11": {
         "numero": 11,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 207,
-        "porcentaje_acierto": 68.5,
+        "total_respuestas": 319,
+        "aciertos": 219,
+        "porcentaje_acierto": 68.7,
         "distribucion": {
           "D": 69.0,
           "A": 16.0,
-          "B": 10.0,
+          "B": 9.0,
           "C": 6.0
         }
       },
       "pregunta_12": {
         "numero": 12,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 288,
-        "porcentaje_acierto": 95.4,
+        "total_respuestas": 319,
+        "aciertos": 303,
+        "porcentaje_acierto": 95.0,
         "distribucion": {
           "B": 95.0,
           "C": 3.0,
@@ -165,22 +165,22 @@
       "pregunta_13": {
         "numero": 13,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 262,
-        "porcentaje_acierto": 86.8,
+        "total_respuestas": 319,
+        "aciertos": 274,
+        "porcentaje_acierto": 85.9,
         "distribucion": {
-          "B": 87.0,
-          "D": 2.0,
-          "A": 7.0,
+          "B": 86.0,
+          "D": 3.0,
+          "A": 8.0,
           "C": 4.0
         }
       },
       "pregunta_14": {
         "numero": 14,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 218,
-        "porcentaje_acierto": 72.2,
+        "total_respuestas": 319,
+        "aciertos": 230,
+        "porcentaje_acierto": 72.1,
         "distribucion": {
           "D": 72.0,
           "C": 9.0,
@@ -191,12 +191,12 @@
       "pregunta_15": {
         "numero": 15,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 243,
-        "porcentaje_acierto": 80.5,
+        "total_respuestas": 319,
+        "aciertos": 257,
+        "porcentaje_acierto": 80.6,
         "distribucion": {
-          "C": 80.0,
-          "D": 16.0,
+          "C": 81.0,
+          "D": 15.0,
           "B": 3.0,
           "A": 1.0
         }
@@ -204,11 +204,11 @@
       "pregunta_16": {
         "numero": 16,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 141,
-        "porcentaje_acierto": 46.7,
+        "total_respuestas": 319,
+        "aciertos": 148,
+        "porcentaje_acierto": 46.4,
         "distribucion": {
-          "C": 47.0,
+          "C": 46.0,
           "B": 27.0,
           "A": 21.0,
           "D": 6.0
@@ -217,38 +217,38 @@
       "pregunta_17": {
         "numero": 17,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 232,
-        "porcentaje_acierto": 76.8,
+        "total_respuestas": 319,
+        "aciertos": 242,
+        "porcentaje_acierto": 75.9,
         "distribucion": {
-          "D": 77.0,
+          "D": 76.0,
           "C": 12.0,
-          "A": 4.0,
+          "A": 5.0,
           "B": 7.0
         }
       },
       "pregunta_18": {
         "numero": 18,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 256,
-        "porcentaje_acierto": 84.8,
+        "total_respuestas": 319,
+        "aciertos": 268,
+        "porcentaje_acierto": 84.0,
         "distribucion": {
-          "C": 85.0,
+          "C": 84.0,
           "A": 7.0,
-          "B": 5.0,
+          "B": 6.0,
           "D": 3.0
         }
       },
       "pregunta_19": {
         "numero": 19,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 194,
-        "porcentaje_acierto": 64.2,
+        "total_respuestas": 319,
+        "aciertos": 201,
+        "porcentaje_acierto": 63.0,
         "distribucion": {
-          "C": 64.0,
-          "B": 6.0,
+          "C": 63.0,
+          "B": 7.0,
           "D": 19.0,
           "A": 11.0
         }
@@ -256,35 +256,35 @@
       "pregunta_20": {
         "numero": 20,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 259,
-        "porcentaje_acierto": 85.8,
+        "total_respuestas": 319,
+        "aciertos": 269,
+        "porcentaje_acierto": 84.3,
         "distribucion": {
-          "C": 86.0,
-          "A": 9.0,
-          "D": 3.0,
+          "C": 84.0,
+          "A": 10.0,
+          "D": 4.0,
           "B": 2.0
         }
       },
       "pregunta_21": {
         "numero": 21,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 272,
-        "porcentaje_acierto": 90.1,
+        "total_respuestas": 319,
+        "aciertos": 285,
+        "porcentaje_acierto": 89.3,
         "distribucion": {
-          "A": 90.0,
-          "D": 4.0,
-          "C": 1.0,
-          "B": 5.0
+          "A": 89.0,
+          "D": 5.0,
+          "C": 2.0,
+          "B": 4.0
         }
       },
       "pregunta_22": {
         "numero": 22,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 252,
-        "porcentaje_acierto": 83.4,
+        "total_respuestas": 319,
+        "aciertos": 264,
+        "porcentaje_acierto": 82.8,
         "distribucion": {
           "C": 7.0,
           "B": 83.0,
@@ -295,34 +295,34 @@
       "pregunta_23": {
         "numero": 23,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 218,
-        "porcentaje_acierto": 72.2,
+        "total_respuestas": 319,
+        "aciertos": 227,
+        "porcentaje_acierto": 71.2,
         "distribucion": {
-          "B": 72.0,
+          "B": 71.0,
           "C": 21.0,
           "D": 4.0,
-          "A": 3.0
+          "A": 4.0
         }
       },
       "pregunta_24": {
         "numero": 24,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 249,
-        "porcentaje_acierto": 82.5,
+        "total_respuestas": 319,
+        "aciertos": 260,
+        "porcentaje_acierto": 81.5,
         "distribucion": {
           "B": 82.0,
           "A": 12.0,
           "C": 5.0,
-          "D": 1.0
+          "D": 2.0
         }
       },
       "pregunta_25": {
         "numero": 25,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 271,
+        "total_respuestas": 319,
+        "aciertos": 286,
         "porcentaje_acierto": 89.7,
         "distribucion": {
           "B": 4.0,
@@ -334,25 +334,25 @@
       "pregunta_26": {
         "numero": 26,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 141,
-        "porcentaje_acierto": 50.7,
+        "total_respuestas": 314,
+        "aciertos": 158,
+        "porcentaje_acierto": 50.3,
         "distribucion": {
           "D": 32.0,
-          "B": 51.0,
-          "A": 6.0,
-          "C": 11.0
+          "B": 50.0,
+          "A": 7.0,
+          "C": 10.0
         }
       },
       "pregunta_27": {
         "numero": 27,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 134,
-        "porcentaje_acierto": 48.2,
+        "total_respuestas": 314,
+        "aciertos": 152,
+        "porcentaje_acierto": 48.4,
         "distribucion": {
           "A": 48.0,
-          "B": 17.0,
+          "B": 16.0,
           "C": 22.0,
           "D": 13.0
         }
@@ -360,9 +360,9 @@
       "pregunta_28": {
         "numero": 28,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 190,
-        "porcentaje_acierto": 68.3,
+        "total_respuestas": 314,
+        "aciertos": 215,
+        "porcentaje_acierto": 68.5,
         "distribucion": {
           "C": 68.0,
           "D": 13.0,
@@ -373,24 +373,24 @@
       "pregunta_29": {
         "numero": 29,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 188,
-        "porcentaje_acierto": 67.6,
+        "total_respuestas": 314,
+        "aciertos": 215,
+        "porcentaje_acierto": 68.5,
         "distribucion": {
           "C": 68.0,
           "D": 14.0,
-          "B": 6.0,
-          "A": 13.0
+          "B": 5.0,
+          "A": 12.0
         }
       },
       "pregunta_30": {
         "numero": 30,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 261,
-        "porcentaje_acierto": 93.9,
+        "total_respuestas": 314,
+        "aciertos": 292,
+        "porcentaje_acierto": 93.0,
         "distribucion": {
-          "A": 94.0,
+          "A": 93.0,
           "B": 3.0,
           "D": 1.0,
           "C": 3.0
@@ -399,102 +399,102 @@
       "pregunta_31": {
         "numero": 31,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 206,
-        "porcentaje_acierto": 74.1,
+        "total_respuestas": 314,
+        "aciertos": 226,
+        "porcentaje_acierto": 72.0,
         "distribucion": {
-          "D": 74.0,
+          "D": 72.0,
           "C": 12.0,
-          "B": 8.0,
+          "B": 10.0,
           "A": 6.0
         }
       },
       "pregunta_32": {
         "numero": 32,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 125,
-        "porcentaje_acierto": 45.0,
+        "total_respuestas": 314,
+        "aciertos": 145,
+        "porcentaje_acierto": 46.2,
         "distribucion": {
-          "C": 45.0,
-          "D": 45.0,
-          "A": 5.0,
+          "C": 46.0,
+          "D": 44.0,
+          "A": 4.0,
           "B": 5.0
         }
       },
       "pregunta_33": {
         "numero": 33,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 181,
-        "porcentaje_acierto": 65.1,
+        "total_respuestas": 314,
+        "aciertos": 201,
+        "porcentaje_acierto": 64.0,
         "distribucion": {
-          "C": 65.0,
-          "A": 10.0,
+          "C": 64.0,
+          "A": 11.0,
           "D": 15.0,
-          "B": 10.0
+          "B": 11.0
         }
       },
       "pregunta_34": {
         "numero": 34,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 242,
-        "porcentaje_acierto": 87.1,
+        "total_respuestas": 314,
+        "aciertos": 270,
+        "porcentaje_acierto": 86.0,
         "distribucion": {
-          "A": 87.0,
+          "A": 86.0,
           "B": 2.0,
-          "C": 8.0,
+          "C": 9.0,
           "D": 3.0
         }
       },
       "pregunta_35": {
         "numero": 35,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 232,
-        "porcentaje_acierto": 83.5,
+        "total_respuestas": 314,
+        "aciertos": 259,
+        "porcentaje_acierto": 82.5,
         "distribucion": {
-          "C": 83.0,
+          "C": 82.0,
           "D": 8.0,
-          "B": 7.0,
-          "A": 1.0
+          "B": 8.0,
+          "A": 2.0
         }
       },
       "pregunta_36": {
         "numero": 36,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 180,
-        "porcentaje_acierto": 64.7,
+        "total_respuestas": 314,
+        "aciertos": 199,
+        "porcentaje_acierto": 63.4,
         "distribucion": {
           "A": 14.0,
-          "B": 65.0,
-          "D": 10.0,
-          "C": 12.0
+          "B": 63.0,
+          "D": 12.0,
+          "C": 11.0
         }
       },
       "pregunta_37": {
         "numero": 37,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 178,
-        "porcentaje_acierto": 64.0,
+        "total_respuestas": 314,
+        "aciertos": 203,
+        "porcentaje_acierto": 64.6,
         "distribucion": {
-          "B": 64.0,
-          "C": 16.0,
-          "A": 9.0,
-          "D": 10.0
+          "B": 65.0,
+          "C": 15.0,
+          "A": 10.0,
+          "D": 11.0
         }
       },
       "pregunta_38": {
         "numero": 38,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 233,
-        "porcentaje_acierto": 83.8,
+        "total_respuestas": 314,
+        "aciertos": 266,
+        "porcentaje_acierto": 84.7,
         "distribucion": {
-          "C": 84.0,
+          "C": 85.0,
           "A": 1.0,
           "D": 11.0,
           "B": 4.0
@@ -503,24 +503,24 @@
       "pregunta_39": {
         "numero": 39,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 189,
-        "porcentaje_acierto": 68.0,
+        "total_respuestas": 314,
+        "aciertos": 209,
+        "porcentaje_acierto": 66.6,
         "distribucion": {
-          "A": 20.0,
-          "C": 68.0,
-          "D": 8.0,
-          "B": 4.0
+          "A": 19.0,
+          "C": 67.0,
+          "D": 9.0,
+          "B": 5.0
         }
       },
       "pregunta_40": {
         "numero": 40,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 246,
-        "porcentaje_acierto": 88.5,
+        "total_respuestas": 314,
+        "aciertos": 274,
+        "porcentaje_acierto": 87.3,
         "distribucion": {
-          "C": 88.0,
+          "C": 87.0,
           "A": 4.0,
           "D": 5.0,
           "B": 3.0
@@ -529,89 +529,89 @@
       "pregunta_41": {
         "numero": 41,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 259,
-        "porcentaje_acierto": 93.2,
+        "total_respuestas": 314,
+        "aciertos": 289,
+        "porcentaje_acierto": 92.0,
         "distribucion": {
-          "C": 93.0,
+          "C": 92.0,
           "D": 4.0,
-          "B": 2.0,
+          "B": 3.0,
           "A": 1.0
         }
       },
       "pregunta_42": {
         "numero": 42,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 206,
-        "porcentaje_acierto": 74.1,
+        "total_respuestas": 314,
+        "aciertos": 228,
+        "porcentaje_acierto": 72.6,
         "distribucion": {
-          "D": 74.0,
-          "B": 6.0,
-          "A": 13.0,
+          "D": 73.0,
+          "B": 7.0,
+          "A": 14.0,
           "C": 6.0
         }
       },
       "pregunta_43": {
         "numero": 43,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 220,
-        "porcentaje_acierto": 79.1,
+        "total_respuestas": 314,
+        "aciertos": 252,
+        "porcentaje_acierto": 80.3,
         "distribucion": {
-          "C": 79.0,
-          "D": 10.0,
+          "C": 80.0,
+          "D": 9.0,
           "A": 6.0,
-          "B": 5.0
+          "B": 4.0
         }
       },
       "pregunta_44": {
         "numero": 44,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 255,
-        "porcentaje_acierto": 91.7,
+        "total_respuestas": 314,
+        "aciertos": 287,
+        "porcentaje_acierto": 91.4,
         "distribucion": {
-          "C": 92.0,
-          "B": 3.0,
-          "D": 2.0,
+          "C": 91.0,
+          "B": 2.0,
+          "D": 3.0,
           "A": 4.0
         }
       },
       "pregunta_45": {
         "numero": 45,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 232,
-        "porcentaje_acierto": 83.5,
+        "total_respuestas": 314,
+        "aciertos": 259,
+        "porcentaje_acierto": 82.5,
         "distribucion": {
-          "C": 83.0,
-          "B": 6.0,
-          "A": 8.0,
+          "C": 82.0,
+          "B": 7.0,
+          "A": 9.0,
           "D": 2.0
         }
       },
       "pregunta_46": {
         "numero": 46,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 235,
-        "porcentaje_acierto": 84.5,
+        "total_respuestas": 314,
+        "aciertos": 260,
+        "porcentaje_acierto": 82.8,
         "distribucion": {
-          "C": 85.0,
+          "C": 83.0,
           "B": 4.0,
-          "A": 7.0,
+          "A": 8.0,
           "D": 5.0
         }
       },
       "pregunta_47": {
         "numero": 47,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 248,
-        "porcentaje_acierto": 89.2,
+        "total_respuestas": 314,
+        "aciertos": 277,
+        "porcentaje_acierto": 88.2,
         "distribucion": {
-          "A": 89.0,
+          "A": 88.0,
           "B": 4.0,
           "D": 3.0,
           "C": 4.0
@@ -620,40 +620,40 @@
       "pregunta_48": {
         "numero": 48,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 217,
-        "porcentaje_acierto": 78.1,
+        "total_respuestas": 314,
+        "aciertos": 240,
+        "porcentaje_acierto": 76.4,
         "distribucion": {
-          "B": 78.0,
-          "D": 8.0,
+          "B": 76.0,
+          "D": 9.0,
           "A": 6.0,
-          "C": 8.0
+          "C": 9.0
         }
       },
       "pregunta_49": {
         "numero": 49,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 199,
-        "porcentaje_acierto": 71.6,
+        "total_respuestas": 314,
+        "aciertos": 221,
+        "porcentaje_acierto": 70.4,
         "distribucion": {
-          "B": 72.0,
+          "B": 70.0,
           "D": 8.0,
-          "C": 13.0,
-          "A": 8.0
+          "C": 12.0,
+          "A": 9.0
         }
       },
       "pregunta_50": {
         "numero": 50,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 198,
-        "porcentaje_acierto": 71.2,
+        "total_respuestas": 314,
+        "aciertos": 223,
+        "porcentaje_acierto": 71.0,
         "distribucion": {
           "A": 71.0,
-          "C": 10.0,
+          "C": 11.0,
           "D": 10.0,
-          "B": 9.0
+          "B": 8.0
         }
       }
     },
@@ -661,21 +661,21 @@
       "pregunta_26": {
         "numero": 26,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 250,
-        "porcentaje_acierto": 82.8,
+        "total_respuestas": 319,
+        "aciertos": 265,
+        "porcentaje_acierto": 83.1,
         "distribucion": {
           "D": 83.0,
-          "A": 12.0,
-          "C": 4.0,
+          "A": 11.0,
+          "C": 3.0,
           "B": 2.0
         }
       },
       "pregunta_27": {
         "numero": 27,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 286,
+        "total_respuestas": 319,
+        "aciertos": 302,
         "porcentaje_acierto": 94.7,
         "distribucion": {
           "B": 95.0,
@@ -687,22 +687,22 @@
       "pregunta_28": {
         "numero": 28,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 265,
-        "porcentaje_acierto": 87.7,
+        "total_respuestas": 319,
+        "aciertos": 278,
+        "porcentaje_acierto": 87.1,
         "distribucion": {
-          "B": 88.0,
+          "B": 87.0,
           "A": 4.0,
-          "D": 5.0,
+          "D": 6.0,
           "C": 3.0
         }
       },
       "pregunta_29": {
         "numero": 29,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 270,
-        "porcentaje_acierto": 89.4,
+        "total_respuestas": 319,
+        "aciertos": 284,
+        "porcentaje_acierto": 89.0,
         "distribucion": {
           "B": 89.0,
           "C": 2.0,
@@ -713,11 +713,11 @@
       "pregunta_30": {
         "numero": 30,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 268,
-        "porcentaje_acierto": 88.7,
+        "total_respuestas": 319,
+        "aciertos": 282,
+        "porcentaje_acierto": 88.4,
         "distribucion": {
-          "B": 89.0,
+          "B": 88.0,
           "D": 3.0,
           "A": 5.0,
           "C": 3.0
@@ -726,50 +726,50 @@
       "pregunta_31": {
         "numero": 31,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 247,
-        "porcentaje_acierto": 81.8,
+        "total_respuestas": 319,
+        "aciertos": 262,
+        "porcentaje_acierto": 82.1,
         "distribucion": {
           "D": 82.0,
           "B": 5.0,
-          "C": 12.0,
+          "C": 11.0,
           "A": 2.0
         }
       },
       "pregunta_32": {
         "numero": 32,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 271,
-        "porcentaje_acierto": 89.7,
+        "total_respuestas": 319,
+        "aciertos": 285,
+        "porcentaje_acierto": 89.3,
         "distribucion": {
-          "C": 90.0,
+          "C": 89.0,
           "A": 5.0,
-          "B": 5.0,
+          "B": 4.0,
           "D": 1.0
         }
       },
       "pregunta_33": {
         "numero": 33,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 272,
-        "porcentaje_acierto": 90.1,
+        "total_respuestas": 319,
+        "aciertos": 288,
+        "porcentaje_acierto": 90.3,
         "distribucion": {
           "C": 90.0,
-          "D": 1.0,
-          "A": 7.0,
+          "D": 2.0,
+          "A": 6.0,
           "B": 2.0
         }
       },
       "pregunta_34": {
         "numero": 34,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 227,
-        "porcentaje_acierto": 75.2,
+        "total_respuestas": 319,
+        "aciertos": 241,
+        "porcentaje_acierto": 75.5,
         "distribucion": {
-          "B": 75.0,
+          "B": 76.0,
           "D": 5.0,
           "A": 15.0,
           "C": 5.0
@@ -778,24 +778,24 @@
       "pregunta_35": {
         "numero": 35,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 266,
-        "porcentaje_acierto": 88.1,
+        "total_respuestas": 319,
+        "aciertos": 278,
+        "porcentaje_acierto": 87.1,
         "distribucion": {
-          "C": 88.0,
+          "C": 87.0,
           "D": 3.0,
-          "A": 3.0,
+          "A": 4.0,
           "B": 6.0
         }
       },
       "pregunta_36": {
         "numero": 36,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 190,
-        "porcentaje_acierto": 62.9,
+        "total_respuestas": 319,
+        "aciertos": 199,
+        "porcentaje_acierto": 62.4,
         "distribucion": {
-          "C": 63.0,
+          "C": 62.0,
           "A": 21.0,
           "D": 6.0,
           "B": 11.0
@@ -804,9 +804,9 @@
       "pregunta_37": {
         "numero": 37,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 255,
-        "porcentaje_acierto": 84.4,
+        "total_respuestas": 319,
+        "aciertos": 269,
+        "porcentaje_acierto": 84.3,
         "distribucion": {
           "D": 84.0,
           "A": 9.0,
@@ -817,11 +817,11 @@
       "pregunta_38": {
         "numero": 38,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 262,
-        "porcentaje_acierto": 86.8,
+        "total_respuestas": 319,
+        "aciertos": 275,
+        "porcentaje_acierto": 86.2,
         "distribucion": {
-          "C": 87.0,
+          "C": 86.0,
           "D": 5.0,
           "A": 6.0,
           "B": 3.0
@@ -830,24 +830,24 @@
       "pregunta_39": {
         "numero": 39,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 186,
-        "porcentaje_acierto": 61.6,
+        "total_respuestas": 319,
+        "aciertos": 200,
+        "porcentaje_acierto": 62.7,
         "distribucion": {
-          "C": 62.0,
-          "D": 24.0,
-          "A": 10.0,
+          "C": 63.0,
+          "D": 23.0,
+          "A": 9.0,
           "B": 5.0
         }
       },
       "pregunta_40": {
         "numero": 40,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 275,
-        "porcentaje_acierto": 91.1,
+        "total_respuestas": 319,
+        "aciertos": 292,
+        "porcentaje_acierto": 91.5,
         "distribucion": {
-          "A": 91.0,
+          "A": 92.0,
           "B": 3.0,
           "C": 6.0
         }
@@ -855,21 +855,21 @@
       "pregunta_41": {
         "numero": 41,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 220,
-        "porcentaje_acierto": 72.8,
+        "total_respuestas": 319,
+        "aciertos": 230,
+        "porcentaje_acierto": 72.1,
         "distribucion": {
-          "B": 73.0,
+          "B": 72.0,
           "A": 5.0,
-          "C": 19.0,
+          "C": 20.0,
           "D": 3.0
         }
       },
       "pregunta_42": {
         "numero": 42,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 267,
+        "total_respuestas": 319,
+        "aciertos": 282,
         "porcentaje_acierto": 88.4,
         "distribucion": {
           "A": 88.0,
@@ -881,139 +881,139 @@
       "pregunta_43": {
         "numero": 43,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 216,
+        "total_respuestas": 319,
+        "aciertos": 228,
         "porcentaje_acierto": 71.5,
         "distribucion": {
-          "B": 72.0,
-          "C": 16.0,
-          "D": 5.0,
+          "B": 71.0,
+          "C": 15.0,
+          "D": 6.0,
           "A": 8.0
         }
       },
       "pregunta_44": {
         "numero": 44,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 146,
-        "porcentaje_acierto": 48.3,
+        "total_respuestas": 319,
+        "aciertos": 153,
+        "porcentaje_acierto": 48.0,
         "distribucion": {
           "D": 48.0,
           "B": 32.0,
           "A": 6.0,
-          "C": 14.0
+          "C": 15.0
         }
       },
       "pregunta_45": {
         "numero": 45,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 251,
-        "porcentaje_acierto": 83.1,
+        "total_respuestas": 319,
+        "aciertos": 263,
+        "porcentaje_acierto": 82.4,
         "distribucion": {
-          "C": 83.0,
-          "D": 5.0,
+          "C": 82.0,
+          "D": 6.0,
           "B": 7.0,
-          "A": 4.0
+          "A": 5.0
         }
       },
       "pregunta_46": {
         "numero": 46,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 239,
-        "porcentaje_acierto": 79.1,
+        "total_respuestas": 319,
+        "aciertos": 252,
+        "porcentaje_acierto": 79.0,
         "distribucion": {
           "A": 79.0,
           "B": 6.0,
-          "C": 15.0,
+          "C": 14.0,
           "D": 1.0
         }
       },
       "pregunta_47": {
         "numero": 47,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 266,
-        "porcentaje_acierto": 88.1,
+        "total_respuestas": 319,
+        "aciertos": 277,
+        "porcentaje_acierto": 86.8,
         "distribucion": {
-          "A": 88.0,
+          "A": 87.0,
           "C": 5.0,
           "B": 2.0,
-          "D": 5.0
+          "D": 6.0
         }
       },
       "pregunta_48": {
         "numero": 48,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 263,
-        "porcentaje_acierto": 87.1,
+        "total_respuestas": 319,
+        "aciertos": 276,
+        "porcentaje_acierto": 86.5,
         "distribucion": {
           "A": 87.0,
           "C": 6.0,
-          "B": 2.0,
+          "B": 3.0,
           "D": 5.0
         }
       },
       "pregunta_49": {
         "numero": 49,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 174,
-        "porcentaje_acierto": 57.6,
+        "total_respuestas": 319,
+        "aciertos": 187,
+        "porcentaje_acierto": 58.6,
         "distribucion": {
-          "D": 58.0,
+          "D": 59.0,
           "B": 8.0,
-          "C": 29.0,
+          "C": 28.0,
           "A": 5.0
         }
       },
       "pregunta_50": {
         "numero": 50,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 247,
-        "porcentaje_acierto": 81.8,
+        "total_respuestas": 319,
+        "aciertos": 259,
+        "porcentaje_acierto": 81.2,
         "distribucion": {
-          "B": 82.0,
+          "B": 81.0,
           "D": 4.0,
           "C": 9.0,
-          "A": 5.0
+          "A": 6.0
         }
       },
       "pregunta_51": {
         "numero": 51,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 279,
-        "porcentaje_acierto": 92.4,
+        "total_respuestas": 319,
+        "aciertos": 292,
+        "porcentaje_acierto": 91.5,
         "distribucion": {
           "B": 92.0,
           "C": 5.0,
-          "A": 2.0,
-          "D": 0.0
+          "A": 3.0,
+          "D": 1.0
         }
       },
       "pregunta_52": {
         "numero": 52,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 183,
-        "porcentaje_acierto": 60.6,
+        "total_respuestas": 319,
+        "aciertos": 191,
+        "porcentaje_acierto": 59.9,
         "distribucion": {
-          "B": 61.0,
-          "C": 18.0,
-          "D": 17.0,
+          "B": 60.0,
+          "C": 19.0,
+          "D": 16.0,
           "A": 5.0
         }
       },
       "pregunta_53": {
         "numero": 53,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 236,
-        "porcentaje_acierto": 78.1,
+        "total_respuestas": 319,
+        "aciertos": 250,
+        "porcentaje_acierto": 78.4,
         "distribucion": {
           "D": 78.0,
           "B": 8.0,
@@ -1024,12 +1024,12 @@
       "pregunta_54": {
         "numero": 54,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 168,
-        "porcentaje_acierto": 55.6,
+        "total_respuestas": 319,
+        "aciertos": 177,
+        "porcentaje_acierto": 55.5,
         "distribucion": {
           "B": 33.0,
-          "D": 56.0,
+          "D": 55.0,
           "C": 9.0,
           "A": 3.0
         }
@@ -1037,38 +1037,38 @@
       "pregunta_55": {
         "numero": 55,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 244,
-        "porcentaje_acierto": 80.8,
+        "total_respuestas": 319,
+        "aciertos": 258,
+        "porcentaje_acierto": 80.9,
         "distribucion": {
           "C": 81.0,
-          "A": 9.0,
-          "B": 7.0,
+          "A": 8.0,
+          "B": 8.0,
           "D": 3.0
         }
       },
       "pregunta_56": {
         "numero": 56,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 258,
-        "porcentaje_acierto": 85.4,
+        "total_respuestas": 319,
+        "aciertos": 273,
+        "porcentaje_acierto": 85.6,
         "distribucion": {
-          "B": 85.0,
+          "B": 86.0,
           "D": 3.0,
-          "A": 10.0,
-          "C": 2.0
+          "A": 9.0,
+          "C": 3.0
         }
       },
       "pregunta_57": {
         "numero": 57,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 271,
-        "porcentaje_acierto": 89.7,
+        "total_respuestas": 319,
+        "aciertos": 285,
+        "porcentaje_acierto": 89.3,
         "distribucion": {
-          "A": 6.0,
-          "D": 90.0,
+          "A": 7.0,
+          "D": 89.0,
           "C": 3.0,
           "B": 1.0
         }
@@ -1076,22 +1076,22 @@
       "pregunta_58": {
         "numero": 58,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 198,
-        "porcentaje_acierto": 65.6,
+        "total_respuestas": 319,
+        "aciertos": 210,
+        "porcentaje_acierto": 65.8,
         "distribucion": {
           "C": 66.0,
           "B": 13.0,
-          "A": 15.0,
-          "D": 7.0
+          "A": 14.0,
+          "D": 8.0
         }
       },
       "pregunta_59": {
         "numero": 59,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 222,
-        "porcentaje_acierto": 73.5,
+        "total_respuestas": 319,
+        "aciertos": 235,
+        "porcentaje_acierto": 73.7,
         "distribucion": {
           "C": 74.0,
           "D": 5.0,
@@ -1102,11 +1102,11 @@
       "pregunta_60": {
         "numero": 60,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 262,
-        "porcentaje_acierto": 86.8,
+        "total_respuestas": 319,
+        "aciertos": 274,
+        "porcentaje_acierto": 85.9,
         "distribucion": {
-          "C": 87.0,
+          "C": 86.0,
           "D": 7.0,
           "B": 5.0,
           "A": 2.0
@@ -1115,22 +1115,22 @@
       "pregunta_61": {
         "numero": 61,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 283,
+        "total_respuestas": 319,
+        "aciertos": 299,
         "porcentaje_acierto": 93.7,
         "distribucion": {
           "C": 94.0,
           "A": 3.0,
           "B": 2.0,
-          "D": 1.0
+          "D": 2.0
         }
       },
       "pregunta_62": {
         "numero": 62,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 208,
-        "porcentaje_acierto": 68.9,
+        "total_respuestas": 319,
+        "aciertos": 220,
+        "porcentaje_acierto": 69.0,
         "distribucion": {
           "A": 69.0,
           "C": 11.0,
@@ -1141,53 +1141,53 @@
       "pregunta_63": {
         "numero": 63,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 86,
-        "porcentaje_acierto": 28.5,
+        "total_respuestas": 319,
+        "aciertos": 93,
+        "porcentaje_acierto": 29.2,
         "distribucion": {
-          "C": 22.0,
-          "B": 28.0,
-          "A": 45.0,
-          "D": 5.0
+          "C": 21.0,
+          "B": 29.0,
+          "A": 44.0,
+          "D": 6.0
         }
       },
       "pregunta_64": {
         "numero": 64,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 246,
+        "total_respuestas": 319,
+        "aciertos": 260,
         "porcentaje_acierto": 81.5,
         "distribucion": {
-          "B": 81.0,
+          "B": 82.0,
           "C": 6.0,
-          "D": 10.0,
+          "D": 9.0,
           "A": 3.0
         }
       },
       "pregunta_65": {
         "numero": 65,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 207,
-        "porcentaje_acierto": 68.5,
+        "total_respuestas": 319,
+        "aciertos": 218,
+        "porcentaje_acierto": 68.3,
         "distribucion": {
-          "C": 69.0,
-          "B": 9.0,
-          "A": 11.0,
-          "D": 12.0
+          "C": 68.0,
+          "B": 8.0,
+          "A": 10.0,
+          "D": 13.0
         }
       },
       "pregunta_66": {
         "numero": 66,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 211,
-        "porcentaje_acierto": 69.9,
+        "total_respuestas": 319,
+        "aciertos": 221,
+        "porcentaje_acierto": 69.3,
         "distribucion": {
-          "B": 70.0,
+          "B": 69.0,
           "C": 9.0,
           "A": 14.0,
-          "D": 7.0
+          "D": 8.0
         }
       }
     },
@@ -1195,9 +1195,9 @@
       "pregunta_67": {
         "numero": 67,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 258,
-        "porcentaje_acierto": 85.4,
+        "total_respuestas": 319,
+        "aciertos": 270,
+        "porcentaje_acierto": 84.6,
         "distribucion": {
           "C": 85.0,
           "D": 5.0,
@@ -1208,11 +1208,11 @@
       "pregunta_68": {
         "numero": 68,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 197,
-        "porcentaje_acierto": 65.2,
+        "total_respuestas": 319,
+        "aciertos": 209,
+        "porcentaje_acierto": 65.5,
         "distribucion": {
-          "A": 65.0,
+          "A": 66.0,
           "B": 17.0,
           "C": 12.0,
           "D": 6.0
@@ -1221,37 +1221,37 @@
       "pregunta_69": {
         "numero": 69,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 178,
-        "porcentaje_acierto": 58.9,
+        "total_respuestas": 319,
+        "aciertos": 190,
+        "porcentaje_acierto": 59.6,
         "distribucion": {
-          "B": 59.0,
-          "C": 26.0,
-          "D": 11.0,
+          "B": 60.0,
+          "C": 25.0,
+          "D": 10.0,
           "A": 5.0
         }
       },
       "pregunta_70": {
         "numero": 70,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 267,
-        "porcentaje_acierto": 88.4,
+        "total_respuestas": 319,
+        "aciertos": 280,
+        "porcentaje_acierto": 87.8,
         "distribucion": {
           "A": 88.0,
           "B": 5.0,
           "D": 5.0,
-          "C": 1.0
+          "C": 2.0
         }
       },
       "pregunta_71": {
         "numero": 71,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 261,
-        "porcentaje_acierto": 86.4,
+        "total_respuestas": 319,
+        "aciertos": 277,
+        "porcentaje_acierto": 86.8,
         "distribucion": {
-          "A": 86.0,
+          "A": 87.0,
           "B": 8.0,
           "D": 1.0,
           "C": 4.0
@@ -1260,22 +1260,22 @@
       "pregunta_72": {
         "numero": 72,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 284,
-        "porcentaje_acierto": 94.0,
+        "total_respuestas": 319,
+        "aciertos": 297,
+        "porcentaje_acierto": 93.1,
         "distribucion": {
-          "B": 94.0,
+          "B": 93.0,
           "D": 3.0,
           "A": 2.0,
-          "C": 2.0
+          "C": 3.0
         }
       },
       "pregunta_73": {
         "numero": 73,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 242,
-        "porcentaje_acierto": 80.1,
+        "total_respuestas": 319,
+        "aciertos": 255,
+        "porcentaje_acierto": 79.9,
         "distribucion": {
           "B": 80.0,
           "C": 3.0,
@@ -1286,12 +1286,12 @@
       "pregunta_74": {
         "numero": 74,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 208,
-        "porcentaje_acierto": 68.9,
+        "total_respuestas": 319,
+        "aciertos": 222,
+        "porcentaje_acierto": 69.6,
         "distribucion": {
-          "B": 69.0,
-          "C": 24.0,
+          "B": 70.0,
+          "C": 23.0,
           "D": 6.0,
           "A": 1.0
         }
@@ -1299,23 +1299,24 @@
       "pregunta_75": {
         "numero": 75,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 251,
-        "porcentaje_acierto": 83.1,
+        "total_respuestas": 319,
+        "aciertos": 262,
+        "porcentaje_acierto": 82.1,
         "distribucion": {
-          "C": 83.0,
+          "C": 82.0,
           "B": 13.0,
-          "A": 4.0
+          "A": 4.0,
+          "D": 0.0
         }
       },
       "pregunta_76": {
         "numero": 76,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 260,
-        "porcentaje_acierto": 86.1,
+        "total_respuestas": 319,
+        "aciertos": 272,
+        "porcentaje_acierto": 85.3,
         "distribucion": {
-          "B": 86.0,
+          "B": 85.0,
           "C": 4.0,
           "A": 6.0,
           "D": 4.0
@@ -1324,12 +1325,12 @@
       "pregunta_77": {
         "numero": 77,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 193,
-        "porcentaje_acierto": 63.9,
+        "total_respuestas": 319,
+        "aciertos": 203,
+        "porcentaje_acierto": 63.6,
         "distribucion": {
           "B": 64.0,
-          "D": 25.0,
+          "D": 26.0,
           "C": 8.0,
           "A": 3.0
         }
@@ -1337,24 +1338,24 @@
       "pregunta_78": {
         "numero": 78,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 270,
-        "porcentaje_acierto": 89.4,
+        "total_respuestas": 319,
+        "aciertos": 282,
+        "porcentaje_acierto": 88.4,
         "distribucion": {
-          "A": 89.0,
+          "A": 88.0,
           "C": 3.0,
-          "D": 5.0,
+          "D": 6.0,
           "B": 2.0
         }
       },
       "pregunta_79": {
         "numero": 79,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 229,
-        "porcentaje_acierto": 75.8,
+        "total_respuestas": 319,
+        "aciertos": 242,
+        "porcentaje_acierto": 75.9,
         "distribucion": {
-          "C": 9.0,
+          "C": 8.0,
           "D": 76.0,
           "B": 11.0,
           "A": 5.0
@@ -1363,9 +1364,9 @@
       "pregunta_80": {
         "numero": 80,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 240,
-        "porcentaje_acierto": 79.5,
+        "total_respuestas": 319,
+        "aciertos": 253,
+        "porcentaje_acierto": 79.3,
         "distribucion": {
           "B": 79.0,
           "A": 6.0,
@@ -1376,22 +1377,22 @@
       "pregunta_81": {
         "numero": 81,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 276,
-        "porcentaje_acierto": 91.4,
+        "total_respuestas": 319,
+        "aciertos": 291,
+        "porcentaje_acierto": 91.2,
         "distribucion": {
           "B": 91.0,
-          "C": 6.0,
-          "A": 2.0,
+          "C": 5.0,
+          "A": 3.0,
           "D": 1.0
         }
       },
       "pregunta_82": {
         "numero": 82,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 267,
-        "porcentaje_acierto": 88.4,
+        "total_respuestas": 319,
+        "aciertos": 281,
+        "porcentaje_acierto": 88.1,
         "distribucion": {
           "B": 88.0,
           "C": 6.0,
@@ -1402,11 +1403,11 @@
       "pregunta_83": {
         "numero": 83,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 145,
-        "porcentaje_acierto": 48.0,
+        "total_respuestas": 319,
+        "aciertos": 151,
+        "porcentaje_acierto": 47.3,
         "distribucion": {
-          "D": 48.0,
+          "D": 47.0,
           "A": 22.0,
           "C": 13.0,
           "B": 17.0
@@ -1415,11 +1416,11 @@
       "pregunta_84": {
         "numero": 84,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 207,
-        "porcentaje_acierto": 68.5,
+        "total_respuestas": 319,
+        "aciertos": 218,
+        "porcentaje_acierto": 68.3,
         "distribucion": {
-          "A": 69.0,
+          "A": 68.0,
           "D": 8.0,
           "C": 16.0,
           "B": 8.0
@@ -1428,11 +1429,11 @@
       "pregunta_85": {
         "numero": 85,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 235,
-        "porcentaje_acierto": 77.8,
+        "total_respuestas": 319,
+        "aciertos": 247,
+        "porcentaje_acierto": 77.4,
         "distribucion": {
-          "C": 78.0,
+          "C": 77.0,
           "B": 11.0,
           "D": 7.0,
           "A": 4.0
@@ -1441,22 +1442,22 @@
       "pregunta_86": {
         "numero": 86,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 260,
-        "porcentaje_acierto": 86.1,
+        "total_respuestas": 319,
+        "aciertos": 272,
+        "porcentaje_acierto": 85.3,
         "distribucion": {
-          "A": 86.0,
+          "A": 85.0,
           "B": 7.0,
           "C": 5.0,
-          "D": 2.0
+          "D": 3.0
         }
       },
       "pregunta_87": {
         "numero": 87,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 263,
-        "porcentaje_acierto": 87.1,
+        "total_respuestas": 319,
+        "aciertos": 276,
+        "porcentaje_acierto": 86.5,
         "distribucion": {
           "C": 87.0,
           "B": 5.0,
@@ -1467,11 +1468,11 @@
       "pregunta_88": {
         "numero": 88,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 259,
-        "porcentaje_acierto": 85.8,
+        "total_respuestas": 319,
+        "aciertos": 272,
+        "porcentaje_acierto": 85.3,
         "distribucion": {
-          "B": 86.0,
+          "B": 85.0,
           "D": 3.0,
           "C": 9.0,
           "A": 2.0
@@ -1480,9 +1481,9 @@
       "pregunta_89": {
         "numero": 89,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 257,
-        "porcentaje_acierto": 85.1,
+        "total_respuestas": 319,
+        "aciertos": 270,
+        "porcentaje_acierto": 84.6,
         "distribucion": {
           "C": 85.0,
           "B": 7.0,
@@ -1493,37 +1494,37 @@
       "pregunta_90": {
         "numero": 90,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 245,
-        "porcentaje_acierto": 81.1,
+        "total_respuestas": 319,
+        "aciertos": 256,
+        "porcentaje_acierto": 80.3,
         "distribucion": {
-          "B": 81.0,
+          "B": 80.0,
           "D": 9.0,
-          "C": 6.0,
-          "A": 4.0
+          "C": 5.0,
+          "A": 5.0
         }
       },
       "pregunta_91": {
         "numero": 91,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 213,
-        "porcentaje_acierto": 70.5,
+        "total_respuestas": 319,
+        "aciertos": 224,
+        "porcentaje_acierto": 70.2,
         "distribucion": {
-          "A": 15.0,
-          "C": 71.0,
-          "B": 7.0,
+          "A": 14.0,
+          "C": 70.0,
+          "B": 8.0,
           "D": 8.0
         }
       },
       "pregunta_1": {
         "numero": 1,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 28,
-        "porcentaje_acierto": 10.1,
+        "total_respuestas": 314,
+        "aciertos": 30,
+        "porcentaje_acierto": 9.6,
         "distribucion": {
-          "A": 25.0,
+          "A": 26.0,
           "C": 47.0,
           "D": 18.0,
           "B": 10.0
@@ -1532,35 +1533,35 @@
       "pregunta_2": {
         "numero": 2,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 124,
-        "porcentaje_acierto": 44.6,
+        "total_respuestas": 314,
+        "aciertos": 136,
+        "porcentaje_acierto": 43.3,
         "distribucion": {
-          "A": 45.0,
+          "A": 43.0,
           "D": 20.0,
-          "C": 30.0,
-          "B": 5.0
+          "C": 31.0,
+          "B": 6.0
         }
       },
       "pregunta_3": {
         "numero": 3,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 228,
-        "porcentaje_acierto": 82.0,
+        "total_respuestas": 314,
+        "aciertos": 257,
+        "porcentaje_acierto": 81.8,
         "distribucion": {
           "B": 82.0,
           "D": 9.0,
-          "C": 6.0,
-          "A": 3.0
+          "C": 7.0,
+          "A": 2.0
         }
       },
       "pregunta_4": {
         "numero": 4,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 244,
-        "porcentaje_acierto": 87.8,
+        "total_respuestas": 314,
+        "aciertos": 275,
+        "porcentaje_acierto": 87.6,
         "distribucion": {
           "B": 88.0,
           "C": 5.0,
@@ -1571,51 +1572,51 @@
       "pregunta_5": {
         "numero": 5,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 244,
-        "porcentaje_acierto": 87.8,
+        "total_respuestas": 314,
+        "aciertos": 277,
+        "porcentaje_acierto": 88.2,
         "distribucion": {
           "D": 88.0,
-          "B": 5.0,
-          "A": 5.0,
+          "B": 4.0,
+          "A": 4.0,
           "C": 3.0
         }
       },
       "pregunta_6": {
         "numero": 6,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 148,
-        "porcentaje_acierto": 53.2,
+        "total_respuestas": 314,
+        "aciertos": 172,
+        "porcentaje_acierto": 54.8,
         "distribucion": {
-          "C": 53.0,
+          "C": 55.0,
           "A": 10.0,
-          "B": 14.0,
-          "D": 23.0
+          "B": 13.0,
+          "D": 22.0
         }
       },
       "pregunta_7": {
         "numero": 7,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 123,
-        "porcentaje_acierto": 44.2,
+        "total_respuestas": 314,
+        "aciertos": 131,
+        "porcentaje_acierto": 41.7,
         "distribucion": {
-          "A": 34.0,
-          "D": 44.0,
-          "C": 12.0,
-          "B": 10.0
+          "A": 35.0,
+          "D": 42.0,
+          "C": 11.0,
+          "B": 11.0
         }
       },
       "pregunta_8": {
         "numero": 8,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 252,
-        "porcentaje_acierto": 90.6,
+        "total_respuestas": 314,
+        "aciertos": 286,
+        "porcentaje_acierto": 91.1,
         "distribucion": {
           "C": 91.0,
-          "D": 4.0,
+          "D": 3.0,
           "A": 3.0,
           "B": 3.0
         }
@@ -1623,24 +1624,24 @@
       "pregunta_9": {
         "numero": 9,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 231,
-        "porcentaje_acierto": 83.1,
+        "total_respuestas": 314,
+        "aciertos": 260,
+        "porcentaje_acierto": 82.8,
         "distribucion": {
           "D": 83.0,
           "A": 9.0,
-          "C": 5.0,
-          "B": 3.0
+          "C": 4.0,
+          "B": 4.0
         }
       },
       "pregunta_10": {
         "numero": 10,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 253,
-        "porcentaje_acierto": 91.0,
+        "total_respuestas": 314,
+        "aciertos": 284,
+        "porcentaje_acierto": 90.4,
         "distribucion": {
-          "D": 91.0,
+          "D": 90.0,
           "B": 3.0,
           "A": 3.0,
           "C": 4.0
@@ -1649,34 +1650,34 @@
       "pregunta_11": {
         "numero": 11,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 227,
-        "porcentaje_acierto": 81.7,
+        "total_respuestas": 314,
+        "aciertos": 254,
+        "porcentaje_acierto": 80.9,
         "distribucion": {
-          "C": 82.0,
-          "D": 5.0,
-          "B": 7.0,
-          "A": 6.0
+          "C": 81.0,
+          "D": 6.0,
+          "B": 8.0,
+          "A": 5.0
         }
       },
       "pregunta_12": {
         "numero": 12,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 240,
-        "porcentaje_acierto": 86.3,
+        "total_respuestas": 314,
+        "aciertos": 267,
+        "porcentaje_acierto": 85.0,
         "distribucion": {
-          "C": 86.0,
+          "C": 85.0,
           "D": 3.0,
-          "B": 8.0,
+          "B": 9.0,
           "A": 3.0
         }
       },
       "pregunta_13": {
         "numero": 13,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 233,
+        "total_respuestas": 314,
+        "aciertos": 263,
         "porcentaje_acierto": 83.8,
         "distribucion": {
           "B": 84.0,
@@ -1688,12 +1689,12 @@
       "pregunta_14": {
         "numero": 14,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 205,
-        "porcentaje_acierto": 73.7,
+        "total_respuestas": 314,
+        "aciertos": 231,
+        "porcentaje_acierto": 73.6,
         "distribucion": {
           "D": 74.0,
-          "A": 10.0,
+          "A": 11.0,
           "C": 13.0,
           "B": 3.0
         }
@@ -1701,25 +1702,25 @@
       "pregunta_15": {
         "numero": 15,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 214,
-        "porcentaje_acierto": 77.0,
+        "total_respuestas": 314,
+        "aciertos": 239,
+        "porcentaje_acierto": 76.1,
         "distribucion": {
-          "D": 77.0,
+          "D": 76.0,
           "A": 10.0,
-          "C": 4.0,
-          "B": 8.0
+          "C": 5.0,
+          "B": 9.0
         }
       },
       "pregunta_16": {
         "numero": 16,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 198,
-        "porcentaje_acierto": 71.2,
+        "total_respuestas": 314,
+        "aciertos": 227,
+        "porcentaje_acierto": 72.3,
         "distribucion": {
-          "D": 71.0,
-          "B": 17.0,
+          "D": 72.0,
+          "B": 16.0,
           "A": 7.0,
           "C": 4.0
         }
@@ -1727,24 +1728,24 @@
       "pregunta_17": {
         "numero": 17,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 237,
-        "porcentaje_acierto": 85.3,
+        "total_respuestas": 314,
+        "aciertos": 267,
+        "porcentaje_acierto": 85.0,
         "distribucion": {
           "C": 85.0,
           "D": 8.0,
-          "B": 5.0,
+          "B": 6.0,
           "A": 1.0
         }
       },
       "pregunta_18": {
         "numero": 18,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 252,
-        "porcentaje_acierto": 90.6,
+        "total_respuestas": 314,
+        "aciertos": 282,
+        "porcentaje_acierto": 89.8,
         "distribucion": {
-          "D": 91.0,
+          "D": 90.0,
           "A": 2.0,
           "B": 5.0,
           "C": 3.0
@@ -1753,22 +1754,22 @@
       "pregunta_19": {
         "numero": 19,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 244,
-        "porcentaje_acierto": 87.8,
+        "total_respuestas": 314,
+        "aciertos": 271,
+        "porcentaje_acierto": 86.3,
         "distribucion": {
-          "A": 88.0,
+          "A": 86.0,
           "B": 4.0,
-          "D": 5.0,
+          "D": 7.0,
           "C": 3.0
         }
       },
       "pregunta_20": {
         "numero": 20,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 225,
-        "porcentaje_acierto": 80.9,
+        "total_respuestas": 314,
+        "aciertos": 253,
+        "porcentaje_acierto": 80.6,
         "distribucion": {
           "D": 81.0,
           "B": 7.0,
@@ -1779,25 +1780,25 @@
       "pregunta_21": {
         "numero": 21,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 159,
-        "porcentaje_acierto": 57.2,
+        "total_respuestas": 314,
+        "aciertos": 174,
+        "porcentaje_acierto": 55.4,
         "distribucion": {
-          "A": 16.0,
-          "D": 57.0,
-          "B": 14.0,
-          "C": 12.0
+          "A": 17.0,
+          "D": 55.0,
+          "B": 13.0,
+          "C": 14.0
         }
       },
       "pregunta_22": {
         "numero": 22,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 202,
-        "porcentaje_acierto": 72.7,
+        "total_respuestas": 314,
+        "aciertos": 229,
+        "porcentaje_acierto": 72.9,
         "distribucion": {
           "B": 73.0,
-          "C": 12.0,
+          "C": 11.0,
           "A": 13.0,
           "D": 3.0
         }
@@ -1805,39 +1806,39 @@
       "pregunta_23": {
         "numero": 23,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 167,
-        "porcentaje_acierto": 60.1,
+        "total_respuestas": 314,
+        "aciertos": 190,
+        "porcentaje_acierto": 60.5,
         "distribucion": {
-          "A": 60.0,
-          "D": 21.0,
-          "C": 12.0,
+          "A": 61.0,
+          "D": 20.0,
+          "C": 11.0,
           "B": 8.0
         }
       },
       "pregunta_24": {
         "numero": 24,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 212,
-        "porcentaje_acierto": 76.3,
+        "total_respuestas": 314,
+        "aciertos": 239,
+        "porcentaje_acierto": 76.1,
         "distribucion": {
           "C": 76.0,
           "A": 11.0,
           "D": 3.0,
-          "B": 10.0
+          "B": 11.0
         }
       },
       "pregunta_25": {
         "numero": 25,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 177,
-        "porcentaje_acierto": 63.7,
+        "total_respuestas": 314,
+        "aciertos": 203,
+        "porcentaje_acierto": 64.6,
         "distribucion": {
-          "C": 64.0,
-          "D": 17.0,
-          "B": 14.0,
+          "C": 65.0,
+          "D": 15.0,
+          "B": 15.0,
           "A": 5.0
         }
       }
@@ -1846,12 +1847,12 @@
       "pregunta_92": {
         "numero": 92,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 221,
-        "porcentaje_acierto": 73.2,
+        "total_respuestas": 319,
+        "aciertos": 235,
+        "porcentaje_acierto": 73.7,
         "distribucion": {
-          "C": 73.0,
-          "B": 15.0,
+          "C": 74.0,
+          "B": 14.0,
           "A": 9.0,
           "D": 3.0
         }
@@ -1859,12 +1860,12 @@
       "pregunta_93": {
         "numero": 93,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 177,
-        "porcentaje_acierto": 58.6,
+        "total_respuestas": 319,
+        "aciertos": 185,
+        "porcentaje_acierto": 58.0,
         "distribucion": {
-          "C": 59.0,
-          "A": 28.0,
+          "C": 58.0,
+          "A": 29.0,
           "B": 8.0,
           "D": 5.0
         }
@@ -1872,38 +1873,38 @@
       "pregunta_94": {
         "numero": 94,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 249,
-        "porcentaje_acierto": 82.5,
+        "total_respuestas": 319,
+        "aciertos": 261,
+        "porcentaje_acierto": 81.8,
         "distribucion": {
           "A": 82.0,
           "D": 3.0,
           "B": 10.0,
-          "C": 4.0
+          "C": 5.0
         }
       },
       "pregunta_95": {
         "numero": 95,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 243,
-        "porcentaje_acierto": 80.5,
+        "total_respuestas": 319,
+        "aciertos": 252,
+        "porcentaje_acierto": 79.0,
         "distribucion": {
-          "B": 80.0,
+          "B": 79.0,
           "D": 13.0,
           "A": 3.0,
-          "C": 3.0
+          "C": 4.0
         }
       },
       "pregunta_96": {
         "numero": 96,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 266,
-        "porcentaje_acierto": 88.1,
+        "total_respuestas": 319,
+        "aciertos": 280,
+        "porcentaje_acierto": 87.8,
         "distribucion": {
           "C": 88.0,
-          "B": 2.0,
+          "B": 3.0,
           "D": 5.0,
           "A": 5.0
         }
@@ -1911,12 +1912,12 @@
       "pregunta_97": {
         "numero": 97,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 194,
-        "porcentaje_acierto": 64.2,
+        "total_respuestas": 319,
+        "aciertos": 203,
+        "porcentaje_acierto": 63.6,
         "distribucion": {
           "C": 64.0,
-          "A": 20.0,
+          "A": 21.0,
           "B": 11.0,
           "D": 5.0
         }
@@ -1924,9 +1925,9 @@
       "pregunta_98": {
         "numero": 98,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 187,
-        "porcentaje_acierto": 61.9,
+        "total_respuestas": 319,
+        "aciertos": 198,
+        "porcentaje_acierto": 62.1,
         "distribucion": {
           "B": 62.0,
           "C": 16.0,
@@ -1937,12 +1938,12 @@
       "pregunta_99": {
         "numero": 99,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 270,
-        "porcentaje_acierto": 89.4,
+        "total_respuestas": 319,
+        "aciertos": 286,
+        "porcentaje_acierto": 89.7,
         "distribucion": {
-          "A": 89.0,
-          "C": 7.0,
+          "A": 90.0,
+          "C": 6.0,
           "D": 2.0,
           "B": 2.0
         }
@@ -1950,51 +1951,51 @@
       "pregunta_100": {
         "numero": 100,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 225,
-        "porcentaje_acierto": 74.5,
+        "total_respuestas": 319,
+        "aciertos": 235,
+        "porcentaje_acierto": 73.7,
         "distribucion": {
-          "D": 75.0,
-          "C": 10.0,
+          "D": 74.0,
+          "C": 11.0,
           "A": 10.0,
-          "B": 6.0
+          "B": 5.0
         }
       },
       "pregunta_101": {
         "numero": 101,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 202,
-        "porcentaje_acierto": 66.9,
+        "total_respuestas": 319,
+        "aciertos": 211,
+        "porcentaje_acierto": 66.1,
         "distribucion": {
-          "A": 67.0,
-          "D": 21.0,
+          "A": 66.0,
+          "D": 20.0,
           "C": 8.0,
-          "B": 5.0
+          "B": 6.0
         }
       },
       "pregunta_102": {
         "numero": 102,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 276,
-        "porcentaje_acierto": 91.4,
+        "total_respuestas": 319,
+        "aciertos": 287,
+        "porcentaje_acierto": 90.0,
         "distribucion": {
-          "A": 91.0,
-          "B": 3.0,
-          "D": 2.0,
+          "A": 90.0,
+          "B": 4.0,
+          "D": 3.0,
           "C": 4.0
         }
       },
       "pregunta_103": {
         "numero": 103,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 155,
-        "porcentaje_acierto": 51.3,
+        "total_respuestas": 319,
+        "aciertos": 161,
+        "porcentaje_acierto": 50.5,
         "distribucion": {
-          "C": 29.0,
-          "D": 51.0,
+          "C": 30.0,
+          "D": 50.0,
           "B": 11.0,
           "A": 9.0
         }
@@ -2002,9 +2003,9 @@
       "pregunta_104": {
         "numero": 104,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 263,
-        "porcentaje_acierto": 87.1,
+        "total_respuestas": 319,
+        "aciertos": 276,
+        "porcentaje_acierto": 86.5,
         "distribucion": {
           "D": 87.0,
           "C": 5.0,
@@ -2015,11 +2016,11 @@
       "pregunta_105": {
         "numero": 105,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 222,
-        "porcentaje_acierto": 73.5,
+        "total_respuestas": 319,
+        "aciertos": 233,
+        "porcentaje_acierto": 73.0,
         "distribucion": {
-          "C": 74.0,
+          "C": 73.0,
           "A": 13.0,
           "B": 7.0,
           "D": 7.0
@@ -2028,63 +2029,63 @@
       "pregunta_106": {
         "numero": 106,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 242,
-        "porcentaje_acierto": 80.1,
+        "total_respuestas": 319,
+        "aciertos": 255,
+        "porcentaje_acierto": 79.9,
         "distribucion": {
           "A": 80.0,
           "B": 13.0,
           "D": 2.0,
-          "C": 4.0
+          "C": 5.0
         }
       },
       "pregunta_107": {
         "numero": 107,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 271,
-        "porcentaje_acierto": 89.7,
+        "total_respuestas": 319,
+        "aciertos": 281,
+        "porcentaje_acierto": 88.1,
         "distribucion": {
-          "C": 90.0,
+          "C": 88.0,
           "B": 6.0,
-          "A": 2.0,
-          "D": 2.0
+          "A": 3.0,
+          "D": 3.0
         }
       },
       "pregunta_108": {
         "numero": 108,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 262,
-        "porcentaje_acierto": 86.8,
+        "total_respuestas": 319,
+        "aciertos": 273,
+        "porcentaje_acierto": 85.6,
         "distribucion": {
-          "A": 87.0,
+          "A": 86.0,
           "B": 7.0,
-          "D": 3.0,
+          "D": 4.0,
           "C": 4.0
         }
       },
       "pregunta_109": {
         "numero": 109,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 189,
-        "porcentaje_acierto": 62.6,
+        "total_respuestas": 319,
+        "aciertos": 197,
+        "porcentaje_acierto": 61.8,
         "distribucion": {
-          "C": 63.0,
-          "D": 19.0,
+          "C": 62.0,
+          "D": 18.0,
           "A": 13.0,
-          "B": 6.0
+          "B": 7.0
         }
       },
       "pregunta_110": {
         "numero": 110,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 250,
-        "porcentaje_acierto": 82.8,
+        "total_respuestas": 319,
+        "aciertos": 263,
+        "porcentaje_acierto": 82.4,
         "distribucion": {
-          "C": 83.0,
+          "C": 82.0,
           "A": 8.0,
           "B": 6.0,
           "D": 4.0
@@ -2093,38 +2094,38 @@
       "pregunta_111": {
         "numero": 111,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 271,
-        "porcentaje_acierto": 89.7,
+        "total_respuestas": 319,
+        "aciertos": 285,
+        "porcentaje_acierto": 89.3,
         "distribucion": {
-          "C": 90.0,
+          "C": 89.0,
           "B": 6.0,
           "D": 2.0,
-          "A": 2.0
+          "A": 3.0
         }
       },
       "pregunta_112": {
         "numero": 112,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 270,
-        "porcentaje_acierto": 89.4,
+        "total_respuestas": 319,
+        "aciertos": 282,
+        "porcentaje_acierto": 88.4,
         "distribucion": {
-          "C": 89.0,
-          "B": 6.0,
-          "A": 3.0,
+          "C": 88.0,
+          "B": 7.0,
+          "A": 4.0,
           "D": 1.0
         }
       },
       "pregunta_113": {
         "numero": 113,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 274,
-        "porcentaje_acierto": 90.7,
+        "total_respuestas": 319,
+        "aciertos": 288,
+        "porcentaje_acierto": 90.3,
         "distribucion": {
-          "C": 91.0,
-          "D": 3.0,
+          "C": 90.0,
+          "D": 4.0,
           "B": 4.0,
           "A": 2.0
         }
@@ -2132,12 +2133,12 @@
       "pregunta_114": {
         "numero": 114,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 248,
-        "porcentaje_acierto": 82.1,
+        "total_respuestas": 319,
+        "aciertos": 259,
+        "porcentaje_acierto": 81.2,
         "distribucion": {
-          "C": 82.0,
-          "D": 8.0,
+          "C": 81.0,
+          "D": 9.0,
           "A": 4.0,
           "B": 6.0
         }
@@ -2145,50 +2146,50 @@
       "pregunta_115": {
         "numero": 115,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 223,
-        "porcentaje_acierto": 73.8,
+        "total_respuestas": 319,
+        "aciertos": 234,
+        "porcentaje_acierto": 73.4,
         "distribucion": {
-          "C": 74.0,
-          "A": 14.0,
-          "B": 5.0,
-          "D": 7.0
+          "C": 73.0,
+          "A": 13.0,
+          "B": 6.0,
+          "D": 8.0
         }
       },
       "pregunta_116": {
         "numero": 116,
         "respuesta_correcta": "B",
-        "total_respuestas": 302,
-        "aciertos": 257,
-        "porcentaje_acierto": 85.1,
+        "total_respuestas": 319,
+        "aciertos": 269,
+        "porcentaje_acierto": 84.3,
         "distribucion": {
-          "B": 85.0,
+          "B": 84.0,
           "C": 7.0,
           "A": 5.0,
-          "D": 3.0
+          "D": 4.0
         }
       },
       "pregunta_117": {
         "numero": 117,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 264,
-        "porcentaje_acierto": 87.4,
+        "total_respuestas": 319,
+        "aciertos": 275,
+        "porcentaje_acierto": 86.2,
         "distribucion": {
-          "C": 87.0,
+          "C": 86.0,
           "D": 3.0,
-          "B": 5.0,
+          "B": 6.0,
           "A": 5.0
         }
       },
       "pregunta_118": {
         "numero": 118,
         "respuesta_correcta": "D",
-        "total_respuestas": 302,
-        "aciertos": 156,
-        "porcentaje_acierto": 51.7,
+        "total_respuestas": 319,
+        "aciertos": 164,
+        "porcentaje_acierto": 51.4,
         "distribucion": {
-          "D": 52.0,
+          "D": 51.0,
           "C": 20.0,
           "B": 22.0,
           "A": 7.0
@@ -2197,24 +2198,24 @@
       "pregunta_119": {
         "numero": 119,
         "respuesta_correcta": "A",
-        "total_respuestas": 302,
-        "aciertos": 209,
-        "porcentaje_acierto": 69.2,
+        "total_respuestas": 319,
+        "aciertos": 220,
+        "porcentaje_acierto": 69.0,
         "distribucion": {
           "A": 69.0,
-          "B": 5.0,
-          "C": 10.0,
+          "B": 6.0,
+          "C": 9.0,
           "D": 16.0
         }
       },
       "pregunta_120": {
         "numero": 120,
         "respuesta_correcta": "C",
-        "total_respuestas": 302,
-        "aciertos": 207,
-        "porcentaje_acierto": 68.5,
+        "total_respuestas": 319,
+        "aciertos": 218,
+        "porcentaje_acierto": 68.3,
         "distribucion": {
-          "C": 69.0,
+          "C": 68.0,
           "D": 8.0,
           "B": 9.0,
           "A": 14.0
@@ -2223,9 +2224,9 @@
       "pregunta_51": {
         "numero": 51,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 231,
-        "porcentaje_acierto": 83.1,
+        "total_respuestas": 314,
+        "aciertos": 262,
+        "porcentaje_acierto": 83.4,
         "distribucion": {
           "C": 83.0,
           "A": 7.0,
@@ -2236,35 +2237,35 @@
       "pregunta_52": {
         "numero": 52,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 142,
-        "porcentaje_acierto": 51.1,
+        "total_respuestas": 314,
+        "aciertos": 165,
+        "porcentaje_acierto": 52.5,
         "distribucion": {
           "D": 13.0,
-          "B": 51.0,
-          "C": 18.0,
+          "B": 53.0,
+          "C": 17.0,
           "A": 18.0
         }
       },
       "pregunta_53": {
         "numero": 53,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 214,
-        "porcentaje_acierto": 77.0,
+        "total_respuestas": 314,
+        "aciertos": 239,
+        "porcentaje_acierto": 76.1,
         "distribucion": {
-          "B": 77.0,
-          "C": 13.0,
-          "D": 5.0,
+          "B": 76.0,
+          "C": 12.0,
+          "D": 6.0,
           "A": 6.0
         }
       },
       "pregunta_54": {
         "numero": 54,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 223,
-        "porcentaje_acierto": 80.2,
+        "total_respuestas": 314,
+        "aciertos": 252,
+        "porcentaje_acierto": 80.3,
         "distribucion": {
           "B": 80.0,
           "A": 7.0,
@@ -2275,77 +2276,77 @@
       "pregunta_55": {
         "numero": 55,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 213,
-        "porcentaje_acierto": 76.6,
+        "total_respuestas": 314,
+        "aciertos": 241,
+        "porcentaje_acierto": 76.8,
         "distribucion": {
           "B": 77.0,
-          "D": 7.0,
-          "C": 8.0,
+          "D": 6.0,
+          "C": 9.0,
           "A": 8.0
         }
       },
       "pregunta_56": {
         "numero": 56,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 234,
-        "porcentaje_acierto": 84.2,
+        "total_respuestas": 314,
+        "aciertos": 261,
+        "porcentaje_acierto": 83.1,
         "distribucion": {
-          "C": 84.0,
+          "C": 83.0,
           "D": 4.0,
-          "B": 6.0,
+          "B": 7.0,
           "A": 5.0
         }
       },
       "pregunta_57": {
         "numero": 57,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 239,
-        "porcentaje_acierto": 86.0,
+        "total_respuestas": 314,
+        "aciertos": 271,
+        "porcentaje_acierto": 86.3,
         "distribucion": {
           "C": 86.0,
-          "B": 12.0,
-          "D": 1.0,
+          "B": 11.0,
+          "D": 2.0,
           "A": 1.0
         }
       },
       "pregunta_58": {
         "numero": 58,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 210,
-        "porcentaje_acierto": 75.5,
+        "total_respuestas": 314,
+        "aciertos": 234,
+        "porcentaje_acierto": 74.5,
         "distribucion": {
-          "C": 76.0,
+          "C": 75.0,
           "B": 8.0,
-          "D": 13.0,
-          "A": 3.0
+          "D": 14.0,
+          "A": 4.0
         }
       },
       "pregunta_59": {
         "numero": 59,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 206,
-        "porcentaje_acierto": 74.1,
+        "total_respuestas": 314,
+        "aciertos": 228,
+        "porcentaje_acierto": 72.6,
         "distribucion": {
-          "C": 74.0,
+          "C": 73.0,
           "D": 18.0,
-          "B": 3.0,
+          "B": 4.0,
           "A": 5.0
         }
       },
       "pregunta_60": {
         "numero": 60,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 250,
-        "porcentaje_acierto": 89.9,
+        "total_respuestas": 314,
+        "aciertos": 283,
+        "porcentaje_acierto": 90.1,
         "distribucion": {
           "D": 90.0,
-          "C": 4.0,
+          "C": 5.0,
           "B": 2.0,
           "A": 4.0
         }
@@ -2353,11 +2354,11 @@
       "pregunta_61": {
         "numero": 61,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 250,
-        "porcentaje_acierto": 89.9,
+        "total_respuestas": 314,
+        "aciertos": 279,
+        "porcentaje_acierto": 88.9,
         "distribucion": {
-          "B": 90.0,
+          "B": 89.0,
           "C": 4.0,
           "D": 3.0,
           "A": 4.0
@@ -2366,64 +2367,64 @@
       "pregunta_62": {
         "numero": 62,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 204,
-        "porcentaje_acierto": 73.4,
+        "total_respuestas": 314,
+        "aciertos": 226,
+        "porcentaje_acierto": 72.0,
         "distribucion": {
-          "C": 73.0,
+          "C": 72.0,
           "B": 12.0,
           "D": 9.0,
-          "A": 6.0
+          "A": 7.0
         }
       },
       "pregunta_63": {
         "numero": 63,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 233,
+        "total_respuestas": 314,
+        "aciertos": 263,
         "porcentaje_acierto": 83.8,
         "distribucion": {
           "B": 84.0,
           "C": 10.0,
           "D": 3.0,
-          "A": 3.0
+          "A": 4.0
         }
       },
       "pregunta_64": {
         "numero": 64,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 197,
-        "porcentaje_acierto": 70.9,
+        "total_respuestas": 314,
+        "aciertos": 225,
+        "porcentaje_acierto": 71.7,
         "distribucion": {
-          "C": 71.0,
+          "C": 72.0,
           "A": 8.0,
-          "B": 17.0,
-          "D": 5.0
+          "B": 16.0,
+          "D": 4.0
         }
       },
       "pregunta_65": {
         "numero": 65,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 145,
-        "porcentaje_acierto": 52.2,
+        "total_respuestas": 314,
+        "aciertos": 155,
+        "porcentaje_acierto": 49.4,
         "distribucion": {
-          "C": 52.0,
-          "B": 37.0,
-          "D": 8.0,
-          "A": 3.0
+          "C": 49.0,
+          "B": 39.0,
+          "D": 9.0,
+          "A": 4.0
         }
       },
       "pregunta_66": {
         "numero": 66,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 220,
-        "porcentaje_acierto": 79.1,
+        "total_respuestas": 314,
+        "aciertos": 250,
+        "porcentaje_acierto": 79.6,
         "distribucion": {
-          "B": 79.0,
-          "C": 12.0,
+          "B": 80.0,
+          "C": 11.0,
           "A": 6.0,
           "D": 3.0
         }
@@ -2431,103 +2432,103 @@
       "pregunta_67": {
         "numero": 67,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 210,
-        "porcentaje_acierto": 75.5,
+        "total_respuestas": 314,
+        "aciertos": 234,
+        "porcentaje_acierto": 74.5,
         "distribucion": {
-          "B": 7.0,
-          "A": 76.0,
-          "C": 15.0,
-          "D": 3.0
+          "B": 8.0,
+          "A": 75.0,
+          "C": 16.0,
+          "D": 2.0
         }
       },
       "pregunta_68": {
         "numero": 68,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 251,
-        "porcentaje_acierto": 90.3,
+        "total_respuestas": 314,
+        "aciertos": 282,
+        "porcentaje_acierto": 89.8,
         "distribucion": {
           "B": 90.0,
-          "A": 6.0,
+          "A": 5.0,
           "C": 3.0,
-          "D": 1.0
+          "D": 2.0
         }
       },
       "pregunta_69": {
         "numero": 69,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 198,
-        "porcentaje_acierto": 71.2,
+        "total_respuestas": 314,
+        "aciertos": 224,
+        "porcentaje_acierto": 71.3,
         "distribucion": {
           "C": 71.0,
           "B": 13.0,
-          "D": 13.0,
+          "D": 12.0,
           "A": 3.0
         }
       },
       "pregunta_70": {
         "numero": 70,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 251,
-        "porcentaje_acierto": 90.3,
+        "total_respuestas": 314,
+        "aciertos": 281,
+        "porcentaje_acierto": 89.5,
         "distribucion": {
-          "B": 90.0,
+          "B": 89.0,
           "A": 4.0,
           "C": 5.0,
-          "D": 1.0
+          "D": 2.0
         }
       },
       "pregunta_71": {
         "numero": 71,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 250,
-        "porcentaje_acierto": 89.9,
+        "total_respuestas": 314,
+        "aciertos": 281,
+        "porcentaje_acierto": 89.5,
         "distribucion": {
-          "B": 90.0,
+          "B": 89.0,
           "C": 5.0,
-          "D": 2.0,
+          "D": 3.0,
           "A": 3.0
         }
       },
       "pregunta_72": {
         "numero": 72,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 206,
-        "porcentaje_acierto": 74.1,
+        "total_respuestas": 314,
+        "aciertos": 227,
+        "porcentaje_acierto": 72.3,
         "distribucion": {
-          "C": 74.0,
+          "C": 72.0,
           "B": 12.0,
-          "A": 7.0,
-          "D": 6.0
+          "A": 8.0,
+          "D": 7.0
         }
       },
       "pregunta_73": {
         "numero": 73,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 234,
-        "porcentaje_acierto": 84.2,
+        "total_respuestas": 314,
+        "aciertos": 261,
+        "porcentaje_acierto": 83.1,
         "distribucion": {
-          "C": 84.0,
-          "B": 6.0,
-          "A": 5.0,
+          "C": 83.0,
+          "B": 8.0,
+          "A": 6.0,
           "D": 4.0
         }
       },
       "pregunta_74": {
         "numero": 74,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 225,
-        "porcentaje_acierto": 80.9,
+        "total_respuestas": 314,
+        "aciertos": 248,
+        "porcentaje_acierto": 79.0,
         "distribucion": {
-          "A": 81.0,
-          "C": 9.0,
+          "A": 79.0,
+          "C": 11.0,
           "D": 3.0,
           "B": 7.0
         }
@@ -2535,66 +2536,66 @@
       "pregunta_75": {
         "numero": 75,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 168,
-        "porcentaje_acierto": 60.4,
+        "total_respuestas": 314,
+        "aciertos": 186,
+        "porcentaje_acierto": 59.2,
         "distribucion": {
-          "C": 60.0,
+          "C": 59.0,
           "B": 17.0,
-          "D": 12.0,
+          "D": 13.0,
           "A": 11.0
         }
       },
       "pregunta_76": {
         "numero": 76,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 233,
-        "porcentaje_acierto": 83.8,
+        "total_respuestas": 314,
+        "aciertos": 257,
+        "porcentaje_acierto": 81.8,
         "distribucion": {
-          "B": 84.0,
+          "B": 82.0,
           "C": 4.0,
           "A": 8.0,
-          "D": 5.0
+          "D": 6.0
         }
       },
       "pregunta_77": {
         "numero": 77,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 185,
-        "porcentaje_acierto": 66.5,
+        "total_respuestas": 314,
+        "aciertos": 211,
+        "porcentaje_acierto": 67.2,
         "distribucion": {
           "B": 67.0,
           "A": 7.0,
-          "C": 25.0,
+          "C": 24.0,
           "D": 2.0
         }
       },
       "pregunta_78": {
         "numero": 78,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 183,
-        "porcentaje_acierto": 65.8,
+        "total_respuestas": 314,
+        "aciertos": 205,
+        "porcentaje_acierto": 65.3,
         "distribucion": {
-          "A": 66.0,
+          "A": 65.0,
           "B": 16.0,
-          "C": 7.0,
+          "C": 8.0,
           "D": 11.0
         }
       },
       "pregunta_79": {
         "numero": 79,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 195,
-        "porcentaje_acierto": 70.1,
+        "total_respuestas": 314,
+        "aciertos": 212,
+        "porcentaje_acierto": 67.5,
         "distribucion": {
-          "D": 70.0,
-          "C": 17.0,
-          "B": 8.0,
-          "A": 4.0
+          "D": 68.0,
+          "C": 19.0,
+          "B": 9.0,
+          "A": 5.0
         }
       }
     },
@@ -2602,14 +2603,14 @@
       "pregunta_80": {
         "numero": 80,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 257,
-        "porcentaje_acierto": 92.4,
+        "total_respuestas": 314,
+        "aciertos": 288,
+        "porcentaje_acierto": 91.7,
         "distribucion": {
           "B": 92.0,
           "F": 0.0,
-          "E": 0.0,
-          "A": 5.0,
+          "E": 1.0,
+          "A": 6.0,
           "C": 1.0,
           "G": 0.0,
           "D": 0.0
@@ -2618,14 +2619,14 @@
       "pregunta_81": {
         "numero": 81,
         "respuesta_correcta": "F",
-        "total_respuestas": 278,
-        "aciertos": 236,
-        "porcentaje_acierto": 84.9,
+        "total_respuestas": 314,
+        "aciertos": 267,
+        "porcentaje_acierto": 85.0,
         "distribucion": {
           "F": 85.0,
           "E": 3.0,
           "C": 6.0,
-          "B": 2.0,
+          "B": 3.0,
           "G": 2.0,
           "A": 1.0,
           "D": 1.0
@@ -2634,46 +2635,47 @@
       "pregunta_82": {
         "numero": 82,
         "respuesta_correcta": "E",
-        "total_respuestas": 278,
-        "aciertos": 224,
-        "porcentaje_acierto": 80.6,
+        "total_respuestas": 314,
+        "aciertos": 251,
+        "porcentaje_acierto": 79.9,
         "distribucion": {
-          "E": 81.0,
+          "E": 80.0,
           "A": 1.0,
-          "D": 10.0,
+          "D": 11.0,
           "G": 1.0,
-          "B": 1.0,
+          "B": 2.0,
           "F": 1.0,
-          "C": 5.0
+          "C": 4.0,
+          "H": 0.0
         }
       },
       "pregunta_83": {
         "numero": 83,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 254,
-        "porcentaje_acierto": 91.4,
+        "total_respuestas": 314,
+        "aciertos": 284,
+        "porcentaje_acierto": 90.4,
         "distribucion": {
-          "A": 91.0,
+          "A": 90.0,
           "G": 1.0,
           "D": 4.0,
-          "B": 0.0,
+          "B": 1.0,
           "F": 1.0,
-          "C": 1.0,
-          "E": 1.0
+          "C": 2.0,
+          "E": 2.0
         }
       },
       "pregunta_84": {
         "numero": 84,
         "respuesta_correcta": "G",
-        "total_respuestas": 278,
-        "aciertos": 240,
-        "porcentaje_acierto": 86.3,
+        "total_respuestas": 314,
+        "aciertos": 270,
+        "porcentaje_acierto": 86.0,
         "distribucion": {
           "G": 86.0,
           "F": 3.0,
           "H": 1.0,
-          "B": 1.0,
+          "B": 2.0,
           "E": 2.0,
           "D": 3.0,
           "C": 3.0,
@@ -2683,13 +2685,13 @@
       "pregunta_85": {
         "numero": 85,
         "respuesta_correcta": "F",
-        "total_respuestas": 278,
-        "aciertos": 223,
-        "porcentaje_acierto": 80.2,
+        "total_respuestas": 314,
+        "aciertos": 254,
+        "porcentaje_acierto": 80.9,
         "distribucion": {
-          "F": 80.0,
+          "F": 81.0,
           "E": 5.0,
-          "G": 3.0,
+          "G": 2.0,
           "D": 2.0,
           "B": 4.0,
           "A": 6.0,
@@ -2699,41 +2701,42 @@
       "pregunta_86": {
         "numero": 86,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 259,
-        "porcentaje_acierto": 93.2,
+        "total_respuestas": 314,
+        "aciertos": 291,
+        "porcentaje_acierto": 92.7,
         "distribucion": {
           "C": 93.0,
           "A": 2.0,
           "E": 1.0,
-          "B": 1.0,
+          "B": 2.0,
           "D": 2.0,
           "F": 0.0,
-          "G": 0.0
+          "G": 1.0
         }
       },
       "pregunta_87": {
         "numero": 87,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 241,
-        "porcentaje_acierto": 86.7,
+        "total_respuestas": 314,
+        "aciertos": 271,
+        "porcentaje_acierto": 86.3,
         "distribucion": {
-          "D": 87.0,
+          "D": 86.0,
           "E": 1.0,
           "B": 6.0,
-          "F": 4.0,
-          "A": 0.0,
+          "F": 3.0,
+          "A": 1.0,
           "C": 2.0,
-          "G": 1.0
+          "G": 1.0,
+          "H": 0.0
         }
       },
       "pregunta_88": {
         "numero": 88,
         "respuesta_correcta": "G",
-        "total_respuestas": 278,
-        "aciertos": 208,
-        "porcentaje_acierto": 74.8,
+        "total_respuestas": 314,
+        "aciertos": 237,
+        "porcentaje_acierto": 75.5,
         "distribucion": {
           "G": 75.0,
           "F": 2.0,
@@ -2741,22 +2744,22 @@
           "D": 3.0,
           "E": 4.0,
           "H": 0.0,
-          "A": 3.0,
+          "A": 2.0,
           "C": 3.0
         }
       },
       "pregunta_89": {
         "numero": 89,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 232,
-        "porcentaje_acierto": 83.5,
+        "total_respuestas": 314,
+        "aciertos": 264,
+        "porcentaje_acierto": 84.1,
         "distribucion": {
-          "A": 83.0,
+          "A": 84.0,
           "B": 3.0,
           "C": 2.0,
           "F": 4.0,
-          "E": 3.0,
+          "E": 2.0,
           "D": 2.0,
           "G": 1.0,
           "H": 1.0
@@ -2765,9 +2768,9 @@
       "pregunta_90": {
         "numero": 90,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 238,
-        "porcentaje_acierto": 85.6,
+        "total_respuestas": 314,
+        "aciertos": 270,
+        "porcentaje_acierto": 86.0,
         "distribucion": {
           "B": 86.0,
           "C": 9.0,
@@ -2777,9 +2780,9 @@
       "pregunta_91": {
         "numero": 91,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 252,
-        "porcentaje_acierto": 90.6,
+        "total_respuestas": 314,
+        "aciertos": 285,
+        "porcentaje_acierto": 90.8,
         "distribucion": {
           "B": 91.0,
           "A": 4.0,
@@ -2789,57 +2792,57 @@
       "pregunta_92": {
         "numero": 92,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 257,
-        "porcentaje_acierto": 92.4,
+        "total_respuestas": 314,
+        "aciertos": 289,
+        "porcentaje_acierto": 92.0,
         "distribucion": {
           "C": 92.0,
-          "B": 5.0,
+          "B": 6.0,
           "A": 2.0
         }
       },
       "pregunta_93": {
         "numero": 93,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 257,
-        "porcentaje_acierto": 92.4,
+        "total_respuestas": 314,
+        "aciertos": 291,
+        "porcentaje_acierto": 92.7,
         "distribucion": {
-          "A": 92.0,
-          "B": 3.0,
+          "A": 93.0,
+          "B": 4.0,
           "C": 4.0
         }
       },
       "pregunta_94": {
         "numero": 94,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 240,
-        "porcentaje_acierto": 86.3,
+        "total_respuestas": 314,
+        "aciertos": 268,
+        "porcentaje_acierto": 85.4,
         "distribucion": {
-          "B": 86.0,
+          "B": 85.0,
           "C": 5.0,
-          "A": 9.0
+          "A": 10.0
         }
       },
       "pregunta_95": {
         "numero": 95,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 202,
-        "porcentaje_acierto": 72.7,
+        "total_respuestas": 314,
+        "aciertos": 229,
+        "porcentaje_acierto": 72.9,
         "distribucion": {
           "C": 73.0,
-          "B": 21.0,
-          "A": 6.0
+          "B": 20.0,
+          "A": 7.0
         }
       },
       "pregunta_96": {
         "numero": 96,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 233,
-        "porcentaje_acierto": 83.8,
+        "total_respuestas": 314,
+        "aciertos": 264,
+        "porcentaje_acierto": 84.1,
         "distribucion": {
           "C": 84.0,
           "A": 10.0,
@@ -2849,105 +2852,105 @@
       "pregunta_97": {
         "numero": 97,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 236,
-        "porcentaje_acierto": 84.9,
+        "total_respuestas": 314,
+        "aciertos": 267,
+        "porcentaje_acierto": 85.0,
         "distribucion": {
           "B": 85.0,
-          "A": 8.0,
-          "C": 7.0
+          "A": 7.0,
+          "C": 8.0
         }
       },
       "pregunta_98": {
         "numero": 98,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 257,
-        "porcentaje_acierto": 92.4,
+        "total_respuestas": 314,
+        "aciertos": 291,
+        "porcentaje_acierto": 92.7,
         "distribucion": {
-          "B": 92.0,
+          "B": 93.0,
           "A": 5.0,
-          "C": 3.0
+          "C": 2.0
         }
       },
       "pregunta_99": {
         "numero": 99,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 221,
-        "porcentaje_acierto": 79.5,
+        "total_respuestas": 314,
+        "aciertos": 254,
+        "porcentaje_acierto": 80.9,
         "distribucion": {
-          "A": 79.0,
-          "B": 13.0,
-          "C": 8.0
+          "A": 81.0,
+          "B": 12.0,
+          "C": 7.0
         }
       },
       "pregunta_100": {
         "numero": 100,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 176,
-        "porcentaje_acierto": 63.3,
+        "total_respuestas": 314,
+        "aciertos": 198,
+        "porcentaje_acierto": 63.1,
         "distribucion": {
           "B": 63.0,
-          "C": 29.0,
-          "A": 8.0
+          "C": 28.0,
+          "A": 9.0
         }
       },
       "pregunta_101": {
         "numero": 101,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 198,
-        "porcentaje_acierto": 71.2,
+        "total_respuestas": 314,
+        "aciertos": 224,
+        "porcentaje_acierto": 71.3,
         "distribucion": {
           "B": 71.0,
           "C": 17.0,
-          "A": 12.0
+          "A": 11.0
         }
       },
       "pregunta_102": {
         "numero": 102,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 210,
+        "total_respuestas": 314,
+        "aciertos": 237,
         "porcentaje_acierto": 75.5,
         "distribucion": {
-          "C": 76.0,
+          "C": 75.0,
           "B": 17.0,
-          "A": 8.0
+          "A": 7.0
         }
       },
       "pregunta_103": {
         "numero": 103,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 201,
-        "porcentaje_acierto": 72.3,
+        "total_respuestas": 314,
+        "aciertos": 228,
+        "porcentaje_acierto": 72.6,
         "distribucion": {
-          "C": 72.0,
-          "A": 15.0,
-          "B": 13.0
+          "C": 73.0,
+          "A": 13.0,
+          "B": 14.0
         }
       },
       "pregunta_104": {
         "numero": 104,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 218,
-        "porcentaje_acierto": 78.4,
+        "total_respuestas": 314,
+        "aciertos": 246,
+        "porcentaje_acierto": 78.3,
         "distribucion": {
           "B": 78.0,
           "C": 9.0,
-          "A": 12.0
+          "A": 13.0
         }
       },
       "pregunta_105": {
         "numero": 105,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 140,
-        "porcentaje_acierto": 50.4,
+        "total_respuestas": 314,
+        "aciertos": 157,
+        "porcentaje_acierto": 50.0,
         "distribucion": {
           "A": 50.0,
           "C": 26.0,
@@ -2957,23 +2960,23 @@
       "pregunta_106": {
         "numero": 106,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 178,
-        "porcentaje_acierto": 64.0,
+        "total_respuestas": 314,
+        "aciertos": 197,
+        "porcentaje_acierto": 62.7,
         "distribucion": {
           "B": 24.0,
-          "A": 64.0,
-          "C": 12.0
+          "A": 63.0,
+          "C": 14.0
         }
       },
       "pregunta_107": {
         "numero": 107,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 199,
-        "porcentaje_acierto": 71.6,
+        "total_respuestas": 314,
+        "aciertos": 223,
+        "porcentaje_acierto": 71.0,
         "distribucion": {
-          "C": 72.0,
+          "C": 71.0,
           "B": 17.0,
           "A": 12.0
         }
@@ -2981,109 +2984,109 @@
       "pregunta_108": {
         "numero": 108,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 234,
-        "porcentaje_acierto": 84.2,
+        "total_respuestas": 314,
+        "aciertos": 262,
+        "porcentaje_acierto": 83.4,
         "distribucion": {
-          "A": 84.0,
+          "A": 83.0,
           "C": 7.0,
-          "B": 9.0
+          "B": 10.0
         }
       },
       "pregunta_109": {
         "numero": 109,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 194,
-        "porcentaje_acierto": 69.8,
+        "total_respuestas": 314,
+        "aciertos": 222,
+        "porcentaje_acierto": 70.7,
         "distribucion": {
-          "B": 70.0,
-          "A": 18.0,
-          "C": 13.0
+          "B": 71.0,
+          "A": 17.0,
+          "C": 12.0
         }
       },
       "pregunta_110": {
         "numero": 110,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 184,
-        "porcentaje_acierto": 66.2,
+        "total_respuestas": 314,
+        "aciertos": 212,
+        "porcentaje_acierto": 67.5,
         "distribucion": {
-          "B": 66.0,
-          "C": 17.0,
-          "A": 17.0
+          "B": 68.0,
+          "C": 16.0,
+          "A": 16.0
         }
       },
       "pregunta_111": {
         "numero": 111,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 202,
-        "porcentaje_acierto": 72.7,
+        "total_respuestas": 314,
+        "aciertos": 223,
+        "porcentaje_acierto": 71.0,
         "distribucion": {
-          "C": 73.0,
-          "B": 16.0,
+          "C": 71.0,
+          "B": 17.0,
           "A": 12.0
         }
       },
       "pregunta_112": {
         "numero": 112,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 225,
-        "porcentaje_acierto": 80.9,
+        "total_respuestas": 314,
+        "aciertos": 252,
+        "porcentaje_acierto": 80.3,
         "distribucion": {
-          "B": 81.0,
-          "C": 6.0,
+          "B": 80.0,
+          "C": 7.0,
           "A": 13.0
         }
       },
       "pregunta_113": {
         "numero": 113,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 166,
-        "porcentaje_acierto": 59.7,
+        "total_respuestas": 314,
+        "aciertos": 182,
+        "porcentaje_acierto": 58.0,
         "distribucion": {
-          "A": 60.0,
-          "B": 23.0,
+          "A": 58.0,
+          "B": 25.0,
           "C": 17.0
         }
       },
       "pregunta_114": {
         "numero": 114,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 171,
-        "porcentaje_acierto": 61.5,
+        "total_respuestas": 314,
+        "aciertos": 185,
+        "porcentaje_acierto": 58.9,
         "distribucion": {
-          "C": 62.0,
-          "B": 28.0,
-          "A": 10.0
+          "C": 59.0,
+          "B": 29.0,
+          "A": 12.0
         }
       },
       "pregunta_115": {
         "numero": 115,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 206,
-        "porcentaje_acierto": 74.1,
+        "total_respuestas": 314,
+        "aciertos": 232,
+        "porcentaje_acierto": 73.9,
         "distribucion": {
           "B": 74.0,
-          "C": 13.0,
+          "C": 12.0,
           "D": 3.0,
-          "A": 10.0
+          "A": 11.0
         }
       },
       "pregunta_116": {
         "numero": 116,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 175,
-        "porcentaje_acierto": 62.9,
+        "total_respuestas": 314,
+        "aciertos": 196,
+        "porcentaje_acierto": 62.4,
         "distribucion": {
-          "A": 63.0,
-          "D": 13.0,
+          "A": 62.0,
+          "D": 12.0,
           "C": 12.0,
           "B": 13.0
         }
@@ -3091,77 +3094,77 @@
       "pregunta_117": {
         "numero": 117,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 201,
-        "porcentaje_acierto": 72.3,
+        "total_respuestas": 314,
+        "aciertos": 224,
+        "porcentaje_acierto": 71.3,
         "distribucion": {
-          "C": 72.0,
-          "B": 12.0,
+          "C": 71.0,
+          "B": 11.0,
           "A": 6.0,
-          "D": 10.0
+          "D": 11.0
         }
       },
       "pregunta_118": {
         "numero": 118,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 187,
-        "porcentaje_acierto": 67.3,
+        "total_respuestas": 314,
+        "aciertos": 213,
+        "porcentaje_acierto": 67.8,
         "distribucion": {
-          "B": 67.0,
+          "B": 68.0,
           "D": 4.0,
-          "C": 13.0,
-          "A": 16.0
+          "C": 12.0,
+          "A": 15.0
         }
       },
       "pregunta_119": {
         "numero": 119,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 171,
-        "porcentaje_acierto": 61.5,
+        "total_respuestas": 314,
+        "aciertos": 191,
+        "porcentaje_acierto": 60.8,
         "distribucion": {
-          "C": 62.0,
-          "D": 12.0,
-          "B": 14.0,
-          "A": 13.0
+          "C": 61.0,
+          "D": 13.0,
+          "B": 15.0,
+          "A": 11.0
         }
       },
       "pregunta_120": {
         "numero": 120,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 140,
-        "porcentaje_acierto": 50.4,
+        "total_respuestas": 314,
+        "aciertos": 156,
+        "porcentaje_acierto": 49.7,
         "distribucion": {
           "D": 50.0,
-          "A": 17.0,
+          "A": 18.0,
           "C": 21.0,
-          "B": 12.0
+          "B": 11.0
         }
       },
       "pregunta_121": {
         "numero": 121,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 74,
-        "porcentaje_acierto": 26.6,
+        "total_respuestas": 314,
+        "aciertos": 83,
+        "porcentaje_acierto": 26.4,
         "distribucion": {
-          "B": 47.0,
-          "D": 27.0,
-          "C": 17.0,
+          "B": 48.0,
+          "D": 26.0,
+          "C": 16.0,
           "A": 10.0
         }
       },
       "pregunta_122": {
         "numero": 122,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 189,
-        "porcentaje_acierto": 68.0,
+        "total_respuestas": 314,
+        "aciertos": 209,
+        "porcentaje_acierto": 66.6,
         "distribucion": {
-          "C": 68.0,
-          "B": 13.0,
+          "C": 67.0,
+          "B": 14.0,
           "A": 12.0,
           "D": 7.0
         }
@@ -3169,12 +3172,12 @@
       "pregunta_123": {
         "numero": 123,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 166,
-        "porcentaje_acierto": 59.7,
+        "total_respuestas": 314,
+        "aciertos": 187,
+        "porcentaje_acierto": 59.6,
         "distribucion": {
           "A": 60.0,
-          "D": 9.0,
+          "D": 10.0,
           "C": 15.0,
           "B": 16.0
         }
@@ -3182,12 +3185,12 @@
       "pregunta_124": {
         "numero": 124,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 143,
-        "porcentaje_acierto": 51.4,
+        "total_respuestas": 314,
+        "aciertos": 162,
+        "porcentaje_acierto": 51.6,
         "distribucion": {
           "A": 28.0,
-          "C": 51.0,
+          "C": 52.0,
           "B": 14.0,
           "D": 6.0
         }
@@ -3195,12 +3198,12 @@
       "pregunta_125": {
         "numero": 125,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 156,
-        "porcentaje_acierto": 56.1,
+        "total_respuestas": 314,
+        "aciertos": 179,
+        "porcentaje_acierto": 57.0,
         "distribucion": {
-          "B": 56.0,
-          "C": 21.0,
+          "B": 57.0,
+          "C": 20.0,
           "A": 12.0,
           "D": 11.0
         }
@@ -3208,11 +3211,11 @@
       "pregunta_126": {
         "numero": 126,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 152,
-        "porcentaje_acierto": 54.7,
+        "total_respuestas": 314,
+        "aciertos": 170,
+        "porcentaje_acierto": 54.1,
         "distribucion": {
-          "B": 55.0,
+          "B": 54.0,
           "C": 12.0,
           "A": 23.0,
           "D": 10.0
@@ -3221,105 +3224,105 @@
       "pregunta_127": {
         "numero": 127,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 155,
-        "porcentaje_acierto": 55.8,
+        "total_respuestas": 314,
+        "aciertos": 172,
+        "porcentaje_acierto": 54.8,
         "distribucion": {
-          "A": 56.0,
+          "A": 55.0,
           "B": 17.0,
-          "C": 17.0,
-          "D": 11.0
+          "C": 18.0,
+          "D": 10.0
         }
       },
       "pregunta_128": {
         "numero": 128,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 154,
-        "porcentaje_acierto": 55.4,
+        "total_respuestas": 314,
+        "aciertos": 172,
+        "porcentaje_acierto": 54.8,
         "distribucion": {
           "D": 55.0,
-          "B": 24.0,
-          "C": 14.0,
+          "B": 25.0,
+          "C": 13.0,
           "A": 6.0
         }
       },
       "pregunta_129": {
         "numero": 129,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 161,
-        "porcentaje_acierto": 57.9,
+        "total_respuestas": 314,
+        "aciertos": 181,
+        "porcentaje_acierto": 57.6,
         "distribucion": {
           "B": 58.0,
-          "C": 20.0,
-          "D": 10.0,
+          "C": 19.0,
+          "D": 12.0,
           "A": 12.0
         }
       },
       "pregunta_130": {
         "numero": 130,
         "respuesta_correcta": "C",
-        "total_respuestas": 278,
-        "aciertos": 173,
-        "porcentaje_acierto": 62.2,
+        "total_respuestas": 314,
+        "aciertos": 193,
+        "porcentaje_acierto": 61.5,
         "distribucion": {
-          "C": 62.0,
+          "C": 61.0,
           "B": 18.0,
-          "D": 9.0,
+          "D": 10.0,
           "A": 11.0
         }
       },
       "pregunta_131": {
         "numero": 131,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 185,
-        "porcentaje_acierto": 66.5,
+        "total_respuestas": 314,
+        "aciertos": 206,
+        "porcentaje_acierto": 65.6,
         "distribucion": {
-          "D": 67.0,
-          "A": 13.0,
+          "D": 66.0,
+          "A": 12.0,
           "C": 11.0,
-          "B": 10.0
+          "B": 11.0
         }
       },
       "pregunta_132": {
         "numero": 132,
         "respuesta_correcta": "A",
-        "total_respuestas": 278,
-        "aciertos": 154,
-        "porcentaje_acierto": 55.4,
+        "total_respuestas": 314,
+        "aciertos": 171,
+        "porcentaje_acierto": 54.5,
         "distribucion": {
-          "A": 55.0,
-          "C": 22.0,
-          "B": 15.0,
-          "D": 8.0
+          "A": 54.0,
+          "C": 21.0,
+          "B": 16.0,
+          "D": 9.0
         }
       },
       "pregunta_133": {
         "numero": 133,
         "respuesta_correcta": "B",
-        "total_respuestas": 278,
-        "aciertos": 210,
-        "porcentaje_acierto": 75.5,
+        "total_respuestas": 314,
+        "aciertos": 233,
+        "porcentaje_acierto": 74.2,
         "distribucion": {
-          "B": 76.0,
-          "C": 12.0,
-          "D": 6.0,
+          "B": 74.0,
+          "C": 13.0,
+          "D": 7.0,
           "A": 6.0
         }
       },
       "pregunta_134": {
         "numero": 134,
         "respuesta_correcta": "D",
-        "total_respuestas": 278,
-        "aciertos": 178,
+        "total_respuestas": 314,
+        "aciertos": 201,
         "porcentaje_acierto": 64.0,
         "distribucion": {
           "D": 64.0,
-          "C": 10.0,
-          "B": 10.0,
-          "A": 15.0
+          "C": 11.0,
+          "B": 11.0,
+          "A": 14.0
         }
       }
     }
