@@ -1,0 +1,76 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ============================================
+    // CONFIG - App configuration (read-only)
+    // ============================================
+    match /config/{doc} {
+      allow read: if request.auth != null;
+      allow write: if false; // Solo via Admin SDK (Python)
+    }
+    
+    // ============================================
+    // SIMULATIONS - Manifests, stats, invalidaciones
+    // ============================================
+    match /simulations/{simId} {
+      allow read: if request.auth != null;
+      allow write: if false;
+      
+      // Sub-collections (estadisticas, invalidaciones)
+      match /{sub=**} {
+        allow read: if request.auth != null;
+        allow write: if false;
+      }
+    }
+    
+    // ============================================
+    // STUDENTS - Solo puedes leer tu propio doc
+    // ============================================
+    match /students/{studentId} {
+      // Perfil del estudiante: solo si tu email coincide
+      allow read: if request.auth != null && 
+                     resource.data.email == request.auth.token.email;
+      allow write: if false;
+      
+      // Resultados por simulacro
+      match /results/{simId} {
+        allow read: if request.auth != null &&
+                       get(/databases/$(database)/documents/students/$(studentId)).data.email == request.auth.token.email;
+        allow write: if false;
+      }
+    }
+    
+    // ============================================
+    // ADMIN STUDENTS - Admin reads all students
+    // Uses a separate collection for admin queries
+    // ============================================
+    match /admin_students/{simId} {
+      // Only admins can read (checked by admin email list in config)
+      allow read: if request.auth != null &&
+                     exists(/databases/$(database)/documents/config/admins) &&
+                     request.auth.token.email in get(/databases/$(database)/documents/config/admins).data.emails;
+      allow write: if false;
+      
+      match /{sub=**} {
+        allow read: if request.auth != null &&
+                       exists(/databases/$(database)/documents/config/admins) &&
+                       request.auth.token.email in get(/databases/$(database)/documents/config/admins).data.emails;
+        allow write: if false;
+      }
+    }
+    
+    // ============================================
+    // RANKINGS - Cualquier autenticado puede leer
+    // ============================================
+    match /rankings/{simId} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+    
+    // Deny everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

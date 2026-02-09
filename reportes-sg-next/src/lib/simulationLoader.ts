@@ -1,59 +1,52 @@
 /**
- * Simulation Data Loader
+ * Simulation Data Loader (Firestore-backed)
  * 
- * Provides functions to load student data from the new unified structure.
- * Supports multiple simulations with versioning.
+ * Unified data access layer. Uses firestoreService.ts as the single source of truth.
+ * Maintains backwards-compatible API for existing components.
  */
 
 import type { Estudiante, EstadisticasGrupo } from '@/types';
-import type { SimulationManifest, SimulationStudentsFile, CurrentSimulation } from '@/types/simulation';
+import type { SimulationManifest, CurrentSimulation } from '@/types/simulation';
+import {
+    getAppConfig,
+    getAllStudents,
+    getStudentResults,
+    getStatistics,
+    getSimulationManifest as fsGetManifest,
+    listAvailableSimulations as fsListSims,
+    clearCache as fsClearCache,
+    getStudentSimulations,
+} from './firestoreService';
 
-// Cache for loaded data to avoid redundant fetches
-const cache: {
-    currentSimulation?: CurrentSimulation;
-    manifests: Record<string, SimulationManifest>;
-    students: Record<string, SimulationStudentsFile>;
-    statistics: Record<string, EstadisticasGrupo>;
-} = {
-    manifests: {},
-    students: {},
-    statistics: {}
-};
+// ========================================
+// Backwards-compatible API
+// ========================================
 
 /**
  * Get the currently active simulation configuration.
  */
 export async function getCurrentSimulation(): Promise<CurrentSimulation> {
-    if (cache.currentSimulation) {
-        return cache.currentSimulation;
-    }
-
-    const res = await fetch('/data/current_simulation.json');
-    if (!res.ok) {
-        throw new Error('Failed to load current simulation config');
-    }
-
-    const data = await res.json();
-    cache.currentSimulation = data;
-    return data;
+    const config = await getAppConfig();
+    return {
+        active: config.activeSimulation,
+        available: config.availableSimulations,
+    };
 }
 
 /**
  * Get the manifest for a specific simulation.
  */
 export async function getSimulationManifest(simId: string): Promise<SimulationManifest> {
-    if (cache.manifests[simId]) {
-        return cache.manifests[simId];
-    }
-
-    const res = await fetch(`/data/simulations/${simId}/manifest.json`);
-    if (!res.ok) {
-        throw new Error(`Failed to load manifest for simulation: ${simId}`);
-    }
-
-    const data = await res.json();
-    cache.manifests[simId] = data;
-    return data;
+    const manifest = await fsGetManifest(simId);
+    return {
+        id: manifest.id,
+        name: manifest.name,
+        date: manifest.date,
+        version: '1.0.0',
+        totalStudents: manifest.totalStudents,
+        sessions: ['S1', 'S2'],
+        generatedAt: '',
+    };
 }
 
 /**
@@ -61,74 +54,44 @@ export async function getSimulationManifest(simId: string): Promise<SimulationMa
  * Returns an array of students for compatibility with existing code.
  */
 export async function loadStudents(simId?: string): Promise<Estudiante[]> {
-    const currentSim = simId || (await getCurrentSimulation()).active;
-
-    if (cache.students[currentSim]) {
-        const data = cache.students[currentSim];
-        return data.index.map(id => data.students[id]);
-    }
-
-    const res = await fetch(`/data/simulations/${currentSim}/students.json`);
-    if (!res.ok) {
-        throw new Error(`Failed to load students for simulation: ${currentSim}`);
-    }
-
-    const data: SimulationStudentsFile = await res.json();
-    cache.students[currentSim] = data;
-
-    // Convert to array for compatibility
-    return data.index.map(id => data.students[id]);
+    const config = await getAppConfig();
+    const currentSim = simId || config.activeSimulation;
+    return await getAllStudents(currentSim);
 }
 
 /**
  * Get a single student by ID.
- * More efficient than loading all students when only one is needed.
  */
 export async function getStudentById(studentId: string, simId?: string): Promise<Estudiante | null> {
-    const students = await loadStudents(simId);
-    return students.find(s => s.informacion_personal.numero_identificacion === studentId) ?? null;
+    const config = await getAppConfig();
+    const currentSim = simId || config.activeSimulation;
+    return await getStudentResults(studentId, currentSim);
 }
 
 /**
  * Load group statistics for a simulation.
  */
 export async function loadStatistics(simId?: string): Promise<EstadisticasGrupo> {
-    const currentSim = simId || (await getCurrentSimulation()).active;
-
-    if (cache.statistics[currentSim]) {
-        return cache.statistics[currentSim];
-    }
-
-    // Primero intentar estadisticas_grupo.json (con claves detalladas)
-    let res = await fetch(`/data/simulations/${currentSim}/estadisticas_grupo.json`);
-
-    // Fallback a statistics.json si no existe
-    if (!res.ok) {
-        res = await fetch(`/data/simulations/${currentSim}/statistics.json`);
-    }
-    if (!res.ok) {
-        throw new Error(`Failed to load statistics for simulation: ${currentSim}`);
-    }
-
-    const data = await res.json();
-    cache.statistics[currentSim] = data;
-    return data;
+    return await getStatistics(simId);
 }
 
 /**
  * List all available simulations.
  */
 export async function listAvailableSimulations(): Promise<string[]> {
-    const config = await getCurrentSimulation();
-    return config.available;
+    return await fsListSims();
+}
+
+/**
+ * Detect which simulations a student participated in.
+ */
+export async function detectStudentSimulations(studentId: string): Promise<string[]> {
+    return await getStudentSimulations(studentId);
 }
 
 /**
  * Clear the cache (useful for development or when switching simulations).
  */
 export function clearCache(): void {
-    cache.currentSimulation = undefined;
-    cache.manifests = {};
-    cache.students = {};
-    cache.statistics = {};
+    fsClearCache();
 }

@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { auth, googleProvider } from '@/lib/firebase';
 import { signInWithPopup, browserLocalPersistence, setPersistence } from 'firebase/auth';
 import BrowserHelpModal from '@/components/BrowserHelpModal';
+import { getStudentByEmail } from '@/lib/firestoreService';
 
 export default function EstudianteLogin() {
     const router = useRouter();
@@ -17,8 +18,6 @@ export default function EstudianteLogin() {
     useEffect(() => {
         const initAuth = async () => {
             try {
-                // Usar persistencia LOCAL en lugar de SESSION para mejor compatibilidad
-                // Esto ayuda con navegadores que particionan sessionStorage
                 await setPersistence(auth, browserLocalPersistence);
             } catch (e) {
                 console.warn('Could not set persistence:', e);
@@ -52,26 +51,18 @@ export default function EstudianteLogin() {
                 return;
             }
 
-            // 2. Cargar índice ligero de autenticación
-            const res = await fetch(`/data/auth_index.json?v=${new Date().getTime()}`);
-            if (!res.ok) throw new Error('Error conectando con el sistema de autenticación.');
+            // 2. Buscar estudiante en Firestore (reemplaza auth_index.json)
+            const student = await getStudentByEmail(email);
 
-            const authIndex = await res.json();
-
-            // 3. Buscar estudiante por correo en el índice (Búsqueda O(n) rápida en lista ligera)
-            const target = email.toLowerCase();
-            const entry = authIndex.find((item: any) => item.e.toLowerCase() === target);
-
-            if (entry) {
+            if (student) {
                 // ÉXITO: Guardar sesión y redirigir
-                localStorage.setItem('student_id', entry.i);
-                localStorage.setItem('student_name', entry.n);
+                localStorage.setItem('student_id', student.id);
+                localStorage.setItem('student_name', `${student.nombre} ${student.apellidos}`);
                 localStorage.setItem('student_email', email);
-                // El dashboard cargará los datos completos después
                 router.push('/estudiante/dashboard');
             } else {
                 // ERROR: Correo no encontrado
-                await auth.signOut(); // Cerrar sesión para que pueda intentar con otra cuenta
+                await auth.signOut();
                 setError(`El correo ${email} no está autorizado para ver resultados. Por favor usa tu correo institucional asignado.`);
             }
 
@@ -79,7 +70,6 @@ export default function EstudianteLogin() {
             console.error("Login error:", err);
             const errorMessage = err.message || '';
 
-            // Manejo de errores específicos de Firebase
             if (err.code === 'auth/popup-closed-by-user') {
                 setError('Inicio de sesión cancelado.');
             } else if (err.code === 'auth/configuration-not-found') {
@@ -91,9 +81,8 @@ export default function EstudianteLogin() {
                 errorMessage.includes('sessionStorage is inaccessible') ||
                 errorMessage.includes('storage-partitioned')
             ) {
-                // Error específico de navegadores con almacenamiento particionado
                 setIsBrowserError(true);
-                setShowBrowserHelp(true); // Abrir modal automáticamente
+                setShowBrowserHelp(true);
                 setError('Tu navegador está bloqueando el inicio de sesión.');
             } else if (err.code === 'auth/network-request-failed') {
                 setError('Error de conexión. Verifica tu internet e inténtalo de nuevo.');

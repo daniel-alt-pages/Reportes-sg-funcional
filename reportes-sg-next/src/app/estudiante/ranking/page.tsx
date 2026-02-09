@@ -2,6 +2,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { Estudiante } from '@/types';
+import { getAllStudents, getAppConfig } from '@/lib/firestoreService';
 
 // ============== SVG ICONS (No emojis as per UUPM guidelines) ==============
 const TrophyIcon = () => (
@@ -280,36 +281,26 @@ export default function RankingPage() {
             if (!checkAuth()) return;
 
             try {
-                const currentSim = sessionStorage.getItem('simulacro_selected') || 'SG11-09';
-                setSimulacro(currentSim);
-
-                const res = await fetch(`/data/simulations/${currentSim}/students.json?v=${Date.now()}`);
-                if (res.ok) {
-                    const data = await res.json();
-
-                    // Handle both data structures:
-                    // SG11-09 uses: { estudiantes: [...] }
-                    // SG11-08 uses: { students: { id: {...}, ... } }
-                    let studentsArray: Estudiante[] = [];
-
-                    if (data.estudiantes && Array.isArray(data.estudiantes)) {
-                        studentsArray = data.estudiantes;
-                    } else if (data.students && typeof data.students === 'object') {
-                        // Convert object to array
-                        studentsArray = Object.values(data.students);
-                    }
-
-                    if (studentsArray.length === 0) {
-                        console.warn('No students found in data');
-                        setLoading(false);
-                        return;
-                    }
-
-                    const sorted = [...studentsArray].sort((a: Estudiante, b: Estudiante) =>
-                        (Number(b.puntaje_global) || 0) - (Number(a.puntaje_global) || 0)
-                    );
-                    setEstudiantes(sorted);
+                const currentSim = sessionStorage.getItem('simulacro_selected');
+                let activeSim = currentSim;
+                if (!activeSim) {
+                    const config = await getAppConfig();
+                    activeSim = config.activeSimulation;
                 }
+                setSimulacro(activeSim);
+
+                const studentsArray = await getAllStudents(activeSim);
+
+                if (studentsArray.length === 0) {
+                    console.warn('No students found in data');
+                    setLoading(false);
+                    return;
+                }
+
+                const sorted = [...studentsArray].sort((a: Estudiante, b: Estudiante) =>
+                    (Number(b.puntaje_global) || 0) - (Number(a.puntaje_global) || 0)
+                );
+                setEstudiantes(sorted);
             } catch (error) {
                 console.error('Error loading data:', error);
             } finally {

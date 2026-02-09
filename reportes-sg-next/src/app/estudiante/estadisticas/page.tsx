@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
+import { getAllStudents, getAppConfig } from '@/lib/firestoreService';
 import {
     Chart as ChartJS,
     RadialLinearScale,
@@ -302,15 +303,17 @@ export default function EstadisticasPage() {
     const loadData = useCallback(async () => {
         const id = localStorage.getItem('student_id');
         if (!id) { router.replace('/estudiante'); return; }
-        const currentSim = sessionStorage.getItem('simulacro_selected') || 'SG11-09';
+        const saved = sessionStorage.getItem('simulacro_selected');
+        let currentSim = saved;
+        if (!currentSim) {
+            const config = await getAppConfig();
+            currentSim = config.activeSimulation;
+        }
         setSimulacroActual(currentSim);
         try {
-            let res = await fetch(`/data/simulations/${currentSim}/resultados_finales.json?v=${Date.now()}`);
-            if (!res.ok) res = await fetch(`/data/resultados_finales.json?v=${Date.now()}`);
-            if (!res.ok) throw new Error('Error');
-            const data = await res.json();
+            const studentsArray = await getAllStudents(currentSim);
             const unicosMap = new Map();
-            data.estudiantes.forEach((e: Estudiante) => {
+            studentsArray.forEach((e: Estudiante) => {
                 const idNum = String(e.informacion_personal.numero_identificacion).trim();
                 if (!unicosMap.has(idNum) || e.puntaje_global > unicosMap.get(idNum).puntaje_global) unicosMap.set(idNum, e);
             });

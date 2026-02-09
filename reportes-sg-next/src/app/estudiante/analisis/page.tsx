@@ -3,6 +3,7 @@ import { useEffect, useState, useCallback, useMemo } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Modal from '@/components/ui/Modal';
 import { motion } from 'framer-motion';
+import { getStudentResults, getAllStudents, getInvalidaciones, getAppConfig } from '@/lib/firestoreService';
 import {
     BarChart,
     ArrowLeft,
@@ -126,24 +127,25 @@ function AnalisisContentInternal() {
 
         try {
             const targetId = String(id).trim();
-            const currentSim = sessionStorage.getItem('simulacro_selected') || 'SG11-09';
-
-            let resEst = await fetch(`/data/simulations/${currentSim}/estudiantes/${targetId}.json?v=${new Date().getTime()}`);
-            if (!resEst.ok) {
-                resEst = await fetch(`/data/estudiantes/${targetId}.json?v=${new Date().getTime()}`);
+            const saved = sessionStorage.getItem('simulacro_selected');
+            let currentSim = saved;
+            if (!currentSim) {
+                const config = await getAppConfig();
+                currentSim = config.activeSimulation;
             }
 
-            if (resEst.ok) {
-                const studentData = await resEst.json();
-                setEstudiante(studentData);
+            // 1. Cargar datos del estudiante desde Firestore
+            const studentData = await getStudentResults(targetId, currentSim);
+            if (studentData) {
+                setEstudiante(studentData as any);
             }
 
-            fetch(`/data/simulations/${currentSim}/resultados_finales.json?v=${new Date().getTime()}`)
-                .then(r => r.ok ? r.json() : fetch(`/data/resultados_finales.json?v=${new Date().getTime()}`).then(r2 => r2.json()))
-                .then(data => {
-                    if (data?.estudiantes) {
+            // 2. Cargar todos los estudiantes para estadísticas de grupo
+            getAllStudents(currentSim)
+                .then(studentsArray => {
+                    if (studentsArray.length > 0) {
                         const unicosMap = new Map();
-                        data.estudiantes.forEach((e: any) => {
+                        studentsArray.forEach((e: any) => {
                             const idNum = String(e.informacion_personal.numero_identificacion).trim();
                             if (!unicosMap.has(idNum) || e.puntaje_global > unicosMap.get(idNum).puntaje_global) {
                                 unicosMap.set(idNum, e);
@@ -154,12 +156,11 @@ function AnalisisContentInternal() {
                 })
                 .catch(err => console.warn("Could not load global stats", err));
 
-            // Cargar invalidaciones
-            fetch(`/data/invalidaciones.json?v=${new Date().getTime()}`)
-                .then(r => r.ok ? r.json() : null)
+            // 3. Cargar invalidaciones desde Firestore
+            getInvalidaciones(currentSim)
                 .then(data => {
-                    if (data?.invalidaciones) {
-                        setInvalidaciones(data.invalidaciones);
+                    if (data) {
+                        setInvalidaciones(data);
                     }
                 })
                 .catch(err => console.warn("Could not load invalidaciones", err));

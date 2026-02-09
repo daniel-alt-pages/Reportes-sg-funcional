@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-import DevToolsBlocker from "../components/DevToolsBlocker";
+// import DevToolsBlocker from "../components/DevToolsBlocker";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <DevToolsBlocker />
+        {/* <DevToolsBlocker /> */}
         {children}
       </body>
     </html>

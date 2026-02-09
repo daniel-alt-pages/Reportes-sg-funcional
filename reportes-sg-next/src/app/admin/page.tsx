@@ -4,6 +4,7 @@ import { EstadisticasGrupo } from '@/types';
 import { useState, useEffect, useMemo } from 'react';
 import * as XLSX from 'xlsx';
 import { Estudiante, ResultadosFinales, InstitucionData } from '@/types';
+import { getAppConfig, getAllStudents, getStatistics } from '@/lib/firestoreService';
 import LiquidEther from '@/components/LiquidEther';
 import SlidingPillNav from '@/components/SlidingPillNav';
 import AnalisisArea from '@/components/AnalisisArea';
@@ -86,13 +87,10 @@ export default function AdminPage() {
     useEffect(() => {
         const cargarSimulacros = async () => {
             try {
-                const response = await fetch('/data/current_simulation.json');
-                if (response.ok) {
-                    const data = await response.json();
-                    setSimulacrosDisponibles(data.available || ['SG11-08', 'SG11-09']);
-                    if (data.active) {
-                        setSimulacroActual(data.active);
-                    }
+                const config = await getAppConfig();
+                setSimulacrosDisponibles(config.availableSimulations || ['SG11-08', 'SG11-09']);
+                if (config.activeSimulation) {
+                    setSimulacroActual(config.activeSimulation);
                 }
             } catch (error) {
                 console.error('Error cargando simulacros:', error);
@@ -107,42 +105,8 @@ export default function AdminPage() {
             setLoading(true);
             setError(null);
             try {
-                // Intentar cargar desde la carpeta del simulacro
-                const simPath = `/data/simulations/${simulacroActual}`;
-
-                // Cargar estudiantes
-                let estudiantesData: Estudiante[] = [];
-                const studentsRes = await fetch(`${simPath}/students.json`);
-                if (studentsRes.ok) {
-                    const data = await studentsRes.json();
-                    // Soportar ambos formatos:
-                    // 1. { estudiantes: [...] } - formato array directo
-                    // 2. { students: {...}, index: [...] } - formato objeto con índice
-                    if (data.estudiantes && Array.isArray(data.estudiantes)) {
-                        estudiantesData = data.estudiantes;
-                    } else if (data.index && data.students) {
-                        estudiantesData = data.index.map((id: string) => data.students[id]);
-                    } else if (data.students && typeof data.students === 'object') {
-                        estudiantesData = Object.values(data.students);
-                    }
-                }
-
-                // Fallback si students.json no devolvió datos
-                if (estudiantesData.length === 0) {
-                    // Fallback a resultados_finales.json
-                    const resultsRes = await fetch(`${simPath}/resultados_finales.json`);
-                    if (resultsRes.ok) {
-                        const data = await resultsRes.json();
-                        estudiantesData = data.estudiantes || [];
-                    } else {
-                        // Último fallback: archivo global
-                        const globalRes = await fetch('/data/resultados_finales.json');
-                        if (globalRes.ok) {
-                            const data = await globalRes.json();
-                            estudiantesData = data.estudiantes || [];
-                        }
-                    }
-                }
+                // Cargar estudiantes desde Firestore
+                const estudiantesData = await getAllStudents(simulacroActual);
 
                 // Función auxiliar para calcular aciertos por sesión
                 const calcularAciertosSesion = (puntajes: Estudiante['puntajes']) => {
@@ -254,14 +218,14 @@ export default function AdminPage() {
 
                 setEstudiantes(estudiantesProcesados);
 
-                // Cargar estadísticas del simulacro (estadisticas_grupo.json tiene las claves correctas)
-                let statsRes = await fetch(`${simPath}/estadisticas_grupo.json`);
-                if (!statsRes.ok) {
-                    statsRes = await fetch(`${simPath}/statistics.json`);
-                }
-                if (statsRes.ok) {
-                    const statsData = await statsRes.json();
-                    setEstadisticas(statsData);
+                // Cargar estadísticas desde Firestore
+                try {
+                    const statsData = await getStatistics(simulacroActual);
+                    if (statsData) {
+                        setEstadisticas(statsData);
+                    }
+                } catch (statsErr) {
+                    console.warn('Could not load statistics:', statsErr);
                 }
 
             } catch (err) {

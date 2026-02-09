@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import { getAllStudents, getStudentResults, getStudentSimulations, getAppConfig } from '@/lib/firestoreService';
 
 interface Puntaje {
     puntaje: number;
@@ -34,6 +35,8 @@ export default function StudentDashboard() {
     const [estudiante, setEstudiante] = useState<Estudiante | null>(null);
     const [loading, setLoading] = useState(true);
     const [errorMsg, setErrorMsg] = useState('');
+    const [debugLog, setDebugLog] = useState<string[]>([]);
+    const addLog = (msg: string) => setDebugLog(prev => [...prev, `${new Date().toLocaleTimeString()} ${msg}`]);
 
     const [rankingInfo, setRankingInfo] = useState({ puesto: 0, total: 0, top5: [] as any[] });
     const [allStudents, setAllStudents] = useState<any[]>([]);
@@ -62,51 +65,38 @@ export default function StudentDashboard() {
         setLoading(true);
         setErrorMsg('');
 
-        // 1. Cargar Ranking del Simulacro Actual
+        // 1. Cargar Ranking del Simulacro Actual (Firestore)
         const fetchRanking = async () => {
             try {
-                // Cargar students.json del simulacro actual
-                const res = await fetch(`/data/simulations/${currentSim}/students.json?v=${new Date().getTime()}`);
-                if (res.ok) {
-                    const data = await res.json();
+                addLog('⏳ getAllStudents...');
+                const studentsArray = await getAllStudents(currentSim || undefined);
+                addLog(`✅ getAllStudents: ${studentsArray.length} estudiantes`);
 
-                    // Handle both data structures:
-                    // SG11-09 uses: { estudiantes: [...] }
-                    // SG11-08 uses: { students: { id: {...}, ... } }
-                    let studentsArray: any[] = [];
-
-                    if (data.estudiantes && Array.isArray(data.estudiantes)) {
-                        studentsArray = data.estudiantes;
-                    } else if (data.students && typeof data.students === 'object') {
-                        // Convert object to array
-                        studentsArray = Object.values(data.students);
-                    }
-
-                    if (studentsArray.length === 0) {
-                        console.warn("No students found in data");
-                        return;
-                    }
-
-                    const sorted = [...studentsArray].sort((a: any, b: any) =>
-                        (Number(b.puntaje_global) || 0) - (Number(a.puntaje_global) || 0)
-                    );
-
-                    setAllStudents(studentsArray);
-
-                    const myIndex = sorted.findIndex((e: any) => String(e.informacion_personal.numero_identificacion).trim() === String(id).trim());
-
-                    setRankingInfo({
-                        puesto: myIndex >= 0 ? myIndex + 1 : 0,
-                        total: sorted.length,
-                        top5: sorted.slice(0, 5)
-                    });
+                if (studentsArray.length === 0) {
+                    addLog('⚠️ No students found');
+                    return;
                 }
-            } catch (e) {
+
+                const sorted = [...studentsArray].sort((a: any, b: any) =>
+                    (Number(b.puntaje_global) || 0) - (Number(a.puntaje_global) || 0)
+                );
+
+                setAllStudents(studentsArray);
+
+                const myIndex = sorted.findIndex((e: any) => String(e.informacion_personal.numero_identificacion).trim() === String(id).trim());
+
+                setRankingInfo({
+                    puesto: myIndex >= 0 ? myIndex + 1 : 0,
+                    total: sorted.length,
+                    top5: sorted.slice(0, 5)
+                });
+            } catch (e: any) {
+                addLog(`❌ Ranking error: ${e.message}`);
                 console.error("Error loading ranking", e);
             }
         };
 
-        // 2. Cargar Datos Estudiante (Optimizado)
+        // 2. Cargar Datos Estudiante (Firestore)
         const fetchEstudiante = async () => {
             // Try to load from cache first for instant display
             const cachedData = localStorage.getItem('student_data');
@@ -124,26 +114,21 @@ export default function StudentDashboard() {
 
             try {
                 const targetId = String(id).trim();
+                addLog(`⏳ getStudentResults(${targetId}, ${currentSim})...`);
+                const found = await getStudentResults(targetId, currentSim || undefined);
 
-                // Intentar cargar desde la carpeta del simulacro específico
-                let res = await fetch(`/data/simulations/${currentSim}/estudiantes/${targetId}.json?v=${new Date().getTime()}`);
-
-                // Fallback a la ruta general
-                if (!res.ok) {
-                    res = await fetch(`/data/estudiantes/${targetId}.json?v=${new Date().getTime()}`);
-                }
-
-                if (res.ok) {
-                    const found = await res.json();
-                    setEstudiante(found);
+                if (found) {
+                    addLog('✅ Student data loaded');
+                    setEstudiante(found as any);
                     try { localStorage.setItem('student_data', JSON.stringify(found)); } catch (e) { }
                 } else {
-                    // If network fetch fails, and no valid cached data was set, then throw error
-                    if (!estudiante) { // Only throw if student data is not already set from cache
+                    addLog('⚠️ No results found for student');
+                    if (!estudiante) {
                         throw new Error(`No tienes resultados para el simulacro ${currentSim}. Prueba cambiando de simulacro.`);
                     }
                 }
             } catch (err: any) {
+                addLog(`❌ Student error: ${err.message}`);
                 console.error(err);
                 setErrorMsg(err.message || "Error cargando información.");
             }
@@ -154,33 +139,15 @@ export default function StudentDashboard() {
 
     }, [simulacroActual]); // Reload when simulation changes
 
-    // Detectar simulacros disponibles para el estudiante al cargar
+    // Detectar simulacros disponibles para el estudiante al cargar (Firestore)
     useEffect(() => {
         const detectarSimulacros = async () => {
             const id = localStorage.getItem('student_id');
             if (!id) return;
 
-            const simulacrosConDatos: string[] = [];
-            const simulacrosPosibles = ['SG11-08', 'SG11-09'];
-
-            // Verificar en qué simulacros tiene datos el estudiante
-            for (const sim of simulacrosPosibles) {
-                try {
-                    // Primero intentar en carpeta del simulacro
-                    let res = await fetch(`/data/simulations/${sim}/estudiantes/${id}.json`, { method: 'HEAD' });
-                    if (res.ok) {
-                        simulacrosConDatos.push(sim);
-                    } else {
-                        // Intentar en ruta general (solo para el simulacro más reciente)
-                        res = await fetch(`/data/estudiantes/${id}.json`, { method: 'HEAD' });
-                        if (res.ok && sim === 'SG11-09') {
-                            simulacrosConDatos.push(sim);
-                        }
-                    }
-                } catch (e) {
-                    // Ignorar errores de fetch
-                }
-            }
+            addLog('⏳ getStudentSimulations...');
+            const simulacrosConDatos = await getStudentSimulations(id);
+            addLog(`✅ Simulations: ${simulacrosConDatos.join(', ') || 'none'}`);
 
             setSimulacrosDelEstudiante(simulacrosConDatos);
 
@@ -189,13 +156,12 @@ export default function StudentDashboard() {
                 setShowSimulacroModal(true);
                 setSimulacroActual(simulacrosConDatos[simulacrosConDatos.length - 1]);
             } else {
-                // Caso: Solo tiene uno, o ya seleccionó en esta sesión
                 const saved = sessionStorage.getItem('simulacro_selected');
-                const finalSim = saved || (simulacrosConDatos.length > 0 ? simulacrosConDatos[simulacrosConDatos.length - 1] : 'SG11-09');
+                const config = await getAppConfig();
+                const finalSim = saved || (simulacrosConDatos.length > 0 ? simulacrosConDatos[simulacrosConDatos.length - 1] : config.activeSimulation);
 
                 setSimulacroActual(finalSim);
 
-                // Mostrar bienvenida si no se ha mostrado aún
                 if (!sessionStorage.getItem('welcome_shown')) {
                     setTimeout(() => setWelcomeModal(true), 1500);
                     sessionStorage.setItem('welcome_shown', 'true');
@@ -243,6 +209,12 @@ export default function StudentDashboard() {
             <div className="min-h-screen bg-slate-50 flex items-center justify-center flex-col gap-4">
                 <div className="w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
                 <p className="text-slate-500 font-medium animate-pulse">Cargando resultados...</p>
+                {debugLog.length > 0 && (
+                    <div className="mt-4 bg-slate-900 text-green-400 p-4 rounded-lg font-mono text-xs max-w-lg w-full mx-4 max-h-60 overflow-y-auto">
+                        <p className="text-slate-500 mb-2">🔧 Debug Log:</p>
+                        {debugLog.map((log, i) => <p key={i}>{log}</p>)}
+                    </div>
+                )}
             </div>
         );
     }
